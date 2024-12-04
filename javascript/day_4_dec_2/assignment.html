@@ -1,0 +1,26 @@
+<script>
+    // window.alert('Hellooo, Good Morning!!!');
+    // 1. using prompt collect 2 values from user and perform all arithmetic operations on those 2 values
+
+    let n = prompt('Enter your first number to perform arthematic operations');
+    let m = prompt('Enter your second number to perform arthematic operations');
+
+    operations(parseInt(n), parseInt(m));
+    
+    function operations(n, m) {
+        console.log(`Addition of ${n} and ${m} is`, n+m);
+        console.log(`Subtraction of ${n} and ${m} is`, n-m);
+        console.log(`Multiplication of ${n} and ${m} is`, n*m);
+        console.log(`Division of ${n} and ${m} is`, n/m);
+    }
+
+    /*
+        alert() : display some message with 1 button(ok)
+        confirm() : user confirmation with 2 buttons(ok,cancel)
+        prompt() : collect user input(inputBox , ok, cancel)
+
+        Note : winodw object methods can be directly called
+        window.alert()  : fine
+        alert()
+    */
+</script>
