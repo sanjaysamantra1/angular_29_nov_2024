@@ -1,0 +1,43 @@
+<!-- 1. WAP create 3 buttons with increment,decrement,reset functionality, using closure -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Increment Decrement and Reset Func using CLOSURE</h1>
+    <h1>Counter: <span></span></h1>
+    <button title="Increment by 1" onclick="controller.increment()">Increment</button>
+    <button title="Decrement by 1" onclick="controller.decrement()">Decrement</button>
+    <button title="Reset on click" onclick="controller.reset()">Reset</button>
+
+    <script>
+        function initCounter() {
+            let count = 0;
+            return {
+                increment: function () {
+                    count++;
+                    document.querySelector('span').innerHTML = count;
+                },
+                decrement: function () {
+                    count--;
+                    document.querySelector('span').innerHTML = count;
+                },
+                reset: function () {
+                    count = 0;
+                    document.querySelector('span').innerHTML = count;
+                }
+            }
+        }
+
+        let controller = initCounter();
+
+    </script>
+</body>
+
+</html>
