@@ -1,3 +1,7 @@
+
+var firstName1= 'Sachin';
+var lastName1= 'Tendulkar';
+
 let user = {
     firstName: 'Sachin',
     lastName: 'Tendulkar',
@@ -5,7 +9,7 @@ let user = {
         console.log(this.firstName + " " + this.lastName); // this = user
     },
     fullName2: () => { // this = global
-        console.log(this.firstName + this.lastName)
+        console.log(firstName1 + lastName1)
     }
 }
 user.fullName1(); // inside fullName1() ,  this  = user
