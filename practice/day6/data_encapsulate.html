@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function openAccount(initalAmount) {
+            let accNumber = 1222;
+            let accBalance = initalAmount;
+            return {
+                deposit: function (depositAmt) {
+                    if (depositAmt < 0) {
+                        console.log("DEPOSIT AMT NEG VALUE");
+                    } else {
+                        accBalance += depositAmt;
+                    }
+                },
+                getAccountInfo: function () {
+                    console.log(`Account ${accNumber} has balance of ${accBalance}`);
+                }
+            };
+        }
+
+        let accObj = openAccount(100);
+        accObj.deposit(10000);
+        accObj.getAccountInfo();
+
+        accObj.deposit(-100);
+        accObj.getAccountInfo();
+
+        console.dir(accObj);
+    </script>
+</body>
+
+</html>

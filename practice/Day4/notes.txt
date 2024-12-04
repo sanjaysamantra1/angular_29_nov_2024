@@ -1,0 +1,8 @@
+User defined func types:
+Function delaration
+
+function expression
+
+IIFE stands for "Immediately Invoked Function Expression" and is a JavaScript programming language idiom that executes a function immediately after it's defined
+
+arrow functions

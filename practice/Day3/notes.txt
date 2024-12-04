@@ -1,0 +1,34 @@
+variables are containers for storing data values.
+
+variable name is the location address where it was assigned
+
+can be declared using below 3 keywords: let, var, const
+
+when assigned with var and let keywords variables values can be modified.
+variables assigned with const keyword can't be changed and value must be decalred at the time of initialization.
+
+variables declared with let and const cannot be redeclared.
+
+variables declared with let and const have scopes ranging from block / function / global
+
+var keyword assigned variables have function / global scopes
+
+A temporal dead zone (TDZ) is the area of a block where a variable is inaccessible
+until the moment the computer completely initializes it with a value. 
+
+In JavaScript, the Temporal Dead Zone (TDZ) is the period between entering a scope and the actual declaration of a variable within that scope. During this phase, the variable exists but is inaccessible. It's a behavior specific to let and const declarations, introduced in ES6.
+
+ECMA : European Computer Menufacturer Association
+
+ES-5    <2015       
+ES-6    2015 (let , const , class , extends , module , spread , rest)
+ES-7    2016 ( ** )
+ES-8    2017
+ES-9    2018
+ES-10   2019
+ES-11   2020
+ES-12   2021
+ES-13   2022
+ES-14   2023
+ES-15   2024
+

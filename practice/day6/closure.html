@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Count: <span></span></h1>
+    <p class="hi"></p>
+    <button onclick="increment()">
+        Increment Counter
+    </button>
+    <button onclick="sayHi()">
+        Say Hiii
+    </button>
+    <script>
+        function initCounter() {
+            let count = 0;
+
+            return function () {
+                count++;
+                document.querySelector('span').innerHTML = count;
+            };
+        }
+
+        let increment = initCounter();
+
+        console.dir(increment);
+
+        function sayHi() {
+            document.querySelector('.hi').innerHTML = 'Hi';
+        }
+    </script>
+</body>
+
+</html>
