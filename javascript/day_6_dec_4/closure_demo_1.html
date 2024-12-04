@@ -1,0 +1,23 @@
+<script>
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    function f1() {
+        let d = 40;
+        console.log('I am f1', a, b, c, d);
+
+        function f2() {
+            let e = 50;
+            console.log('I am f2', a, b, c, d, e);
+        }
+        f2();
+        console.dir(f2);
+    }
+    f1();
+    console.dir(f1);
+    // all the 'var' type global variables are part of global scope
+    // all let & const type global variables are part of script scope
+
+    // closure scope will not be seen with outer functions
+    // closure scope will be seen only with inner functions & only if the inner function accesses outer function data
+</script>

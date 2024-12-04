@@ -1,0 +1,29 @@
+<script>
+    class Student {
+        firstName = 'Sachin';
+        lastName = 'Tendulkar';
+        fullName1() {
+            console.log(this); // this = Student 
+            console.log('fullname1 ', this.firstName, this.lastName);
+
+            function f1() { // regular : how the function is called
+                console.log('f1', this); // this = undefined
+            }
+            f1();
+
+            let f2 = () => {
+                console.log('f2', this); // this  = from lexical scope (fullName1)
+            }
+            f2();
+        }
+        fullName2 = () => {
+            console.log(this); // this = Student
+            console.log('fullname2 ', this.firstName, this.lastName)
+        }
+    }
+    // Note: arrow Function doesn't have its own 'this' , it uses this from its lexical scope
+    // lexical scope : the place where the function is declared
+    let std1 = new Student();
+    std1.fullName1(); // as it's called with std1 , inside fullName1() , this = student object
+    std1.fullName2(); // fullName2 uses this from lexical scope, this = student
+</script>
