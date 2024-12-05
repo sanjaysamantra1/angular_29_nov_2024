@@ -1,0 +1,56 @@
+Use Strict
+==========
+-provides better coding standard and stronger error checking.
+-'use strict' is only recognized at the beginning of a script or a function.
+-JavaScript modules are automatically in strict mode, with no statement needed to initiate it.(import/export)
+-The purpose of "use strict" is to execute the javascript in "strict mode".
+-when 'use strict' is not written, browser runs the JS in normal mode.
+-when 'use strict' is  written, browser runs the JS in strict mode.
+-in Normal mode few mistakes are ignored, in strict mode mistakes are not ignored
+
+
+1. variable declaration without var/let/const is not allowed.
+   makes it impossible to accidentally create global variables.
+2. function with duplicate arguements are not allowed.
+3. NaN/undefined/Infinity cann't be used as a variable name.
+4. Delete of an unqualified identifier in strict mode. 
+    ex:delete Object.prototype; 
+	var x = 5; delete x;
+5. Multiple assignments not allowed.
+   var a = b = c = 3;
+6. 'this' is undefined, when a function is invoked from Global Context in strict mode.
+
+
+functions
+=========
+1. Pre-Defined / inbuilt
+  javascript inbuilt objects : console , document , window , Math , Array , Object
+  console Object Methods : log() , table(), warn() , error() , time() , timeEnd()
+  document Object Methods : write() , writeln()
+  window Object methods : alert() , prompt() , confirm() , print(), close(), atob() , btoa()
+  Math : max() , min(), sqrt(), cbrt()
+2. User Defined
+   a. Function declaration
+   b. Function Expression
+   c. Self invoked / IIFE 
+   d. Arrow Function (ES-6) (2015)
+
+
+How 'this' works in arrow function & regular function
+=====================================================
+regular : 'this' is calculated , how/where the function is invoked
+           'this' is dynamic
+arrow : 'this' is not calculated how  the function is invoked,
+        'this' is decided from the place, where the arrow function is written
+        'this' is not dynamic
+
+
+Arrow function Limitations
+==========================
+1. arrow functions shouldn't used as object methods. dont use arrow functions inside objects
+2. Don't use arrow function if 'this' should be dynamic inside a function
+
+
+Assignments:
+1. using prompt collect 2 values from user and perform all arithmetic operations on those 2 values
+

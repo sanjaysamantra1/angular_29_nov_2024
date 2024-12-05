@@ -1,0 +1,62 @@
+HTML - content of a webpage
+CSS - for styling
+Bootstrap - Responsiveness + pre-defined components-table,carousel,modal,card
+Javascript - behaviour of a webpage
+
+
+How to run Javascript files
+===========================
+1. Browser (FronEnd Development)
+   a. Create a javascript file & add Javascript code
+   b. include that javascript file in HTML file using the below syntax
+      <script src='abc.js' />
+   c. open HTML file in Browser 
+   
+2. Nodejs (BackEnd Development)
+   a. Install Nodejs
+   b. Run the below command in command
+      node <fileName.js>
+
+
+        Browser                     Nodejs
+=======================================================
+1. window - yes                    1. window - No
+2. document - yes                  2. document - No
+3. File - No                       3. File - yes
+
+   
+Variables
+=========
+-Variables are containers for storing data values. 
+ Variable is a name of memory location.
+-Variables in Javascript can be declared by using either one of the below 3 keywords:
+ 1. var   
+ 2. let
+ 3. const
+
+	var						let						 const
+======================================================================
+1.since begining		 1.ECMASCRIPT-6(2015)		1.ECMASCRIPT-6(2015)
+2.value can be changed   2.value can be changed     2.cann't be changed
+3.initialization is		 3.initialization is		3.mandatory
+	not mandatory           not mandatory	
+4.can be redeclared		 4.cann't be redeclared		4.cann't be redeclared
+5.function/global		 6.block/function/global	6.block/function/global
+6.TDZ - No			 	 5.TDZ - Yes				5.TDZ - Yes
+
+
+Javascript : programming language, follows ECMASCRIPT standards
+ECMASCRIPT : standard provider for javascript
+ECMA : European Computer Menufacturer Association
+
+ES-5    <2015       
+ES-6    2015 (let , const , class , extends , module , spread , rest)
+ES-7    2016 ( ** )
+ES-8    2017
+ES-9    2018
+ES-10   2019
+ES-11   2020
+ES-12   2021
+ES-13   2022
+ES-14   2023
+ES-15   2024
