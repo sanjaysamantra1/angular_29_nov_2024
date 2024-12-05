@@ -1,0 +1,44 @@
+<!-- -- WAP create 3 buttons with increment,decrement,reset functionality, using closure -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter with Closures</title>
+</head>
+<body>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+    <button id="reset">Reset</button>
+
+    <h1>Count: <span>0</span></h1>
+
+    <script>
+        function createCounter() {
+            let count = 0;
+
+            return {
+                increment: function () {
+                    count++;
+                    document.querySelector('span').innerHTML = count;
+                },
+                decrement: function () {
+                    count--;
+                    document.querySelector('span').innerHTML = count;
+                },
+                reset: function () {
+                    count = 0;
+                    document.querySelector('span').innerHTML= count;
+                }
+            };
+        }
+
+        const counter = createCounter();
+
+        document.getElementById('increment').addEventListener('click', counter.increment);
+        document.getElementById('decrement').addEventListener('click', counter.decrement);
+        document.getElementById('reset').addEventListener('click', counter.reset);
+    </script>
+</body>
+</html>
