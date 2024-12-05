@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+ <script>
+
+var nestedObject = {
+  data: {
+    info: {
+      stuff: {
+        thing: {
+          moreStuff: {
+            magicNumber: 22,
+            something: "hello",
+            manyMoreStuff: {
+              number: 44,
+            },
+          },
+        },
+      },
+    },
+  },
+};
+
+// Recursive function to check if the value exists in the object
+function contains(obj, searchValue) {
+  // Loop through each key in the object
+  for (let key in obj) {
+    // If the current property is an object, call the function recursively
+    if (typeof obj[key] === 'object' && obj[key] !== null) {
+      if (contains(obj[key], searchValue)) {
+        return true; // Return true if the value is found in the nested object
+      }
+    }
+    
+    // If the value matches, return true
+    if (obj[key] === searchValue) {
+      return true;
+    }
+  }
+  
+  // Return false if the value was not found
+  return false;
+}
+
+// Example usages:
+console.log(contains(nestedObject, 44)); // true
+console.log(contains(nestedObject, "hello")); // true
+console.log(contains(nestedObject, "hiii")); // false
+
+ </script>
+
+
+</body>
+</html>
