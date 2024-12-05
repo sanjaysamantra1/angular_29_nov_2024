@@ -1,0 +1,35 @@
+<body>
+    <button onclick="increment()">INCREMENT</button>
+    <button onclick="decrement()">DECREMENT</button>
+    <button onclick="reset()">RESET</button>
+  
+    <h1>Count: <span id="counter">0</span></h1>
+  
+    <script>
+      let count = 0;
+  
+      function updateCounter() {
+        document.getElementById('counter').textContent = count;
+      }
+  
+      function increment() {
+        count++;
+        updateCounter();
+      }
+  
+      function decrement() {
+        if (count > 0) {
+          count--;
+          updateCounter();
+        } else {
+          alert("Count can't be negative!");
+        }
+      }
+  
+      function reset() {
+        count = 0;
+        updateCounter();
+      }
+    </script>
+  </body>
+  
