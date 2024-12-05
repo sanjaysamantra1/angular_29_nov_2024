@@ -1,0 +1,34 @@
+FrontEnd : Develop User Interface of a web application
+
+HTML - Content of a webpage ( Table, form , image ,audio, video, list)
+CSS - for styling  ( color , border , placement of elements, background, width,height)
+Bootstrap - Responsiveness + pre-defined components-table,carousel,modal,card
+Javascript - behaviour of a webpage
+Angular - Javascript framework (RAD,CLI,DataBinding,Form Validation,AJAX,Routing)
+
+Javascript Frameworks : Angular / React / NextJs / VueJs / PolymerJs / knockoutJs
+
+
+
+fipkart page
+============
+1. create an HTML file (flipkart.html) and html code
+2. install vscode extension
+   'open in browser'
+3. open html file in browser 
+   alt+b  / alt+shift+b
+4. How to use css
+   a. inline 
+   b. internal (<style>)
+   c. external (separate css file & include that css in html)
+5. How to use Bootstrap (bootstrap 3/4/5)  (Twitter)
+   include bootstrap CDN link in our HTML 
+6. How to use Javascript 
+   a. internal  (<script> tag)
+   b. external  (separate javascript file & include that in html file)
+
+
+Vscode shortcuts (EMMET)
+========================
+!    HTML code
+table>tbody>tr*20>td*5{Data-$}
