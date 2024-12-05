@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">User-1</button>
+    <button id="btn2">User-2</button>
+    <button id="btn3">User-3</button>
+    <button id="btn4">User-4</button>
+    <button id="btn5">User-5</button>
+    <button id="btn6">User-6</button>
+    <button id="btn7">User-7</button>
+    <button id="btn8">User-8</button>
+    <button id="btn9">User-9</button>
+    <button id="btn10">User-10</button>
+
+    <script>
+        async function fetchUserData() {
+            console.log(this)
+            let userId = this.id.split('btn').pop(); // this = dynamic (btn1 / btn2 / btn3 ....)
+            let response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+            let finalResponse = await response.json();
+            console.log(finalResponse)
+        }
+        /* let fetchUserData = async () => {
+            console.log(this)
+            let userId = this.id.split('btn').pop(); // this = dynamic (btn1 / btn2 / btn3 ....)
+            let response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+            let finalResponse = await response.json();
+            console.log(finalResponse)
+        } */
+        let allButtons = document.querySelectorAll('button');
+        allButtons.forEach(button => {
+            button.addEventListener('click', fetchUserData);
+        })
+    </script>
+</body>
+
+</html>

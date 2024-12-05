@@ -1,0 +1,17 @@
+1. Download Nodejs and install
+  https://nodejs.org/en/download/prebuilt-installer
+
+2. Code Editor (Visual Studio Code)
+   https://code.visualstudio.com/download
+   
+
+3. Git Setup 
+   a. download an install git software
+       https://git-scm.com/downloads
+   b. create a git profile
+      https://github.com/  (register)
+
+
+
+GitHub Repository :
+https://github.com/sanjaysamantra1/angular_29_nov_2024

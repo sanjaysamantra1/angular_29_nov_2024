@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+            height: 450px;
+        }
+
+        button {
+            padding: 15px 60px;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        #btn1 {
+            background-color: orange;
+        }
+
+        #btn2 {
+            background-color: orangered;
+        }
+    </style>
+    <script>
+        function addToCart() {
+            alert('Cool, Your Item Has been added to the cart!!!')
+        }
+        function BuyNow() {
+            alert('Your Buying this item!!!')
+        }
+    </script>
+</head>
+
+<body>
+    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/backpack/w/t/8/27-daredevil-34-12147-laptop-backpack-wildcraft-43-48-original-imah66wm62nkp2mv.jpeg?q=70&crop=false"
+        alt="">
+    <br />
+    <button id="btn1" onclick="addToCart()">ADD TO CART</button>
+    <button id="btn2" onclick="BuyNow()">BUY NOW</button>
+</body>
+
+</html>
