@@ -2,9 +2,12 @@
     class Student {
         firstName = 'Sachin';
         lastName = 'Tendulkar';
+
+      
         fullName1() {
             console.log(this); // this = Student 
             console.log('fullname1 ', this.firstName, this.lastName);
+            
 
             function f1() { // regular : how the function is called
                 console.log('f1', this); // this = undefined
