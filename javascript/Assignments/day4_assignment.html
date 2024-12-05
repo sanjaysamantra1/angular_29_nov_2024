@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunction()
+        {
+            var x= parseInt(prompt("Enter Value1 : "));
+            
+            var y=parseInt(prompt("Enter Value2 : "));
+
+            let s = prompt("What operation would you like to perfrom : ");
+            let text;
+          switch(s) {
+             case "add":
+             z = x+y;
+             console.log(z);
+             break;
+             case "subtract":
+             z = x-y;
+             break;
+             case "multiply":
+             z = value1* value2;
+             break;
+             case "divide":
+                z=x/y;
+                break;
+             default:
+             z = "I have never heard of that one..";
+             console.log("Result : ",z);
+  }
+  document.getElementById("result").innerHTML = z;
+
+        }
+        
+    </script>
+</head>
+<body>
+
+    
+    
+    <button onclick="myFunction()">Enter two numbers</button>
+    <p id="result"></p>
+</body>
+</html>
