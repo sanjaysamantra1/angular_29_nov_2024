@@ -1,0 +1,30 @@
+<!-- if function is not accessing data from outer function its not closure scope if
+the function inside the function access the data from outer func itll be closure scope -->
+
+<script>
+    var a=10;
+    var b=20;
+    var c=30;
+    function f(){
+        let d=40;
+        console.log('I am f',a,b,c,d);
+        
+    function f1(){
+        let e=50;
+        console.log('I am f2',a,b,e,d);
+    }
+    f1();
+    console.dir(f1);
+    }
+    f();
+    console.dir(f);
+     // all the 'var' type global variables are part of global scope
+    // all let & const type global variables are part of script scope
+
+    // closure scope will not be seen with outer functions
+    // closure scope will be seen only with inner functions & only if the inner function accesses outer function data
+
+
+
+
+</script>

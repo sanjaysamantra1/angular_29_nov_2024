@@ -1,0 +1,22 @@
+<body>
+
+
+    <button onclick="incrementCounter()">Increment</button>
+    <button onclick="sayHi()">Decrement</button>
+
+<h1>Count:<span>0</span></h1>
+
+    <script>
+        let count=0; // global
+        const incrementCounter=()=>{
+            // let count=0; // function scope works 1 time
+            count++;  // n times
+            document.querySelector('span').innerHTML=count; // n times
+        }
+        const sayHi=()=>{
+            console.log('Hi Rohith');
+            count++;
+            document.querySelector('span').innerHTML=count;
+        }
+    </script>
+</body>
