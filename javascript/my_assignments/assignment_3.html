@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter with Closure Demo</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+        }
+        #counter {
+            font-size: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">Count: 0</div>
+    <button onclick="counterModule.increment()">Increment</button>
+    <button onclick="counterModule.decrement()">Decrement</button>
+    <button onclick="counterModule.reset()">Reset</button>
+
+    <script>
+        // Counter Module using Closure
+        const counterModule = (function() {
+            let count = 0; // Private variable
+            const display = document.getElementById('counter');
+            
+            // Private function to update display
+            function updateDisplay() {
+                display.textContent = 'Count: ' + count;
+            }
+
+            // Public methods
+            return {
+                increment: function() {
+                    count++;
+                    updateDisplay();
+                },
+                decrement: function() {
+                    count--;
+                    updateDisplay();
+                },
+                reset: function() {
+                    count = 0;
+                    updateDisplay();
+                }
+            };
+        })();
+    </script>
+</body>
+</html>
