@@ -7,32 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <span> </span> 
-    <button onclick=variable.increment()> Increment</button>
-    <button onclick=variable.decrement()> Decrement</button>
-    <button onclick=variable.reset()>reset</button>
     <script>
-    function counter(){
-        let count=0;
-        return{
-            increment : function(){
-                count++;
-                document.querySelector('span').innerHTML=count;
-            },
-            decrement  : function(){
-                count--
-                document.querySelector('span').innerHTML=count;
-            },
-            reset: function(){
-                count=0;
-                document.querySelector('span').innerHTML = count;
-            }
-        }
+
+let input= window.prompt("Enter a sequence of paranthesis");
+       var stack=[];
+let dictionary = new Map();
+dictionary.set('}','{')
+dictionary.set(')','(')
+dictionary.set(']','[')
+
+if(input.length%2!=0){
+    window.alert("Invalid sequence of paranthesos")
+}
+for(let i=0;i<input.length/2;i++){
+    stack.push(input[i]);
+}
+for(let j=input.length/2;j<input.length;j++){
+    if(stack.pop()==dictionary.get(input[j])){
+    continue;
+}
+    else{
+        window.alert("Invalid sequence of paranthesos");
     }
-    let variable = counter();
+}
+window.alert("valid sequence of paranthesos");
         
     </script>
 </body>
 </html>
-
-<!---WAP create 3 buttons with increment,decrement,reset functionality, using closure
