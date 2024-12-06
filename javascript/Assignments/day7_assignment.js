@@ -28,14 +28,20 @@ console.log(NoOfOccurences(ip));
     let maxCount = 0;
 
     for (let char of str.toLowerCase()) {
-        if (char !== ' ') {
-            charCount[char] = (charCount[char] || 0) + 1;
+        for (let i of str){
+            if (charCount[i]) {
+                charCount[i] += 1;
+            } else {
+                charCount[i] = 1;
+            }
+            
+        }
             if (charCount[char] > maxCount) {
                 maxCount = charCount[char];
                 maxChar = char;
             }
         }
-    }
+    
 
     return maxChar.toUpperCase(); 
 }
@@ -126,7 +132,7 @@ console.log(op2);
 /*6. Ask user to enter a sequence of parantheses and validate 
    input: '([{ }])'
    output : true */
- /*  function isValidParentheses(sequence) {
+   /*function isValidParentheses(sequence) {
     const stack = [];
     const matchingBrackets = {
         ')': '(',
@@ -151,7 +157,7 @@ console.log(op2);
 const userInput = console.log("Enter a sequence of parentheses:");
 const result = isValidParentheses(userInput);
 console.log(result); // Output: true or false
-*/
+
 
 /*7. Ask user to enter a 3 letter word, print all the permutations using those 3 letters.
     input: 'ABC'
