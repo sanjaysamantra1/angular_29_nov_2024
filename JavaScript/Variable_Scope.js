@@ -15,7 +15,7 @@ function func_var() {
         let b=244;
         const c=225;
         console.log(`Block: a is ${a}, b is ${b}, c is ${c}`);
-        myName="Rohith Rudrapati"
+        myName="Akshay Joshi";
     }
 }
 func_var();
