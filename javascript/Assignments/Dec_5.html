@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dec-5</title>
+</head>
+<body>
+    
+    <script>
+
+        function getCharCount(str){
+            let obj = {};
+            for( let char of str){
+                if(obj[char] == null){
+                    obj[char] = 1;
+                }else{
+                    obj[char]++;
+                }
+            }
+            return obj;
+        }
+
+        // -------------------Task-1---------------------------
+        let str = 'entertainment';
+        let obj = getCharCount(str);
+        Object.keys(obj).forEach(element => {
+            console.log(`${element} is repeated ${obj[element]} times`);
+        });
+
+
+        // -------------------Task-2---------------------------
+
+        let str1 = 'hello world';
+        let obj1 = getCharCount(str1);
+        let highestKey = '';
+
+        for(let key in obj1){
+            if(highestKey == ''){
+                highestKey = key;
+            }
+            if(obj1[key] > obj1[highestKey]){
+                highestKey = key;
+            }
+        }
+        console.log("-------------------Task-2---------------------------");
+        console.log(`${highestKey} is repeated ${obj1[highestKey]} times`);
+
+        // -------------------Task-3---------------------------
+        console.log("-------------------Task-3---------------------------");
+        let str2 = 'hello World';
+        let upadtedString = '';
+        console.log("Original string is: ", str2);
+        for(let i= 0; i< str2.length; i++){
+            upadtedString +=  (str2[i] === str2[i].toUpperCase()) ?  str2[i].toLowerCase() : str2[i].toUpperCase();
+        }
+        console.log("Updated string is: ", upadtedString);
+
+        // ---------------------Task-4-----------------------
+        console.log("-------------------Task-4---------------------------");
+
+        let str3 = 'Rabindra Nath Tagore';
+        console.log("Original string is: ", str3);
+
+        let strArray = str3.split(' ');
+        let updatedString = '';
+        for( let i = 0; i < strArray.length; i++){
+            if( i == strArray.length -1){
+                updatedString += strArray[i].charAt(0).toUpperCase() + strArray[i].slice(1);
+
+            }else {
+                updatedString += strArray[i].charAt(0).toUpperCase() + ". ";
+            }
+        }
+        console.log("Updated string is: ", updatedString);
+
+
+        // ---------------------Task-5-----------------------
+        console.log("-------------------Task-5---------------------------");
+        let str4 = 'abcxyz';
+        console.log("Original string is: ", str4);
+        let updatedString2 = '';
+        for(let i = 0; i < str4.length; i++){
+            updatedString2 +=  str4.charCodeAt(i) === 122 ? 'a' : str4.charCodeAt(i) === 90 ? 'A' : String.fromCharCode(str4.charCodeAt(i) + 1);
+        }
+        console.log("Updated string is: ", updatedString2);
+
+
+        // ---------------------Task-6-----------------------
+        console.log("-------------------Task-6---------------------------");
+        let value = prompt("Enter a sequence of charceters whcih contains different types of parantheses");
+        let isValid = true;
+        console.log("Original string is: ", value);
+
+        for(let i = 0 ;i < value.length/2; i++){
+            if(value[i] === '(' || value[i] === '[' || value[i] === '{'){
+                if(value[i] === '(' && value[value.length - i - 1] === ')'){
+                    continue;
+                }else if(value[i] === '[' && value[value.length - i - 1] === ']'){
+                    continue;
+                }else if(value[i] === '{' && value[value.length - i - 1] === '}'){
+                    continue;
+                }else{
+                    isValid = false;
+                    break;
+                }
+            }else{
+                isValid = false;
+                break;
+            }
+        }
+        console.log("Result :", isValid);
+
+
+        // ---------------------Task-7-----------------------
+        console.log("-------------------Task-7---------------------------");
+
+        let check = true;
+        let promtValue;
+        let invalidInput = false;
+        while(check){
+            promtValue = prompt(invalidInput ? "Invalid input! Enter a  3 letter word" : "Enter a  3 letter word");
+            invalidInput = true;
+            if(promtValue.length === 3 ){
+                check = false;
+            }
+        }
+        promtValue = promtValue.trim();
+        console.log("User entered value:",promtValue);
+        
+        function generatePermutations(word) {
+            const result = [];
+
+            function permute(current, remaining) {
+                if (remaining.length === 0) {
+                result.push(current); // Base case: no more characters to permute
+                }
+
+                for (let i = 0; i < remaining.length; i++) {
+                permute(current + remaining[i], remaining.slice(0, i) + remaining.slice(i + 1));
+                }
+            }
+
+            permute("", word);
+            return result;
+        }
+        let result = generatePermutations(promtValue);
+
+
+        console.log("Result : ",result.join(', '));
+
+
+
+    </script>
+</body>
+</html>
