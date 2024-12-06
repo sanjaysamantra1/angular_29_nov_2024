@@ -118,6 +118,19 @@ console.log(str100);
 // }
 // console.log(str69);
 
+let str4 = 'Rabindra Nath Tagore';
+let strarr=str4.split(' ');
+console.log(strarr);
+let str55 ='';
+for(let i=0;i<strarr.length;i++){
+    str55= str55.concat(strarr[i].charAt(0)).concat('. ');
+    if(i==strarr.length-2){
+        break;
+    }
+}
+   str55=  str55.concat(strarr[strarr.length-1]);
+    console.log(str55);
+
 // Ask user to enter a sequence of parantheses and validate 
 //    input: '([{}])'
 //    output : true
