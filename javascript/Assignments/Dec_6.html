@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dec-6 Assignment</title>
+</head>
+<body>
+    <script>
+        
+        let employees = [
+        { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
+        { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
+        { eId: 103, name: 'sameer', sal: 7000, gender: 'male' },
+        { eId: 102, name: 'sita', sal: 9000, gender: 'female' },
+        { eId: 105, name: 'deepak', sal: 8000, gender: 'male' }
+        ];
+
+        
+
+        // 1. declare array of employees & sort them in ascending order (empId)
+        let employees1 = [...employees];
+        let sortOnEmplyId = employees1.sort((a,b) => a.eId -b.eId);
+        console.log("------------------Task-1--------");
+        console.log(sortOnEmplyId);
+
+        // 2. declare array of employees & sort them in ascending order by name.
+        let employees2 = [...employees];
+        let sortOnEmplyName = employees2.sort((a,b) => a.name.localeCompare(b.name));
+        console.log("------------------Task-2--------");
+        // console.log(employees2);
+        console.log(sortOnEmplyName);
+
+        // 3. declare array of employees & filter the employees whose sal>6000;
+        console.log("------------------Task-3--------");
+        let employeesWithSalMoreThan6000 = employees.filter(emp => emp.sal > 6000);
+        console.log(employeesWithSalMoreThan6000);
+
+        // 4. declare array of employees & increase sal of every employee by 500;
+        console.log("------------------Task-4--------");
+        let employees4 = structuredClone(employees);
+
+        employees4.forEach(emp => {
+            emp.sal += 500;
+        });
+        console.log(employees4);
+
+
+        // 5. declare array of employees & add "comp:ibm" to every employee;
+        console.log("------------------Task-5--------");
+        let employees5 = structuredClone(employees);
+
+        employees5.forEach(emp => {
+            emp.comp = "ibm";
+        });
+        console.log(employees5);
+
+        // 6. convert array of letters to array of words
+        console.log("------------------Task-6--------");
+		const inputArr = [ 
+				'b', 'a', 'k', 'e', '',
+				'c', 'a', 'k', 'e', '',
+				'e', 'a', 't'
+				];
+
+        let arr  = [];
+        let temp = '';
+
+        for(let i = 0; i < inputArr.length; i++) {
+            if(inputArr[i] !== '') {
+                temp += inputArr[i];
+            } else {
+                arr.push(temp);
+                temp = '';
+                continue;
+            }
+            if(i === inputArr.length - 1) {
+                arr.push(temp);
+            }
+        }
+        console.log(arr);
+
+
+        //7. add Dept info for each employee
+        console.log("------------------Task-7--------");
+        let emp = [{eId: 101, name: "sanjay", sal: 5000, gender: "male" },
+				{ eId: 104, name: "reena", sal: 8000, gender: "female" }];
+	    let departments = [{ eId: 101, dept: "sales" },
+				{ eId: 104, dept: "marketing" }];
+        
+        emp.forEach(emp => {
+            let dept = departments.find(dept => dept.eId === emp.eId);
+            emp.dept = dept.dept;
+        });
+        console.log(emp);
+
+        // 8. declare array of employees & groupBy employees-name
+        console.log("------------------Task-8--------");
+        let employessGroup = [
+        { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
+        { eId: 102, name: 'sanjay', sal: 5000, gender: 'male' },
+        { eId: 103, name: 'sanjay', sal: 5000, gender: 'male' },
+        { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
+        { eId: 105, name: 'geeta', sal: 7000, gender: 'male' },
+        { eId: 106, name: 'sita', sal: 9000, gender: 'female' },
+        // { eId: 107, name: 'deepak', sal: 8000, gender: 'male' }
+        ];
+
+        let emplyObj = {};
+        employessGroup.forEach(emp =>{
+            if(emplyObj[emp.name]){
+                emplyObj[emp.name].push(emp);
+            }else {
+                emplyObj[emp.name] = [emp];
+            }
+        })
+        console.log("initial array : ", employessGroup);    
+        console.log("result: ",emplyObj);
+
+        // 9. intersection of 2 number arrays
+        console.log("------------------Task-9--------");
+        let arr1 =[10, 20, 30, 40, 50];
+        let arr2 = [35, 40, 45, 50, 55];
+
+        let result = arr1.filter(num => arr2.includes(num));
+        console.log(result);
+
+        // 10. WAP to print the occurance of each elements
+        console.log("------------------Task-10--------");
+
+        let input  = [10,20,30,40,50,10,30,50];
+        let obj = {};
+
+        for(let element of input){
+            if(obj[element]){
+                obj[element]++;
+            }else{
+                obj[element] = 1;
+            }
+        }
+        console.log("input : ", input);
+        console.log("result: ",obj);
+
+
+
+
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
