@@ -27,9 +27,14 @@ console.log(NoOfOccurences(ip));
     let maxChar = '';
     let maxCount = 0;
 
+    
     for (let char of str.toLowerCase()) {
-        if (char !== ' ') {
-            charCount[char] = (charCount[char] || 0) + 1;
+        for (let i of str) {
+            if (charCount[i]) {
+                charCount[i] += 1;
+            } else {
+                charCount[i] = 1;
+            }
             if (charCount[char] > maxCount) {
                 maxCount = charCount[char];
                 maxChar = char;
