@@ -1,0 +1,209 @@
+[33mcommit 48c1535f267e09360721cff7993c949764c00f06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ankitc003 <chemudua@gmail.com>
+Date:   Thu Dec 5 23:30:07 2024 -0500
+
+    added day 7 assignment
+
+[33mcommit ea8b3924b19739da92eed88237ac4ea832b40354[m
+Author: saivenkatR <51846247+saivenkatR@users.noreply.github.com>
+Date:   Thu Dec 5 13:56:19 2024 -0500
+
+    Revert "Merge branch 'saivenkat_R'"
+    
+    This reverts commit 24bede020c975559bc1032eddc766d3b46ab7199, reversing
+    changes made to a43134266110bc9b388f35e7562c602fd0ce4b1e.
+
+[33mcommit 24bede020c975559bc1032eddc766d3b46ab7199[m
+Merge: a431342 0cd9944
+Author: saivenkatR <51846247+saivenkatR@users.noreply.github.com>
+Date:   Thu Dec 5 13:43:41 2024 -0500
+
+    Merge branch 'saivenkat_R'
+
+[33mcommit a43134266110bc9b388f35e7562c602fd0ce4b1e[m
+Author: RushithaM1920 <mudigondarushitha@gmail.com>
+Date:   Thu Dec 5 11:51:49 2024 -0500
+
+    Delete javascript/Assignments directory
+
+[33mcommit 500d5484209107ca345d1ba9627d32d9947829ef[m
+Merge: 078820d dcf72ac
+Author: Vamsi_Kandula <84926395+kandulavamsi@users.noreply.github.com>
+Date:   Thu Dec 5 11:48:50 2024 -0500
+
+    Merge pull request #6 from sanjaysamantra1/revert-5-vamsi_kandula
+    
+    Revert "Vamsi kandula"
+
+[33mcommit dcf72ac8c7f5e3c9894ab7389125b8b918374703[m[33m ([m[1;31morigin/revert-5-vamsi_kandula[m[33m)[m
+Author: Vamsi_Kandula <84926395+kandulavamsi@users.noreply.github.com>
+Date:   Thu Dec 5 11:48:29 2024 -0500
+
+    Revert "Vamsi kandula"
+
+[33mcommit 078820d69d08e7064535896ff1296a0cbc08b819[m
+Merge: 30e26e2 4366b2a
+Author: Vamsi_Kandula <84926395+kandulavamsi@users.noreply.github.com>
+Date:   Thu Dec 5 11:41:58 2024 -0500
+
+    Merge pull request #5 from sanjaysamantra1/vamsi_kandula
+    
+    Vamsi kandula
+
+[33mcommit 0cd9944b972d83cf84a5cb461a4f47f0e4101dd5[m
+Author: saivenkatR <51846247+saivenkatR@users.noreply.github.com>
+Date:   Thu Dec 5 11:29:26 2024 -0500
+
+    push
+    
+    push
+
+[33mcommit 30e26e2f1f8d3e6b83c9b1b396c00f990090fd6b[m
+Merge: 8efba76 e5d2d74
+Author: Navya <122176358+navyaswe@users.noreply.github.com>
+Date:   Thu Dec 5 11:22:56 2024 -0500
+
+    Merge pull request #4 from sanjaysamantra1/navya_daggubati
+    
+    Navya daggubati
+
+[33mcommit 8efba7670195819457f5487e895710192a8fbc53[m
+Merge: f1e1c9d f595a36
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Thu Dec 5 21:18:36 2024 +0530
+
+    Merge branch 'main' of https://github.com/sanjaysamantra1/angular_29_nov_2024
+
+[33mcommit f1e1c9de53d7c30ab5f8c4a8c7a40295909920bd[m
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Thu Dec 5 21:18:26 2024 +0530
+
+    day 7
+
+[33mcommit e5d2d74403f9e4fbbcfef29b30f69dc942e97e53[m
+Author: Navya <122176358+navyaswe@users.noreply.github.com>
+Date:   Thu Dec 5 08:35:41 2024 -0500
+
+    closure_js
+
+[33mcommit f595a3613338281b78e8e75cb47b7e5c6f3a77b5[m[33m ([m[1;31morigin/Ganesan[m[33m)[m
+Author: RushithaM1920 <mudigondarushitha@gmail.com>
+Date:   Wed Dec 4 20:07:36 2024 -0500
+
+    Add files via upload
+
+[33mcommit 4366b2a6af32e22af44a49e751171df628b43c37[m
+Author: kandulavamsi <kvamsi1924@gmail.com>
+Date:   Wed Dec 4 18:21:47 2024 -0500
+
+    fixing merging
+
+[33mcommit dafa27541cd3e796e3aa345e1862590745cdee75[m
+Author: Vamsi_Kandula <84926395+kandulavamsi@users.noreply.github.com>
+Date:   Wed Dec 4 16:39:39 2024 -0500
+
+    Add files via upload
+
+[33mcommit 4be05da78b440ef7d4ed44376785156c1b1a12c5[m
+Author: saivenkatR <51846247+saivenkatR@users.noreply.github.com>
+Date:   Wed Dec 4 12:36:44 2024 -0500
+
+    Commting the assignments till date
+    
+    To saivenkat_R
+
+[33mcommit 81654176f6c723aacffb0cf0a26fb9e2afab3bd9[m
+Author: kandulavamsi <kvamsi1924@gmail.com>
+Date:   Wed Dec 4 12:07:44 2024 -0500
+
+    js
+
+[33mcommit 70239331eaa39234310dfdf2387373493c7a5a4f[m
+Merge: f93ba20 58b991f
+Author: Navya <122176358+navyaswe@users.noreply.github.com>
+Date:   Wed Dec 4 11:42:00 2024 -0500
+
+    Merge pull request #2 from sanjaysamantra1/main
+    
+    day 6
+
+[33mcommit 284f6a84a985aaa4ff8275aa7c142e92d997bbf4[m
+Merge: 62b00b9 58b991f
+Author: saivenkatR <51846247+saivenkatR@users.noreply.github.com>
+Date:   Wed Dec 4 11:29:04 2024 -0500
+
+    Merge pull request #1 from sanjaysamantra1/main
+    
+    day 6
+
+[33mcommit 58b991f47ffa0e93dbf1456a509205a6085d515f[m[33m ([m[1;31morigin/abishek[m[33m)[m
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Wed Dec 4 21:11:08 2024 +0530
+
+    day 6
+
+[33mcommit d5869231cf5d7032a001103bb4d628be1ea2a75c[m
+Author: Vamsi_Kandula <84926395+kandulavamsi@users.noreply.github.com>
+Date:   Tue Dec 3 23:16:10 2024 -0500
+
+    Delete javascript/myPractice directory
+
+[33mcommit 554698e700a235fd5d41d12813fc319b3f003510[m
+Author: Vamsi_Kandula <84926395+kandulavamsi@users.noreply.github.com>
+Date:   Tue Dec 3 23:15:55 2024 -0500
+
+    Delete javascript/day_5_dec_3 directory
+
+[33mcommit 903c84808ebca9ae7d691f9bc30d9e95344a8760[m
+Author: kandulavamsi <kvamsi1924@gmail.com>
+Date:   Tue Dec 3 22:47:55 2024 -0500
+
+    assignment
+
+[33mcommit f93ba209e63abde8a8d7aa2751680bab7bd08c12[m
+Author: Navya <122176358+navyaswe@users.noreply.github.com>
+Date:   Tue Dec 3 21:48:20 2024 -0500
+
+    recursive_1.js
+
+[33mcommit 50b241811880028f069c2ca8693aa9a2a7b92966[m
+Author: Navya <122176358+navyaswe@users.noreply.github.com>
+Date:   Tue Dec 3 21:47:03 2024 -0500
+
+    Add files via upload
+
+[33mcommit 62b00b9f2b56b6709562a191581437a6d5dbb59c[m[33m ([m[1;31morigin/Sankeerth[m[33m)[m
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Tue Dec 3 20:56:36 2024 +0530
+
+    day 5
+
+[33mcommit 33d01e1bd8e6cd1b2bf1ed84838f517ce8131e97[m
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Mon Dec 2 21:20:06 2024 +0530
+
+    daay 4
+
+[33mcommit e539df53d3d18b2e744a5d9b9156474e71acbe1b[m
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Sun Dec 1 21:45:45 2024 +0530
+
+    day 3 variables
+
+[33mcommit f1b8cfc467400626c86b6bcf8d56681c68a75294[m
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Sat Nov 30 20:50:05 2024 +0530
+
+    day 2 nov 30
+
+[33mcommit af441a3f7fc66a500d282bb5a59bf5e8e2e859f1[m
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Fri Nov 29 20:54:49 2024 +0530
+
+    day 1
+
+[33mcommit 92da65eb03868cdd368bf87f205836cdd36d012a[m
+Author: Sanjay Samantra <sanjaysamantra1@gmail.com>
+Date:   Fri Nov 29 20:03:21 2024 +0530
+
+    first commit
