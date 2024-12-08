@@ -14,12 +14,13 @@ for(let i=0;i<s.length;i++){
                 count++;
             }
         }
-    
-            console.log(`${s.charAt(i)}:${count}`);
-            s1[s.charAt(i)]= true;
+            // console.log(`${s.charAt(i)}:${count}`);
+            s1[s.charAt(i)]= count;
     }
     
 }
+console.log(s1);
+
 
 // 2. Print the character which is repeated max no of times
 //    input: 'hello world'
@@ -107,7 +108,6 @@ let alphabet = "abcdefghijklmnopqrstuvwxyz";
 
 // console.log(input1[1]); //b
 // console.log(input1.charAt(1)); // b
-
 
 for (let i = 0; i < input1.length; i++) {
     let char = input1[i]; 

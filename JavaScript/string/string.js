@@ -84,6 +84,7 @@ let a1 = "This is Rohith Rudrapati";
 console.log(a1.slice(7,14));  // Rohith
 console.log(a1.substring(7,14)); // Rohith
 
+console.log(a1.slice(7,-90)); //blank
 
 console.log(a1.slice(7,-9)); // starts from 7 and ends with checking 9 letter from backside
 console.log(a1.substring(7,-9)); /// gives garbage values as substring wont work for -ve numbers
