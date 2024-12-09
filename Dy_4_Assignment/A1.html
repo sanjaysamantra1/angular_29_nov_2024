@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p1 = Number(window.prompt("Enter value 1"));
+        let p2 = Number(window.prompt("Enter value 2"));
+        add(p1, p2);
+        sub(p1,p2);1
+        mult(p1,p2);
+        div(p1,p2);
+
+        function add(p1, p2) {
+            console.log(`Addition of ${p1} and ${p2} is: ${p1+p2}`);
+        }
+        function mult(p1,p2){
+            document.write(`Multiplication of ${p1} and ${p2} is: ${p1 * p2}`);
+        }
+        function div(p1, p2) {
+            window.alert(`Division of ${p1} and ${p2} is: ${p1 / p2}`);
+        }
+        function sub(p1,p2){
+            console.log(`Subtraction of ${p1} and ${p2} is: ${p1 - p2}`);
+        }
+    </script>
+    
+</body>
+</html>
