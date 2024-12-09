@@ -1,0 +1,20 @@
+<script>
+    let obj1 = { a: 10, b: 20 };
+    let obj2 = Object.create(obj1);
+
+    console.log('obj1: ', obj1); // { a: 10, b: 20 }
+    console.log('obj2: ', obj2); // {}
+
+    console.log('obj1 ', obj1.a, obj1.b); // 10 20
+    console.log('obj2 ', obj2.a, obj2.b); // 10 20
+
+    obj1.a = 15;
+    obj2.b = 25; // obj2 adds a direct property 'b' with value 25
+
+    console.log('obj1 ', obj1.a, obj1.b); // 15 20
+    console.log('obj2 ', obj2.a, obj2.b); // 15 25
+
+    // when an object literal has both direct property and prototype property with the same name, how can we access prototype property?
+    console.log('obj2 ', obj2.a, obj2.__proto__.b); // 15 20
+
+</script>
