@@ -1,0 +1,9 @@
+array copying
+
+when we assign an array to a new variable it will have only it's reference.
+
+when we do shallow copy -> nested elements share the same references and remaining values will be copied.
+
+deep copy -> all the elements are copied to the new memory location.
+
+
