@@ -1,0 +1,26 @@
+<script>
+    class Student {
+        constructor(roll, name, branch) {
+            this.roll = roll;
+            this.name = name;
+            this.branch = branch;
+            // this.clgName = 'Eureca IT';
+            // this.clgAddress = 'Harrisburg';
+        }
+    }
+    Student.prototype.clgName = 'Eureca IT';
+    Student.prototype.clgAddress = 'Harrisburg';
+
+    let std1 = new Student(101, 'Rahul', 'CS')
+    let std2 = new Student(102, 'Deepak', 'Civil')
+    console.log(std1)
+    console.log(std2);
+    console.log(std1.name, std1.branch, std1.clgName);
+    // std1.clgName = 'Eureca InfoTech';  // adds a new object property clgName
+    Student.prototype.clgName = 'Eureca InfoTech';
+    console.log(std1.name, std1.branch, std1.clgName);
+    console.log(std2.name, std2.branch, std2.clgName);
+
+    //access prototype property even if if have a direct prop with the same name
+    console.log(Student.prototype.clgName)
+</script>

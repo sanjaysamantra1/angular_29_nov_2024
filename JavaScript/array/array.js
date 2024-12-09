@@ -160,3 +160,50 @@ arr2.sort((a,b)=>a-b); // ascending outcome // if a-b is -ve dont do anything if
 arr2.sort((a,b)=>b-a); // ascending outcome
 console.log(arr2);
 
+
+
+
+// COPY
+
+
+//REFERENCE COPY
+// If we change p1 it will change p also
+let p=[23,42];
+let p1=p;
+p1.push(44);
+console.log(p+" "+p1); //23,42,44 23,42,44
+
+
+let p2=[...p];
+p2.push(60);
+// op:
+// [ 23, 42, 44 ]
+// [ 23, 42, 44, 60 ]
+console.log(p);
+console.log(p2);
+
+
+
+
+// let arr1 = [10, 20];
+// let arr2 = arr1;   // Reference Copy 
+// // a new array is not being created, both the variables are sharing the same reference
+// arr2.push(30);
+// console.log(arr1, arr2);
+
+
+// let arr3 = [...arr1]; // Spread Operator : Copy elements by value (shallow copy)
+// // a new array gets created, the values from arr1 are copied to arr3 , newly created array address is stored in arr3
+// arr3.push(40);
+// console.log(arr1);
+// console.log(arr3);
+
+// let arr4 = [10, 20, [30, 31]];
+// // let arr5 = [...arr4]; // shallow copy
+// let arr5 = structuredClone(arr4); // Deep Copy
+// arr5.push(40); // 40 will be seen only in arr5 but not in arr4
+// arr5[2].push(32, 33); // 32,33 are seen 
+// console.log('arr4', arr4);
+// console.log('arr5', arr5);
+// // shallow copy : top level values are copied by value, nested arrays are sharing
+// // deep copy : top level values are copied by value, even nested elements are copied by value

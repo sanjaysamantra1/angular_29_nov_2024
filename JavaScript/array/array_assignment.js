@@ -97,6 +97,15 @@ console.log(employees);
 // 		'alok' : [{}]
 // 	}
 
+let groupName = employees.reduce((result,employee)=>{
+    let key= employee.name;
+    if(!result[key]){
+        result[key]=[];
+    }
+    result[key].push(employee);
+    return result;
+})
+console.log(groupName);
 
 
 
