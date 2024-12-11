@@ -1,0 +1,17 @@
+.footer {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px 0;          /* Padding for spacing */
+    color: #6c757d;           /* Muted text color */
+    font-size: 14px;          /* Small text */
+  }
+  
+  .footer a {
+    color: #007bff;           /* Link color */
+    text-decoration: none;
+    margin: 0 5px;            /* Spacing between links */
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
