@@ -1,0 +1,23 @@
+<script>
+	class Student {
+		constructor(roll, name, branch) {
+			this.roll = roll;
+			this.name = name;
+			this.branch = branch;
+		}
+	}
+	Student.prototype.clgName = 'Narayana';
+	Student.prototype.clgAddress = 'Vijayawada';
+
+	let std1 = new Student(12, 'Pradeep', 'cs');
+	let std2 = new Student(122, 'Yendluri', 'btech');
+
+	console.log(std1, std2);
+
+	console.log(std1.name, std1.branch, std1.clgName);
+
+	console.log(std1);
+	Student.prototype.clgName = 'Eureka';
+	console.log(std1.name, std1.branch, std1.clgName);
+	console.log(std2.name, std2.branch, std2.clgName);
+</script>
