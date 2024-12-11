@@ -1,0 +1,14 @@
+
+  .horizontal-list {
+    justify-content: center;  /* Center items horizontally */
+      list-style: none; /* Remove bullet points */
+      display: flex;    /* Use flexbox for horizontal layout */
+      padding: 0;       /* Remove padding */
+      margin: 0;        /* Remove margin */
+
+  }
+ 
+  .horizontal-list li {
+    margin-top: 10px;
+    margin-right: 15px; /* Add spacing between items */
+  }

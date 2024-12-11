@@ -1,0 +1,16 @@
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 220px;  /* Fixed height for laptop, TV, and AirPods images */
+}
+
+
+.card-body {
+    flex-grow: 1;
+}

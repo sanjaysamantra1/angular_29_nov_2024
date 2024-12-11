@@ -1,0 +1,6 @@
+ng --version // check angular version
+ng new angular // creating new angular project with name angular
+ng serve // to run the project
+ng s -o // will run and open the browser(serve and open)
+
+@import 'bootstrap/dist/css/bootstrap.css' // add this in style.css to use bootstrap
