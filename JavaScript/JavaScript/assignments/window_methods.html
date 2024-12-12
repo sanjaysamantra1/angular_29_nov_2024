@@ -1,0 +1,36 @@
+
+<script>
+
+    /*
+        alert() : display some message with 1 button(ok)
+        confirm() : user confirmation with 2 buttons(ok,cancel)
+        prompt() : collect user input(inputBox , ok, cancel)
+
+        Note : winodw object methods can be directly called
+        window.alert()  : fine
+        alert()
+    */
+
+
+window.alert('Hello all, This is Rohith'); // gives an alert when we open the browser
+
+// window.prompt('Hi');
+
+// --ASSIGNMENT 1
+
+let a= +prompt("Enter value of a:");
+let b= +prompt("Enter value of b:");
+// console.log(`${a}+${b}=${a-(-b)}`);
+console.log(`${a}+${b}=${a + b}`);
+console.log(`${a}-${b}=${a-b}`);
+console.log(`${a}*${b}=${a*b}`);
+console.log(`${a}/${b}=${a/b}`);
+
+
+
+let val= confirm('Are you sure?')
+console.log(val);
+
+
+alert(); // returns fine in console
+</script>

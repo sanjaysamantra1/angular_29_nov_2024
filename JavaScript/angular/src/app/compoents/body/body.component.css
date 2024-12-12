@@ -6,7 +6,7 @@
 }
 
 .card-img-top {
-    object-fit: cover;
+    object-fit: fit;
     height: 220px;  /* Fixed height for laptop, TV, and AirPods images */
 }
 
