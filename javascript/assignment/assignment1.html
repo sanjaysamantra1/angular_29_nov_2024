@@ -1,0 +1,45 @@
+<script>
+    let a = prompt('enter two values with the comma(,) seperation');
+    let [fv, sv] = a.split(",");
+
+
+    //console.log('entered value' +a);
+    //console.log(fv);
+    //console.log(sv);
+    fv = parseInt(fv);
+    sv = parseInt(sv);
+    //console.log(fv);
+    //console.log(sv);
+    
+    
+    function sum(a, b){
+        return a+b;
+    }
+
+    function sub(a, b){
+        return a-b;
+    }
+
+
+    function mul(a, b){
+        return a*b;
+    }
+
+    function div(a, b){
+        return a/b;
+    }
+
+    function mod(a, b){
+        return a%b;
+    }
+
+    document.write("Addition of two numbers is ", sum(fv, sv));
+    document.write("  <br> Subtraction of two numbers is ", sub(fv, sv));
+    document.write("  <br> Multiplication of two numbers is ", mul(fv, sv));
+    document.write("  <br> Division of two numbers is ", div(fv, sv));
+    document.write("  <br> Modulus of two numbers is ", mod(fv, sv));
+
+
+
+
+</script>
