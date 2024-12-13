@@ -1,14 +1,44 @@
+/* General container styling */
+.horizontal-list-container {
+  display: flex;
+  justify-content: center; /* Center the entire list */
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background for contrast */
+}
 
-  .horizontal-list {
-    justify-content: center;  /* Center items horizontally */
-      list-style: none; /* Remove bullet points */
-      display: flex;    /* Use flexbox for horizontal layout */
-      padding: 0;       /* Remove padding */
-      margin: 0;        /* Remove margin */
+/* Horizontal list styling */
+.horizontal-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  }
- 
-  .horizontal-list li {
-    margin-top: 10px;
-    margin-right: 15px; /* Add spacing between items */
-  }
+/* Individual list items */
+.horizontal-list li {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center;    /* Center items within the list item */
+  margin-right: 20px;     /* Space between items */
+  text-align: center;
+  padding-inline: 60px;
+}
+
+.horizontal-list li:last-child {
+  margin-right: 0; /* Remove right margin from the last item */
+}
+
+/* Image styling */
+.horizontal-list img {
+  width: 80px;       /* Set consistent size */
+  height: 80px;
+  object-fit: contain; /* Ensure the image fits within bounds */
+  margin-bottom: 10px; /* Space between image and label */
+}
+
+/* Text styling */
+.horizontal-list span {
+  font-size: 14px;
+  color: #333; /* Dark text for readability */
+  font-weight: 500; /* Slightly bold text for emphasis */
+}

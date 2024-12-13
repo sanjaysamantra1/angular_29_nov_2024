@@ -6,10 +6,9 @@
 }
 
 .card-img-top {
-    object-fit: fit;
+    object-fit: fill;
     height: 220px;  /* Fixed height for laptop, TV, and AirPods images */
 }
-
 
 .card-body {
     flex-grow: 1;
