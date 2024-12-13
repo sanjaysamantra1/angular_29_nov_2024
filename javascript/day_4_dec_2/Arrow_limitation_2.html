@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">Button-1</button>
+    <button id="btn2">Button-2</button>
+    <button id="btn3">Button-3</button>
+    <button id="btn4">Button-4</button>
+    <button id="btn5">Button-5</button>
+    <button id="btn6">Button-6</button>
+
+    <script>
+        function changeColor1() { // Regular - this : how/where the function is called
+            console.log(this); // this = window / btn1 / btn2 / btn3 (dynamic)
+            this.style.backgroundColor = 'red';
+        }
+        // changeColor1(); // global
+
+        let changeColor2 = () => { // this = window
+            console.log(this); // this = static , this = where the function is written
+            // this.style.backgroundColor = 'red';
+        }
+        document.getElementById('btn1').addEventListener('click', changeColor1);
+        document.getElementById('btn2').addEventListener('click', changeColor1);
+        document.getElementById('btn3').addEventListener('click', changeColor1);
+
+        document.getElementById('btn4').addEventListener('click', changeColor2);
+        document.getElementById('btn5').addEventListener('click', changeColor2);
+        document.getElementById('btn6').addEventListener('click', changeColor2);
+    </script>
+</body>
+
+</html>

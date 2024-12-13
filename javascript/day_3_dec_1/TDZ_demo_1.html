@@ -1,0 +1,22 @@
+<script>
+    console.log(`a is ${a}`); // undefined , hoisting
+    // console.log(`b is ${b}`); // <value unavailable>
+    // console.log(`c is ${c}`); // <value unavailable>
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    console.log(`a is ${a}`);
+    console.log(`b is ${b}`);
+    console.log(`c is ${c}`);
+    /*
+     Javascript code gets executed in 2 steps
+         1. Memory Creation
+         2. Code Execution 
+
+        Note : During Memory creation phase, memory gets created for var/let/const 
+             but 'undefined' value is given only to 'var' variables
+
+        Hoisting : Hoisting is the concept where ,  During Memory creation phase, memory gets created for var/let/const
+        but 'undefined' value is given only to 'var' variables
+     */
+</script>
