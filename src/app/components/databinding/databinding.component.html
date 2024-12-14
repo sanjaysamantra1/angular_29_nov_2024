@@ -1,0 +1,61 @@
+<div>
+    <button (click)="togglePara()">Paragraph!</button>
+    <p *ngIf="isVisible">This is a toggleable paragraph!</p>
+  </div>
+  
+  <textarea
+    [(ngModel)]="text"
+    (ngModelChange)="updateRemainingChars()"
+    maxlength="100"
+    rows="5"
+    cols="30"
+  ></textarea>
+  <div>{{ remainingChars }} characters remaining</div>
+  
+  <div>
+    <label for="stateSelect">Select a state: </label>
+    <select
+      id="stateSelect"
+      [(ngModel)]="selectedState"
+      (change)="onStateChange()"
+    >
+      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+  </div>
+  <p>You selected: {{ selectedState }}</p>
+  
+  <div>
+    <label>Input 1: </label>
+    <input type="number" [(ngModel)]="input1" />
+  
+    <label>Input 2: </label>
+    <input type="number" [(ngModel)]="input2" />
+  
+    <label>Operation: </label>
+    <select [(ngModel)]="selectedOperation" (change)="calculate()">
+      <option *ngFor="let operation of operations" [value]="operation">
+        {{ operation }}
+      </option>
+    </select>
+    <button (click)="calculate()">Calculate</button>
+    <p>Result: {{ result }}</p>
+  </div>
+  
+  <div>
+  <label for="passwordInput">Enter Password:</label>
+  <input [type]="isPassword ? 'password' : 'text'" id="passwordInput" [(ngModel)]="inputValue" />
+  <button (click)="togglePasswordVisibility()" type="button">
+    {{ isPassword ? 'Show' : 'Hide' }}
+  </button>
+  </div>
+  <p>Input Value: {{ inputValue }}</p>
+  
+  <div style="text-align: center; margin: 20px;">
+  <h2>Counter: {{ counter }}</h2>
+  <button (click)="increment()">Increment</button>
+  <button (click)="decrement()">Decrement</button>
+  <button (click)="reset()">Reset</button>
+  </div>
+  
+  
+  
