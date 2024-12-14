@@ -2,8 +2,8 @@
 
 <div class="border container">
   <div>My Name is: {{myName}}</div>
-  <div>My Name is: <span [innerHTML]="myName"></span></div>
-  <div>My Name is: <span bind-innerHTML="myName"></span></div>
+  <div>My Name is: <span [innerHTML]="myName1"></span></div>
+  <div>My Name is: <span bind-innerHTML="myName2"></span></div>
 
   <img src="{{img_url}}" alt="" />
   <img [src]="img_url" alt="" />
@@ -11,6 +11,8 @@
 
   <div class="my-2">
     <input type="text" placeholder="Enter Your Name" [(ngModel)]="myName" />
+    <input type="text" placeholder="Enter Your Name" [(ngModel)]="myName1" />
+    <input type="text" placeholder="Enter Your Name" [(ngModel)]="myName2" />
   </div>
 
   <div>
