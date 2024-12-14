@@ -25,7 +25,7 @@ export class DatabindingComponent {
   firstNumber: number = 0;
   secondNumber: number = 0;
   selectedOperation: string = 'add';
-  operationResult: number = 0;
+  operationResult: any = 0;
   inputType: string = 'password';
   counter: number = 0; // Counter value
 
@@ -49,7 +49,12 @@ export class DatabindingComponent {
         this.operationResult = this.firstNumber * this.secondNumber;
         break;
       case 'divide':
+        if(this.secondNumber==0){
+          this.operationResult = 'Does not exist';
+        }
+        else{
         this.operationResult = this.secondNumber !== 0 ? this.firstNumber / this.secondNumber : 0;
+        }
         break;
       default:
         this.operationResult = 0;
