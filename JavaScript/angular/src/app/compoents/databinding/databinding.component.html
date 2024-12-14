@@ -1,1 +1,98 @@
 <img class="img-styl" src="https://rukminim1.flixcart.com/flap/3600/3600/image/f4c5cdea70491fdc.jpg">
+
+
+<!-- Assignments: 
+1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
+2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.
+3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph
+4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations
+5. create a input box, toggle the type of that input box to (text/password)
+6. create a counter example with 3 controls(increment,decrement,reset) -->
+<br/>
+<br/>
+<p> Assignment 1: Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
+</p>
+<div>
+    <p [hidden]="flag">{{val}}</p>
+    <button (click)="flag=!flag">{{flag ? 'SHOW' : 'HIDE'}}</button>
+</div>
+
+<br/>
+
+
+
+
+<p> Assignment 2: Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.
+</p>
+<div>
+    <textarea rows="4" cols="20" maxlength="{{textLength}}" [(ngModel)]="text"></textarea>
+    <div>Remaining characters: {{textLength-text.length}}</div>
+</div>
+
+
+
+<br/>
+<div>
+
+<p> Assignment 3: Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph
+</p>
+<select [(ngModel)]="selectedState" aria-placeholder="Select The State">
+    <option value="TS">Telangana</option>
+    <option value="AP">Andhra Pradesh</option>
+    <option value="TN">TamilNadu</option>
+    <option value="GOA">Goa</option>
+    <option value="PJ">Punjab</option>
+    <option value="DL">Delhi</option>
+    <option value="GT">Gujarat</option>
+    <option value="MH">Maharastra</option>
+    <option value="HP">Himachal Pradesh</option>
+    <option value="KA">Karnataka</option>
+</select>
+<br/><br/>
+<div> You selected: {{selectedState}}</div>
+    
+</div>
+
+
+
+<br/>
+<div>
+<p> Assignment 4: have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations
+</p>
+
+
+<input [(ngModel)]="val1" type="number" placeholder="Enter first value">
+<input class=mx-3 [(ngModel)]="val2" type="number" placeholder="Enter first value">
+<select [(ngModel)]="operator" (change)="calculate()">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="%">%</option>
+</select>
+<div>Result: {{res}}</div>
+
+</div>
+
+
+
+<br/>
+<div>
+ <p> Assignment 5: create a input box, toggle the type of that input box to (text/password)
+</p>
+
+<div> 
+    <input class="assignment5" [type]="isPass ? 'password' : 'text'" [(ngModel)]="passwordValue" placeholder="Enter Text"> 
+    <button class="mx-3" (click)="togglePasswordVisibility()">{{isPass ? 'SHOW' : 'HIDE'}}</button>
+ </div>
+
+
+
+ <br/>
+ <div>
+  <p> Assignment 6: create a counter example with 3 controls(increment,decrement,reset) 
+ </p>
+
+<button  (click)="counterr('increment')">INCREMENT</button>
+<input class="mx-3" [(ngModel)]="counter">
+<button  (click)="counterr('decrement')">DECREMENT</button>
+<button class="mx-3 my-2"  (click)="counterr('reset')">RESET</button>
