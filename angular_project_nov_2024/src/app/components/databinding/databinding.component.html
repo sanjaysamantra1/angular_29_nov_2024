@@ -1,106 +1,70 @@
-<h3 class="text-center">DataBinding Component</h3>
+<h3 class="text-center">DataBinding Component</h3><br/><br/>
 
-<div class="border container">
-    <div>My Name is: {{myName}}</div>
-    <div>My Name is: <span [innerHTML]="myName"></span></div>
-    <div>My Name is: <span bind-innerHTML="myName"></span></div>
-
-    <img src="{{img_url}}" alt="" />
-    <img [src]="img_url" alt="" />
-    <img bind-src="img_url" alt="" />
-
-    <div class="my-2">
-        <input type="text" placeholder="Enter Your Name" value="Virat Kohli" />
-        1 way : <input type="text" value={{myName}} class="mx-2" />
-        1 way: <input type="text" [value]='myName' class="mx-2" />
-        1 way: <input type="text" bind-value='myName' class="mx-2" /> <br /><br />
-        2 way: <input type="text" [(ngModel)]="myName" />
-        2 way: <input type="text" bindon-ngModel="myName" />
-    </div>
 
     <div>
-        <button class="btn btn-primary" disabled="{{flag}}">btn-1</button>
-        <button class="btn btn-primary mx-2" [disabled]="flag">btn-2</button>
-        <button class="btn btn-primary" bind-disabled="flag">btn-3</button>
-
-        <button (click)="f1()" class="btn btn-primary mx-2" [ariaLabel]="myAriaLabel">invoke F1</button>
-        <button on-click="f1()" class="btn btn-primary mx-2" [attr.aria-label]="myAriaLabel">invoke F1</button>
-    </div>
-
-    <table border="1" [width]="myWidth" [attr.height]="myHeight">
-        <tbody>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td>data-3</td>
-                <td>data-4</td>
-            </tr>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td>data-3</td>
-                <td>data-4</td>
-            </tr>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td>data-3</td>
-                <td>data-4</td>
-            </tr>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td [attr.colspan]="1 + 1">data-3</td>
-                <td>data-4</td>
-            </tr>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td>data-3</td>
-                <td>data-4</td>
-            </tr>
-        </tbody>
-    </table>
-    <hr />
-
-    <div class="border p-2">
-        Addition Using 2 way Binding:
-        <input [(ngModel)]="num1" class="mx-2" />
-        <input [(ngModel)]="num2" />
-        <div>Addition of {{num1}} & {{num2}} is {{ +num1 + +num2}}</div>
-
-        <div> Template Reference Variable:</div>
-        <input class="mx-2" #box1 />
-        <input ref-box2 class="mx-2" />
-        <button (click)="addition(box1.value,box2.value)">Addition</button>
-    </div>
-
-    <div>
-        Assignment:1 (Toggle)
-        <h1 [hidden]="flag">Hellooooooooooooooooooooo Angularrrrrrrrrr</h1>
+        <h3>Assignment 1: Paragraph Toggle</h3><br/>
+        <h1 [hidden]="flag">Welcome to the Angular Class</h1>
         <button (click)="flag=!flag">
             {{flag ? 'SHOW' : 'HIDE'}}
         </button>
     </div>
-    <div>
-        Assignment:2 (Remaining Char) <br />
+    <div><br/><br/>
+
+
+        <h3>Assignment 2: Remaining Characters </h3><br />
         <textarea rows="4" cols="20" maxlength="100" [(ngModel)]="msg"></textarea>
         <div>Remaining Characters: {{100 - msg.length}}</div>
-    </div>
+    </div><br/><br/>
     <div>
-        Assignment:3 (Selected State) <br />
+        <h3>Assignment 3: Selected State</h3> <br />
         <select [(ngModel)]="selectedState">
-            <option value="AP">Andhra Pradesh</option>
-            <option value="KA">Karnataka</option>
-            <option>State-3</option>
-            <option>State-4</option>
-            <option>State-5</option>
-            <option>State-6</option>
-            <option>State-7</option>
-            <option>State-8</option>
-            <option>State-9</option>
-            <option>State-10</option>
+            <option value="MO">Missouri</option>
+            <option value="TX">Texas</option>
+            <option value="AL">Alabama</option>
+            <option value="CA">California</option>
+            <option value="NY">New York</option>
+            <option value="FL">Florida</option>
+            <option value="IL">Illinois</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="OH">Ohio</option>
+            <option value="GA">Georgia</option>
         </select>
         <div>You selected:: {{selectedState}}</div>
     </div>
+<br/><br/>
+
+<div>
+    <h3>Assignment:4 Arithmetic Operations</h3>
+    <input class="mx-2" #num1 type="number" placeholder="Enter first number" />
+    <input class="mx-2" #num2 type="number" placeholder="Enter second number" />
+    <select class="mx-2" #operation>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <button class="btn btn-primary mx-2" (click)="calculate(num1.value, num2.value, operation.value)">
+        Calculate
+    </button>
+    <div class="mt-3">Result: {{ result }}</div>
+</div><br/><br/>
+
+
+<div>
+    <h3>Assignment 5: Toggle Input Type</h3>
+    <input [type]="isPassword ? 'password' : 'text'" placeholder="Enter your password" /><br/>
+    <button (click)="isPassword = !isPassword">
+        {{ isPassword ? 'Show Password' : 'Hide Password' }}
+    </button>
+</div><br/><br/>
+
+
+<div>
+    <h3>Assignment 6: Counter Example</h3>
+    <h2>Current Count: {{ count }}</h2>
+    <button (click)="increment()" class="btn btn-success mx-2">Increment</button>
+    <button (click)="decrement()" class="btn btn-warning mx-2">Decrement</button>
+    <button (click)="reset()" class="btn btn-danger mx-2">Reset</button>
 </div>
+
+

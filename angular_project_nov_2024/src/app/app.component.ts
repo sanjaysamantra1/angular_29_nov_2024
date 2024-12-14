@@ -3,7 +3,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BodyComponent } from './components/body/body.component';
+import { DatabindingComponent } from './components/databinding/databinding.component';
 import { FooterComponent } from './components/footer/footer.component';
+
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
     CategoriesComponent,
     CarouselComponent,
     BodyComponent,
+    DatabindingComponent,
     FooterComponent
   ],
   templateUrl: './app.component.html',
