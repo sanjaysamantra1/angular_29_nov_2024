@@ -1,106 +1,69 @@
-<h3 class="text-center">DataBinding Component</h3>
+<h3 class="text-center">Chenna DataBinding</h3>
 
 <div class="border container">
-    <div>My Name is: {{myName}}</div>
-    <div>My Name is: <span [innerHTML]="myName"></span></div>
-    <div>My Name is: <span bind-innerHTML="myName"></span></div>
+  <div>My Name is: {{myName}}</div>
+  <div>My Name is: <span [innerHTML]="myName1"></span></div>
+  <div>My Name is: <span bind-innerHTML="myName2"></span></div>
 
-    <img src="{{img_url}}" alt="" />
-    <img [src]="img_url" alt="" />
-    <img bind-src="img_url" alt="" />
+  <img src="{{img_url}}" alt="" />
+  <img [src]="img_url" alt="" />
+  <img bind-src="img_url" alt="" />
 
-    <div class="my-2">
-        <input type="text" placeholder="Enter Your Name" value="Virat Kohli" />
-        1 way : <input type="text" value={{myName}} class="mx-2" />
-        1 way: <input type="text" [value]='myName' class="mx-2" />
-        1 way: <input type="text" bind-value='myName' class="mx-2" /> <br /><br />
-        2 way: <input type="text" [(ngModel)]="myName" />
-        2 way: <input type="text" bindon-ngModel="myName" />
-    </div>
+  <div class="my-2">
+    <input type="text" placeholder="Enter Your Name" [(ngModel)]="myName" />
+    <input type="text" placeholder="Enter Your Name" [(ngModel)]="myName1" />
+    <input type="text" placeholder="Enter Your Name" [(ngModel)]="myName2" />
+  </div>
 
-    <div>
-        <button class="btn btn-primary" disabled="{{flag}}">btn-1</button>
-        <button class="btn btn-primary mx-2" [disabled]="flag">btn-2</button>
-        <button class="btn btn-primary" bind-disabled="flag">btn-3</button>
+  <div>
+    <button class="btn btn-primary" [disabled]="flag">btn-1</button>
+    <button class="btn btn-primary mx-2" (click)="f1()" [attr.aria-label]="myAriaLabel">invoke F1</button>
+  </div>
 
-        <button (click)="f1()" class="btn btn-primary mx-2" [ariaLabel]="myAriaLabel">invoke F1</button>
-        <button on-click="f1()" class="btn btn-primary mx-2" [attr.aria-label]="myAriaLabel">invoke F1</button>
-    </div>
+  <table border="1" [width]="myWidth" [attr.height]="myHeight">
+    <tbody>
+      <tr>
+        <td>data-1</td>
+        <td>data-2</td>
+        <td>data-3</td>
+        <td>data-4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-    <table border="1" [width]="myWidth" [attr.height]="myHeight">
-        <tbody>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td>data-3</td>
-                <td>data-4</td>
-            </tr>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td>data-3</td>
-                <td>data-4</td>
-            </tr>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td>data-3</td>
-                <td>data-4</td>
-            </tr>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td [attr.colspan]="1 + 1">data-3</td>
-                <td>data-4</td>
-            </tr>
-            <tr>
-                <td>data-1</td>
-                <td>data-2</td>
-                <td>data-3</td>
-                <td>data-4</td>
-            </tr>
-        </tbody>
-    </table>
-    <hr />
+<hr />
 
-    <div class="border p-2">
-        Addition Using 2 way Binding:
-        <input [(ngModel)]="num1" class="mx-2" />
-        <input [(ngModel)]="num2" />
-        <div>Addition of {{num1}} & {{num2}} is {{ +num1 + +num2}}</div>
+<div class="border container">
+  <h3>Arithmetic Operations</h3>
+  <div>
+    <input type="number" [(ngModel)]="firstNumber" placeholder="Enter first number" />
+    <input type="number" [(ngModel)]="secondNumber" placeholder="Enter second number" />
+    <select [(ngModel)]="selectedOperation">
+      <option value="add">+</option>
+      <option value="subtract">-</option>
+      <option value="multiply">*</option>
+      <option value="divide">/</option>
+    </select>
+    <button class="btn btn-primary mx-2" (click)="performOperation()">Calculate</button>
+    <div>Result: {{operationResult}}</div>
+  </div>
+</div>
 
-        <div> Template Reference Variable:</div>
-        <input class="mx-2" #box1 />
-        <input ref-box2 class="mx-2" />
-        <button (click)="addition(box1.value,box2.value)">Addition</button>
-    </div>
+<hr />
 
-    <div>
-        Assignment:1 (Toggle)
-        <h1 [hidden]="flag">Hellooooooooooooooooooooo Angularrrrrrrrrr</h1>
-        <button (click)="flag=!flag">
-            {{flag ? 'SHOW' : 'HIDE'}}
-        </button>
-    </div>
-    <div>
-        Assignment:2 (Remaining Char) <br />
-        <textarea rows="4" cols="20" maxlength="100" [(ngModel)]="msg"></textarea>
-        <div>Remaining Characters: {{100 - msg.length}}</div>
-    </div>
-    <div>
-        Assignment:3 (Selected State) <br />
-        <select [(ngModel)]="selectedState">
-            <option value="AP">Andhra Pradesh</option>
-            <option value="KA">Karnataka</option>
-            <option>State-3</option>
-            <option>State-4</option>
-            <option>State-5</option>
-            <option>State-6</option>
-            <option>State-7</option>
-            <option>State-8</option>
-            <option>State-9</option>
-            <option>State-10</option>
-        </select>
-        <div>You selected:: {{selectedState}}</div>
-    </div>
+<div class="border container">
+  <h3>Password Toggle</h3>
+  <input [type]="inputType" placeholder="Enter Password" />
+  <button class="btn btn-secondary" (click)="toggleInputType()">Toggle</button>
+</div>
+
+<hr />
+
+<div class="border container">
+  <h3>Counter Example</h3>
+  <div>Counter Value: {{counter}}</div>
+  <button class="btn btn-success mx-1" (click)="increment()">Increment</button>
+  <button class="btn btn-danger mx-1" (click)="decrement()">Decrement</button>
+  <button class="btn btn-secondary mx-1" (click)="reset()">Reset</button>
 </div>
