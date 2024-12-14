@@ -1,0 +1,48 @@
+.footer {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px 10px;        /* Added horizontal padding for responsiveness */
+  color: #6c757d;            /* Muted text color */
+  font-size: 14px;           /* Small text */
+  text-align: center;        /* Center-align all text */
+  border-top: 1px solid #e9ecef; /* Subtle top border for separation */
+}
+
+.footer a {
+  color: #007bff;            /* Blue link color */
+  text-decoration: none;     /* Remove underline */
+  margin: 0 10px;            /* Even spacing between links */
+  transition: color 0.2s ease-in-out; /* Smooth color change on hover */
+}
+
+.footer a:hover {
+  color: #0056b3;            /* Darker shade on hover */
+  text-decoration: underline;
+}
+
+.footer p {
+  margin: 10px 0 0;          /* Space below content */
+}
+
+.footer .social-icons {
+  margin-top: 10px;          /* Space above icons */
+}
+
+.footer .social-icons a {
+  display: inline-block;     /* Ensures proper spacing */
+  width: 30px;               /* Fixed size for icons */
+  height: 30px;
+  line-height: 30px;         /* Center text/icons vertically */
+  border-radius: 50%;        /* Circular icons */
+  background-color: #007bff; /* Default icon background */
+  color: #fff;               /* Icon text color */
+  text-align: center;        /* Align content in the center */
+  margin: 0 5px;             /* Spacing between icons */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer .social-icons a:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.1);     /* Slightly enlarge icons */
+}
+
+  

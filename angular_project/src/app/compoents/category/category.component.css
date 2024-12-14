@@ -1,0 +1,23 @@
+.horizontal-list {
+  display: flex;          /* Use flexbox for horizontal layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center;    /* Align items vertically in case of varying heights */
+  list-style: none;       /* Remove bullet points */
+  padding: 0; 
+  margin-top: 10px;            /* Remove padding */
+  gap: 15px;              /* Simplify spacing using the `gap` property */
+}
+
+.horizontal-list li {
+  margin: 0;              /* Remove margin for consistency */
+  padding: 10px 50px;     /* Add padding for better spacing inside items */
+  background-color: #f8f9fa; /* Light background for contrast */
+  border: 1px solid #ddd; /* Subtle border for item separation */
+  border-radius: 8px;     /* Rounded corners for a modern look */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.horizontal-list li:hover {
+  transform: translateY(-3px); /* Lift the item slightly on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}

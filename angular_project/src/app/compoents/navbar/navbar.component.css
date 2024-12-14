@@ -1,0 +1,9 @@
+.login-layout {
+    margin: 0 auto; /* Center align the layout */
+    max-width: 400px; /* Set a maximum width for better responsiveness */
+    padding: 20px; /* Add some padding for inner spacing */
+    background-color: #f8f9fa; /* Light gray background for a clean look */
+    border-radius: 8px; /* Rounded corners for modern design */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align content inside */
+}
