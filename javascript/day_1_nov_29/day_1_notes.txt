@@ -4,7 +4,6 @@
 2. Code Editor (Visual Studio Code)
    https://code.visualstudio.com/download
    
-
 3. Git Setup 
    a. download an install git software
        https://git-scm.com/downloads
@@ -12,6 +11,18 @@
       https://github.com/  (register)
 
 
-
 GitHub Repository :
 https://github.com/sanjaysamantra1/angular_29_nov_2024
+
+git checkout <your-branch>
+git fetch origin
+git merge origin/main
+
+these merges the updates from main repo to the branch 
+---
+
+git add <file_name>
+git commit -m 'message'
+git push 
+
+These pushes code from the branch (local) to branch (git)

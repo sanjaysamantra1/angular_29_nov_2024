@@ -1,10 +1,10 @@
 array creation:
 ---------------
 var arr1 = [10,20,30,40,50];
-var arr2 = new Array(5); 
+var arr2 = new Array(5);
 var arr3 = new Array(10,20,30,40,50);
 
--iterating over an array: 1.loop   2.for-in   3.for-of	 4.forEach()
+- iterating over an array: 1.loop   2.for-in   3.for-of	 4.forEach()
 
 properties: length , delete
 

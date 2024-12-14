@@ -1,83 +1,154 @@
-// 1. Print the occurrence of each character
-let inputText1 = 'entertainment';
-let charFrequency = {};
+// 1. Print the occurence of each character in a string
+// input: 'entertainment'
+// output: { e:3 , n:2 , t: 3 ....}
 
-for (let character of inputText1) {
-    charFrequency[character] = (charFrequency[character] || 0) + 1;
-}
+const charOccurrence = (str) => {
+  const result = {};
+  for (const char of str) {
+    if (result[char]){
+      result[char] += 1
+    } else (result[char]) = 1;
+  }
+  return result;
+};
 
-console.log(charFrequency); 
+console.log(charOccurrence("entertainment"));
 
-// 2. Character repeated the maximum number of times
-let inputText2 = 'hello world';
-let charCountMap = {};
-let mostFrequentChar = '';
 
-for (let character of inputText2.toLowerCase()) {
-    if (character !== ' ') { 
-        charCountMap[character] = (charCountMap[character] || 0) + 1;
+// 2. Print the character which is repeated max no of times
+//    input: 'hello world'
+//    output : 'L'
 
-        if (!mostFrequentChar || charCountMap[character] > charCountMap[mostFrequentChar]) {
-            mostFrequentChar = character;
-        }
+const maxRepeatedChar = (str) => {
+  const charCounts = {};
+
+  for (const char of str.toLowerCase()) {
+    if (char != " ") {
+      if (charCounts[char] == undefined) {
+        charCounts[char] = 1;
+      } else {
+        charCounts[char] += 1;
+      }
     }
-}
+  }
 
-console.log(mostFrequentChar.toUpperCase()); 
+  let maxChar = null;
+  let maxCount = 0;
 
-// 3. Swap case for each character
-let inputText3 = 'Hello World';
-let swappedCaseText = [...inputText3]
-    .map(character => character === character.toUpperCase() ? character.toLowerCase() : character.toUpperCase())
-    .join('');
-
-console.log(swappedCaseText); 
-
-// 4. Print abbreviation
-let inputText4 = 'Rabindra Nath Tagore';
-let nameWords = inputText4.split(' ');
-
-let abbreviation = nameWords
-    .slice(0, -1) // All except the last word
-    .map(word => word[0].toUpperCase() + '.')
-    .join(' ') + ' ' + nameWords.at(-1).toLowerCase();
-
-console.log(abbreviation); 
-
-// 5. Shift characters to the next
-let inputText5 = 'abcxyz';
-let shiftedText = [...inputText5]
-    .map(character => String.fromCharCode(((character.charCodeAt(0) - 97 + 1) % 26) + 97))
-    .join('');
-
-console.log(shiftedText); 
-
-// 6. Validate parentheses
-function validateParentheses(sequence) {
-    let stack = [];
-    let matchingPairs = { ')': '(', ']': '[', '}': '{' };
-
-    for (let char of sequence) {
-        if (Object.values(matchingPairs).includes(char)) {
-            stack.push(char);
-        } else if (matchingPairs[char]) {
-            if (stack.pop() !== matchingPairs[char]) return false;
-        }
+  for (const char in charCounts) {
+    if (charCounts[char] > maxCount) {
+      maxChar = char;
+      maxCount = charCounts[char];
     }
+  }
 
-    return stack.length === 0;
-}
+  return maxChar.toUpperCase();
+};
 
-console.log(validateParentheses('([{}])')); 
+console.log(maxRepeatedChar("hello world"));
 
-// 7. Generate permutations of 3 letters
-function generatePermutations(inputText) {
-    if (inputText.length === 1) return [inputText];
 
-    return [...inputText].flatMap((character, index) =>
-        generatePermutations(inputText.slice(0, index) + inputText.slice(index + 1))
-            .map(permutation => character + permutation)
-    );
-}
+// 3. Swap The case for Each Character in a string 
+//    input: 'Hello World'
+//    output: 'hELLO wORLD'
 
-console.log(generatePermutations('ABC')); 
+const swapEachChar = (str) => {
+  return str.split("").map((char) =>
+      char == char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()
+    )
+    .join("");
+};
+
+console.log(swapEachChar("Hello World"));
+
+
+// 4. Print the Abbreviation for a string
+//    input: 'Rabindra Nath Tagore'
+//    output: 'R. N. tagore'
+
+const abbreviation = (str) => {
+  const words = str.split(" "); 
+  let result = "";
+
+  for (let i = 0; i < words.length; i++) {
+    if (i < words.length - 1) {
+      result += words[i][0].toUpperCase() + ". ";
+    } else {
+      result += words[i].toLowerCase();
+    }
+  }
+
+  return result.trim();
+};
+
+console.log(abbreviation("Rabindra Nath Tagore"));
+
+
+// 5. Shift the characters by the next character
+//    input:  'abcxyz'
+//    output: 'bcdyza'
+
+const shiftChars = (str) => {
+  let result = "";
+
+  for (const char of str) {
+    if (char == "z") {
+      result += "a";
+    } else if (char == "Z") {
+      result += "A";
+    } else {
+      result += String.fromCharCode(char.charCodeAt(0) + 1);
+    }
+  }
+
+  return result;
+};
+
+console.log(shiftChars("abcxyz")); // Output: 'bcdyza'
+
+
+// 6. Ask user to enter a sequence of parantheses and validate 
+//    input: '([{ }])'
+//    output : true
+
+const checkParenthesis = (str) => {
+  const stack = [];
+  const pairs = { ")": "(", "]": "[", "}": "{" };
+
+  for (const char of str) {
+    if ("([{".includes(char)) {
+      stack.push(char);
+    } else if (")]}".includes(char)) {
+      if (stack.pop() != pairs[char]) 
+        return false;
+    }
+  }
+
+  return stack.length == 0;
+};
+
+console.log(checkParenthesis("([{ }])"));
+console.log(checkParenthesis("([{})]"));
+
+
+// 7. Ask user to enter a 3 letter word, print all the permutations using those 3 letters.
+//     input: 'ABC'
+//     output: ABC , ACB , BCA, BAC ...
+
+const getPermutations = (str) => {
+  if (str.length === 1) return [str];
+
+  const permutations = [];
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    const remaining = str.slice(0, i) + str.slice(i + 1);
+    const subPermutations = getPermutations(remaining);
+
+    for (const subPerm of subPermutations) {
+      permutations.push(char + subPerm);
+    }
+  }
+  return permutations;
+};
+
+console.log(getPermutations("ABC").join(", "));
