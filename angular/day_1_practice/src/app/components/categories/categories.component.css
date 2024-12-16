@@ -1,0 +1,10 @@
+.category img {
+  width: 75px;
+  height: 75px;
+}
+
+.category div {
+  width: 75px;
+  height: 75px;
+  font-weight: bolder;
+}

@@ -1,0 +1,121 @@
+<h3 class="text-center">DataBinding Component</h3>
+<div class="border container">
+    <!-- Property Binding -->
+    <div>My name is {{ myName }}</div>
+    <!-- Interpolation Binding -->
+    <div>My name is <span [innerHTML]="myName"></span></div>
+
+    <!-- Interpolation -->
+    <img src="{{ imgUrl }}" />
+    <!-- Property Binding -->
+    <img [src]="imgUrl" />
+    <img bind-src="imgUrl" />
+    <br /><br />
+    <input type="text" placeholder="{{ myName }}" />
+
+    <input type="text" value="{{ myName }}" />
+    <input type="text" [value]="myName" />
+    <input type="text" bind-value="myName" />
+
+    <p>2 way</p>
+    <!-- 2 way data binding -->
+    <input type="text" [(ngModel)]="myName" />
+    <div>
+        <button class="btn btn-primary" disabled="{{ flag }}">Btn 1</button>
+        <!--Interpolation doesn't work with boolean values-->
+        <button class="btn btn-primary" [disabled]="flag">Btn 2</button>
+        <button class="btn btn-primary" bind-disabled="flag">Btn 3</button>
+        <button class="btn btn-primary">Btn 4</button>
+
+        <!-- Event Binding -->
+        <button class="btn btn-primary mx-2" (click)="func1()">
+            Invoke Func1
+        </button>
+        <button
+            class="btn btn-primary mx-2"
+            on-click="func1()"
+            [attr.aria-label]="myAriaLabel"
+        >
+            Invoke Func1
+        </button>
+    </div>
+    <br /><br />
+    <table border="1" [width]="myWidth" [attr.height]="myHeight">
+        <tbody>
+            <tr>
+                <td>Data - 1</td>
+                <td>Data - 2</td>
+                <td>Data - 3</td>
+                <td>Data - 4</td>
+            </tr>
+            <tr>
+                <td>Data - 1</td>
+                <td>Data - 2</td>
+                <td>Data - 3</td>
+                <td [colSpan]="2">Data - 4</td>
+            </tr>
+            <tr>
+                <td>Data - 1</td>
+                <td>Data - 2</td>
+                <td [attr.colspan]="2">Data - 3</td>
+                <td>Data - 4</td>
+            </tr>
+            <tr>
+                <td>Data - 1</td>
+                <td>Data - 2</td>
+                <td>Data - 3</td>
+                <td>Data - 4</td>
+            </tr>
+            <tr>
+                <td>Data - 1</td>
+                <td>Data - 2</td>
+                <td>Data - 3</td>
+                <td>Data - 4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="border p-2">
+        Addition: using 2 way binding
+        <input type="number" [(ngModel)]="num1" />
+        <input type="number" [(ngModel)]="num2" />
+        <p>Addition of {{ num1 }} and {{ num2 }} is {{ num1 + num2 }}</p>
+
+        Template Reference Variable
+        <input class="mx-2" #input1 />
+        <input ref-input2 />
+        <button (click)="addition(input1.value, input2.value)">Addition</button>
+    </div>
+
+    <div>
+        <h1>Assignment 1</h1>
+
+        <h2 [hidden]="flag">Hello</h2>
+        <button (click)="flag = !flag">{{ flag ? "Show" : "Hide" }}</button>
+
+        <h1>Assignment 2</h1>
+
+        <textarea
+            name="textInput"
+            id="textInput"
+            maxlength="100"
+            [(ngModel)]="msg"
+        ></textarea>
+        <p>remaining characters: {{ 100 - msg.length }}</p>
+
+        <h1>Assignment 3</h1>
+        <select name="selectState" id="selectState" [(ngModel)]="selectState">
+            <option>State 1</option>
+            <option>State 2</option>
+            <option>State 3</option>
+            <option>State 4</option>
+            <option>State 5</option>
+            <option>State 6</option>
+            <option>State 7</option>
+            <option value="1000">State 8</option>
+            <option>State 9</option>
+            <option>State 10</option>
+        </select>
+        <h3>You selected {{ selectState }}</h3>
+    </div>
+</div>
