@@ -1,0 +1,10 @@
+.category{
+ margin: 50px;
+ list-style: none;
+ display: flex;
+ justify-content: space-between;
+}
+
+.category li {
+    display: flex;
+}
