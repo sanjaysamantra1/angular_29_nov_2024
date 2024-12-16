@@ -1,0 +1,41 @@
+.navbar-dark .navbar-brand {
+    color: #fff; /* Makes the brand text white */
+  }
+  
+  .navbar-dark .nav-link {
+    color: #ddd; /* Makes the navigation links subtle white */
+  }
+  
+  .navbar-dark .nav-link:hover {
+    color: #fff; /* Brightens the link on hover */
+  }
+  
+  .navbar-dark .dropdown-menu-dark {
+    background-color: #222; /* Dark background for dropdowns */
+    border: 1px solid #444; /* Adds a subtle border for distinction */
+  }
+  
+  .navbar-dark .dropdown-item {
+    color: #ddd; /* Dropdown item text */
+  }
+  
+  .navbar-dark .dropdown-item:hover {
+    color: #fff; /* Brightens text on hover */
+    background-color: #333; /* Slightly brighter hover background */
+  }
+  
+  .navbar-dark .form-control {
+    background-color: #333; /* Dark input background */
+    border: 1px solid #555; /* Border for the input */
+    color: #fff; /* White text in the search box */
+  }
+  
+  .navbar-dark .btn-outline-success {
+    border-color: #6c757d; /* Subtle border for the button */
+    color: #fff; /* Button text color */
+  }
+  
+  .navbar-dark .btn-outline-success:hover {
+    background-color: #6c757d; /* Slightly brighter on hover */
+  }
+  

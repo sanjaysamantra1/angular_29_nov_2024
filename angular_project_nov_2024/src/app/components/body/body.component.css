@@ -1,0 +1,68 @@
+/* General Styles for Dark Mode */
+body {
+    background-color: #121212; /* Page-wide dark background */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+}
+
+/* Container Title Styling */
+h2 {
+    color: #ffffff; /* White text for the title */
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Card Styling */
+.card {
+    background-color: #1c1c1c; /* Deep dark background for cards */
+    border: 1px solid #333333; /* Subtle border for contrast */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1); /* Subtle shadow */
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-height: 200px;
+    object-fit: cover; /* Ensures proper image fit */
+}
+
+/* Card Content */
+.card-title {
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+.card-text {
+    color: #b3b3b3; /* Slightly muted text for pricing */
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+/* Button Styling */
+.btn-light {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-light:hover {
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+/* Grid Layout Gaps */
+.g-4 {
+    gap: 24px; /* Adjustable gap between cards */
+}

@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.css';
+
+/* Dark mode styling for the entire page */
+body {
+    background-color: #121212; /* Dark background for the page */
+    color: #ffffff; /* Light text color */
+    font-family: 'Arial', sans-serif; /* Optional font for readability */
+    margin: 0; /* Reset default body margin */
+    padding: 0;
+}
+
+/* Ensure elements from the app-root or other components follow the dark mode aesthetic */
+app-root {
+    display: block;
+    min-height: 100vh; /* Ensures full viewport height */
+    background-color: #121212; /* Ensures dark background for app-root content */
+}
+
+h1, h2, h3, p, a, span {
+    color: #ffffff; /* Default white color for text */
+}
+
+/* Optional styling for links */
+a {
+    text-decoration: none;
+    color: #61dafb; /* A soft blue for links */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff; /* Lightens the color on hover */
+}

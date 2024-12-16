@@ -1,0 +1,29 @@
+/* Container styling */
+.container {
+    background-color: #121212;
+    padding: 2rem;
+  }
+  
+  /* Category container */
+  .category {
+    text-align: center;
+  }
+  
+  /* Category image styling */
+  .category-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Ensures the image is resized while maintaining aspect ratio */
+    border-radius: 10%; /* Optional: Rounded corners for a clean look */
+    background-color: #fff; /* Optional: Add a background for better contrast */
+    padding: 5px; /* Padding around the image */
+  }
+  
+  /* Category title styling */
+  .category-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0.5rem;
+  }
+  
