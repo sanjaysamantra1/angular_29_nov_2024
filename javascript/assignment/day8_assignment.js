@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 console.log("------------------------------------------1. Sort employees by empId-------------------------------------------");
 let employees = [
   { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
