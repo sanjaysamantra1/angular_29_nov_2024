@@ -1,0 +1,73 @@
+<h2>Directives</h2>
+
+<div class="border p-2">
+    @if(num%2 == 0){
+    <h4>{{ num }} is even</h4>
+    }@else{
+    <h4>{{ num }} is odd</h4>
+    }
+
+    <h4 [hidden]="num % 2 != 0">{{ num }} is Even</h4>
+    <h4 [hidden]="num % 2 == 0">{{ num }} is Odd</h4>
+
+    <p>switch</p>
+    @switch(num){ @case(1) {
+    <h1>Monday</h1>
+    } @case(2) {
+    <h1>Tuesday</h1>
+    } @case(3) {
+    <h1>Wednesday</h1>
+    } @case(4) {
+    <h1>Thursday</h1>
+    } @case(5) {
+    <h1>Friday</h1>
+    } @case(6) {
+    <h1>Saturday</h1>
+    } @case(7) {
+    <h1>Sunday</h1>
+    } @default{
+    <h1>Not a valid number</h1>
+    } }
+
+    <ol>
+        @for(car of cars; track $index){
+        <li>{{ car }}</li>
+        }
+    </ol>
+
+    <select>
+        @for(car of cars;track $index;){
+        <option>{{ car }}</option>
+        }
+    </select>
+</div>
+<div class="container mt-5">
+    <h1>Assignment</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @for(product of products; track $index;){
+        <div class="col">
+            <div class="card" style="width: 18rem">
+                <img
+                    class="card-img-top"
+                    src="{{ product.image }}"
+                    alt="{{ product.title }}'s image"
+                />
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <h6>
+                        ⭐{{ product.rating.rate }} ({{ product.rating.count }})
+                        &nbsp; &nbsp; &nbsp;$
+                        {{ product.price }}
+                    </h6>
+                    <p class="card-text text-truncate">
+                        {{ product.description }}
+                    </p>
+                    <button type="button" class="btn btn-dark">
+                        {{ product.category }}
+                    </button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
