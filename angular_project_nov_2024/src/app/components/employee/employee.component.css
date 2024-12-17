@@ -1,0 +1,26 @@
+table, th, td {
+    border: 1px solid rgb(117, 20, 20);
+  }
+
+th, td{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 40px;
+}
+th{
+    background-color: rgb(195, 188, 221);
+}
+td{
+    background-color: rgb(165, 104, 14);
+}
+
+.card{
+    float: inline-start;
+    width: 18.7%;
+    text-align: center;
+    margin: 7px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: darkolivegreen;
+}
