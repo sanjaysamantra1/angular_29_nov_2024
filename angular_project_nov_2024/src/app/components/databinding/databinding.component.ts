@@ -41,7 +41,7 @@ export class DatabindingComponent {
     console.log(`Addition of ${n1} and ${n2} is ${+n1 + +n2}`)
   }
 result : number =0;
-  operationsNeedToDo($event : any, nu1:any, nu2: any){
+  /*operationsNeedToDo($event : any, nu1:any, nu2: any){
     switch (this.selectedOperation){
       case '+':
         this.result = +nu1+parseInt(nu2);
@@ -60,8 +60,10 @@ result : number =0;
         break;
       default:
         console.log("*******************");
+    }*/
+    operationsNeedToDo($event : any){
+      this.result = (eval(this.num1+this.selectedOperation+this.num2));
     }
-
     
   }
 
