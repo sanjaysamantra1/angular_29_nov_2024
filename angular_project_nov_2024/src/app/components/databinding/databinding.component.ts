@@ -11,8 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class DatabindingComponent {
 
-  myName: string = 'Sachin Tendulkar';
-  img_url: string = 'https://images-cricketcom.imgix.net/sachin-tendulkar-1693132548682?fit=crop&crop=face&auto=format&ixlib=react-9.8.0&h=250&w=180'
+  myName: String = 'Sachin Tendulkar';
+  img_url: String = 'https://images-cricketcom.imgix.net/sachin-tendulkar-1693132548682?fit=crop&crop=face&auto=format&ixlib=react-9.8.0&h=250&w=180'
   flag: boolean = false;
   myWidth = '50%';
   myHeight = '200px';
@@ -69,4 +69,11 @@ export class DatabindingComponent {
   togglePassword() {
     this.showPassword = !this.showPassword;
   }
+  employees = [
+    { id: 1, name: 'Rajesh Kumar', position: 'Senior Software Developer', department: 'Engineering' },
+    { id: 2, name: 'Priya Sharma', position: 'Project Lead', department: 'Operations' },
+    { id: 3, name: 'Amit Patel', position: 'UX Specialist', department: 'Creative Solutions' },
+    { id: 4, name: 'Deepa Verma', position: 'Test Lead', department: 'Quality Control' },
+];
+
 }
