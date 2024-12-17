@@ -1,0 +1,33 @@
+<div class="abc">
+    <table>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee age</th>
+            <th>Employee Department</th>
+        </tr>
+
+    @for(emp of employee; track $index){
+        <tr>
+        <td> {{emp.eId}} </td>
+        <td> {{emp.name}} </td>
+        <td> {{emp.age}} </td>
+        <td> {{emp.deptId}} </td>
+    </tr>
+    }
+
+    </table>
+</div>
+<hr/>
+
+<div class="cards">
+    @for(emp of employee; track $index){
+    <div class="card">
+      <h5 class="card-title">Employee Name :{{emp.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.eId}}</h6>
+      <h5 class="card-text">Salary :{{emp.age}}</h5>
+      <h5 class="card-text">Gender :{{emp.deptId}}</h5>
+    </div>
+    }
+</div>
+<hr/>
