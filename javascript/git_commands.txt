@@ -1,0 +1,12 @@
+git checkout <your-branch>
+git fetch origin
+git merge origin/main
+
+these merges the updates from main repo to the branch 
+---
+
+git add <file_name>
+git commit -m 'message'
+git push 
+
+These pushes code from the branch (local) to branch (git)
