@@ -3,7 +3,7 @@
 
 <div class="border p-2">
     @if(num%2 == 0){
-    <h4>{{num}} is Even </h4>
+        <h4>{{num}} is Even </h4>
     }@else{
     <h4>{{num}} is Odd </h4>
     }
@@ -95,5 +95,11 @@
 
         <button class="btn" [ngClass]="{'btn-primary': flag}">Helloo</button>
         <button class="btn mx-1" [class.btn-success]="flag">Helloo</button>
+    </div>
+
+    <div>
+        <h2>Font awesome icons</h2>
+        <fa-icon [icon]="faStar"></fa-icon>
+        <fa-icon [icon]="faPlane"></fa-icon>
     </div>
 </div>

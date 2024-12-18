@@ -1,12 +1,14 @@
 
 import { CommonModule } from '@angular/common';
-import { HttpBackend } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-directives',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FontAwesomeModule],
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.css'
 })
@@ -14,6 +16,8 @@ export class DirectivesComponent {
   num: number = 5;
   cars: string[] = ['Tata', 'Honda', 'Maruti', 'Hundai', 'Toyota'];
   flag: boolean = true;
+  faStar:any = faStar;
+  faPlane:any = faPlane;
 
   myStyle1 = {
     "color": 'red',
