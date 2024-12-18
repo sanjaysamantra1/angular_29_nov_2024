@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { EmployeeComponent } from "../employee/employee.component";
 
 @Component({
   selector: 'app-databinding',
-  imports: [FormsModule],
+  imports: [FormsModule, EmployeeComponent],
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css'
 })

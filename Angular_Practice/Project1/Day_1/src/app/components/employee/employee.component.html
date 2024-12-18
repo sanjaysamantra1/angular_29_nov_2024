@@ -1,0 +1,107 @@
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Gender</th>
+          </tr>
+        </thead>
+        @for(employee of employees; track $index) {
+            <tbody>
+                <tr>
+                    <th scope="row">{{employee.eId}}</th>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.sal}}</td>
+                    <td>{{employee.gender}}</td>
+                </tr>
+            </tbody>
+            }
+      </table>
+
+    <br>
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        @for(employee of employees; track $index) {
+            <div class="col">
+                <div class="card">
+                    <div class="card h-150">
+                        <div class="card-body">
+                            <h5 class="card-title">{{employee.name}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">#Id - {{employee.eId}}</h6>
+                            <p class="card-text">Salary - {{employee.sal}}</p>
+                            <p class="card-text">Gender - {{employee.gender}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+ 
+    <button class="btn mx-1 btn-primary" (click)="onClickChange()">Toggle to {{flag ? "List View" : "Card View"}}
+    </button>
+    <br>
+    @if (flag == true) {
+    <br>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        @for(employee of employees | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
+        <div class="col">
+            <div class="card">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{employee.name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">#Id - {{employee.eId}}</h6>
+                        <p class="card-text">Salary - {{employee.sal}}</p>
+                        <p class="card-text">Gender - {{employee.gender}}</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        }
+    </div>
+
+    <div>
+        <div class="row mt-2">
+            <div style="text-align: center;">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+    } @else {
+    <br>
+    <div>
+        <table class="table table-dark table-striped table-bordered border-primary">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Gender</th>
+                </tr>
+            </thead>
+            @for(employee of employees | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
+            <tbody>
+                <tr>
+                    <th scope="row">{{employee.eId}}</th>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.sal}}</td>
+                    <td>{{employee.gender}}</td>
+                </tr>
+            </tbody>
+            }
+        </table>
+        <div>
+            <div class="row mt-2">
+                <div style="text-align: center;">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+
