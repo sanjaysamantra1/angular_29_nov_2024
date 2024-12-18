@@ -20,6 +20,15 @@ import { EmployeeComponent } from './components/employee/employee.component';
 })
 export class AppComponent {
   title = 'angular_project_nov_2024';
+  flag = false;
+  toggle() {
+    this.flag = !this.flag;
+    if (this.flag) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }
 }
 /*
 @Component({
