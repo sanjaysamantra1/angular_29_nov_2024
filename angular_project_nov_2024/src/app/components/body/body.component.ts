@@ -6,10 +6,10 @@ import { UserListComponent } from '../user-list/user-list.component';
 @Component({
   selector: 'app-body',
   imports: [
-    // DatabindingComponent,
-    // DirectivesComponent,
+    DatabindingComponent,
+    DirectivesComponent,
     UserListComponent
-  ],
+],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
