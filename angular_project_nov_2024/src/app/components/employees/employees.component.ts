@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
+import * as employees from './employees.json';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-employees',
-  imports: [],
+  imports: [NgxPaginationModule],
   templateUrl: './employees.component.html',
   styleUrl: './employees.component.css'
 })
 export class EmployeesComponent {
 
-  employees = [
-    { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
-    { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
-    { eId: 103, name: 'sameer', sal: 7000, gender: 'male' },
-    { eId: 102, name: 'sita', sal: 9000, gender: 'female' },
-    { eId: 105, name: 'deepak', sal: 8000, gender: 'male' }
-  ];
+  employees = (employees as any).default;
 
-  
+  p: any;
+  flag: boolean = true;
+
+  onClickChange() {
+    console.log(!this.flag);
+    return this.flag = !this.flag;
+  }
 
 }

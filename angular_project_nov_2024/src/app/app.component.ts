@@ -13,4 +13,20 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   title = 'angular_project_nov_2024';
+  flag: boolean = true;
+
+  toggleMode() {
+    console.log("Button clicked");
+    this.flag = !this.flag;
+    console.log(this.flag);
+    if (this.flag) {
+      var ele =  document.body;
+      console.log(ele);
+      ele.classList.toggle("dark-mode");
+    } else {
+      console.log("light");
+      document.body.classList.remove('dark');
+    }
+  }
+
 }
