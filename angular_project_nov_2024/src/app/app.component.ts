@@ -22,7 +22,7 @@ export class AppComponent {
     if (this.flag) {
       var ele =  document.body;
       console.log(ele);
-      ele.classList.toggle("dark-mode");
+      ele.classList.add('dark');
     } else {
       console.log("light");
       document.body.classList.remove('dark');
