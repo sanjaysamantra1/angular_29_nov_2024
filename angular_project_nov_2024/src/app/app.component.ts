@@ -21,3 +21,14 @@ import { EmployeeComponent } from './components/employee/employee.component';
 export class AppComponent {
   title = 'angular_project_nov_2024';
 }
+/*
+@Component({
+  selector: 'app-root',
+  template: `
+    <h1>angular-dark-mode</h1>
+    <p>Toggle to see magic happens!</p>
+    <app-dark-mode-toggle></app-dark-mode-toggle>
+  `,
+})
+export class AppComponent {}
+*/
