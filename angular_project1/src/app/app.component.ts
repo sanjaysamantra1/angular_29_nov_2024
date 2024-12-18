@@ -11,10 +11,10 @@ import { EmployeeComponent } from './components/employee/employee.component';
   selector: 'app-root',
   imports: [RouterOutlet,
     NavbarComponent,
-    CategoriesComponent,
-    CarouselComponent,
-    BodyComponent,
-    FooterComponent,
+    // CategoriesComponent,
+    // CarouselComponent,
+    // BodyComponent,
+    // FooterComponent,
     EmployeeComponent
 
   ],
@@ -23,4 +23,13 @@ import { EmployeeComponent } from './components/employee/employee.component';
 })
 export class AppComponent {
   title = 'angular_project1';
+  flag=false;
+  toggle() {
+    this.flag = !this.flag;
+    if (this.flag) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }
 }

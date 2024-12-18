@@ -1,33 +1,51 @@
+
+<button (click)="toggleMode()">{{flag ? 'DARK' : 'LIGHT'}}</button>
+<button (click)="flag1=!flag1">{{flag1 ? 'SHOW CARDS' : 'SHOW TABLE'}}</button>
+@if(flag1){
 <div class="abc">
     <table>
         <tr>
             <th>Employee ID</th>
             <th>Employee Name</th>
-            <th>Employee age</th>
-            <th>Employee Department</th>
+            <th>Employee Email</th>
+            <th>Employee Address Zipcode</th>
         </tr>
 
-    @for(emp of employee; track $index){
+    @for(emp of myProducts ; track $index){
         <tr>
-        <td> {{emp.eId}} </td>
-        <td> {{emp.name}} </td>
-        <td> {{emp.age}} </td>
-        <td> {{emp.deptId}} </td>
+        <td> {{emp.id}} </td>
+        <td> {{emp.username}} </td>
+        <td> {{emp.email}} </td>
+        <td> {{emp.address.zipcode}} </td>
     </tr>
     }
 
-    </table>
+</table>
+</div>
+<hr/>
+}
+@else{
+
+
+<div class="row">
+    @for(emp of myProducts | paginate: { itemsPerPage: 3, currentPage: p}; track $index){
+        <div class ="col-sm-4">
+    <div class="card">
+        <div class="card-body text-center">
+      <h5 class="card-title">Employee Name :{{emp.username}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.id}}</h6>
+      <h5 class="card-text">Email :{{emp.email}}</h5>
+      <h5 class="card-text">Address Zipcode :{{emp.address.zipcode}}</h5>
+    </div>
+    </div>
+</div>
+}
+    <div class ="row mt-4">
+        <div style="text-align:center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    </div>
 </div>
 <hr/>
 
-<div class="cards">
-    @for(emp of employee; track $index){
-    <div class="card">
-      <h5 class="card-title">Employee Name :{{emp.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.eId}}</h6>
-      <h5 class="card-text">Salary :{{emp.age}}</h5>
-      <h5 class="card-text">Gender :{{emp.deptId}}</h5>
-    </div>
-    }
-</div>
-<hr/>
+}
