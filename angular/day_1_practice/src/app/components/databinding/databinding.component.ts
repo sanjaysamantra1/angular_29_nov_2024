@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-databinding',
     imports: [FormsModule],
     templateUrl: './databinding.component.html',
-    styleUrl: './databinding.component.css',
+    // styleUrl: './databinding.component.css',
+    styles: ['h1{color: red}'],
+    encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class DatabindingComponent {
     myName: string = 'Pradeep';

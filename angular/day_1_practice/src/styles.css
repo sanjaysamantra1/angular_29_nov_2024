@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.css';
+
+h2{
+    color: green;
+    border: 2px solid green;
+}
