@@ -1,0 +1,178 @@
+<div class="container">
+    <h1>Employees CRUD</h1>
+    <br />
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#employeeAddModal">
+        ADD EMPLOYEE
+    </button>
+    <br />
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="employeeAddModal" tabindex="-1" aria-labelledby="employeeAddModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="employeeAddModal">
+                        Add Employee
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+                            <div id="emailHelp" class="form-text">
+                                We'll never share your email with anyone else.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                          </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="phone" class="form-control" id="phone" aria-describedby="phone number" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="username" class="form-control" id="username" aria-describedby="username" />
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="firstName" class="form-control" id="firstName" aria-describedby="firstName" />
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="lsatName" class="form-label">Last Name</label>
+                                <input type="lsatName" class="form-control" id="lsatName" aria-describedby="lsatName" />
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" />
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary" (click)="addEmployee()">
+                        Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Assignment
+----------
+1. create 1 EmployeeCRUD component
+2. display list of employees in a table(data comes from an array)
+3. user should be able to delete Employee (ask user confirmation)
+4. view the details of each employee in a modal (bootstrap)
+5. add a new employee to the table (insert a new record to the array)
+   use sweetAlert to display messages ('Added Successfully') -->
+
+    <!--  {
+        "address": {
+            "geolocation": {
+                "lat": "-37.3159",
+                "long": "81.1496"
+            },
+            "city": "kilcoole",
+            "street": "new road",
+            "number": 7682,
+            "zipcode": "12926-3874"
+        },
+        "id": 1,
+        "email": "john@gmail.com",
+        "username": "johnd",
+        "password": "m38rmF$",
+        "name": {
+            "firstname": "john",
+            "lastname": "doe"
+        },
+        "phone": "1-570-236-7033",
+        "__v": 0
+    }, -->
+    <div class="modal fade" id="exampleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="employeeAddModal">
+                        Employee Details
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>EID: </strong>{{ selectedEmployee.id }}</p>
+                    <p>
+                        <strong>USERNAME: </strong>{{ selectedEmployee.username }}
+                    </p>
+                    <p>
+                        <strong>FIRST NAME: </strong>{{ selectedEmployee.name.firstname }}
+                    </p>
+                    <p>
+                        <strong>LAST NAME: </strong>{{ selectedEmployee.name.lastname }}
+                    </p>
+                    <p>
+                        <strong>ADDRESS(CITY): </strong>{{ selectedEmployee.address.city }}
+                    </p>
+                    <p><strong>PHONE: </strong>{{ selectedEmployee.phone }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Employee ID</td>
+                <td>Username</td>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>Address</td>
+                <td>Phone</td>
+                <td>Remove</td>
+                <td>View</td>
+            </tr>
+        </thead>
+        <tbody>
+            @for(employee of employees; track $index){
+            <tr>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.username }}</td>
+                <td>{{ employee.name.firstname }}</td>
+                <td>{{ employee.name.lastname }}</td>
+                <td>{{ employee.address.city }}</td>
+                <td>{{ employee.phone }}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">
+                        Delete
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        (click)="showEmployeeDetails(employee)">
+                        Details
+                    </button>
+                </td>
+            </tr>
+            }@empty{
+            <p>No employees present</p>
+            }
+        </tbody>
+    </table>
+</div>
