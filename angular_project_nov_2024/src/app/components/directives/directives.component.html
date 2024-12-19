@@ -1,9 +1,9 @@
-<h2 class="text-center">let's Learn Directives</h2>
+<h2 class="text-center" highlight>let's Learn Directives</h2>
 
 
 <div class="border p-2">
     @if(num%2 == 0){
-        <h4>{{num}} is Even </h4>
+    <h4>{{num}} is Even </h4>
     }@else{
     <h4>{{num}} is Odd </h4>
     }
@@ -98,8 +98,14 @@
     </div>
 
     <div>
-        <h2>Font awesome icons</h2>
+        <h2 highlight>Font awesome icons</h2>
         <fa-icon [icon]="faStar"></fa-icon>
         <fa-icon [icon]="faPlane"></fa-icon>
+    </div>
+
+    <div>
+        <div>Custom Directive:</div>
+        <input type="text" numberonly />
+        <!-- Input Box is the host element for numberonly directive -->
     </div>
 </div>

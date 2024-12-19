@@ -3,6 +3,7 @@ import { DatabindingComponent } from '../databinding/databinding.component';
 import { DirectivesComponent } from '../directives/directives.component';
 import { UserListComponent } from '../user-list/user-list.component';
 import { Demo1Component } from '../demo1/demo1.component';
+import { MyModalComponent } from '../my-modal/my-modal.component';
 
 @Component({
   selector: 'app-body',
@@ -10,7 +11,8 @@ import { Demo1Component } from '../demo1/demo1.component';
     DatabindingComponent,
     DirectivesComponent,
     UserListComponent,
-    Demo1Component
+    Demo1Component,
+    MyModalComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
