@@ -1,36 +1,54 @@
-<p>employee works!</p>
-<div class="abc">  
+<!--<p>Employee Directory</p>-->
+
+<!-- Toggle Buttons -->
+<button (click)="toggleTheme()">{{ isDarkMode ? 'DARK' : 'LIGHT' }}</button>
+<button (click)="viewMode = !viewMode">{{ viewMode ? 'SHOW CARDS' : 'SHOW TABLE' }}</button>
+
+
+<div *ngIf="viewMode">
+  <div class="employee-table">
+    <!-- Employee Table -->
     <table>
+      <thead>
         <tr>
-            <th>Employee Id</th>
-            <th>Name</th>
-            <th>Salary</th>
-            <th>Gender</th>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Employee Email</th>
+          <th>Address Zip Code</th>
         </tr>
-    
-    @for(emp of employee; track $index){
-        <tr>
-        <td> {{emp.eId}} </td>
-        <td> {{emp.name}} </td>
-        <td> {{emp.sal}} </td>
-        <td> {{emp.gender}} </td>
-    </tr>
-    }
-
-</table>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employeeList; index as employeeIndex">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.address.zipCode }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
 </div>
-<hr/>
-
-
-
-<div class="cards">
-    @for(emp of employee; track $index){
-    <div class="card">
-      <h5 class="card-title">Employee Name :{{emp.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.eId}}</h6>
-      <h5 class="card-text">Salary :{{emp.sal}}</h5>
-      <h5 class="card-text">Gender :{{emp.gender}}</h5>
+<div *ngIf="!viewMode">
+  <div class="row">
+    <!-- Employee Cards -->
+    <div class="col-sm-4" *ngFor="let employee of employeeList | paginate: { itemsPerPage: 3, currentPage: currentPage }; index as employeeIndex">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="card-title">Name: {{ employee.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">ID: {{ employee.id }}</h6>
+          <p class="card-text">Email: {{ employee.email }}</p>
+          <p class="card-text">Zip Code: {{ employee.address.zipCode }}</p>
+        </div>
+      </div>
     </div>
-}
+  </div>
+
+  <!-- Pagination Controls -->
+  <div class="row mt-4">
+    <div style="text-align: center">
+      <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+    </div>
+  </div>
+  <hr />
 </div>
-<hr/>
