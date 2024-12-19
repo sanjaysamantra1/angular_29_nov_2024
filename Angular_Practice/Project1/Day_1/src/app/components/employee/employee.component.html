@@ -22,26 +22,6 @@
 
     <br>
 
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        @for(employee of employees; track $index) {
-            <div class="col">
-                <div class="card">
-                    <div class="card h-150">
-                        <div class="card-body">
-                            <h5 class="card-title">{{employee.name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">#Id - {{employee.eId}}</h6>
-                            <p class="card-text">Salary - {{employee.sal}}</p>
-                            <p class="card-text">Gender - {{employee.gender}}</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            }
-        </div>
-    </div>
- 
     <button class="btn mx-1 btn-primary" (click)="onClickChange()">Toggle to {{flag ? "List View" : "Card View"}}
     </button>
     <br>

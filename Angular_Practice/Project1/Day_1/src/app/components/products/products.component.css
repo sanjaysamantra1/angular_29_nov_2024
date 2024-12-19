@@ -1,0 +1,35 @@
+.level{
+    background-color: antiquewhite;
+    height: auto;
+    width:auto;
+    
+}
+
+.inside-level{
+
+    width: 97%;
+  
+   margin: auto;
+   padding: 10px;
+   display: table;
+    
+}
+
+
+#card{
+
+  display: table-cell;
+
+}
+
+#cardEach
+{
+    
+}
+
+#img{
+    height: 150px;
+    width: 150px;
+    margin: auto;
+  
+}

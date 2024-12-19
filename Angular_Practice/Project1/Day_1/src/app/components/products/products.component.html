@@ -1,0 +1,61 @@
+<div class="level">
+
+<div class="inside-level">
+  <div class="input-group mb-3" style="width: fit-content;">
+      <input type="text" class="form-control" placeholder="Search" style="border-color: black;" [(ngModel)]="inputVal">
+      <button class="btn btn-primary" type="button" id="button-addon1" (click)="getInputValue()">Search <fa-icon [icon]="faSearchPlus"></fa-icon></button>
+      
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="ascending()">Asc
+          <fa-icon [icon]="faSortAmountAsc"></fa-icon>
+      </button>
+
+      <button class="btn btn-outline-secondary" type="button" id="button-addon3" (click)="descending()">Desc
+       
+        //  <fa-icon [icon]="faSortAmountDesc"></fa-icon>
+
+         
+          
+      </button>
+      
+  </div>
+
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      @for(product of products | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
+      
+        <div class="col">
+          <div class="card" id="card">
+              <div class="card h-100" id="cardEach" >
+                  <div class="card-body">
+                    <img class="card-img-top" src={{product.image}} alt="Card image cap" id="img" style="align-self: center;">
+                   
+                      <h5 class="card-title">{{product.id}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" id="title">{{product.title}}</h6>
+                      <p class="card-text" id="price">${{product.price}}</p>
+                      <p class="card-text" id="desc">{{product.description}}</p>
+                      <p class="card-text" id="rate">{{product.rating.rate}}</p>
+                      <p class="card-text" id="count">{{product.rating.count}}</p>
+                   
+                     
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+      }
+
+      <div>
+        <div class="row mt-2">
+          <div style="text-align: center;">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+      </div>
+      </div>
+      
+  </div>
+
+  </div>
+
+
+
+
+

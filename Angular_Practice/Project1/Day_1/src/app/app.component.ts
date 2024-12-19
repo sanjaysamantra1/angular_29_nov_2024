@@ -6,10 +6,11 @@ import { CarouselComponent } from "./components/carousel/carousel.component";
 import { BodyComponent } from "./components/body/body.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { EmployeeComponent } from "./components/employee/employee.component";
+import { ProductsComponent } from "./components/products/products.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, CategoriesComponent, CarouselComponent, BodyComponent, FooterComponent, EmployeeComponent],
+  imports: [RouterOutlet, NavbarComponent, CategoriesComponent, CarouselComponent, BodyComponent, FooterComponent, EmployeeComponent, ProductsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
