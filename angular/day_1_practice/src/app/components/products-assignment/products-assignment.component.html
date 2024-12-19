@@ -1,0 +1,91 @@
+<div class="container">
+    <h1 class="text-center">Products List</h1>
+    <form>
+        <div class="row">
+            <div class="col-4">
+                <label class="sr-only" for="inlineFormInput"
+                    >Search Product</label
+                >
+                <input
+                    type="text"
+                    class="form-control mb-2"
+                    id="inlineFormInput"
+                    placeholder="SanDisk"
+                    #searchText
+                />
+
+                <button
+                    type="submit"
+                    class="btn btn-primary mb-2"
+                    (click)="searchProduct(searchText.value)"
+                >
+                    Search
+                </button>
+            </div>
+            <div class="col-4">
+                <p class="sr-only">Sort Product by Price</p>
+                <button
+                    type="submit"
+                    class="btn btn-primary mb-2"
+                    (click)="ascendingOrder()"
+                    id="sortFunc"
+                >
+                    Ascending Order</button
+                >&nbsp;
+                <button
+                    type="submit"
+                    class="btn btn-primary mb-2"
+                    (click)="descendingOrder()"
+                    id="sortFunc"
+                >
+                    Descending Order
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        @for (product of productSearchResult | paginate: {itemsPerPage: 4,
+        currentPage: page}; track $index) {
+        <div class="col-sm-3">
+            <div class="card">
+                <img
+                    style="height: 300px; width: 300px"
+                    src="{{ product.image }}"
+                    alt="Card image cap"
+                />
+                <div class="card-body">
+                    <h5
+                        class="card-title text-truncate"
+                        title="{{ product.title }}"
+                    >
+                        {{ product.title }}
+                    </h5>
+                    <h6>
+                        $ {{ product.price }} | ⭐ {{ product.rating.rate }} ({{
+                            product.rating.count
+                        }})
+                    </h6>
+                    <p
+                        class="card-text text-truncate"
+                        title="{{ product.description }}"
+                    >
+                        {{ product.description }}
+                    </p>
+                    <div class="card-footer">
+                        <small class="text-muted">{{ product.category }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }@empty {
+        <p>No Products found with the {{ searchText.value }}</p>
+        }
+    </div>
+    <div class="row">
+        <div class="offset-4 mt-5">
+            <pagination-controls
+                (pageChange)="page = $event"
+            ></pagination-controls>
+        </div>
+    </div>
+</div>

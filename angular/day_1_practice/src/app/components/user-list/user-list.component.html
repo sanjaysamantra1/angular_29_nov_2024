@@ -1,0 +1,40 @@
+<h2 class="text-center">User List</h2>
+<div class="container">
+    <div class="row">
+        @for(user of users | paginate: {itemsPerPage: 4, currentPage: p}; track
+        $index){
+        <div class="col-sm-3">
+            <div class="card" style="width: 18rem">
+                <img
+                    class="card-img-top"
+                    src="https://attic.sh/22khbjqy656j556fgjqo3sgzx5u6"
+                    alt="Card image cap"
+                />
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ user.username }}</h5>
+                    <p class="card-text">
+                        {{ user.name }}
+                    </p>
+                    <p class="card-text">
+                        {{ user.email }}
+                    </p>
+                    <p class="card-text">
+                        {{ user.address.city }}
+                    </p>
+                    <p class="card-text">
+                        {{ user.phone }}
+                    </p>
+                    <a href="#" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+        }
+        <div class="row">
+            <div class="offset-4 mt-2">
+                <pagination-controls
+                    (pageChange)="p = $event"
+                ></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

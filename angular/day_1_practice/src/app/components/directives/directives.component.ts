@@ -1,30 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-directives',
-    imports: [],
+    imports: [CommonModule, FormsModule, FontAwesomeModule],
     templateUrl: './directives.component.html',
     styleUrl: './directives.component.css',
 })
 export class DirectivesComponent {
-    // products = [
-    //     {
-    //         image: 'https://rukminim2.flixcart.com/image/612/612/xif0q/backpack/o/d/o/laptop-backpack-1010-medium-waterproof-school-bag-college-bag-original-imagyghv77fhvssw.jpeg?q=70',
-    //         name: 'Bag 1',
-    //         cost: 350,
-    //     },
-    //     {
-    //         image: 'https://rukminim2.flixcart.com/image/612/612/xif0q/backpack/j/a/e/laptop-backpack-1010-medium-waterproof-school-bag-college-bag-original-imagyghvz9hxdbgq.jpeg?q=70',
-    //         name: 'Bag 2',
-    //         cost: 350,
-    //     },
-    //     {
-    //         image: 'https://rukminim2.flixcart.com/image/612/612/xif0q/backpack/j/a/e/laptop-backpack-1010-medium-waterproof-school-bag-college-bag-original-imagyghvz9hxdbgq.jpeg?q=70',
-    //         name: 'Bag 3',
-    //         cost: 350,
-    //     },
-    // ];
-
     products = [
         {
             id: 1,
@@ -79,6 +66,50 @@ export class DirectivesComponent {
             },
         },
     ];
+    myStyle1 = {
+        'background-color': 'lightblue',
+        color: 'red',
+        'font-size': '16px',
+        padding: '10px',
+    };
+    myStyle2 = {
+        color: 'goldenrod',
+        'background-color': 'black',
+        'font-size': '28px',
+        padding: '10px',
+    };
     num: number = 5;
     cars: string[] = ['Tata', 'Honda', 'Maruti', 'Hundai', 'Toyota'];
+    flag: boolean = true;
+    condition: boolean = false;
+
+    faStar: any = faStar;
+    faPlane: any = faPlane;
+    employees = [
+        { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
+        { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
+        { eId: 103, name: 'werwer', sal: 7000, gender: 'male' },
+        { eId: 102, name: 'sita', sal: 9000, gender: 'female' },
+        { eId: 105, name: 'deepika', sal: 8000, gender: 'female' },
+    ];
+
+    addNewEmployee() {
+        this.employees = [
+            { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
+            { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
+            { eId: 103, name: 'sameer', sal: 7000, gender: 'male' },
+            { eId: 102, name: 'sita', sal: 9000, gender: 'female' },
+            { eId: 105, name: 'deepika', sal: 8000, gender: 'female' },
+            { eId: 105, name: 'deepika', sal: 8000, gender: 'female' },
+        ];
+    }
+    myFunction() {
+        return {
+            color: 'goldenrod',
+            'background-color': '#663399',
+            'font-size': '49px',
+        };
+    }
+    isActive: boolean = true;
+    isDisabled: boolean = true;
 }

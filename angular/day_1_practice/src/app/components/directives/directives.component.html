@@ -68,6 +68,99 @@
                 </div>
             </div>
         </div>
-        }
+        }@empty { No products available }
+    </div>
+</div>
+
+<div>
+    <h3>Employees Table</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <th>Index</th>
+            <th>EID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+            <th>is First</th>
+            <th>is Last</th>
+            <th>Odd</th>
+            <th>Even</th>
+        </thead>
+        <tbody>
+            @for (employee of employees; track $index) {
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ employee.eId }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.sal }}</td>
+                <td>{{ employee.gender }}</td>
+                <td>{{ $first }}</td>
+                <td>{{ $last }}</td>
+                <td>{{ $even }}</td>
+                <td>{{ $odd }}</td>
+            </tr>
+
+            } @empty { Employees Data Not Available }
+        </tbody>
+    </table>
+
+    <table class="table table-striped table-bordered">
+        <tbody>
+            @for (employee of employees; track employee) {
+            <tr>
+                <td>{{ employee.eId }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.sal }}</td>
+                <td>{{ employee.gender }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <button (click)="addNewEmployee()">Add Employees</button>
+
+    <div class="border p-2">
+        <h1>NgStyle and NgClasses</h1>
+
+        <input type="number" [(ngModel)]="num" />
+
+        <p [style.color]="num % 2 == 0 ? 'blue' : 'red'">Add a style</p>
+        <p [style.fontSize.px]="num % 2 == 0 ? 48 : 100">
+            Add a style with unit
+        </p>
+        <p [style.background-color]="flag ? 'green' : 'red'">
+            Add a style conditionally
+        </p>
+        <p [ngStyle]="condition ? myStyle1 : myStyle2">
+            NgStyle for multiple values
+        </p>
+        <p [ngStyle]="myFunction()">NgStyle for multiple values</p>
+    </div>
+
+    <button class="btn" [ngClass]="{ 'btn-success': isActive }">NgClass</button>
+    <button class="btn" [class.btn-warning]="isActive">NgClass</button>
+
+    <button
+        class="btn"
+        [ngClass]="{ 'btn-success': isActive, 'btn-primary': isDisabled }"
+    >
+        Multiple Conditions
+    </button>
+
+    <!-- btn-primary and btn-dark classes are always applied and btn-danger or 
+     btn-secondary are applied based on isActive condition -->
+    <button
+        class="btn"
+        [ngClass]="[
+            'btn-primary',
+            'btn-dark',
+            isActive ? 'btn-danger' : 'btn-secondary'
+        ]"
+    >
+        Array of classes
+    </button>
+    <div>
+        <h5>Fontawesome Icons</h5>
+        <fa-icon [icon]="faStar"></fa-icon>
+        <fa-icon [icon]="faPlane"></fa-icon>
     </div>
 </div>
