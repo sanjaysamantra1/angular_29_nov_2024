@@ -42,3 +42,7 @@
   color: #333; /* Dark text for readability */
   font-weight: 500; /* Slightly bold text for emphasis */
 }
+
+.category{
+  width: 100%;
+}

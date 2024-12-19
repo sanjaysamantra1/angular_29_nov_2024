@@ -1,0 +1,156 @@
+<h2 class="text-center">Learning Directives</h2>
+
+<div>
+    @if(num%2==0){
+        <h4>{{num}} id Even</h4>
+    }
+    @else{
+        <h4>{{num}} is Odd</h4>
+    }
+
+
+    <h4 [hidden]="num%2!=0">{{num}} is Even </h4>
+    <h4 [hidden]="num%2==0">{{num}} is Odd </h4>
+
+
+    @switch (num) {
+        @case (1) { <h1>Monday</h1> }
+        @case (2) { <h1>Tuesday</h1> }
+        @case (3) { <h1>Wednesday</h1> }
+        @case (4) { <h1>Thursday</h1> }
+        @case (5) { <h1>Friday</h1> }
+        @case (6) { <h1>Saturday</h1> }
+        @case (7) { <h1>Sunday</h1> }
+        @default { <h1>Not a Valid number</h1>> }
+        }
+    
+
+        <ol>
+            @for(car of cars;track $index;){
+            <li>{{car}}</li>
+            }
+        </ol>
+
+
+        <select>
+            @for(car of cars;track $index;){
+            <option>{{car}}</option>
+            }
+        </select>
+
+
+
+
+<h2> ASSIGNMENT </h2>
+<h2>EMPLOYEE TABLE</h2>
+        <div class="container mt-5">
+            <h2>Employee List (Table)</h2>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Department</th>
+                  <th>Salary</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                
+                @for(employee of addNewEmployeeTab;track $index){
+                <tr>
+                  <td>{{ $index+1 }}</td>
+                  <td>{{ employee.name }}</td>
+                  <td>{{ employee.position }}</td>
+                  <td>{{ employee.department }}</td>
+                  <td>{{ employee.salary }}</td>
+                </tr>
+            }
+            @empty{
+                No Employee Found
+            }
+              </tbody>
+            </table>
+
+
+            <!-- <div class="container mt-5">
+                <h2>Employee List (Table)</h2>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>eId</th>
+                      <th>Name</th>
+                      <th>Salary</th>
+                      <th>position</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+               
+                    <tr *ngFor="let emp of addNewEmployeeTab;let i= index">
+                      <td>{{ i+1 }}</td>
+                      <td>{{ emp.eId }}</td>
+                      <td>{{ emp.name }}</td>
+                      <td>{{ emp.sal }}</td>
+                      <td>{{ emp.gender }}</td>
+                    </tr>
+                 }
+                @empty{
+                    No Employee Found
+                } -->
+                  <!-- </tbody>
+                </table> --> 
+
+            <button class="btn btn-primary" (click)="addNewEmployee()">Add new Emp</button>
+
+
+
+
+            <div class="container mt-5">
+              <div class="row d-flex flex-row">
+                @for (employee of addNewEmployeeTab; track $index) {
+                  <div class="col-md-3"> <!-- Adjust the width here based on how many cards per row you want -->
+                    <div class="card my-3 show" style="width: 18rem;">
+                      <img src="{{employee.eImg}}" class="card-img-top" alt="Image Not Available">
+                      <div class="card-body">
+                        <h5 class="card-title">NAME: {{employee.name}}</h5>
+                        <p class="card-text">POSITION: {{employee.sal}}</p>
+                        <p class="card-text">DEPARTMENT: {{employee.gender}}</p>
+                      </div>
+                    </div>
+                  </div>
+                }
+                @empty {
+                  <p>No Employee Found</p>
+                }
+              </div>
+            </div>
+            
+
+
+
+
+            <div class="border p-2">
+                Ngstyle and ng class
+        
+                <input type="number" [(ngModel)]='num'>
+                <p [style.color]="num % 2 == 0 ? 'blue' : 'red'"> {{num}} is {{num % 2 == 0 ?'even':'odd'}} </p>
+                <p [style.fontSize.px]='num % 2 == 0 ? 48 :12'> Add style with unit </p>
+                <p [style.background-color]=" flag?'green':'blue' "> Add style conditionally </p>
+                <p [ngStyle]="num % 2 == 0 ? myStyle1 : myStyle2"> NgStyle for multiple values </p>
+                <p [ngStyle]="myFunction()"> NgStyle for multiple values </p>
+        
+                <button class="btn" [ngClass]="{'btn-primary': flag}">Helloo</button>
+                <button class="btn mx-1" [class.btn-success]="flag">Helloo</button>
+            </div>
+
+            <div>
+              <h2>
+                Font Awesome Icons
+              </h2>
+              <fa-icon [icon]="faStar"></fa-icon>
+              <fa-icon [icon]="faPlane"></fa-icon>
+            </div>
+          </div>
+        

@@ -13,3 +13,7 @@
 .card-body {
     flex-grow: 1;
 }
+
+.body{
+    width:100%;
+}

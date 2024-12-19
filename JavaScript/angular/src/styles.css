@@ -1,1 +1,17 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+
+body {
+  background-color: white; /* Default light theme */
+  color: black;
+  width: 100%;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+
+body.light-theme {
+  background-color: white;
+  color: black;
+}
