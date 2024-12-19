@@ -1,0 +1,27 @@
+<h2  class = "text-center">User List</h2>
+
+<div class ="container">
+    <div class = "row">
+          @for(user of users | paginate: { itemsPerPage: 4, currentPage: p};track $index){
+            <div class = "col-sm-3">
+             <div class="card">
+                <img  src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_640.png" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+
+                  <h5 class="card-title">{{user.userId}}</h5>
+                  <p class = "card-text">{{user.id}}</p>
+                  <p class = "card-text">{{user.title}}</p>
+
+
+                  <a href="#" class="btn btn-primary">Details</a>
+                </div>
+              </div>
+            </div>
+          }
+    </div>
+     <div class = "row mt-2">
+        <div class = "offset-6"></div>
+     </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
