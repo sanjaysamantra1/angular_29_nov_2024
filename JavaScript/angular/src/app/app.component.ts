@@ -6,10 +6,12 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { Demo1Component } from './components/demo1/demo1.component';
+import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-root', // will give in index.html
-  imports: [RouterOutlet,NavbarComponent,CategoryComponent,CarouselComponent,BodyComponent,FooterComponent,Demo1Component],
+  imports: [RouterOutlet,NavbarComponent,CategoryComponent,CarouselComponent,BodyComponent,FooterComponent,Demo1Component,FormsModule,NgxPaginationModule],
   templateUrl: './app.component.html', //passess this html and css to that index.html in body
   styleUrl: './app.component.css'
 })

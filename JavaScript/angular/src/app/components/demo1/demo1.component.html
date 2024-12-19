@@ -2,5 +2,41 @@
 <button (click)="openMyAlert()">Show Alert</button>
 <button (click)="openMySnackBar()">Show SnackBarAlert</button>
 
-<ng-Content></ng-Content>
+<ng-content></ng-content>
 
+<!-- Search and Sort Controls -->
+<div class="d-flex justify-content-center align-items-center mb-4">
+    <!-- Search Bar -->
+    <input type="text" class="form-control w-25" [(ngModel)]="searchText" (input)="filterProducts()" placeholder="Search by title" />
+    
+    <!-- Sort Buttons -->
+    <div>
+      <button class="btn btn-secondary mx-3" (click)="sortByPrice('asc')">Price: Low to High</button>
+      <button class="btn btn-secondary ms-2" (click)="sortByPrice('desc')">Price: High to Low</button>
+    </div>
+  </div>
+  
+  <h2 class="text-center">Product List</h2>
+
+<div class="container">
+  <div class="row">
+    @for(product of filteredProducts | paginate: { itemsPerPage: 4, currentPage: p };track $index){
+        <div class="card my-3">
+        <img src="{{product.image}}" class="card-img-top img-fluid" alt="..." style="max-height: 200px; object-fit: contain;">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <p class="card-text"><strong>Price: </strong>${{product.price}}</p>
+          <p class="card-text"><strong>Rating: </strong>{{product.rating.rate}} ({{product.rating.count}} reviews)</p>
+          <a href="#" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="row mt-2 pag">
+    <div class="offset-4 col-12 text-center">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
