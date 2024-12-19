@@ -4,6 +4,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PaginationAssignmentComponent } from "./components/pagination-assignment/pagination-assignment.component";
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
     CategoriesComponent,
     CarouselComponent,
     BodyComponent,
-    FooterComponent
-  ],
+    FooterComponent,
+    PaginationAssignmentComponent,
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
