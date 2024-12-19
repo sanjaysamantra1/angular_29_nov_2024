@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter with Closures</title>
+</head>
+<body>
+  <h1>Counter: <span id="counter">0</span></h1>
+  <button id="increment">Increment</button>
+  <button id="decrement">Decrement</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    
+    function createCounter() {
+      let count = 0; 
+
+      return {
+        increment: function () {
+          count++;
+          return count;
+        },
+        decrement: function () {
+          count--;
+          return count;
+        },
+        reset: function () {
+          count = 0;
+          return count;
+        }
+      };
+    }
+
+
+    const counter = createCounter();
+
+    
+    function updateCounterDisplay(newCount) {
+      document.getElementById('counter').textContent = newCount;
+    }
+
+    document.getElementById('increment').addEventListener('click', () => {
+      const newCount = counter.increment();
+      updateCounterDisplay(newCount);
+    });
+
+    document.getElementById('decrement').addEventListener('click', () => {
+      const newCount = counter.decrement();
+      updateCounterDisplay(newCount);
+    });
+
+    document.getElementById('reset').addEventListener('click', () => {
+      const newCount = counter.reset();
+      updateCounterDisplay(newCount);
+    });
+  </script>
+</body>
+</html>
