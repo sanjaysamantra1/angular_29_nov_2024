@@ -1,0 +1,31 @@
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search for products...">
+<button (click)="search()">Search</button>
+<button (click)="sortProducts('ascending')">Sort Ascending</button>
+<button (click)="sortProducts('descending')">Sort Descending</button>
+
+
+<div class="row">
+    @for(array of arrays| paginate: { itemsPerPage: 4, currentPage: p}; track $index ){
+        
+        <div class="col-sm-3">
+            <div class="card" style="width: 18rem;">
+                <img src={{array.image}} class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                  <h5 class="card-title">{{array.title}}</h5>
+                  <p class="card-text">{{array.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><Strong>Category : </Strong> {{array.category}}</li>
+                  <li class="list-group-item"><Strong>Price : </Strong> {{array.price}}</li>
+                  <li class="list-group-item"><Strong>Rating : </Strong> {{array.rating.rate}} <Strong>No.of ratings : </Strong> {{array.rating.count}}</li>
+                  
+                </ul>
+                
+            </div>
+        </div>
+       
+    }
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    
+</div>
