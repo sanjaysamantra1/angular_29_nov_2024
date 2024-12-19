@@ -33,5 +33,67 @@
         }
     </select>
 
+    <div>
+        Employees Table:
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Sl No.</th>
+                <th>Eid</th>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Gender</th>
+                <th>is First?</th>
+                <th>is Last?</th>
+                <th>is Even?</th>
+                <th>is Odd?</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees;track $index){
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{emp?.eId}}</td>
+                <td>{{emp?.name}}</td>
+                <td>{{emp?.sal}}</td>
+                <td>{{emp?.gender}}</td>
+                <td>{{$first}}</td>
+                <td>{{$last}}</td>
+                <td>{{$even}}</td>
+                <td>{{$odd}}</td>
+            </tr>
+            }@empty {
+            No Employee Found
+            }
+        </tbody>
+    </table>
 
+    <table class="table table-bordered table-striped">
+        <tbody>
+            @for (emp of employees; track emp) {
+            <tr>
+                <td>{{emp.eId}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.sal}}</td>
+                <td>{{emp.gender}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <button class="btn btn-primary" (click)="addNewEmployee()">Add new Emp</button>
+
+    <div class="border p-2">
+        Ngstyle and ng class
+
+        <input type="number" [(ngModel)]='num'>
+        <p [style.color]="num % 2 == 0 ? 'blue' : 'red'"> {{num}} is {{num % 2 == 0 ?'even':'odd'}} </p>
+        <p [style.fontSize.px]='num % 2 == 0 ? 48 :12'> Add style with unit </p>
+        <p [style.background-color]=" flag?'green':'blue' "> Add style conditionally </p>
+        <p [ngStyle]="num % 2 == 0 ? myStyle1 : myStyle2"> NgStyle for multiple values </p>
+        <p [ngStyle]="myFunction()"> NgStyle for multiple values </p>
+
+        <button class="btn" [ngClass]="{'btn-primary': flag}">Helloo</button>
+        <button class="btn mx-1" [class.btn-success]="flag">Helloo</button>
+    </div>
 </div>
