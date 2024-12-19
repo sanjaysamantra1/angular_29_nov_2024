@@ -4,6 +4,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CategoriesComponent,
     CarouselComponent,
     BodyComponent,
+    EmployeeComponent,
+    ProductsComponent,
     FooterComponent
   ],
   templateUrl: './app.component.html',

@@ -1,0 +1,38 @@
+<div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input 
+        type="text" 
+        [(ngModel)]="searchTerm" 
+        (input)="search()"
+        (change)="search()"
+        placeholder="Search products by title..."
+        class="search-input"
+      >
+    </div>
+  
+    <!-- Sort Buttons -->
+    <div class="sort-buttons">
+      <button (click)="sortProducts('asc')">Price Low to High</button>
+      <button (click)="sortProducts('desc')">Price High to Low</button>
+    </div>
+  
+    <!-- Products Grid -->
+    <div class="products-grid">
+      <div *ngFor="let product of displayedProducts" class="product-card">
+        <img [src]="product.image" [alt]="product.title">
+        <div class="product-info">
+          <h3>{{ product.title }}</h3>
+          <p class="price">${{ product.price.toFixed(2) }}</p>
+          <p class="category">{{ product.category }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pagination -->
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+  </div>
