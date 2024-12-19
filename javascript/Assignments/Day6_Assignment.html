@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Buttons</title>
+</head>
+<body>
+    <h1>Counter Example</h1>
+    <p id="counter">0</p>
+    <button id="increment">Increment</button>
+    <button id="decrement">Decrement</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        function createCounter() {
+            let count = 0; // Private variable
+
+            return {
+                increment: function() {
+                    count++;
+                    return count;
+                },
+                decrement: function() {
+                    count--;
+                    return count;
+                },
+                reset: function() {
+                    count = 0;
+                    return count;
+                },
+                getCount: function() {
+                    return count;
+                }
+            };
+        }
+
+        const counter = createCounter();
+
+        // DOM elements
+        const counterDisplay = document.getElementById('counter');
+        const incrementButton = document.getElementById('increment');
+        const decrementButton = document.getElementById('decrement');
+        const resetButton = document.getElementById('reset');
+
+        // Event listeners
+        incrementButton.addEventListener('click', () => {
+            counterDisplay.textContent = counter.increment();
+        });
+
+        decrementButton.addEventListener('click', () => {
+            counterDisplay.textContent = counter.decrement();
+        });
+
+        resetButton.addEventListener('click', () => {
+            counterDisplay.textContent = counter.reset();
+        });
+    </script>
+</body>
+</html>
