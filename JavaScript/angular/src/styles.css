@@ -3,7 +3,7 @@
 body {
   background-color: white; /* Default light theme */
   color: black;
-  width: 100%;
+  overflow-x: hidden;
 }
 
 body.dark-theme {
