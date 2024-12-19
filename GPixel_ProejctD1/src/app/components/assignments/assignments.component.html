@@ -1,0 +1,74 @@
+<div class ="container">
+    <div class="row">
+        <div id="dropdown" class="col">
+            <div>
+                <p>Question - 3 (Select a State from the below drop down)</p> <br />
+                <select [(ngModel)]="dropDown">
+                    <option value="S1">State 1</option>
+                    <option value="S2">State 2</option>
+                    <option value="S3">State 3</option>
+                    <option value="S4">State 4</option>
+                    <option value="S5">State 5</option>
+                    <option value="S6">State 6</option>
+                    <option value="S7">State 7</option>
+                    <option value="S8">State 8</option>
+                    <option value="S9">State 9</option>
+                    <option value="S10">State 10</option>
+                </select>
+                <p> Currently you are in {{dropDown}}</p>
+            </div>
+            
+            <div class="col">
+                <p>Question - 4 arithmatic Operation</p>
+                <input type="number" [(ngModel)]="input1" placeholder="Enter first number">
+                <select [(ngModel)]="operation">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+            
+                <input type="number" [(ngModel)]="input2" placeholder="Enter second number">
+                <button (click)="calculate()">Result</button>
+                <br>
+                <br>
+                <div>
+                    <p  >{{input1}} {{operation}}  {{input2}} = {{ result }}</p>
+                </div>
+                <br>
+                
+                <div>
+                    <p  >{{input1}} {{operation}}  {{input2}} = {{ result }}</p>
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <p> Question - 5</p>
+                    <input type="{{ inputText ? 'text' : 'password' }}">
+                    <button (click)="toggleInputType()">Toggle Button</button>
+                </div>
+            </div>
+            <div class ="col">
+                <p> Question - 6 </p>
+                
+                <div>
+                    <div class="counter-container">
+                        <h2>Counter: {{ counter }}</h2>
+                        <input type="number" [(ngModel)]="counter" />
+                        <div class="controls">
+                          <button (click)="increment()">Increment</button>
+                          <button (click)="decrement()">Decrement</button>
+                          <button (click)="reset()">Reset</button>
+                        </div>
+                      </div>
+                      
+                </div>
+            </div>
+    </div>
+
+</div>
+
+
+
+
+</div>

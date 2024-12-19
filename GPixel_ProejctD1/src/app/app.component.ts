@@ -5,19 +5,26 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BodyComponent } from './components/body/body.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AssignmentsComponent } from "./components/assignments/assignments.component";
+import { TableCardComponent } from "./components/table-card/table-card.component";
+import { ProductsComponent } from './components/products/products.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, 
+  imports: [CommonModule,
             RouterOutlet,
             FooterComponent,
             BodyComponent,
             CarouselComponent,
-            NavbarComponent],
+            NavbarComponent,
+            AssignmentsComponent, 
+            TableCardComponent,
+            ProductsComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Project_Day1';
+  
 }

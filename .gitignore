@@ -1,4 +1,4 @@
-./Project_Day1/node_modules
-./Project_Day1/.editorconfig
-./Project_Day1/.vscode
-./Project_Day1/.idea
+**/GPixel_ProejctD1/node_modules/
+../GPixel_ProejctD1/.editorconfig
+../GPixel_ProejctD1/.vscode
+../GPixel_ProejctD1/.idea

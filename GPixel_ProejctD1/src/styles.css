@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'bootstrap/dist/css/bootstrap.css'
+@import 'bootstrap/dist/css/bootstrap.css';
+  
+body.dark{
+    background-color:bisque;
+    color:black;
+  }
+
+  body{
+    background-color:white;
+    color:black;
+  }
