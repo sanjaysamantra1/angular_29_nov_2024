@@ -4,13 +4,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 //import { BodyComponent } from './components/body/body.component';
 //import { CarouselComponent } from './components/carousel/carousel.component';
 //import { CategoriesComponent } from './components/categories/categories.component';
-import { EmployeeComponent } from './components/employee/employee.component';
+//import { EmployeeComponent } from './components/employee/employee.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     NavbarComponent,
-    EmployeeComponent],
+    ProductsListComponent],
+  //EmployeeComponent,
     //CategoriesComponent,
     //CarouselComponent,
     //BodyComponent,

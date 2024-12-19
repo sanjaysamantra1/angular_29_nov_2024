@@ -20,16 +20,16 @@ export class DatabindingComponent {
   num2 = 0;
   msg: string = '';
   selectedState: string = '';
-  selectedOperation : string = "+";
-  password: string= "text";
-  countter : number = 0;
-  changeType=()=>{
-    this.flag= ! this.flag;
-    if(this.flag){
+  selectedOperation: string = "+";
+  password: string = "text";
+  countter: number = 0;
+  changeType = () => {
+    this.flag = !this.flag;
+    if (this.flag) {
       this.password = "password"
     }
-    else{
-      this.password = "text" 
+    else {
+      this.password = "text"
     }
   }
 
@@ -40,7 +40,7 @@ export class DatabindingComponent {
   addition(n1: any, n2: any) {
     console.log(`Addition of ${n1} and ${n2} is ${+n1 + +n2}`)
   }
-result : number =0;
+  result: number = 0;
   /*operationsNeedToDo($event : any, nu1:any, nu2: any){
     switch (this.selectedOperation){
       case '+':
@@ -61,13 +61,9 @@ result : number =0;
       default:
         console.log("*******************");
     }*/
-    operationsNeedToDo($event : any){
-      this.result = (eval(this.num1+this.selectedOperation+this.num2));
-    }
-    
+  operationsNeedToDo($event: any) {
+    this.result = (eval(this.num1 + this.selectedOperation + this.num2));
   }
-
-
 
 }
 
