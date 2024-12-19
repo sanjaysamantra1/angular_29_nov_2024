@@ -1,4 +1,4 @@
-table, th, td {
+<!--table, th, td {
     border: 1px solid rgb(117, 20, 20);
   }
 
@@ -13,7 +13,7 @@ th{
 }
 td{
     background-color: rgb(165, 104, 14);
-}
+}-->
 
 .card{
     float: inline-start;
@@ -23,4 +23,9 @@ td{
     padding-top: 10px;
     padding-bottom: 20px;
     background-color: darkolivegreen;
+}
+
+.pagination-controls{
+    display: inline-flex;
+    justify-content: center;
 }
