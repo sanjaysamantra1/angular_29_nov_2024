@@ -24,3 +24,8 @@ td{
     padding-bottom: 20px;
     background-color: darkolivegreen;
 }
+
+.pagination-controls{
+    display: inline-flex;
+    justify-content: center;
+}
