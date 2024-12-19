@@ -15,18 +15,18 @@ export class AppComponent {
   title = 'angular_project_nov_2024';
   flag: boolean = false;
 
-  toggleMode() {
-    console.log("Button clicked");
-    this.flag = !this.flag;
-    console.log(this.flag);
-    if (this.flag) {
-      var ele =  document.body;
-      console.log(ele);
-      ele.classList.add('dark');
-    } else {
-      console.log("light");
-      document.body.classList.remove('dark');
-    }
-  }
+  // toggleMode() {
+  //   console.log("Button clicked");
+  //   this.flag = !this.flag;
+  //   console.log(this.flag);
+  //   if (this.flag) {
+  //     var ele =  document.body;
+  //     console.log(ele);
+  //     ele.classList.add('dark');
+  //   } else {
+  //     console.log("light");
+  //     document.body.classList.remove('dark');
+  //   }
+  // }
 
 }

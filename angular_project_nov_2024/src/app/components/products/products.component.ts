@@ -23,13 +23,13 @@ export class ProductsComponent {
   faSearch: any = faSearch;
   inputValue: string = '';
 
-  filteredProducts: any[] = this.productList;
+  copyOfProducts: any[] = this.productList;
 
   getInputValue() {
     console.log(this.inputValue);
 
     if (this.inputValue == '') {
-      this.productList = this.filteredProducts
+      this.productList = this.copyOfProducts
     } else {
       this.productList = this.productList.filter((product: any) => {
         return product.title.toLowerCase().includes(this.inputValue.toLowerCase());
