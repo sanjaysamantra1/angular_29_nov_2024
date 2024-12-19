@@ -1,0 +1,15 @@
+.login-layout{
+    margin-left: 0%;
+}
+
+.searching{
+    width: 100%;
+}
+
+.seaching .search-input {
+    width: 300px; /* Increase the width of the search field */
+  }
+  
+  .seaching .search-button {
+    width: 100px; /* Adjust the button width if necessary */
+  }

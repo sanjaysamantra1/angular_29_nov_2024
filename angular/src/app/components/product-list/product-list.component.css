@@ -1,0 +1,29 @@
+.search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .product-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sort-controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  

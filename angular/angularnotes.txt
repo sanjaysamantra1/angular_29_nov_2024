@@ -1,0 +1,21 @@
+ng --version // check angular version
+ng new angular // creating new angular project with name angular
+ng serve // to run the project
+ng s -o // will run and open the browser(serve and open)
+
+@import 'bootstrap/dist/css/bootstrap.css' // add this in style.css to use bootstrap
+
+we have to keep images in public creating images folder and call as images/imagename in components
+
+package json will have all the dep and packages and if we do npm install nodemodule install those 
+
+in angular json (we have preficx app as we use app nav,app header ,app carousel in app comp)
+we can use our project name also in that
+
+in package.json
+dependencies: used while dev and productn
+devdep: use only for develpment
+
+databinding - binidng and working with both ts and angular
+1)interpolation:{()} 
+crete new comp and give it in any of the comp.html so that we can use thta comp there also without giving in app comp
