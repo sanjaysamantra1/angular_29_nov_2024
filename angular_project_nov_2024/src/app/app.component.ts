@@ -13,7 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 })
 export class AppComponent {
   title = 'angular_project_nov_2024';
-  flag: boolean = true;
+  flag: boolean = false;
 
   toggleMode() {
     console.log("Button clicked");
