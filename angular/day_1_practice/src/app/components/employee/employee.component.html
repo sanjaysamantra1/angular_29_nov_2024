@@ -1,74 +1,183 @@
 <div class="container">
     <h1>Employees CRUD</h1>
     <br />
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#employeeAddModal">
+    <button
+        type="button"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#employeeAddModal"
+    >
         ADD EMPLOYEE
     </button>
+    <br />
     <br />
     <!-- Button trigger modal -->
 
     <!-- Modal -->
-    <div class="modal fade" id="employeeAddModal" tabindex="-1" aria-labelledby="employeeAddModal" aria-hidden="true">
+    <div
+        class="modal fade"
+        id="employeeAddModal"
+        tabindex="-1"
+        aria-labelledby="employeeAddModal"
+        aria-hidden="true"
+    >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="employeeAddModal">
                         Add Employee
                     </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
-                            <div id="emailHelp" class="form-text">
-                                We'll never share your email with anyone else.
-                            </div>
+                            <label for="email" class="form-label"
+                                >Email address</label
+                            >
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                aria-describedby="emailHelp"
+                                formControlName="email"
+                                required="true"
+                            />
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                          </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="phone" class="form-control" id="phone" aria-describedby="phone number" />
+                            <label for="password" class="form-label"
+                                >Password</label
+                            >
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="password"
+                                formControlName="password"
+                                required
+                            />
                         </div>
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="username" class="form-control" id="username" aria-describedby="username" />
+                            <label for="phone" class="form-label"
+                                >Phone Number</label
+                            >
+                            <input
+                                type="phone"
+                                class="form-control"
+                                id="phone"
+                                aria-describedby="phone number"
+                                formControlName="phone"
+                                required
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label"
+                                >Username</label
+                            >
+                            <input
+                                type="username"
+                                class="form-control"
+                                id="username"
+                                aria-describedby="username"
+                                formControlName="username"
+                                required
+                            />
                         </div>
                         <div class="row">
                             <div class="col-6 mb-3">
-                                <label for="firstName" class="form-label">First Name</label>
-                                <input type="firstName" class="form-control" id="firstName" aria-describedby="firstName" />
+                                <label for="firstName" class="form-label"
+                                    >First Name</label
+                                >
+                                <input
+                                    type="firstName"
+                                    class="form-control"
+                                    id="firstName"
+                                    aria-describedby="firstName"
+                                    formControlName="firstName"
+                                    required
+                                />
                             </div>
                             <div class="col-6 mb-3">
-                                <label for="lsatName" class="form-label">Last Name</label>
-                                <input type="lsatName" class="form-control" id="lsatName" aria-describedby="lsatName" />
+                                <label for="lastName" class="form-label"
+                                    >Last Name</label
+                                >
+                                <input
+                                    type="lastName"
+                                    class="form-control"
+                                    id="lastName"
+                                    aria-describedby="lastName"
+                                    formControlName="lastName"
+                                    required
+                                />
                             </div>
                         </div>
+                        <h6>Address</h6>
+                        <hr />
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" />
+                            <label for="city" class="form-label">City</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="city"
+                                formControlName="city"
+                                required
+                            />
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        <div class="mb-3">
+                            <label class="form-label" for="street"
+                                >Street</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="street"
+                                formControlName="street"
+                                required
+                            />
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <div class="mb-3">
+                            <label class="form-label" for="houseNumber"
+                                >House Number</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="houseNumber"
+                                formControlName="houseNumber"
+                                required
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="zip">Zip code</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="zip"
+                                formControlName="zip"
+                                required
+                            />
+                        </div>
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            data-bs-dismiss="modal"
+                        >
                             Submit
                         </button>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button type="button" class="btn btn-primary" (click)="addEmployee()">
-                        Save changes
-                    </button>
-                </div>
+                <div class="modal-footer"></div>
             </div>
         </div>
     </div>
@@ -81,28 +190,6 @@
 5. add a new employee to the table (insert a new record to the array)
    use sweetAlert to display messages ('Added Successfully') -->
 
-    <!--  {
-        "address": {
-            "geolocation": {
-                "lat": "-37.3159",
-                "long": "81.1496"
-            },
-            "city": "kilcoole",
-            "street": "new road",
-            "number": 7682,
-            "zipcode": "12926-3874"
-        },
-        "id": 1,
-        "email": "john@gmail.com",
-        "username": "johnd",
-        "password": "m38rmF$",
-        "name": {
-            "firstname": "john",
-            "lastname": "doe"
-        },
-        "phone": "1-570-236-7033",
-        "__v": 0
-    }, -->
     <div class="modal fade" id="exampleModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -110,32 +197,46 @@
                     <h1 class="modal-title fs-5" id="employeeAddModal">
                         Employee Details
                     </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
                 </div>
                 <div class="modal-body">
                     <p><strong>EID: </strong>{{ selectedEmployee.id }}</p>
                     <p>
-                        <strong>USERNAME: </strong>{{ selectedEmployee.username }}
+                        <strong>USERNAME: </strong
+                        >{{ selectedEmployee.username }}
                     </p>
                     <p>
-                        <strong>FIRST NAME: </strong>{{ selectedEmployee.name.firstname }}
+                        <strong>FIRST NAME: </strong
+                        >{{ selectedEmployee.name.firstname }}
                     </p>
                     <p>
-                        <strong>LAST NAME: </strong>{{ selectedEmployee.name.lastname }}
+                        <strong>LAST NAME: </strong
+                        >{{ selectedEmployee.name.lastname }}
                     </p>
                     <p>
-                        <strong>ADDRESS(CITY): </strong>{{ selectedEmployee.address.city }}
+                        <strong>ADDRESS(CITY): </strong
+                        >{{ selectedEmployee.address.city }}
                     </p>
                     <p><strong>PHONE: </strong>{{ selectedEmployee.phone }}</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                    >
                         Close
                     </button>
                 </div>
             </div>
         </div>
     </div>
+    <br />
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -159,13 +260,21 @@
                 <td>{{ employee.address.city }}</td>
                 <td>{{ employee.phone }}</td>
                 <td>
-                    <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">
+                    <button
+                        class="btn btn-danger"
+                        (click)="deleteEmployee(employee.id)"
+                    >
                         Delete
                     </button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        (click)="showEmployeeDetails(employee)">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        (click)="showEmployeeDetails(employee)"
+                    >
                         Details
                     </button>
                 </td>
