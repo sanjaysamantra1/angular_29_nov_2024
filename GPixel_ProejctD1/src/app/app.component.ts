@@ -8,19 +8,21 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AssignmentsComponent } from "./components/assignments/assignments.component";
 import { TableCardComponent } from "./components/table-card/table-card.component";
 import { ProductsComponent } from './components/products/products.component';
+import { CrudOpsComponent } from './components/crud-ops/crud-ops.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule,
-            RouterOutlet,
-            FooterComponent,
-            BodyComponent,
-            CarouselComponent,
-            NavbarComponent,
-            AssignmentsComponent, 
-            TableCardComponent,
-            ProductsComponent],
+    //RouterOutlet,
+    FooterComponent,
+    BodyComponent,
+    CarouselComponent,
+    NavbarComponent,
+    AssignmentsComponent,
+    TableCardComponent,
+    ProductsComponent, 
+    CrudOpsComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

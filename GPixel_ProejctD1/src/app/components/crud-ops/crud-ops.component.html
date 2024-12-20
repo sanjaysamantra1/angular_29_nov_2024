@@ -1,0 +1,118 @@
+
+    <div class="row" style="text-align: center;text-decoration-line: underline;">
+        <br>
+        <h2 style="text-align: center;"> Our Elite Members</h2>
+        <br>
+    </div>
+    <div class="container">
+        <table class="table table-hover">
+        <thead class="dark">
+            <tr>
+                <th class="col">ID</th>
+                <th class="col">Name</th>
+                <th class="col">Gender</th>
+                <th class="col">Salary</th>
+                <th>View Member</th>
+                <th class="col" (click)="createMember()"> <button class="btn btn-outline-success"> Add a new
+                        Member</button></th>
+            </tr>
+        </thead>
+        @for (member of members; track $index){
+        <tbody>
+            <tr>
+                <td>{{member.memberId}}</td>
+                <td>{{member.name}}</td>
+                <td>{{member.gender}}</td>
+                <td>{{member.sal}}</td>
+                <td><button class="btn  btn-outline-success" (click)="openView(member)">View</button></td>
+                <td><button class="btn btn-secondary" (click)="openDeleteView(member)">Delete</button></td>
+                <!-- <td> <button class="btn  btn-warning" (click)="deleteMember(member.memberId)">Delete</button></td> -->
+            </tr>
+        </tbody>
+        }
+    </table>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: displayDeleteStyle }">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Member Details</h4>
+            </div>
+            <div class="modal-body">
+                <p>id: {{ selectedMember?.memberId }}</p>
+                <p>Name: {{ selectedMember?.name }}</p>
+                <p>sal: {{ selectedMember?.sal }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="closePopup()">
+                    Cancel
+                </button>
+                <button class="btn  btn-warning" (click)="deleteMember()">Delete</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: displayStyle }">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Member Details</h4>
+            </div>
+            <div class="modal-body">
+                <p>Membership Number: {{ selectedMember?.memberId }}</p>
+                <p>Name: {{ selectedMember?.name }}</p>
+                <p>salary: {{ selectedMember?.sal }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="closePopup()">
+                    Cancel
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: displayAddMemberStyle }">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Adding New Member</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Membership Number</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" [(ngModel)]="tempMember.memberId" placeholder="XXX"
+                        required>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" [(ngModel)]="tempMember.name" placeholder="Donald Trump"
+                        required>
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Gender</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-sm" [(ngModel)]="tempMember.gender" placeholder="Male"
+                        required>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" [(ngModel)]="tempMember.sal" placeholder="Salary" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="closePopup()">
+                    Cancel
+                </button>
+                <button class="btn  btn-warning" (click)="addMember()">Add {{tempMember.name}}</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- <p> Man ki Baat sirf Bura ki Baat!! Rahul hi India ka asli sapna !!!</p> -->
