@@ -1,0 +1,83 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-primary mb-2" (click)="showEmployeeForm()">Add Employee</button>
+    </div>
+
+    <!-- Employee Form  -->
+    @if(showForm){
+        <div class="container mt4 mb-2">
+            <h3>Add Employee</h3>
+            <form  #employeeForm = "ngForm" (submit)="onSubmit(employeeForm)">  
+                
+                <div class="mb3">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="number" id="id" name = "id"  class="form-control" ngModel required />
+                </div>
+                <div class="mb3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name = "name" class="form-control" ngModel required />
+                </div>
+                <div class="mb3">
+                    <label for="department" class="form-label">Department</label>
+                    <input type="text" id="department" name = "department" class="form-control" ngModel required />
+                </div>
+                <div class="mb3">
+                    <label for="designation" class="form-label">Designation</label>
+                    <input type="text" id="designation" name = "designation" class="form-control" ngModel required />
+                </div>
+                <div class="mb3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name = "email" class="form-control" ngModel required />
+                </div>
+                <div class="mb3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input type="number" id="salary" name = "salary" class="form-control" ngModel required />
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                
+            </form>
+        </div>
+    }
+
+    <!-- Employee Table -->
+
+    <div class="table-responsive">
+        <table class="table table-dotted table-sthiped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Designation</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th colspan="2  ">Action</th>
+    
+                </tr>
+                
+            </thead>
+            <tbody>
+                @for(employee of employees; track $index){
+                    <tr>
+                        <td>{{employee.id}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.department}}</td>
+                        <td>{{employee.designation}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.salary}}</td>
+                        <td><button class="btn btn-primary mt-2 mb-2" (click)="view(employee)">View</button></td>
+                        <td><button class="btn btn-danger mt-2 mb-2" (click)="deleteRow(employee.id)">Delete</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    
+    </div>
+</div>
+
+
+
+
+
+
+

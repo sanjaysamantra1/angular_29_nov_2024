@@ -6,6 +6,7 @@ import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PaginationAssignmentComponent } from "./components/pagination-assignment/pagination-assignment.component";
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeCrudComponent } from "./components/assignments/employee-crud/employee-crud.component";
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     BodyComponent,
     FooterComponent,
     PaginationAssignmentComponent,
+    EmployeeCrudComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
