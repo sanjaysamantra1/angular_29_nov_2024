@@ -6,7 +6,6 @@
   
   .card {
     width: 100%;
-    /* Ensures the cards take up full width of their container */
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,7 +18,7 @@
   .card-img-top {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Ensures the full image is shown without cropping */
+    object-fit: contain; /
   }
 
   .pag{

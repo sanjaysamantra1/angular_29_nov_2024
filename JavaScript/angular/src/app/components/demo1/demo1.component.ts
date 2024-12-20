@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2'
 import Snackbar from 'awesome-snackbar'
-// import { timeout } from 'rxjs';
 import * as data from './products.json'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CommonModule } from '@angular/common';
@@ -50,10 +49,7 @@ export class Demo1Component {
     });
   }
 
-  // // Track by index to improve performance in *ngFor loop
-  // trackByIndex(index: number, item: any) {
-  //   return index;
-  // }
+
 
 }
 

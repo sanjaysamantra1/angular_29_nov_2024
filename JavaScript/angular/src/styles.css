@@ -1,7 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 
 body {
-  background-color: white; /* Default light theme */
+  background-color: white; 
   color: black;
   overflow-x: hidden;
 }

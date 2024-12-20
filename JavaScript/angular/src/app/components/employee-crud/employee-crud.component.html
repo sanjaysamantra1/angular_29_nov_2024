@@ -1,0 +1,107 @@
+<div class="container mt-5">
+    <h2>Employee List (Table)</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Gender</th>
+          <th>Actions 
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    ADD NEW EMPLOYEE
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+       <h3>Add New Employee</h3>
+       <form (submit)="addEmployee()" class="mb-3">
+        <div class="my-3">
+            <label for="'eId">EmpId : </label>
+            <input class="mx-3" type="number" id="eId" [(ngModel)]="newEmployee.eId" name="eId" required />
+        </div>
+        <div class="my-3">
+            <label for="name">Name : </label>
+            <input class="mx-3" type="text" id="name" [(ngModel)]="newEmployee.name" name="name" required />
+        </div>
+        <div class="my-3">
+            <label for="sal">Salary : </label>
+            <input class="mx-3" type="number" id="sal" [(ngModel)]="newEmployee.sal" name="sal" required />
+        </div>
+        <div class="my-3">
+            <label for="gender">Gender : </label>
+            <select class="mx-3" type="text" id="gender" [(ngModel)]="newEmployee.gender" name="gender" required >
+            <option value="" disabled>SELECT GENDER</option>
+            <option value="male">MALE</option>
+            <option value="female">FEMALE</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">ADD EMPLOYEE</button>
+       </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+          </th>
+          
+        </tr>
+      </thead>
+      <tbody>
+
+        
+        @for(emp of employees;track $index){
+        <tr>
+          <td>{{ $index+1 }}</td>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+          <td>
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModall">
+    VIEW
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Employee Information</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Id: {{emp.eId}}</h2>
+          <h2>Name: {{emp.name}}</h2>
+          <h2>Salary: {{emp.sal}}</h2>
+          <h2>Gender: {{emp.gender}}</h2>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Done</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <button class="mx-3 btn btn-primary" (click)="deleteEmployee($index)">DELETE</button>
+</td>    
+        </tr>
+    }
+    @empty{
+        No Employee Found
+    }
+      </tbody>
+    </table>
