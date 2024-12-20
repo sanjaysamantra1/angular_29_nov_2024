@@ -4,6 +4,7 @@ import { DirectivesComponent } from '../directives/directives.component';
 import { UserListComponent } from '../user-list/user-list.component';
 import { Demo1Component } from '../demo1/demo1.component';
 import { MyModalComponent } from '../my-modal/my-modal.component';
+import { PipesComponent } from '../pipes/pipes.component';
 
 @Component({
   selector: 'app-body',
@@ -12,7 +13,8 @@ import { MyModalComponent } from '../my-modal/my-modal.component';
     DirectivesComponent,
     UserListComponent,
     Demo1Component,
-    MyModalComponent
+    MyModalComponent,
+    PipesComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
