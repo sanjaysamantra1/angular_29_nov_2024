@@ -6,13 +6,18 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 //import { CategoriesComponent } from './components/categories/categories.component';
 //import { EmployeeComponent } from './components/employee/employee.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { CrudopsComponent } from './components/crudops/crudops.component';
+import { ParentCrudopsComponent } from './components/parent-crudops/parent-crudops.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     NavbarComponent,
-    ProductsListComponent],
+    //CrudopsComponent,
+    ParentCrudopsComponent
+  ],
   //EmployeeComponent,
+  //ProductsListComponent,
     //CategoriesComponent,
     //CarouselComponent,
     //BodyComponent,

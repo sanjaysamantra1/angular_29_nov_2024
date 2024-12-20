@@ -1,0 +1,90 @@
+<p>parent-crudops works!</p>
+
+<app-crudops>
+
+
+ <hr/>
+<div class="modal" tabindex="-1" [ngStyle]="{ display: displayStyle }">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closePopup()"></button>
+        </div>
+        <div class="modal-body">
+            <p>id: {{ selectedEmployee?.eId }}</p>
+            <p>Name: {{ selectedEmployee?.name }}</p>
+            <p>sal: {{ selectedEmployee?.sal }}</p>
+            <p>gender: {{ selectedEmployee?.gender }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closePopup()">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>    
+    </div>
+  </div>
+
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Employee salary</th>
+          <th>Employee gender</th>
+          <button class="btn btn-primary mx-2 " id="addid" >ADD NEW EMPLOYEE</button>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      @for(emp of employee ; track $index){
+      <tbody>
+        <tr>
+          <td>{{ emp.eId }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.sal }}</td>
+          <td>{{ emp.gender }}</td>
+          <button class="btn btn-secondary" (click)="openPopup(emp)">View</button>
+         
+          <button on-click="f1(emp.eId)" class="btn btn-primary mx-2" >Delete</button>
+  
+  
+        </tr>
+      </tbody>
+      }
+    </table>
+  </div>
+  <hr />
+
+  <div>
+  <div class="row g-3">
+    <div class="col-sm">
+      <input type="text" class="form-control" placeholder="Employee ID" [(ngModel)]="input1" aria-label="id">
+    </div>
+    <div class="col-sm">
+      <input type="text" class="form-control" placeholder="Employee Name" [(ngModel)]="input2" aria-label="ename">
+    </div>
+    <div class="col-sm">
+      <input type="text" class="form-control" placeholder="Employee Salary" [(ngModel)]="input3" aria-label="salary">
+    </div>
+    <div class="col-sm">
+        <input type="text" class="form-control" placeholder="Employee Gender" [(ngModel)]="input4" aria-label="gender">
+      </div>
+  </div>
+  <div class="col-auto">
+    <button (click)="addemp()" class="btn btn-primary">Add Employee</button>
+  </div>
+</div>
+<br>
+
+
+<br>
+<hr/>
+  <!-- <button class="btn btn-secondary" (click)="f2()">View</button>
+  <input id="swal-input1" [value]="input1" placeholder="User ID" class="swal2-input" >
+       <input id="swal-input2" [value]="input2" placeholder="User Name" class="swal2-input" >
+       <input id="swal-input3" [value]="input3" placeholder="User Salary" class="swal2-input">
+       <input id="swal-input4" [(ngModel)]="input4" placeholder="User Gender" class="swal2-input"> -->
+</app-crudops>
