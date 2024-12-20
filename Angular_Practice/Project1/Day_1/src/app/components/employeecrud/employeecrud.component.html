@@ -1,0 +1,149 @@
+<button (click)="openMyAlert()" class="btn btn-primary">Open alert</button>
+<button class="btn btn-primary btn-sm me-2"data-bs-toggle="modal"data-bs-target="#addEmployeeModal">Add</button>
+<div class="container">
+  <table class="table table-bordered table-striped mt-4">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees; track employee) {
+        <tr >
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>
+            
+            <button class="btn btn-primary btn-sm me-2"(click)="viewEmployee(employee)"data-bs-toggle="modal"data-bs-target="#viewEmployeeModal">
+              View
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee.id)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+
+  <div
+    class="modal fade"
+    id="addEmployeeModal"
+    tabindex="-1"
+    aria-labelledby="addEmployeeModalLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addEmployeeModalLabel">Add Employee</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form #addEmployeeForm="ngForm">
+            <div class="mb-3">
+              <label for="employeeName" class="form-label">Name</label>
+              <input
+                type="text"
+                id="employeeName"
+                class="form-control"
+                [(ngModel)]="newEmployee.name"
+                name="name"
+                required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="employeePosition" class="form-label">Position</label>
+                <input
+                  type="text"
+                  id="employeePosition"
+                  class="form-control"
+                  [(ngModel)]="newEmployee.position"
+                  name="position"
+                  required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="employeeSalary" class="form-label">Salary</label>
+                  <input
+                    type="number"
+                    id="employeeSalary"
+                    class="form-control"
+                    [(ngModel)]="newEmployee.salary"
+                    name="salary"
+                    required
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                  >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  (click)="addEmployee()"
+                  data-bs-dismiss="modal"
+                  >
+                  Add Employee
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div
+        class="modal fade"
+        id="viewEmployeeModal"
+        tabindex="-1"
+        aria-labelledby="viewEmployeeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="viewEmployeeModalLabel">Employee Details</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p><strong>ID:</strong> {{ selectedEmployee?.id }}</p>
+              <p><strong>Name:</strong> {{ selectedEmployee?.name }}</p>
+              <p><strong>Position:</strong> {{ selectedEmployee?.position }}</p>
+              <p><strong>Salary:</strong> {{ selectedEmployee?.salary }}</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+

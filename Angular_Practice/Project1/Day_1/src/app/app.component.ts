@@ -7,10 +7,11 @@ import { BodyComponent } from "./components/body/body.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { EmployeeComponent } from "./components/employee/employee.component";
 import { ProductsComponent } from "./components/products/products.component";
+import { EmployeecrudComponent } from "./components/employeecrud/employeecrud.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, CategoriesComponent, CarouselComponent, BodyComponent, FooterComponent, EmployeeComponent, ProductsComponent],
+  imports: [RouterOutlet, NavbarComponent, CategoriesComponent, CarouselComponent, BodyComponent, FooterComponent, EmployeeComponent, ProductsComponent, EmployeecrudComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
