@@ -1,4 +1,4 @@
-<h2 class="text-center">let's Learn Directives</h2>
+<h2 class="text-center" highlight>let's Learn Directives</h2>
 
 
 <div class="border p-2">
@@ -95,5 +95,17 @@
 
         <button class="btn" [ngClass]="{'btn-primary': flag}">Helloo</button>
         <button class="btn mx-1" [class.btn-success]="flag">Helloo</button>
+    </div>
+
+    <div>
+        <h2 highlight>Font awesome icons</h2>
+        <fa-icon [icon]="faStar"></fa-icon>
+        <fa-icon [icon]="faPlane"></fa-icon>
+    </div>
+
+    <div>
+        <div>Custom Directive:</div>
+        <input type="text" numberonly />
+        <!-- Input Box is the host element for numberonly directive -->
     </div>
 </div>

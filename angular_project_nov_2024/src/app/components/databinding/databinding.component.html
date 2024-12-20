@@ -1,6 +1,11 @@
 
 <h3 class="text-center">DataBinding Component</h3>
 
+<input type="text" [value]="myName" />
+<input type="text" [attr.value]="myName" />
+<button class="btn btn-primary" (click)="myName='Rahul'">Change Name</button>
+
+
 <div class="border container">
   <div>My Name is: {{ myName }}</div>
   <div>My Name is: <span [innerHTML]="myName"></span></div>
