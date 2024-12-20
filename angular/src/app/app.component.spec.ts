@@ -27,3 +27,19 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular');
   });
 });
+
+export class AppComponent {
+  isDarkMode = false;
+
+  toggleTheme(): void {
+    this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem('darkMode', String(this.isDarkMode));
+  }
+
+  ngOnInit(): void {
+    // Load theme from localStorage
+    const savedMode = localStorage.getItem('darkMode') === 'true';
+    this.isDarkMode = savedMode;
+  }
+}
+
