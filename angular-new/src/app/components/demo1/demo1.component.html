@@ -1,0 +1,14 @@
+<div class="form-check form-switch">
+    <input 
+      class="form-check-input" 
+      type="checkbox" 
+      id="themeSwitch" 
+      [(ngModel)]="isDarkMode" 
+      (click)="toggleDarkMode()" 
+    />
+  
+    <label class="form-check-label text-white" for="themeSwitch">
+      {{ isDarkMode ? 'Dark Mode' : 'Light Mode' }}
+    </label>
+  </div>
+  

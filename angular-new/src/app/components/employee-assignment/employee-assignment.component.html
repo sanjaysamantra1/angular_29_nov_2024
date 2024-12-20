@@ -1,0 +1,55 @@
+<div class="container mt-4">
+
+  <!-- Table Format -->
+  <h2 class="mb-4 text-primary">Team Members - Table View</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Member ID</th>
+          <th>Full Name</th>
+          <th>Role</th>
+          <th>Division</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (member of teamMembers; track member.memberId) {
+          <tr>
+            <td>{{ member.memberId }}</td>
+            <td>{{ member.fullName }}</td>
+            <td>{{ member.role }}</td>
+            <td>{{ member.division }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="container mt-4">
+
+      <!-- Card Format -->
+      <h2 class="mb-4 text-primary">Team Members - Card View</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @for (member of teamMembers; track member.memberId) {
+          <div class="col">
+            <div class="card shadow-sm" style="width: 18rem;">
+              <!-- Placeholder Image -->
+              <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="{{ member.fullName }}">
+    
+              <!-- Card Body -->
+              <div class="card-body">
+                <h5 class="card-title">{{ member.fullName }}</h5>
+                <p class="card-text">
+                  <strong>Role:</strong> {{ member.role }}<br>
+                  <strong>Division:</strong> {{ member.division }}
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    
+    </div>
+    
+</div>
