@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
 declare var bootstrap: any;
@@ -15,21 +15,40 @@ interface Employee {
   templateUrl: './employee-crud.component.html',
   styleUrls: ['./employee-crud.component.css']
 })
-export class EmployeeCRUDComponent implements OnInit {
+export class EmployeeCRUDComponent implements OnInit, AfterViewInit {
   @ViewChild('employeeForm') employeeForm!: NgForm;
 
   employees: Employee[] = [
     { name: 'Chenna Reddy', position: 'Developer' },
-    { name: 'Sankeerth', position: 'Designer' },
-    { name: 'chikki Chinni ', position: 'Manager em cheyyaru' },
-    {name: ' Jaabilli Sreeja', position: 'waste production Manager'}
+    { name: 'Dheeraj', position: 'Topper of the university' },
+    { name: 'chikki Chinni ', position: 'Em cheyyaru' },
+    { name: 'John ', position: 'Venkat Bhaai' },
+    { name: 'Jaabilli Sreeja', position: 'Feels Chef' }
   ];
 
   selectedEmployee: Employee | null = null;
   newEmployee: Employee = { name: '', position: '' };
+  private viewEmployeeModal: any;
 
   ngOnInit(): void {
     // Initialize any necessary data
+  }
+
+  ngAfterViewInit(): void {
+    this.initializeModal();
+  }
+
+  // Initialize the modal and set up event listeners
+  initializeModal(): void {
+    const modalElement = document.getElementById('viewEmployeeModal');
+    if (modalElement) {
+      this.viewEmployeeModal = new bootstrap.Modal(modalElement);
+      
+      modalElement.addEventListener('hidden.bs.modal', () => {
+        this.selectedEmployee = null; // Reset selected employee
+        this.refreshPage();
+      });
+    }
   }
 
   // Open the "Add Employee" modal
@@ -63,8 +82,9 @@ export class EmployeeCRUDComponent implements OnInit {
   // View an employee's details
   viewEmployee(employee: Employee): void {
     this.selectedEmployee = employee;
-    const modal = new bootstrap.Modal(document.getElementById('viewEmployeeModal'));
-    modal.show();
+    if (this.viewEmployeeModal) {
+      this.viewEmployeeModal.show();
+    }
   }
 
   // Delete an employee
@@ -86,5 +106,11 @@ export class EmployeeCRUDComponent implements OnInit {
         });
       }
     });
+  }
+
+  // Refresh the page or update the state
+  refreshPage(): void {
+    // Any logic you need to refresh or update the page can be placed here
+    console.log('Modal closed, page refreshed or updated.');
   }
 }
