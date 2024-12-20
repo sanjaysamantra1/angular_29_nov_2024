@@ -6,6 +6,7 @@ import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { ProductsComponent } from './components/products/products.component';
+import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { ProductsComponent } from './components/products/products.component';
     BodyComponent,
     EmployeeComponent,
     ProductsComponent,
-    FooterComponent
+    FooterComponent,
+    EmployeeCRUDComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

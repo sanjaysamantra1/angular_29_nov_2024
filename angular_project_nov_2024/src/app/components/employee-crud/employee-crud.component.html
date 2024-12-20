@@ -1,0 +1,103 @@
+<div class="container mt-4">
+    <h2>Employee CRUD</h2>
+  
+    <!-- Add Employee -->
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">Add Employee</button>
+  
+    <!-- Employee Table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.position }}</td>
+          <td>
+            <button class="btn btn-info btn-sm me-2" (click)="viewEmployee(employee)" data-bs-toggle="modal" data-bs-target="#viewEmployeeModal">View</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteEmployee(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- View Employee Modal -->
+    <div class="modal fade" id="viewEmployeeModal" tabindex="-1" aria-labelledby="viewEmployeeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Employee Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Name:</strong> {{ selectedEmployee?.name }}</p>
+            <p><strong>Position:</strong> {{ selectedEmployee?.position }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Add Employee Modal -->
+    <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Employee</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form #employeeForm="ngForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  [(ngModel)]="newEmployee.name" 
+                  required
+                  #name="ngModel"
+                  class="form-control"
+                  [class.is-invalid]="name.invalid && name.touched">
+                <div class="invalid-feedback" *ngIf="name.invalid && name.touched">
+                  Name is required.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="position" class="form-label">Position</label>
+                <input 
+                  type="text" 
+                  id="position" 
+                  name="position"
+                  [(ngModel)]="newEmployee.position" 
+                  required
+                  #position="ngModel"
+                  class="form-control"
+                  [class.is-invalid]="position.invalid && position.touched">
+                <div class="invalid-feedback" *ngIf="position.invalid && position.touched">
+                  Position is required.
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button 
+              type="button" 
+              class="btn btn-primary" 
+              (click)="addEmployee()"
+              [disabled]="employeeForm.invalid">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
