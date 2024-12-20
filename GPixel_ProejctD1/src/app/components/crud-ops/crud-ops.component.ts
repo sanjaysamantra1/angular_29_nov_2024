@@ -26,6 +26,7 @@ tempMember:any ={
   sal:''
 
 };
+memName: any;
 openView(member:any) {
   this.selectedMember = member;
   this.displayStyle = 'block';
@@ -47,6 +48,7 @@ deleteMember() {
   }
   addMember() {
     this.members.push({...this.tempMember});
+    this.memName = this.tempMember.name;
     this.tempMember ={
       memberId: '',
       name:'',
@@ -54,6 +56,7 @@ deleteMember() {
       sal:''
     };
     this.closePopup();
+    Swal.fire(`Added ${this.memName} to Elite Member List`);
   }
   createMember(){
     this.displayAddMemberStyle='block';
