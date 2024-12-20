@@ -61,7 +61,6 @@ export class EmployeeComponent {
     });
 
     onSubmit() {
-        // TODO: Use EventEmitter with form value
         console.warn(this.employeeForm.value);
         let newEmployee = {
             address: {

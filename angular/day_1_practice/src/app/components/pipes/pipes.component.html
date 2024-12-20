@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>Pipes</h3>
+    <p>Currency : {{ amount | currency }}</p>
+    <p>Currency (INR) : {{ amount | currency : "INR" }}</p>
+    <p>Currency (GBP) : {{ amount | currency : "GBP" }}</p>
+    <p>Currency (YUAN) : {{ amount | currency : "&#20803;" }}</p>
+
+    <p>Text manipulation</p>
+    <p>Lowercase: {{ name | lowercase }}</p>
+    <p>Uppercase: {{ name | uppercase }}</p>
+    <p>Titlecase: {{ name | titlecase }}</p>
+
+    <p>Date Manipulation</p>
+    <p>{{ today | date }}</p>
+    <p>{{ today | date : "shortDate" }}</p>
+    <p>{{ today | date : "mediumDate" }}</p>
+    <p>{{ today | date : "longDate" }}</p>
+    <p>{{ today | date : "fullDate" }}</p>
+    <p>{{ today | date : "fullTime" : "UTC" }}</p>
+
+    <p>{{ today | date : "dd/mm/yyyy h:mm:ss" }}</p>
+    <p>{{ today | date : "fullTime" : "UTC" }}</p>
+    <p>{{ today | date : "fullTime" : "UTC" }}</p>
+</div>
