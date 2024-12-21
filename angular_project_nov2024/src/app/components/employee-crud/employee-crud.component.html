@@ -1,0 +1,76 @@
+<div>
+    <button class="btn mx-1 btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Add New
+        Employee </button>
+    <br>
+    <br>
+    <table class="table table-dark table-striped  border-primary">
+        <thead>
+            <tr>
+                <th scope="col">Employee_Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Designation</th>
+                <th scope="col">View</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        @for(employee of employees ; track $index) {
+        <tbody>
+            <tr scope="row" id="{{employee.Id}}">
+                <th>{{employee.Id}}</th>
+                <td>{{employee.Name}}</td>
+                <td>{{employee.Designation}}</td>
+                <td><button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        (click)="getCurrentRecord(employee)"> View </button></td>
+                <td><button class="btn mx-1 btn-danger" (click)="getRecordToDelete(employee)"> Delete </button></td>
+            </tr>
+        </tbody>
+        }
+    </table>
+
+
+
+    <div class="modal" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Employee Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><b>Id</b> - {{selectedEmployee.Id}}</p>
+                    <p><b>Name</b> - {{selectedEmployee.Name}}</p>
+                    <p><b>Designation</b> - {{selectedEmployee.Designation}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="exampleModal1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Employee Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label">Employee Id</label>
+                    <input type="number" class="form-control" id="id" [(ngModel)]="id">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" [(ngModel)]="name">
+                    <label class="form-label">Designation</label>
+                    <input type="text" class="form-control" id="desg" [(ngModel)]="designation">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        (click)="insertNewRecord()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

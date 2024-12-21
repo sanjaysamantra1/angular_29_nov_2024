@@ -27,9 +27,11 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+          "node_modules/sweetalert2/dist/sweetalert2.min.js"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {

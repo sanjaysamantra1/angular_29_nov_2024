@@ -1,0 +1,125 @@
+<h3 class="text-center">
+    Lets learn pipes
+</h3>
+<div class="border p-2">
+    <div>Name is: {{myName}}</div>
+    <div>Name is : {{myName| uppercase}}</div>
+    <div>Name is : {{myName| lowercase}}</div>
+    <div>Name is : {{myName| titlecase}}</div>
+
+
+    <div>Salary is :{{sal}}</div>
+    <div>Salary is :{{sal | currency}}</div>
+    <div>Salary is :{{sal| currency : 'INR'}}</div> 
+    <!-- input | pipeline :argument -->
+    <div>Salary is :{{sal| currency : '&euro;'}}</div>
+    <div>Salary is :{{sal| currency : '&#20803;'}}</div>
+
+    <hr/>
+
+    <div>Today is : {{today}}</div>
+    <div>Today is : {{today| date}}</div>
+    <div>Today is : {{today| date: 'fullDate'}}</div>
+    <div>Today is : {{today| date: 'mediumDate'}}</div>
+    <div>Today is : {{today| date: 'shortDate'}}</div>
+    <div>Today is : {{today| date: 'fullTime'}}</div>
+    <div>Today is : {{today| date: 'mediumTime'}}</div>
+    <div>Today is : {{today| date: 'shortTime'}}</div>
+    <div>Today is: {{today | date : 'dd-MMMM-yyyy'}}</div>
+    <hr />
+
+
+    <div>Today is : {{today| date: 'dd-MMMM-YYYY' | uppercase}}</div> 
+    <div>Today is : {{today| date: 'dd-MMMM-YYYY' | lowercase}}</div> 
+    <!-- pipe chaining-> the result of one pipe is given input for next pipe -->
+
+    <div>{{12.111222333| number: "3.2-5"}}</div>
+    <div>{{ 12.111222333 | number: "3.2-5" }}</div>
+    <div>{{ 12.1 | number: "3.2-5" }}</div>
+    <div>{{ 0.5 | number:'3.2-5'}} </div>
+    
+    <hr /> 
+
+    <!-- maxium 5 digitd, minimum 2 digits--- defore decimal 3 digits -->
+    <!-- <div>{{12.111222333| number: "3.2-5"}}</div>  -->
+
+<!--percent- pipe-- multiply with 100 and give % sign  -->
+    <div>{{ 0.5 | percent }} </div>
+    <div>{{ 0.75 | percent }} </div>
+
+<!-- json-pipe-- converst our object to json string format -->
+<div>{{ user }}</div>
+    <div>{{ user | json }}</div>
+
+
+<!-- key value pipe- to iterate objects -->
+@for(entry of user | keyvalue;track $index){
+    <h5>{{entry.key}}---{{entry.value}}</h5>
+    }
+    <hr />
+
+ <!-- slice- pipe  -->
+  <div>{{arr}}</div>
+
+  <!-- index 2 to end -->
+  <div>{{arr|slice:2}}</div>
+  <div>{{arr|slice:2 :3}}</div>
+  <div>{{arr|slice:1 :-1}}</div>
+</div>
+
+<div class="border p-3">
+    <h3>Custom Pipes: </h3>
+    <textarea [(ngModel)]="msg"></textarea>
+    <div>Remaining Chars:{{msg| remaining}}</div>
+
+    <textarea [(ngModel)]="msg2"></textarea>
+    <div>Remaining Chars:{{msg2| remaining}}</div>
+    <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
+    <div>Remaining Chars: {{msg2 | remaining : 200}}</div>
+</div>
+<div class="border p-3">
+    <h3>Custom Pipe - Age:</h3>
+    <div>Please select a date to calculate your Age:</div>
+    <input type="date" [(ngModel)]="dob">
+    <div>DOB: {{ dob | date }}</div>
+    <div>Age: {{ dob | age }}</div>
+</div>
+<div class="border p-3">
+    <h3>Custom Pipe - Truncate:</h3>
+    <div>{{ longStr }}</div>
+    <div>{{ longStr | truncate }}</div>
+    <div>{{ longStr | truncate : 12 }}</div>
+    <div>{{ longStr | truncate : 12 : true }}</div>
+    <div>{{ longStr | truncate : 12:false : '####' }}</div>
+</div>
+<!-- Assignment -->
+<div class="border p-3">
+    <h5>Custom Pipe - Ordinal:</h5>
+    <input type="number" [(ngModel)]="num">
+    <div>{{ num | ordinal }}</div>
+</div>
+
+<div class="border p-3">
+    <h5>Custom Pipe - Salutation:</h5>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search Employee" />
+    <table class="table table-primary table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Eid</th>
+                <th>Name</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of employees | filter : searchTerm ;track $index){
+            <tr>
+                <td>{{emp.Id}}</td>
+                <td>{{emp.name | salutation : emp.gender}}</td>
+                <td>{{emp.gender}}</td>
+            </tr>
+            }@empty {
+            <b>No Results</b>
+            }
+        </tbody>
+    </table>
+</div>

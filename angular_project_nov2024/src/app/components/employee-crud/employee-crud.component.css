@@ -1,0 +1,19 @@
+/* employee-crud.component.css */
+
+.container {
+    margin-top: 20px;
+  }
+  
+  .table th,
+  .table td {
+    vertical-align: middle;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .invalid-feedback {
+    display: block;
+  }
+  
