@@ -1,0 +1,30 @@
+<p>{{ 21 | ordinal }}</p> <!-- Outputs: 21st -->
+<p>{{ 22 | ordinal }}</p> <!-- Outputs: 22nd -->
+<p>{{ 23 | ordinal }}</p> <!-- Outputs: 23rd -->
+<p>{{ 24 | ordinal }}</p> <!-- Outputs: 24th -->
+<p>{{ 11 | ordinal }}</p> <!-- Outputs: 11th -->
+<p>{{ 112 | ordinal }}</p> <!-- Outputs: 112th -->
+
+
+
+<h2>Employee List</h2>
+
+<table border-center="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name | salutationpipe:employee.gender }}</td> <!-- Apply salutation pipe -->
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.phone }}</td>
+    </tr>
+  </tbody>
+</table>
+
