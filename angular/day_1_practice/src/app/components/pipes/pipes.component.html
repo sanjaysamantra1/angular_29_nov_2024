@@ -21,4 +21,75 @@
     <p>{{ today | date : "dd/mm/yyyy h:mm:ss" }}</p>
     <p>{{ today | date : "fullTime" : "UTC" }}</p>
     <p>{{ today | date : "fullTime" : "UTC" }}</p>
+
+
+    <p>Decimal/Number</p>
+    <h4>{{ 12.111 | number: "3.2-5" }}</h4>
+    <p>{{ 2.5 | percent }}</p>
+    <p>{{ 0.024 | percent }}</p>
+
+    @for (entry of user | keyvalue; track $index) {
+        <h5>{{ entry.key }}---{{ entry.value }}</h5>
+    }
+
+    <!--    exclusive-->
+    <h4>{{ cars | slice : 2 : 3 }}</h4>
+    <!--    Custom Pipes-->
+    <textarea maxlength="100" [(ngModel)]="msg">
+
+    </textarea>
+    <p>Remaining Chars: {{ msg | remaining }}</p>
+
+    <textarea name="msg" id="msg" cols="30" rows="10" maxlength="200" [(ngModel)]="msg2"></textarea>
+    <p>Remaining Chars: {{ msg2 | remaining : 200 }}</p>
+
+    <div>
+        <h3>Custome Pipe - Age: </h3>
+        <input type="date" [(ngModel)]="dob"/>
+        <h4>DOB: {{ dob | date }}</h4>
+        <h4>Age: {{ dob | age }}</h4>
+    </div>
+
+    <div>
+        <h3>Custome Pipe - Truncate</h3>
+        <p>{{ longString | truncate : 20 : true : "..." }}</p>
+    </div>
+    <!--    Assignment-->
+    <!--    1. Create a custom pipe(ordinal) that displays a cardinal number in ordinal format.
+       input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th
+    -->
+    <div>
+        <h3>Number input - Ordinal output</h3>
+        <input type="number" [(ngModel)]="inputNumber"/>
+
+        <p>Ordinal output: {{ inputNumber | ordinal }}</p>
+    </div>
+    <div>
+        <h3>Custom Salutation / FILTER-SEARCH</h3>
+        <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Type to search employee by name"/>
+        <br>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+            <th>EID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>GENDER</th>
+            </thead>
+
+
+            <tbody>
+                @for (employee of employees | filterEmployee : searchText: 'name'; track $index) {
+                    <tr>
+                        <td>{{ employee.eId }}</td>
+                        <td>{{ employee.name | salutation : employee.gender }}</td>
+                        <td>{{ employee.sal }}</td>
+                        <td>{{ employee.gender }}</td>
+                    </tr>
+                }@empty{
+                    <p> Employee with Name: {{searchText}} not found!</p>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
