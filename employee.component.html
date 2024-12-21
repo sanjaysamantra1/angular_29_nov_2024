@@ -1,0 +1,48 @@
+<div class="container mt-4">
+    <h2 class="mb-4">Employee Details</h2>
+  
+    <!-- Add New Employee -->
+    <button class="btn btn-success mb-3" (click)="openAddEmployeeModal()">Add Employee</button>
+  
+    <!-- Employee Table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Serial Number</th>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>
+            <button class="btn btn-info btn-sm" (click)="viewDetails(employee)">View</button>
+            <button class="btn btn-danger btn-sm" (click)="confirmDelete(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- View Details Modal -->
+  <div class="modal" [ngClass]="{'d-block': showModal}" (click)="closeModal()">
+    <div class="modal-dialog" (click)="stopPropagation($event)">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Employee Details</h5>
+          <button type="button" class="btn-close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Name:</strong> {{ selectedEmployee?.name }}</p>
+          <p><strong>Designation:</strong> {{ selectedEmployee?.designation }}</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
