@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;  
+    border: 2px solid black;
+    background-color:ivory;
+  }

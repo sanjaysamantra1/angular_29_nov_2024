@@ -1,0 +1,89 @@
+[
+    
+    {
+      "memberId":"001",
+      "name": "Indhira Gandhi",
+      "sal": 2000,
+      "gender":"Female"
+  
+    },
+    {
+      "memberId":"002",
+      "name": "Rajiv Gandhi",
+      "sal": 2000,
+      "gender":"Male"
+  
+    },
+    {
+      "memberId":"002",
+      "name": "Shankar Dayal Sharma",
+      "sal": 2000,
+      "gender":"Male"
+    },
+    
+    {
+      "memberId":"004",
+      "name": "P.V.N.Rao",
+      "sal": 2000,
+      "gender":"Male"
+    },
+    {
+      "memberId":"005",
+      "name": "Sonia Gandhi",
+      "sal": 2000,
+      "gender":"Female"
+  
+    },
+    {
+      "memberId":"006",
+      "name": "Neelam Sanjiv Reddy", 
+      "sal": 2000,
+      "gender":"Male"
+    },
+    {
+      "memberId":"007",
+      "name": "Manmohan Singh",
+      "sal": 2000,
+      "gender":"Male"
+    },
+    {
+      "memberId":"008",
+      "name": "Digvijay Singh",
+      "sal": 2000,
+      "gender":"Male"
+  
+    },
+    {
+      "memberId":"009",
+      "name": "Pratibha patil",
+      "sal": 2000,
+      "gender":"Female"
+  
+    },
+    {
+      "memberId":"010",
+      "name": "MalliKarjun Kharge",
+      "sal": 2000,
+      "gender":"Male"
+    },
+    {
+      "memberId":"011",
+      "name": "Sashi Tharoor",
+      "sal": 2000,
+      "gender":"Male"
+  
+    },{
+      "memberId":"100",
+      "name": "Rahul Gandhi",
+      "sal": 2000,
+      "gender":"Male"
+    },
+    {
+      "memberId":"101",
+      "name": "Priayanka Gandhi",
+      "sal": 2000,
+      "gender":"Female"
+  
+    }
+  ]
+  

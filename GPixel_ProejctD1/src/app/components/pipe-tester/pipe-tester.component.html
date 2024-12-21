@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="border p-3 ">
+        <input type="number" class="form-control"  aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-sm" [(ngModel)]="input" placeholder="Enter a Number"
+        required>
+        
+    <p> Cardinal Number for given input is {{input |cardinal}}</p>
+    </div>
+    <hr>
+    <div class="border p-3">
+        <h3>Custom Pipe - Age:</h3>
+        <div>Please selct a date to calculate your Age:</div>
+        <input type="date" [(ngModel)]="dob">
+        <div>DOB: {{ dob | date}}</div>
+        <div>Age: {{ dob | age}}</div>
+    </div>
+
+    <div class="border p-3">
+        <input type="text" class="form-control"  aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-sm" [(ngModel)]="searchText" placeholder="Search Member"
+        required>
+        <button class="btn btn-outline-secondary" (click)="applyFilter()">Search</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="col" style="text-align: center;">Membership Number</th>
+                    <th class="col" style="text-align: center;">Name</th>
+                    <th class="col" style="text-align: center;">Salary</th>
+                    <th class="col" style="text-align: center;">Gender</th>
+                </tr>
+            </thead>
+            @for (member of members | searchMembers:searchText; track $index) {
+            <tbody>
+                <tr>
+                    <td style="text-align: center;"> {{member.memberId}}</td>
+                    <td > {{member.name | title : member.gender}}</td>
+                    <td style="text-align: center;"> {{member.sal}}</td>
+                    <td style="text-align: center;"> {{member.gender}}</td>
+                </tr>
+            </tbody>
+            }
+        </table>
+    </div>
+</div>

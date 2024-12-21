@@ -9,6 +9,7 @@ import { AssignmentsComponent } from "./components/assignments/assignments.compo
 import { TableCardComponent } from "./components/table-card/table-card.component";
 import { ProductsComponent } from './components/products/products.component';
 import { CrudOpsComponent } from './components/crud-ops/crud-ops.component';
+import { PipeTesterComponent } from "./components/pipe-tester/pipe-tester.component";
 
 @Component({
   selector: 'app-root',
@@ -21,8 +22,8 @@ import { CrudOpsComponent } from './components/crud-ops/crud-ops.component';
     NavbarComponent,
     AssignmentsComponent,
     TableCardComponent,
-    ProductsComponent, 
-    CrudOpsComponent],
+    ProductsComponent,
+    CrudOpsComponent, PipeTesterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
