@@ -40,10 +40,10 @@
     <h5>{{entry.key}}---{{entry.value}}</h5>
     }
     <hr />
-    <div>{{arr}}</div>
-    <div>{{arr | slice : 2 }}</div>
-    <div>{{arr | slice : 2 :5}}</div>
-    <div>{{arr | slice : 1 : -1}}</div>
+    <div>{{arr1}}</div>
+    <div>{{arr1 | slice : 2 }}</div>
+    <div>{{arr1 | slice : 2 :5}}</div>
+    <div>{{arr1 | slice : 1 : -1}}</div>
 </div>
 
 <div class="border p-3">
@@ -68,4 +68,23 @@
     <div>{{ longStr | truncate : 12 }}</div>
     <div>{{ longStr | truncate : 12 : true }}</div>
     <div>{{ longStr | truncate : 12:false : '####' }}</div>
+</div>
+<div class="border p-3">
+    <h3>Pure / Impure Pipe</h3>
+    <div>
+        Without Sort Pipe:
+        @for(ele of arr1;track $index){
+        <span>{{ele}} &nbsp;</span>
+        }
+    </div>
+    <div>
+        With Sort Pipe (pure):
+        @for(ele of arr2 | mysort;track $index){
+            <span>{{ele}} &nbsp;</span>
+        }
+        <div>
+            Add a new Number: <input #newnum />
+            <button class="btn btn-primary mx-1" (click)="pushDataToArr(newnum.value)">Add New val</button>
+        </div>
+    </div>
 </div>
