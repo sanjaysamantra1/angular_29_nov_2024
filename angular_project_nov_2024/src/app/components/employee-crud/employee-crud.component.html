@@ -1,103 +1,156 @@
 <div class="container mt-4">
-    <h2>Employee CRUD</h2>
-  
-    <!-- Add Employee -->
-    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">Add Employee</button>
-  
-    <!-- Employee Table -->
-    <table class="table table-bordered">
-      <thead>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Employee CRUD</h1>
+    <button class="btn btn-success" (click)="openAddModal()">
+      Add Employee
+    </button>
+  </div>
+
+  <!-- Search Box -->
+  <div class="input-group mb-3">
+    <span class="input-group-text">
+      <i class="fas fa-search"></i>
+    </span>
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Search employees..."
+      class="form-control"
+    />
+  </div>
+
+  <!-- Employee Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-light">
         <tr>
-          <th>#</th>
           <th>Name</th>
           <th>Position</th>
+          <th>Date of Birth</th>
+          <th>Age</th>
+          <th>Gender</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employees; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>{{ employee.name }}</td>
+        <tr *ngFor="let employee of employees | filter: searchText; let i = index">
+          <td>{{ employee.name | salutation:employee.gender }}</td>
           <td>{{ employee.position }}</td>
+          <td>{{ employee.dob | date:'mediumDate' }}</td>
+          <td>{{ employee.dob | age }}</td>
+          <td>{{ employee.gender | titlecase }}</td>
           <td>
-            <button class="btn btn-info btn-sm me-2" (click)="viewEmployee(employee)" data-bs-toggle="modal" data-bs-target="#viewEmployeeModal">View</button>
-            <button class="btn btn-danger btn-sm" (click)="deleteEmployee(i)">Delete</button>
+            <button class="btn btn-sm btn-primary me-2" (click)="viewEmployee(employee)">
+              <i class="fas fa-eye"></i> View
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="deleteEmployee(i)">
+              <i class="fas fa-trash"></i> Delete
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
-  
-    <!-- View Employee Modal -->
-    <div class="modal fade" id="viewEmployeeModal" tabindex="-1" aria-labelledby="viewEmployeeModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Employee Details</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p><strong>Name:</strong> {{ selectedEmployee?.name }}</p>
-            <p><strong>Position:</strong> {{ selectedEmployee?.position }}</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Add Employee Modal -->
-    <div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
+  </div>
+
+  <!-- Add Employee Modal -->
+  <div class="modal fade" id="addEmployeeModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form #employeeForm="ngForm" (ngSubmit)="addEmployee()">
           <div class="modal-header">
             <h5 class="modal-title">Add Employee</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-            <form #employeeForm="ngForm">
-              <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name"
-                  [(ngModel)]="newEmployee.name" 
-                  required
-                  #name="ngModel"
-                  class="form-control"
-                  [class.is-invalid]="name.invalid && name.touched">
-                <div class="invalid-feedback" *ngIf="name.invalid && name.touched">
-                  Name is required.
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="position" class="form-label">Position</label>
-                <input 
-                  type="text" 
-                  id="position" 
-                  name="position"
-                  [(ngModel)]="newEmployee.position" 
-                  required
-                  #position="ngModel"
-                  class="form-control"
-                  [class.is-invalid]="position.invalid && position.touched">
-                <div class="invalid-feedback" *ngIf="position.invalid && position.touched">
-                  Position is required.
-                </div>
-              </div>
-            </form>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="newEmployee.name"
+                name="name"
+                required
+                minlength="2"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Position</label>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="newEmployee.position"
+                name="position"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Date of Birth</label>
+              <input
+                type="date"
+                class="form-control"
+                [(ngModel)]="newEmployee.dob"
+                name="dob"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Gender</label>
+              <select
+                class="form-select"
+                [(ngModel)]="newEmployee.gender"
+                name="gender"
+                required
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button 
-              type="button" 
-              class="btn btn-primary" 
-              (click)="addEmployee()"
-              [disabled]="employeeForm.invalid">Add</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">
+              Add Employee
+            </button>
           </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Employee Modal -->
+  <div class="modal fade" id="viewEmployeeModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" *ngIf="selectedEmployee">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ selectedEmployee.name | salutation:selectedEmployee.gender }}</h5>
+              <p class="card-text">
+                <strong>Position:</strong> {{ selectedEmployee.position }}<br>
+                <strong>Date of Birth:</strong> {{ selectedEmployee.dob | date:'longDate' }}<br>
+                <strong>Age:</strong> {{ selectedEmployee.dob | age }}<br>
+                <strong>Gender:</strong> {{ selectedEmployee.gender | titlecase }}<br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
+
+
+
+<div class="form-container">
+  <textarea class="form-control" [(ngModel)]="input1" placeholder="Enter a number..."></textarea>
+  <h4>{{ input1 | ordinal }}</h4>
+</div>

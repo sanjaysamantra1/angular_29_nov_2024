@@ -1,17 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { OrdinalPipe } from '../../pipes/ordinal.pipe';
+import { AgePipe } from '../../pipes/age.pipe';
+import { SalutationPipe } from '../../pipes/salutation.pipe';
+import { FilterPipe } from '../../pipes/filter.pipe';
 import Swal from 'sweetalert2';
+
 declare var bootstrap: any;
 
 interface Employee {
   name: string;
   position: string;
+  dob: string;
+  gender?: 'male' | 'female';
 }
 
 @Component({
   selector: 'app-employee-crud',
-  imports: [FormsModule, CommonModule],
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    OrdinalPipe,
+    AgePipe,
+    SalutationPipe,
+    FilterPipe
+  ],
   templateUrl: './employee-crud.component.html',
   styleUrls: ['./employee-crud.component.css']
 })
@@ -19,57 +34,76 @@ export class EmployeeCRUDComponent implements OnInit, AfterViewInit {
   @ViewChild('employeeForm') employeeForm!: NgForm;
 
   employees: Employee[] = [
-    { name: 'Chenna Reddy', position: 'Developer' },
-    { name: 'Dheeraj', position: 'Topper of the university' },
-    { name: 'chikki Chinni ', position: 'Em cheyyaru' },
-    { name: 'John ', position: 'Venkat Bhaai' },
-    { name: 'Jaabilli Sreeja', position: 'Feels Chef' }
+    { name: 'Chenna Reddy', position: 'Developer', dob: '1990-01-01', gender: 'male' },
+    { name: 'Dheeraj', position: 'Topper of the university', dob: '1995-03-22', gender: 'male' },
+    { name: 'Chikki Chinni', position: 'Em cheyyaru', dob: '1992-07-15', gender: 'female' },
+    { name: 'John', position: 'Venkat Bhaai', dob: '1988-11-09', gender: 'male' },
+    { name: 'Jaabilli Sreeja', position: 'Feels Chef', dob: '1999-05-12', gender: 'female' }
   ];
 
+  searchText: string = '';
   selectedEmployee: Employee | null = null;
-  newEmployee: Employee = { name: '', position: '' };
+  newEmployee: Employee = {
+    name: '',
+    position: '',
+    dob: new Date().toISOString().split('T')[0], // Set default to today's date
+    gender: 'male'
+  };
   private viewEmployeeModal: any;
 
-  ngOnInit(): void {
-    // Initialize any necessary data
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.initializeModal();
   }
 
-  // Initialize the modal and set up event listeners
   initializeModal(): void {
     const modalElement = document.getElementById('viewEmployeeModal');
     if (modalElement) {
       this.viewEmployeeModal = new bootstrap.Modal(modalElement);
-      
       modalElement.addEventListener('hidden.bs.modal', () => {
-        this.selectedEmployee = null; // Reset selected employee
-        this.refreshPage();
+        this.selectedEmployee = null;
       });
     }
   }
 
-  // Open the "Add Employee" modal
   openAddModal(): void {
-    this.newEmployee = { name: '', position: '' };
-    const modal = new bootstrap.Modal(document.getElementById('addEmployeeModal'));
-    modal.show();
+    this.newEmployee = {
+      name: '',
+      position: '',
+      dob: new Date().toISOString().split('T')[0], // Set default to today's date
+      gender: undefined
+    };
+    const modalElement = document.getElementById('addEmployeeModal');
+    if (modalElement) {
+      const modal = new bootstrap.Modal(modalElement);
+      modal.show();
+    }
   }
 
-  // Add a new employee
   addEmployee(): void {
     if (this.employeeForm.valid) {
       this.employees.push({ ...this.newEmployee });
       Swal.fire({
         title: 'Success',
-        text: 'Employee added successfully!',
+        text: 'Employee added!',
         icon: 'success'
       });
-      const modal = bootstrap.Modal.getInstance(document.getElementById('addEmployeeModal'));
-      modal.hide();
-      this.employeeForm.resetForm(); // Clear form inputs
+      
+      const modalElement = document.getElementById('addEmployeeModal');
+      if (modalElement) {
+        const modal = bootstrap.Modal.getInstance(modalElement);
+        if (modal) {
+          modal.hide();
+        }
+      }
+      
+      this.employeeForm.resetForm({
+        name: '',
+        position: '',
+        dob: new Date().toISOString().split('T')[0],
+        gender: 'male'
+      });
     } else {
       Swal.fire({
         title: 'Error',
@@ -79,7 +113,6 @@ export class EmployeeCRUDComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // View an employee's details
   viewEmployee(employee: Employee): void {
     this.selectedEmployee = employee;
     if (this.viewEmployeeModal) {
@@ -87,14 +120,13 @@ export class EmployeeCRUDComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // Delete an employee
   deleteEmployee(index: number): void {
     Swal.fire({
       title: 'Are you sure?',
-      text: 'This action cannot be undone!',
+      text: 'This cannot be undone!',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Yes!',
       cancelButtonText: 'Cancel'
     }).then((result) => {
       if (result.isConfirmed) {
@@ -107,10 +139,5 @@ export class EmployeeCRUDComponent implements OnInit, AfterViewInit {
       }
     });
   }
-
-  // Refresh the page or update the state
-  refreshPage(): void {
-    // Any logic you need to refresh or update the page can be placed here
-    console.log('Modal closed, page refreshed or updated.');
-  }
+  input1: number=0;
 }

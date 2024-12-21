@@ -53,3 +53,47 @@
 .is-invalid ~ .invalid-feedback {
     display: block;
 }
+
+
+/* employee-crud.component.css */
+
+/* Styling the container holding the textarea and the output */
+.form-container {
+    margin-top: 20px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  
+  /* Styling the textarea */
+  .form-control {
+    
+    width: 200px; 
+    height: 50px;
+    border: 2px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #495057;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Adding focus effect to the textarea */
+  .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    outline: none;
+  }
+  
+  /* Styling the output heading */
+  h4 {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #343a40;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
