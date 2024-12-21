@@ -5,14 +5,16 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 //import { CarouselComponent } from './components/carousel/carousel.component';
 //import { CategoriesComponent } from './components/categories/categories.component';
 //import { EmployeeComponent } from './components/employee/employee.component';
-import { ProductsListComponent } from './components/products-list/products-list.component';
-import { CrudopsComponent } from './components/crudops/crudops.component';
+//import { ProductsListComponent } from './components/products-list/products-list.component';
+//import { CrudopsComponent } from './components/crudops/crudops.component';
 import { ParentCrudopsComponent } from './components/parent-crudops/parent-crudops.component';
+import { PipescomponentComponent } from './components/pipescomponent/pipescomponent.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     NavbarComponent,
+    PipescomponentComponent,
     //CrudopsComponent,
     ParentCrudopsComponent
   ],

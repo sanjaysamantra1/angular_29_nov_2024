@@ -1,0 +1,37 @@
+<p>pipescomponent works!</p>
+
+<h2>{{'abscvDhvhDGHJB' | lowercase}}</h2>
+<h2>{{'abscvDhvhDGHJB' | uppercase}}</h2>
+<h2>{{'abscvDhvhDGHJB' | titlecase}}</h2>
+<h2>{{'abscvDhvhDGHJB'}}</h2>
+
+
+<textarea [(ngModel)]="abc" placeholder="Enter Number"></textarea>
+<h3>{{ abc | pipeexample}}</h3>
+
+
+
+
+<div class="container-fluid text-white bg-dark">
+<input type="text" [(ngModel)]="inputText" class="form-control-sm" placeholder="Search Username here">
+</div>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of employee|searchname : inputText; track $index){
+        <tr>
+            <th scope="row">{{emp.eId}}</th>
+            <td>{{emp.name | nameMrMissPipe: emp.gender}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.gender}}</td>
+        </tr>
+        }
+    </tbody>
+</table>
