@@ -1,0 +1,82 @@
+[
+    {
+        "empId": 201,
+        "fullName": "Alice Johnson",
+        "dept": "Product Development",
+        "role": "Backend Engineer",
+        "emailAddress": "alice.johnson@company.com",
+        "monthlySalary": 95000
+    },
+    {
+        "empId": 202,
+        "fullName": "Bob Carter",
+        "dept": "Digital Marketing",
+        "role": "SEO Specialist",
+        "emailAddress": "bob.carter@company.com",
+        "monthlySalary": 72000
+    },
+    {
+        "empId": 203,
+        "fullName": "Cathy Wilson",
+        "dept": "Finance",
+        "role": "Accountant",
+        "emailAddress": "cathy.wilson@company.com",
+        "monthlySalary": 81000
+    },
+    {
+        "empId": 204,
+        "fullName": "Daniel Roberts",
+        "dept": "Human Resources",
+        "role": "Recruitment Specialist",
+        "emailAddress": "daniel.roberts@company.com",
+        "monthlySalary": 60000
+    },
+    {
+        "empId": 205,
+        "fullName": "Evelyn Parker",
+        "dept": "Sales",
+        "role": "Regional Manager",
+        "emailAddress": "evelyn.parker@company.com",
+        "monthlySalary": 91000
+    },
+    {
+        "empId": 206,
+        "fullName": "Frank Lewis",
+        "dept": "Information Technology",
+        "role": "Network Administrator",
+        "emailAddress": "frank.lewis@company.com",
+        "monthlySalary": 75000
+    },
+    {
+        "empId": 207,
+        "fullName": "Grace Thompson",
+        "dept": "Engineering",
+        "role": "Mobile App Developer",
+        "emailAddress": "grace.thompson@company.com",
+        "monthlySalary": 86000
+    },
+    {
+        "empId": 208,
+        "fullName": "Henry Moore",
+        "dept": "Creative Design",
+        "role": "Graphic Designer",
+        "emailAddress": "henry.moore@company.com",
+        "monthlySalary": 70000
+    },
+    {
+        "empId": 209,
+        "fullName": "Ivy Scott",
+        "dept": "Customer Service",
+        "role": "Support Agent",
+        "emailAddress": "ivy.scott@company.com",
+        "monthlySalary": 55000
+    },
+    {
+        "empId": 210,
+        "fullName": "Jack Hughes",
+        "dept": "Legal Affairs",
+        "role": "Corporate Lawyer",
+        "emailAddress": "jack.hughes@company.com",
+        "monthlySalary": 115000
+    }
+]

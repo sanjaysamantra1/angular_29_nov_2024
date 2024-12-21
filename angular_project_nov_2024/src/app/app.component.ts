@@ -5,6 +5,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { BodyComponent } from './components/body/body.component';
 import { DatabindingComponent } from './components/databinding/databinding.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PaginationAssignmentComponent } from "./components/pagination-assignment-component/pagination-assignment-component.component";
+import { EmployeeCrudComponent } from "./components/employee-crud/employee-crud.component";
+import { PipesComponent } from "./components/pipes/pipes.component";
 
 
 @Component({
@@ -15,8 +18,11 @@ import { FooterComponent } from './components/footer/footer.component';
     CarouselComponent,
     BodyComponent,
     DatabindingComponent,
-    FooterComponent
-  ],
+    FooterComponent,
+    PaginationAssignmentComponent,
+    EmployeeCrudComponent,
+    PipesComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

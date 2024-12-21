@@ -1,0 +1,69 @@
+<div class="container mt-4">
+    <div class="d-flex justify-content-end mb-3">
+      <button class="btn btn-success mb-2" (click)="toggleEmployeeForm()">New Employee</button>
+    </div>
+  
+    <!-- Employee Form -->
+    <div *ngIf="formVisible" class="container mt-4 mb-2">
+      <h3>Register Employee</h3>
+      <form #employeeRegistrationForm="ngForm" (submit)="handleFormSubmit(employeeRegistrationForm)">
+        <div class="mb-3">
+          <label for="empId" class="form-label">Employee ID</label>
+          <input type="number" id="empId" name="empId" class="form-control" ngModel required />
+        </div>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" id="fullName" name="fullName" class="form-control" ngModel required />
+        </div>
+        <div class="mb-3">
+          <label for="dept" class="form-label">Department</label>
+          <input type="text" id="dept" name="dept" class="form-control" ngModel required />
+        </div>
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <input type="text" id="role" name="role" class="form-control" ngModel required />
+        </div>
+        <div class="mb-3">
+          <label for="emailAddress" class="form-label">Email</label>
+          <input type="email" id="emailAddress" name="emailAddress" class="form-control" ngModel required />
+        </div>
+        <div class="mb-3">
+          <label for="monthlySalary" class="form-label">Monthly Salary</label>
+          <input type="number" id="monthlySalary" name="monthlySalary" class="form-control" ngModel required />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Save</button>
+      </form>
+    </div>
+  
+    <!-- Employee List -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Department</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Monthly Salary</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employeeList; let i = index">
+            <td>{{ emp.empId }}</td>
+            <td>{{ emp.fullName }}</td>
+            <td>{{ emp.dept }}</td>
+            <td>{{ emp.role }}</td>
+            <td>{{ emp.emailAddress }}</td>
+            <td>{{ emp.monthlySalary }}</td>
+            <td>
+              <button class="btn btn-info me-1" (click)="viewEmployeeDetails(emp)">Details</button>
+              <button class="btn btn-danger" (click)="removeEmployee(emp.empId)">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

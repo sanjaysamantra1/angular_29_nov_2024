@@ -1,0 +1,82 @@
+<h3 class="text-center">Pipes Assignments</h3>
+
+<div class="border p-3">
+    <h3>Custom Pipe - Age:</h3>
+    <div>Please select a date to calculate your Age:</div>
+    <input type="date" [(ngModel)]="dob">
+    <div>DOB: {{ dob | date }}</div>
+    <div>Age: {{ dob | age }}</div>  
+</div>
+
+
+<div class="border p-3">
+    <h3>Custom Pipe - Ordinal:</h3>
+    <ul>
+      @for(num of numbers; track $index) {
+        <li [innerText]="'Number: ' + num + ', Ordinal: ' + (num | ordinaltocardinal)"></li>
+      }
+    </ul>
+  </div>
+  
+
+
+
+  <div class="border p-3">
+    <h3>Employee List:</h3>
+    <table border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(employee of employees; track $index){
+        <tr>
+          <td>{{ employee.name | salutation: employee.gender }}</td>
+          <td>{{ employee.gender }}</td>
+          <td>{{ employee.age }}</td>
+          <td>{{ employee.position }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  
+
+  <div class="border p-3">
+    <h3>Employee List:</h3>
+    <input 
+      type="text" 
+      [(ngModel)]="searchText" 
+      placeholder="Search employees..." 
+      class="search-box"
+    />
+  
+    <table border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(employee of employees | search: searchText; track $index) {
+          <tr>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.position }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  
+  
+
+  

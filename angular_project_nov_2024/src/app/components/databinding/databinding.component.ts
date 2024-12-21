@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { DOCUMENT } from '@angular/common';
+
 
 @Component({
   selector: 'app-databinding',
@@ -80,4 +82,11 @@ export class DatabindingComponent {
   reset() {
     this.count = 0;
   }
+
+  employees = [
+    { id: 1, name: 'John Doe', position: 'Software Engineer', department: 'IT' },
+    { id: 2, name: 'Jane Smith', position: 'Product Manager', department: 'Management' },
+    { id: 3, name: 'Mike Johnson', position: 'UI/UX Designer', department: 'Design' },
+    { id: 4, name: 'Alice Brown', position: 'QA Engineer', department: 'Quality Assurance' },
+  ];
 }

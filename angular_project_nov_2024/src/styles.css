@@ -1,2 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.css';
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Light theme */
+  html body.light-theme {
+    background-color: #ffffff ;
+    color: #000000 !important;
+  }
+  
+  /* Dark theme */
+  html body.dark-theme {
+    background-color: #121212 ;
+    color: #ffffff !important;
+  }
+  
+  /* Theme toggle container */
+  .theme-toggle-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  label {
+    cursor: pointer;
+    font-size: 16px;
+  }
