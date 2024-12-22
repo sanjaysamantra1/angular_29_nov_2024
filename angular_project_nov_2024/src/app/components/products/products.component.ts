@@ -4,11 +4,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faPlane, faArrowDown19, faArrowUp91, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
+import { ProductCardComponent } from "../product-card/product-card.component";
 
 
 @Component({
   selector: 'app-products',
-  imports: [NgxPaginationModule, FormsModule, FontAwesomeModule],
+  imports: [NgxPaginationModule, FormsModule, FontAwesomeModule, ProductCardComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

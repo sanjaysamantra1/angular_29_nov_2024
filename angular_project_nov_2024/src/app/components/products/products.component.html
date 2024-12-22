@@ -16,19 +16,7 @@
         @if (productList.length > 0) {
         @for (product of productList | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
         <div class="col-sm-3">
-            <div class="card" style="height: 100%;">
-                <img style="height:150px; width:150px; align-self: center; margin-top: 15px; margin-bottom: 15px;"
-                    src="{{product.image}}" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <b class="card-title nowrap" id="title">{{product.title}}</b>
-                    <b class="card-text">$ {{product.price}}</b>
-                    <p class="card-text">{{product.category}}</p>
-                    <p class="card-text" style="overflow-y: auto; max-height: 100px;">{{product.description}}</p>
-                    <p class="card-text">{{product.rating.rate}} <fa-icon [icon]="faStar"></fa-icon>
-                        ({{product.rating.count}}) reviews</p>
-                    <!-- <a href="#" class="btn btn-primary">Details</a> -->
-                </div>
-            </div>
+            <app-product-card [product] = 'product'></app-product-card>
         </div>
         }
         <div>
