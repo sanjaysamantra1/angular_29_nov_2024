@@ -1,0 +1,87 @@
+<div>
+    Employees Table:
+</div>
+
+<div>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#modelexample">Add Employee</button>
+</div>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" [(ngModel)]="msg" placeholder="Search" aria-label="Search">
+       <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+      </form>
+    </div>
+  </nav>
+
+<div class="modal" id="modelexample" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Employee</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Id</label>
+                        <input type="number" id="id" name="id" class="form-control" [(ngModel)]="inputID"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-control" [(ngModel)]="inputName"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label" >Gender</label>
+                        <select id="gender" name="gender" class="form-control" [(ngModel)]="inputGender">
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+    
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="salary" class="form-label">Salary</label>
+                        <input type="number" id="salary" name="salary" class="form-control" [(ngModel)]="inputSalary"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="addemployee()" data-bs-dismiss="modal">Submit</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>index</th>
+            <th>Eid</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+            <th>View</th>
+            <th>Delete</th>
+            
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of employees | paginate: { itemsPerPage: 4, currentPage: p };track $index ){
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{emp.eId}}</td>
+            <td>{{emp | salutation}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.gender}}</td>
+            <td><button class="btn mx-1 btn-primary" (click)="view(emp)">View</button></td>
+            <td><button class="btn mx-1 btn-danger" (click)="deleteEmployee(emp.eId)">Delete</button></td>
+            <td><button>ADD</button></td>
+        </tr>
+        }@empty {
+        No Employee Found
+        }
+
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
