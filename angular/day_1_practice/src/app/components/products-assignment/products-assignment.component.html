@@ -46,37 +46,7 @@
     <div class="row">
         @for (product of productSearchResult | paginate: {itemsPerPage: 4,
         currentPage: page}; track $index) {
-        <div class="col-sm-3">
-            <div class="card">
-                <img
-                    style="height: 300px; width: 300px"
-                    src="{{ product.image }}"
-                    alt="Card image cap"
-                />
-                <div class="card-body">
-                    <h5
-                        class="card-title text-truncate"
-                        title="{{ product.title }}"
-                    >
-                        {{ product.title }}
-                    </h5>
-                    <h6>
-                        $ {{ product.price }} | ⭐ {{ product.rating.rate }} ({{
-                            product.rating.count
-                        }})
-                    </h6>
-                    <p
-                        class="card-text text-truncate"
-                        title="{{ product.description }}"
-                    >
-                        {{ product.description }}
-                    </p>
-                    <div class="card-footer">
-                        <small class="text-muted">{{ product.category }}</small>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <app-product-card [productData]="product"></app-product-card>
         }@empty {
         <p>No Products found with the {{ searchText.value }}</p>
         }
