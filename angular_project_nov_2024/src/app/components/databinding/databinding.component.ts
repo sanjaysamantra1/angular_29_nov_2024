@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-databinding',
@@ -20,6 +21,7 @@ export class DatabindingComponent {
   num2 = 0;
   msg: string = '';
   selectedState: string = '';
+  
 
 
   f1() {
