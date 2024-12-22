@@ -5,10 +5,11 @@ import * as data from './products.json'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ProductListCardComponent } from '../product-list-card/product-list-card.component';
 
 @Component({
   selector: 'app-demo1',
-  imports: [CommonModule,FormsModule,NgxPaginationModule],
+  imports: [CommonModule,FormsModule,NgxPaginationModule,ProductListCardComponent],
   templateUrl: './demo1.component.html',
   styleUrl: './demo1.component.css'
 })

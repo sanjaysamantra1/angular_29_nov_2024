@@ -1,8 +1,8 @@
 <p>demo1 works!</p>
-<button (click)="openMyAlert()">Show Alert</button>
-<button (click)="openMySnackBar()">Show SnackBarAlert</button>
+<button class="mb-4 mx-3" (click)="openMyAlert()">Show Alert</button>
+<button class="mb-4" (click)="openMySnackBar()">Show SnackBarAlert</button>
 
-<ng-content></ng-content>
+<!-- <ng-content></ng-content> -->
 
 <!-- Search and Sort Controls -->
 <div class="d-flex justify-content-center align-items-center mb-4">
@@ -21,15 +21,8 @@
 <div class="container">
   <div class="row">
     @for(product of filteredProducts | paginate: { itemsPerPage: 4, currentPage: p };track $index){
-        <div class="card my-3">
-        <img src="{{product.image}}" class="card-img-top img-fluid" alt="..." style="max-height: 200px; object-fit: contain;">
-        <div class="card-body text-center">
-          <h5 class="card-title">{{product.title}}</h5>
-          <p class="card-text">{{product.description}}</p>
-          <p class="card-text"><strong>Price: </strong>${{product.price}}</p>
-          <p class="card-text"><strong>Rating: </strong>{{product.rating.rate}} ({{product.rating.count}} reviews)</p>
-          <a href="#" class="btn btn-primary">Details</a>
-        </div>
+      <div class="col">
+        <app-product-list-card [product]="product"></app-product-list-card>
       </div>
     }
   </div>

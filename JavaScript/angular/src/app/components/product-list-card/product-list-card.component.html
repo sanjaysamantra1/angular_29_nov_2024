@@ -1,0 +1,10 @@
+<div class="card my-3">
+    <img src="{{product.image}}" class="card-img-top img-fluid" alt="..." style="max-height: 200px; object-fit: contain;">
+    <div class="card-body text-center">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <p class="card-text"><strong>Price: </strong>${{product.price}}</p>
+      <p class="card-text"><strong>Rating: </strong>{{product.rating.rate}} ({{product.rating.count}} reviews)</p>
+      <a href="#" class="btn btn-primary">Details</a>
+    </div>
+  </div>

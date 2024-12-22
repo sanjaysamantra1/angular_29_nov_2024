@@ -5,7 +5,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { Demo1Component } from './components/demo1/demo1.component';
+import { Demo1Component } from './components/product_list/demo1.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 
