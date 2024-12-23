@@ -1,0 +1,117 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            formControlName="email"
+            required="true"
+        />
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            required
+        />
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input
+            type="phone"
+            class="form-control"
+            id="phone"
+            aria-describedby="phone number"
+            formControlName="phone"
+            required
+        />
+    </div>
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+            type="username"
+            class="form-control"
+            id="username"
+            aria-describedby="username"
+            formControlName="username"
+            required
+        />
+    </div>
+    <div class="row">
+        <div class="col-6 mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+                type="firstName"
+                class="form-control"
+                id="firstName"
+                aria-describedby="firstName"
+                formControlName="firstName"
+                required
+            />
+        </div>
+        <div class="col-6 mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+                type="lastName"
+                class="form-control"
+                id="lastName"
+                aria-describedby="lastName"
+                formControlName="lastName"
+                required
+            />
+        </div>
+    </div>
+    <h6>Address</h6>
+    <hr />
+    <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input
+            type="text"
+            class="form-control"
+            id="city"
+            formControlName="city"
+            required
+        />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="street">Street</label>
+        <input
+            type="text"
+            class="form-control"
+            id="street"
+            formControlName="street"
+            required
+        />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="houseNumber">House Number</label>
+        <input
+            type="text"
+            class="form-control"
+            id="houseNumber"
+            formControlName="houseNumber"
+            required
+        />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="zip">Zip code</label>
+        <input
+            type="text"
+            class="form-control"
+            id="zip"
+            formControlName="zip"
+            required
+        />
+    </div>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Close
+    </button>
+    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+        Submit
+    </button>
+</form>

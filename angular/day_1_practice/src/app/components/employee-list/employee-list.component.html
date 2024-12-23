@@ -1,0 +1,93 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Employee ID</td>
+            <td>Username</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Address</td>
+            <td>Phone</td>
+            <td>Remove</td>
+            <td>View</td>
+        </tr>
+    </thead>
+    <tbody>
+        @for(employee of employees; track $index){
+        <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.username }}</td>
+            <td>{{ employee.name.firstname }}</td>
+            <td>{{ employee.name.lastname }}</td>
+            <td>{{ employee.address.city }}</td>
+            <td>{{ employee.phone }}</td>
+            <td>
+                <button
+                    class="btn btn-danger"
+                    (click)="deleteEmployee(employee.id)"
+                >
+                    Delete
+                </button>
+            </td>
+            <td>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    (click)="showEmployeeDetails(employee)"
+                >
+                    Details
+                </button>
+            </td>
+        </tr>
+        }@empty{
+        <p>No employees present</p>
+        }
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="employeeAddModal">
+                    Employee Details
+                </h1>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>EID: </strong>{{ selectedEmployee.id }}</p>
+                <p>
+                    <strong>USERNAME: </strong>{{ selectedEmployee.username }}
+                </p>
+                <p>
+                    <strong>FIRST NAME: </strong
+                    >{{ selectedEmployee.name.firstname }}
+                </p>
+                <p>
+                    <strong>LAST NAME: </strong
+                    >{{ selectedEmployee.name.lastname }}
+                </p>
+                <p>
+                    <strong>ADDRESS(CITY): </strong
+                    >{{ selectedEmployee.address.city }}
+                </p>
+                <p><strong>PHONE: </strong>{{ selectedEmployee.phone }}</p>
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

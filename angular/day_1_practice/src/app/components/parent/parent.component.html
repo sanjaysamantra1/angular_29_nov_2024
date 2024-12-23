@@ -1,0 +1,20 @@
+<div class="border text-center">
+    <h4>This Parent component</h4>
+
+    <p>My own data is {{ own }}</p>
+    <p>My child's data is {{ child1Ref.myName }}</p>
+
+    <p>My child's data is {{ parentCars }}</p>
+    <div class="row">
+        <div class="col-sm-6 border text-center">
+            <app-child1
+                [own]="own"
+                #child1Ref
+                (carsEvent)="getDataFromChild($event)"
+            ></app-child1>
+        </div>
+        <div class="col-sm-6 border text-center">
+            <app-child2 [b]="b" [child1Ref]="child1Ref"></app-child2>
+        </div>
+    </div>
+</div>

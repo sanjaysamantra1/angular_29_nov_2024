@@ -3,10 +3,17 @@ import * as data from './employees.json';
 import Swal from 'sweetalert2';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AddEmployeeComponent } from '../add-employee/add-employee.component';
+import { EmployeeListComponent } from '../employee-list/employee-list.component';
 
 @Component({
     selector: 'app-employee',
-    imports: [FormsModule, ReactiveFormsModule],
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        AddEmployeeComponent,
+        EmployeeListComponent,
+    ],
     templateUrl: './employee.component.html',
     styleUrl: './employee.component.css',
 })
@@ -47,41 +54,28 @@ export class EmployeeComponent {
         console.log(this.selectedEmployee);
     }
 
-    employeeForm = new FormGroup({
-        email: new FormControl(''),
-        firstName: new FormControl(''),
-        lastName: new FormControl(''),
-        username: new FormControl(''),
-        phone: new FormControl(''),
-        password: new FormControl(''),
-        city: new FormControl(''),
-        street: new FormControl(''),
-        houseNumber: new FormControl(''),
-        zip: new FormControl(''),
-    });
-
-    onSubmit() {
-        console.warn(this.employeeForm.value);
+    addEmployee(employee: any) {
+        console.warn(this.employee.value);
         let newEmployee = {
             address: {
                 geolocation: {
                     lat: '-37.3159',
                     long: '81.1496',
                 },
-                city: this.employeeForm.value.city,
-                street: this.employeeForm.value.street,
-                number: this.employeeForm.value.houseNumber,
-                zipcode: this.employeeForm.value.zip,
+                city: this.employee.value.city,
+                street: this.employee.value.street,
+                number: this.employee.value.houseNumber,
+                zipcode: this.employee.value.zip,
             },
             id: this.incrementEmployeeId++,
-            email: this.employeeForm.value.email,
-            username: this.employeeForm.value.username,
-            password: this.employeeForm.value.password,
+            email: this.employee.value.email,
+            username: this.employee.value.username,
+            password: this.employee.value.password,
             name: {
-                firstname: this.employeeForm.value.firstName,
-                lastname: this.employeeForm.value.lastName,
+                firstname: this.employee.value.firstName,
+                lastname: this.employee.value.lastName,
             },
-            phone: this.employeeForm.value.phone,
+            phone: this.employee.value.phone,
             __v: 0,
         };
         this.employees.push(newEmployee);

@@ -1,16 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {RemainingPipe} from '../../pipes/remaining.pipe';
-import {AgePipe} from '../../pipes/age.pipe';
-import {TruncatePipe} from '../../pipes/truncate.pipe';
-import {OrdinalPipe} from '../../pipes/ordinal.pipe';
-import {SalutationPipe} from '../../pipes/salutation.pipe';
-import {FilterPipe} from '../../pipes/filter.pipe';
+import { RemainingPipe } from '../../pipes/remaining.pipe';
+import { AgePipe } from '../../pipes/age.pipe';
+import { TruncatePipe } from '../../pipes/truncate.pipe';
+import { OrdinalPipe } from '../../pipes/ordinal.pipe';
+import { SalutationPipe } from '../../pipes/salutation.pipe';
+import { FilterPipe } from '../../pipes/filter.pipe';
+import { MysortPipe } from '../../pipes/mysort.pipe';
 
 @Component({
     selector: 'app-pipes',
-    imports: [FormsModule, CommonModule, RemainingPipe, AgePipe, TruncatePipe, OrdinalPipe, SalutationPipe, FilterPipe],
+    imports: [
+        FormsModule,
+        CommonModule,
+        RemainingPipe,
+        AgePipe,
+        TruncatePipe,
+        OrdinalPipe,
+        SalutationPipe,
+        FilterPipe,
+        MysortPipe,
+    ],
     templateUrl: './pipes.component.html',
     styleUrl: './pipes.component.css',
 })
@@ -18,15 +29,18 @@ export class PipesComponent {
     amount: number = 5000.45;
     name: string = 'PrAdEEP YendLURI';
     today: Date = new Date();
-    user={
-        "name": "pradeep",
-        "age": 12,
-    }
-    msg: string = "";
-    msg2: string = "";
+    user = {
+        name: 'pradeep',
+        age: 12,
+    };
+    arr2 = [20, 10, 50, 40, 30];
+    arr1 = [20, 10, 50, 40, 30];
+    msg: string = '';
+    msg2: string = '';
     dob: Date = new Date();
-    longString: string = "asdfasdfd asd fasdddd fasdfdas dfdasdfa sdfdasdf  asdfdas dfasdf asdfdasd fdasdfasdfd";
-    cars= ['toyota', 'maruthi', 'ford', 'mustang'];
+    longString: string =
+        'asdfasdfd asd fasdddd fasdfdas dfdasdfa sdfdasdf  asdfdas dfasdf asdfdasd fdasdfasdfd';
+    cars = ['toyota', 'maruthi', 'ford', 'mustang'];
     inputNumber: number = 0;
     employees = [
         { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },

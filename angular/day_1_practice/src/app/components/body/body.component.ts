@@ -9,6 +9,7 @@ import { NumberonlyDirective } from '../../directives/numberonly.directive';
 import { MyModalComponent } from '../my-modal/my-modal.component';
 import { EmployeeComponent } from '../employee/employee.component';
 import { PipesComponent } from '../pipes/pipes.component';
+import { ParentComponent } from '../parent/parent.component';
 
 @Component({
     selector: 'app-body',
@@ -23,6 +24,7 @@ import { PipesComponent } from '../pipes/pipes.component';
         MyModalComponent,
         EmployeeComponent,
         PipesComponent,
+        ParentComponent,
     ],
     templateUrl: './body.component.html',
     styleUrl: './body.component.css',

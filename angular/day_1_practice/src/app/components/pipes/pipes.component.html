@@ -22,30 +22,34 @@
     <p>{{ today | date : "fullTime" : "UTC" }}</p>
     <p>{{ today | date : "fullTime" : "UTC" }}</p>
 
-
     <p>Decimal/Number</p>
-    <h4>{{ 12.111 | number: "3.2-5" }}</h4>
+    <h4>{{ 12.111 | number : "3.2-5" }}</h4>
     <p>{{ 2.5 | percent }}</p>
     <p>{{ 0.024 | percent }}</p>
 
     @for (entry of user | keyvalue; track $index) {
-        <h5>{{ entry.key }}---{{ entry.value }}</h5>
+    <h5>{{ entry.key }}---{{ entry.value }}</h5>
     }
 
     <!--    exclusive-->
     <h4>{{ cars | slice : 2 : 3 }}</h4>
     <!--    Custom Pipes-->
-    <textarea maxlength="100" [(ngModel)]="msg">
-
-    </textarea>
+    <textarea maxlength="100" [(ngModel)]="msg"> </textarea>
     <p>Remaining Chars: {{ msg | remaining }}</p>
 
-    <textarea name="msg" id="msg" cols="30" rows="10" maxlength="200" [(ngModel)]="msg2"></textarea>
+    <textarea
+        name="msg"
+        id="msg"
+        cols="30"
+        rows="10"
+        maxlength="200"
+        [(ngModel)]="msg2"
+    ></textarea>
     <p>Remaining Chars: {{ msg2 | remaining : 200 }}</p>
 
     <div>
-        <h3>Custome Pipe - Age: </h3>
-        <input type="date" [(ngModel)]="dob"/>
+        <h3>Custome Pipe - Age:</h3>
+        <input type="date" [(ngModel)]="dob" />
         <h4>DOB: {{ dob | date }}</h4>
         <h4>Age: {{ dob | age }}</h4>
     </div>
@@ -60,36 +64,64 @@
     -->
     <div>
         <h3>Number input - Ordinal output</h3>
-        <input type="number" [(ngModel)]="inputNumber"/>
+        <input type="number" [(ngModel)]="inputNumber" />
 
         <p>Ordinal output: {{ inputNumber | ordinal }}</p>
     </div>
     <div>
         <h3>Custom Salutation / FILTER-SEARCH</h3>
-        <input class="form-control" type="text" [(ngModel)]="searchText" placeholder="Type to search employee by name"/>
-        <br>
+        <input
+            class="form-control"
+            type="text"
+            [(ngModel)]="searchText"
+            placeholder="Type to search employee by name"
+        />
+        <br />
 
         <table class="table table-bordered table-striped">
             <thead>
-            <th>EID</th>
-            <th>NAME</th>
-            <th>SALARY</th>
-            <th>GENDER</th>
+                <th>EID</th>
+                <th>NAME</th>
+                <th>SALARY</th>
+                <th>GENDER</th>
             </thead>
 
-
             <tbody>
-                @for (employee of employees | filterEmployee : searchText: 'name'; track $index) {
-                    <tr>
-                        <td>{{ employee.eId }}</td>
-                        <td>{{ employee.name | salutation : employee.gender }}</td>
-                        <td>{{ employee.sal }}</td>
-                        <td>{{ employee.gender }}</td>
-                    </tr>
+                @for (employee of employees | filterEmployee : searchText:
+                'name'; track $index) {
+                <tr>
+                    <td>{{ employee.eId }}</td>
+                    <td>{{ employee.name | salutation : employee.gender }}</td>
+                    <td>{{ employee.sal }}</td>
+                    <td>{{ employee.gender }}</td>
+                </tr>
                 }@empty{
-                    <p> Employee with Name: {{searchText}} not found!</p>
+                <p>Employee with Name: {{ searchText }} not found!</p>
                 }
             </tbody>
         </table>
+    </div>
+    <div>
+        <h4>Pure / Impure Pipes</h4>
+        <p>Without sort pipe</p>
+        @for(element of arr1; track $index){
+        <span>{{ element }} &nbsp;</span>
+        }
+    </div>
+    <div>
+        <h4>With sort pipe</h4>
+        @for(element of arr2 | mysort; track $index){
+        <span>{{ element }} &nbsp;</span>
+        }
+        <div>
+            Add a new number:
+            <input type="text" #newNumber />
+            <button
+                class="btn btn-secondary"
+                (click)="arr2.push(+newNumber.value)"
+            >
+                Add new val
+            </button>
+        </div>
     </div>
 </div>
