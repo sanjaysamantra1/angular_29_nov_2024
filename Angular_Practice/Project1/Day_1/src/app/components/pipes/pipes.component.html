@@ -1,0 +1,44 @@
+<p>pipes works!</p>
+<div>
+    <p>please enter a number: </p>
+    <input type="number" [(ngModel)]="num">
+    <p>{{num | ordinal}}</p>
+</div>
+
+<div>
+
+    <p>Enter age: </p>
+    <input type="date" [(ngModel)]="age">
+    <p>{{age | age}}</p>
+</div>
+
+
+
+<div>
+<table class="table table-bordered table-striped">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Gender</th>
+    </tr>
+</thead>
+@for(emp of employees; track $index){
+<tbody>
+   
+    <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp | salutation}}</td>
+        <td>{{emp.position}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.gender}}</td>
+    </tr>
+
+ 
+
+</tbody>
+}
+</table>
+</div>
