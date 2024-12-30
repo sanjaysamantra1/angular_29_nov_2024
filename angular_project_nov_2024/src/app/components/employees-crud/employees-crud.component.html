@@ -1,0 +1,80 @@
+<div>
+    <!-- <button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Add an
+        employee </button>
+    <br> -->
+    <!-- <table class="table table-light table-striped table-bordered border-primary">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Details</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        @for(employee of employees | paginate: { itemsPerPage: 5, currentPage: p }; track $index) {
+        <tbody>
+            <tr scope="row" id="{{employee.eId}}">
+                <th>{{employee.eId}}</th>
+                <td>{{employee.name}}</td>
+                <td>{{employee.sal}}</td>
+                <td>{{employee.gender}}</td>
+                <td><button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        (click)="getCurrentRecord(employee)"> View </button></td>
+                <td><button class="btn mx-1 btn-danger" (click)="getRecordToDelete(employee)"> Delete </button></td>
+            </tr>
+        </tbody>
+        }
+    </table>
+
+    <div class="modal" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Employee Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><b>Id</b> - {{selectedEmployee.eId}}</p>
+                    <p><b>Name</b> - {{selectedEmployee.name}}</p>
+                    <p><b>Salary</b> - {{selectedEmployee.sal}}</p>
+                    <p><b>Gender</b> - {{selectedEmployee.gender}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="exampleModal1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Employee Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label">Employee Id</label>
+                    <input type="number" class="form-control" id="eId" [(ngModel)]="eId" title="Employee Id" placeholder="Enter employee id">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" id="ename" [(ngModel)]="eName" title="Name" placeholder="Enter Name">
+                    <label class="form-label">Salary</label>
+                    <input type="number" class="form-control" id="esalary" [(ngModel)]="eSalary" title="Salary" placeholder="Enter salary">
+                    <label class="form-label">Gender</label>
+                    <input type="text" class="form-control" id="egender" [(ngModel)]="eGender" title="Gender" placeholder="Enter gender">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        (click)="insertNewRecord()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <app-form-modal (addEmployeeEvent)="insertNewRecord($event)"></app-form-modal> <hr>
+    
+    <app-employee-list [employees] = 'employees'  #empListRef (employeeEvent)="getRecordToDelete($event)" ></app-employee-list>
+
+</div>

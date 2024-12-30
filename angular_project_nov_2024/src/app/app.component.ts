@@ -5,16 +5,18 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EmployeesComponent } from './components/employee/employee.component';
+import { EmployeeCRUDComponent } from './components/employees-crud/employees-crud.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     NavbarComponent,
-    CategoriesComponent,
-    CarouselComponent,
+    // CategoriesComponent,
+    // CarouselComponent,
     BodyComponent,
     FooterComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    EmployeeCRUDComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

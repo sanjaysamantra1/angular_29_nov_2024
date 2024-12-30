@@ -22,11 +22,12 @@ export class DatabindingComponent {
   selectedState: string = '';
   selectedOperator: string = '';
   flag1: boolean = false;
-  text: string = 'text';
+  mode: string = 'text';
   counterValue : number = 0;
 
   f1() {
-    console.log('F1 called.....')
+    console.log('F1 called.....');
+    this.myName = "vamsi";
   }
 
   addition(n1: any, n2: any) {
@@ -49,7 +50,7 @@ export class DatabindingComponent {
 
   clickEvent(){
     this.flag1 = !this.flag1;
-    this.flag1 ? this.text='password' : this.text='text';
+    this.flag1 ? this.mode='password' : this.mode='text';
   }
   
 }

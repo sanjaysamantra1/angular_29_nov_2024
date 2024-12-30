@@ -3,33 +3,33 @@
 
 <div class="border p-2">
     @if(num%2 == 0){
-    <h4>{{num}} is Even </h4>
+        <h4>{{num}} is Even </h4>
     }@else{
-    <h4>{{num}} is Odd </h4>
+        <h4>{{num}} is Odd </h4>
     }
 
     <h4 [hidden]="num%2!=0">{{num}} is Even </h4>
     <h4 [hidden]="num%2==0">{{num}} is Odd </h4>
 
     @switch (num) {
-    @case (1) { <h1>Monday</h1> }
-    @case (2) { <h1>Tuesday</h1> }
-    @case (3) { <h1>Wednesday</h1> }
-    @case (4) { <h1>Thursday</h1> }
-    @case (5) { <h1>Friday</h1> }
-    @case (6) { <h1>Saturday</h1> }
-    @case (7) { <h1>Sunday</h1> }
-    @default { <h1>Not a Valid number</h1>> }
+        @case (1) { <h1>Monday</h1> }
+        @case (2) { <h1>Tuesday</h1> }
+        @case (3) { <h1>Wednesday</h1> }
+        @case (4) { <h1>Thursday</h1> }
+        @case (5) { <h1>Friday</h1> }
+        @case (6) { <h1>Saturday</h1> }
+        @case (7) { <h1>Sunday</h1> }
+        @default { <h1>Not a Valid number</h1>> }
     }
 
     <ol>
         @for(car of cars;track $index;){
-        <li>{{car}}</li>
+            <li>{{car}}</li>
         }
     </ol>
     <select>
         @for(car of cars;track $index;){
-        <option>{{car}}</option>
+            <option>{{car}}</option>
         }
     </select>
 
@@ -96,4 +96,17 @@
         <button class="btn" [ngClass]="{'btn-primary': flag}">Helloo</button>
         <button class="btn mx-1" [class.btn-success]="flag">Helloo</button>
     </div>
+
+    <div>
+        <h2 appHighlight>Font Awesome Icons</h2>
+        <fa-icon [icon]="faStar"></fa-icon>
+        <fa-icon [icon]="faPlane"></fa-icon>
+    </div>
+
+    <div>
+        <div>Custom Directives</div>
+        <input type="text" numberonly>
+        Input box is the host element for numberonly directive
+    </div>
+
 </div>

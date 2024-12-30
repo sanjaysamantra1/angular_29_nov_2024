@@ -6,14 +6,14 @@
   <div>My Name is: <span bind-innerHTML="myName"></span></div>
 
   <img src="{{ img_url }}" alt="" />
-  <img [src]="img_url" alt="" />
+  <img [src]="img_url" alt="this is an image" />
   <img bind-src="img_url" alt="" />
 
   <div class="my-2">
     <input type="text" placeholder="Enter Your Name" value="Virat Kohli" />
     1 way : <input type="text" value="{{ myName }}" class="mx-2" /> 1 way:
-    <input type="text" [value]="myName" class="mx-2" /> 1 way:
-    <input type="text" bind-value="myName" class="mx-2" /> <br /><br />
+    1 way : <input type="text" [value]="myName" class="mx-2" /> 1 way:
+    1 way : <input type="text" bind-value="myName" class="mx-2" /> <br /><br />
     2 way: <input type="text" [(ngModel)]="myName" /> 2 way:
     <input type="text" bindon-ngModel="myName" />
   </div>
@@ -23,13 +23,10 @@
     <button class="btn btn-primary mx-2" [disabled]="flag">btn-2</button>
     <button class="btn btn-primary" bind-disabled="flag">btn-3</button>
 
-    <button
-      (click)="f1()"
-      class="btn btn-primary mx-2"
-      [ariaLabel]="myAriaLabel"
-    >
+    <button (click)="f1()" class="btn btn-primary mx-2" [ariaLabel]="myAriaLabel">
       invoke F1
     </button>
+
     <button
       on-click="f1()"
       class="btn btn-primary mx-2"
@@ -94,16 +91,18 @@
       {{ flag ? "SHOW" : "HIDE" }}
     </button>
   </div>
+
   <div>
     Assignment:2 (Remaining Char) <br />
     <textarea rows="4" cols="20" maxlength="100" [(ngModel)]="msg"></textarea>
     <div>Remaining Characters: {{ 100 - msg.length }}</div>
   </div>
+
   <div>
     Assignment:3 (Selected State) <br />
     <select [(ngModel)]="selectedState">
-      <option value="AP">Andhra Pradesh</option>
-      <option value="KA">Karnataka</option>
+      <option>Andhra Pradesh</option>
+      <option>Karnataka</option>
       <option>State-3</option>
       <option>State-4</option>
       <option>State-5</option>
@@ -114,6 +113,7 @@
       <option>State-10</option>
     </select>
     <div>You selected:: {{ selectedState }}</div>
+    <!-- <input class="mx-2" [(ngModel)]="selectedState"  /> -->
   </div>
 
   <div class="border p-2">
@@ -132,11 +132,10 @@
 
   <div class="border p-2">
     Assignment 5:
-
-    <input class="mx-2" bind-type="text"/>
+    <input class="mx-2" bind-type="mode"/>
     <button (click)="clickEvent()">
         {{ flag1 ? 'Password' : 'Text' }}
-      </button>
+    </button>
       
   </div>
 
