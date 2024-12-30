@@ -96,3 +96,11 @@
 <input class="mx-3" [(ngModel)]="counter">
 <button  (click)="counterr('decrement')">DECREMENT</button>
 <button class="mx-3 my-2"  (click)="counterr('reset')">RESET</button>
+
+
+
+
+<p>Templete Reference Variables</p>
+  <input #primary placeholder="Enter the Number">
+  <button (click)="displayPhone(primary.value)">Submit</button>
+  <p>{{phone}}</p>

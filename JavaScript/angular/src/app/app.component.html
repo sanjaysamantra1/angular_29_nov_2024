@@ -1,14 +1,9 @@
 <div class="wid">
     <app-navbar [isDarkMode]="isDarkMode" (toggleTheme)="toggleTheme()" ></app-navbar>
-    <app-category></app-category>
+    <app-category ></app-category>
     <app-carousel></app-carousel>
     <app-body></app-body>
     
     <app-footer></app-footer>
-  
-    <!-- Directly handle the toggle button here
-    <button (click)="toggleTheme()" class="btn btn-primary mt-3">
-      {{ isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode' }}
-    </button> -->
   </div>
   

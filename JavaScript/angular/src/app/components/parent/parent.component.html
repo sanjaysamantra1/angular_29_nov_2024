@@ -1,0 +1,19 @@
+<div class="border">
+    <div>Parent</div>
+    <div>a = {{a}}</div>
+    <div>name={{name}}</div>
+    <div>b = {{b}}</div>
+    <div>another name={{name1}}</div>
+    <div>My child1 data is {{child1Ref.myName}}</div>
+    <div>My child1 Cars data is {{parentCars}}</div>
+
+    <div class="row">
+        <div class="col-sm-6 border">
+            <app-child1 [a]="a" [name]="name" #child1Ref (carsEvent)="getDataFromChild($event)"></app-child1>
+        </div>
+        <div class="col-sm-6 border">
+            <app-child2 [b]="b" [name1]="name1" [child1Ref]="child1Ref"></app-child2>
+        </div>
+    </div>
+</div>>
+

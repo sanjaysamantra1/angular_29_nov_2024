@@ -74,49 +74,23 @@
             </table>
 
 
-            <!-- <div class="container mt-5">
-                <h2>Employee List (Table)</h2>
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>eId</th>
-                      <th>Name</th>
-                      <th>Salary</th>
-                      <th>position</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-               
-                    <tr *ngFor="let emp of addNewEmployeeTab;let i= index">
-                      <td>{{ i+1 }}</td>
-                      <td>{{ emp.eId }}</td>
-                      <td>{{ emp.name }}</td>
-                      <td>{{ emp.sal }}</td>
-                      <td>{{ emp.gender }}</td>
-                    </tr>
-                 }
-                @empty{
-                    No Employee Found
-                } -->
-                  <!-- </tbody>
-                </table> --> 
-
             <button class="btn btn-primary" (click)="addNewEmployee()">Add new Emp</button>
 
 
 
 
             <div class="container mt-5">
-              <div class="row d-flex flex-row">
+              <div class="row d-flex flex-row ">
                 @for (employee of addNewEmployeeTab; track $index) {
-                  <div class="col-md-3"> <!-- Adjust the width here based on how many cards per row you want -->
+                  <div class="col-sm-3 mx-4"> <!-- Adjust the width here based on how many cards per row you want -->
                     <div class="card my-3 show" style="width: 18rem;">
                       <img src="{{employee.eImg}}" class="card-img-top" alt="Image Not Available">
                       <div class="card-body">
                         <h5 class="card-title">NAME: {{employee.name}}</h5>
-                        <p class="card-text">POSITION: {{employee.sal}}</p>
-                        <p class="card-text">DEPARTMENT: {{employee.gender}}</p>
+                        <p class="card-text">POSITION: {{employee.position}}</p>
+                        <p class="card-text">DEPARTMENT: {{employee.department}}</p>
+                        <p class="card-text">SALARY: {{employee.salary}}</p>
+
                       </div>
                     </div>
                   </div>
@@ -145,18 +119,34 @@
                 <button class="btn mx-1" [class.btn-success]="flag">Helloo</button>
             </div>
 
+
+
+            <div class="my-5"><b>ng-Template/ng-container</b></div>
+            <p>if we want to render a block of html code that can be rendered conditionally we use <b>ng-Template</b></p>
+            <p>if we want to create a container and based on condition it will  store the info in that and it will render: <b>ng-Container</b></p>
+            <ng-template #temp>No Data Found</ng-template>
+            <button (click)="showMessage=!showMessage">Show Message</button>
+            <div >
+              @if(showMessage){
+                <p>This is Rohith</p>
+              }@else{
+                <ng-container [ngTemplateOutlet]="temp"></ng-container>
+              }
+            </div>
+
             <div>
-              <h2>
-                Font Awesome Icons
-              </h2>
+              <div>
+              <h2 >Font Awesome Icons</h2>
+              </div>
               <fa-icon [icon]="faStar"></fa-icon>
               <fa-icon [icon]="faPlane"></fa-icon>
             </div>
 
 
-            <div>
-              <div>Custom Directives:</div>
-              <input type="text" numberonly/>
+            <div >
+              <h2 appHighlight>Custom Directives:</h2>
+              <input type="text" appHighlight appNumberonly />
+              
             </div>
           </div>
         

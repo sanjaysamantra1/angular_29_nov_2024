@@ -1,4 +1,6 @@
 /* General container styling */
+
+
 .horizontal-list-container {
   display: flex;
   justify-content: center; /* Center the entire list */

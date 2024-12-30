@@ -1,0 +1,45 @@
+<button type="button" class=" my-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModals">
+    ADD NEW EMPLOYEE
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModals" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Employee</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>Add New Employee</h3>
+          <form (ngSubmit)="addEmployee()" class="mb-3">
+            <div class="my-3">
+              <label for="eId">EmpId: </label>
+              <input class="mx-3" type="number" id="eId" [(ngModel)]="newEmployee.eId" name="eId" required />
+            </div>
+            <div class="my-3">
+              <label for="name">Name: </label>
+              <input class="mx-3" type="text" id="name" [(ngModel)]="newEmployee.name" name="name" required />
+            </div>
+            <div class="my-3">
+              <label for="sal">Salary: </label>
+              <input class="mx-3" type="number" id="sal" [(ngModel)]="newEmployee.sal" name="sal" required />
+            </div>
+            <div class="my-3">
+              <label for="gender">Gender: </label>
+              <select class="mx-3" id="gender" [(ngModel)]="newEmployee.gender" name="gender" required>
+                <option value="" disabled>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Add Employee</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

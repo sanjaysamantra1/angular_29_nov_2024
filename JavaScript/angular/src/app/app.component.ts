@@ -19,24 +19,20 @@ export class AppComponent {
   title = 'angular';
   isDarkMode = false; // Global theme state
 
-  constructor(private renderer: Renderer2) {}
-
-  // Method to toggle the theme
-  toggleTheme(): void {
-    this.isDarkMode = !this.isDarkMode;
+  toggleTheme(): void{
+    this.isDarkMode=!this.isDarkMode;
 
 
-    this.renderer.removeClass(document.body, 'light-theme');
-    this.renderer.removeClass(document.body, 'dark-theme');
-
-    
-    if (this.isDarkMode) {
-      this.renderer.addClass(document.body, 'dark-theme');
-      this.renderer.removeClass(document.body, 'light-theme');
-    } else {
-      this.renderer.addClass(document.body, 'light-theme');
-      this.renderer.removeClass(document.body, 'dark-theme');
+    if(this.isDarkMode){
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
     }
-     }
+    else{
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+    }
+  }
+
+
   
 }

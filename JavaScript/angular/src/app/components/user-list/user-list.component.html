@@ -1,6 +1,39 @@
-<h2 class="text-center">User LIst</h2>
+<h2 class="text-center">User List</h2>
 
-<div class="container">
+
+<h4 >Assignement on user-list.json</h4>
+<button (click)="clickFlag()">Change View</button>
+
+@if(!flag){
+    <div>
+<table class="table my-3">
+    <thead>
+      <tr>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address_city</th>
+        <th scope="col">Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(user of users | paginate: {itemsPerPage: 4,currentPage: p};track $index){
+            <tr>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.phone}}</td>
+            </tr>
+        }
+    </tbody>
+  </table>
+  <div class="row mt-2">
+    <div class="offset-4">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+</div>
+}@else{
+<div class="container my-3">
     <div class="row">
         @for(user of users | paginate: { itemsPerPage: 4, currentPage: p };track $index){
             <!-- In total there will be 12 so idf we keep 4 will get 12/4 so 3 cards -->
@@ -27,3 +60,4 @@
         </div>
     </div>
 </div>
+}

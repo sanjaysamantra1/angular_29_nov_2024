@@ -3,7 +3,7 @@
   'navbar-light bg-light': !isDarkMode
 }">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">ShopCart</a>
+    <a class="nav-link navbar-brand" href="#">ShopCart</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -28,7 +28,7 @@
       </form>
       <button
       class="btn btn-outline-primary ms-3"
-      (click)="toggleTheme.emit()" >
+      (click)="onToggleTheme()" >
       {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
     </button>
  

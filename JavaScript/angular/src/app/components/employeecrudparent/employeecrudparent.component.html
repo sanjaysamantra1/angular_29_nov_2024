@@ -1,0 +1,4 @@
+<p>Parent</p>
+<button (click)="check()">check</button>
+<app-employeelist [employees]="employees" (deleteEmp)="onDeleteEmployee($event)"></app-employeelist>
+<app-addemployee (addEmp)="addEmployee($event)"></app-addemployee>

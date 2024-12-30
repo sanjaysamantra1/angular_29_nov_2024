@@ -1,0 +1,166 @@
+<h1>PIPES</h1>
+
+<h4>On Currency</h4>
+<p>{{sal | currency}}</p>
+<p>{{sal | currency:'INR'}}</p>
+<p>{{ sal | currency : 'USD' }}</p> 
+
+<h4>On Dates</h4>
+<p>{{today | date : 'shortDate'}}</p>
+<p>{{today | date : 'mediumDate'}}</p>
+<p>{{today | date : 'longDate'}}</p>
+<p>{{today | date : 'fullDate'}}</p>
+
+<h4>Decimal/number</h4>
+<p>{{ 12.111222333 | number: "3.2-5" }}</p>     
+<p>{{ 12.1 | number: "3.2-5" }}</p>
+<p>{{0.5 | number:'3.2-5'}} </p> 
+
+<!-- Use format '3.2-5' : 
+minIntegerDigits = 3 
+minFractionDigits = 2 
+maxFractionDigits = 5  -->
+
+<h4>Percentage Pipe</h4>
+<p>{{8.5 | percent}}</p>
+<p>{{9.60 | percent}}</p>
+<p>{{5.788888888 | percent:'2.2-3'}}</p>
+
+
+<h4>Key value pair</h4>
+@for(s of user | keyvalue; track $index){
+    <p>{{s.key}}-----{{s.value}}</p>
+}
+
+
+
+<h4>Slice Pipe</h4>
+<p>{{myName | slice : 0:4}}</p>
+<p>{{myName | slice : 0:-8}}</p>
+
+
+<h6>Custom Pipes : Remaining Characters:</h6>
+<textarea [(ngModel)]="msg" maxlength="100"></textarea>
+<div>Remaining Characters : {{msg | remaining}}</div>
+
+<textarea [(ngModel)]="anotherMsg" maxlength="100"> </textarea>
+<div>Remaining Characters : {{anotherMsg | remaining : 200}}</div>
+
+
+<h6>Custom Pipe: Age</h6>
+<div>Please select a Date to Calculate Your Age : </div>
+<input type="date"[(ngModel)]="dob" >
+<div>DOB: {{dob | date}}</div>
+<div>Age: {{dob | age}}</div>
+
+<h6>Custom Pipe : Truncate</h6>
+<div>{{myString}}</div>
+<div>{{myString | truncate}}</div>
+<div>{{myString | truncate:40}}</div>
+<div>{{myString | truncate:40:true}}</div>
+<div>{{myString | truncate:40:true:'####'}}</div>
+
+
+
+<div>
+<h6>Custom Pipe : Pure / Impure Pipe</h6>
+<h6>Without Sorting</h6>
+@for(a of arr;track $index){
+    <span>{{a}} &nbsp;</span>
+}
+
+<h6>With Sorting</h6>
+@for(a of arr2 | sorting ; track $index){
+    <span>{{a}} &nbsp;</span>
+}
+
+</div>
+
+
+
+<div>
+    Add a New Number : <input #newnum>
+    <button class="btn btn-primary mx-2" (click)="pushingDataToArr(newnum.value)">Add New Value</button>
+</div>
+
+<p>ASSIGNMENT</p>
+<div>
+    <p>--------------------------Q1-------------------------</p>
+@for(a of arr; track $index){
+    <span>{{a}} &nbsp;</span> 
+}
+</div>
+<div>
+    <p>--------------------------A-------------------------</p>
+@for(a of arr | ordinal; track $index){
+    <span>{{a}} &nbsp;</span> 
+}
+</div>
+
+<p>--------------------------Q2-------------------------</p>
+<div>Please select a Date to Calculate Your Age : </div>
+<input type="date"[(ngModel)]="dob" >
+<div>DOB: {{dob | date}}</div>
+<p>--------------------------A-------------------------</p>
+<div>Age: {{dob | age}}</div>
+
+
+
+
+<p>--------------------------Q3-------------------------</p>
+
+<h2>Employee List</h2>
+<p>--------------------------Q4-------------------------</p>
+<input [(ngModel)]="searchText" placeholder="Search..." />
+<!-- <button class="mx-3" >SEARCH</button> -->
+<div class="container my-3">
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <!-- <th>#</th> -->
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Designation</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+            @for(emp of employees | search:searchText;track $index){
+                <tr>
+                <!-- <td>{{ index + 1 }}</td> -->
+                <td>{{ emp.name | salutation: emp.gender}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{ emp.designation }}</td>
+                <td>{{ emp.salary | currency: 'USD' }}</td>
+            </tr>
+            }
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<!-- <button (click)="arrIteration()">Array Iteration</button>
+
+
+<div>
+    @for(a of arrval;track $index){
+        <p>{{a}}</p>
+    }
+</div> -->
+
+
+
+

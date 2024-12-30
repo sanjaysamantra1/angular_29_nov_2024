@@ -12,4 +12,12 @@ export class UserListComponent {
 
   users = (data as any).default;
   p:any;
+
+  flag:boolean =true;
+  
+  clickFlag(){
+    this.flag=!this.flag;
+  }
+
+
 }

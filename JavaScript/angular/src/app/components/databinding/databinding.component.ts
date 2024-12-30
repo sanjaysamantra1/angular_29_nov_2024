@@ -66,4 +66,11 @@ export class DatabindingComponent {
       this.counter=0;
     }
   }
+
+  phone:string='';
+
+  displayPhone(phone:string){
+    this.phone=phone;
+  }
+  
 }

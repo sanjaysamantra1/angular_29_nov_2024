@@ -1,0 +1,87 @@
+
+
+
+
+
+    <div class="container mt-5">
+        <!-- Button to open the modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#employeeModal"
+        >
+          Show Employee Table
+        </button>
+      
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="employeeModal"
+          tabindex="-1"
+          aria-labelledby="employeeModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="employeeModalLabel">Employee Table</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Salary</th>
+                      <th>Gender</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for(emp of employees;track $index){
+                    <tr>
+                      <td>{{ $index + 1 }}</td>
+                      <td>{{ emp.eId }}</td>
+                      <td>{{ emp.name }}</td>
+                      <td>{{ emp.sal }}</td>
+                      <td>{{ emp.gender }}</td>
+                      <td>
+                        <button
+                          class="btn btn-danger"
+                          (click)="deleteEmployee($index)"
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                    <!-- *If=employees.length==0{
+                        <tr>
+                          <td colspan="6" class="text-center">No Employees Found</td>
+                        </tr>
+                    } -->
+                }
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
