@@ -1,0 +1,34 @@
+<p>child-2 works!</p>
+
+  <div class="modal-dialog al">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Add New Employee</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Employee ID:</label>
+            <input type="text" class="form-control" #empid>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" #empname>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Salary:</label>
+            <input type="text" class="form-control" #empsal>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Gender:</label>
+            <input type="text" class="form-control" #empgender>
+          </div>
+
+            <button type="submit" class="btn btn-primary" (click)="addNewEmp(empid.value,empname.value, empsal.value, empgender.value)">Submit</button>
+
+        </form>
+      </div>
+      
+    </div>
+
+</div>

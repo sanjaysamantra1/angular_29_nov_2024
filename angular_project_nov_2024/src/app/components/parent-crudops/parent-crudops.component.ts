@@ -71,6 +71,40 @@ export class ParentCrudopsComponent {
       })
     
   }
+in1: any;
+in2: any;
+a: any;
+
+//   async f21(){
+//   const { value: formValues } = await Swal.fire({
+//     title: "Multiple inputs",
+//     html: `
+//       <input id="swal-input1" default="a" [(ngModel)]="in1" class="swal2-input">
+//       <input id="swal-input2" default="b" [(ngModel)]="in2" class="swal2-input">
+//     `,
+//     focusConfirm: false,
+//     preConfirm: () => {
+//       console.log(this.in1);
+//       if((document.getElementById("swal-input2").value)!= null){
+//         a = document.getElementById("swal-input2").value;
+//       }
+//       //a = document.getElementById("swal-input2").value;
+//       return [
+
+//         // document.getElementById("swal-input1").value,
+//          document.getElementById("swal-input2").value
+//       ];
+//     }
+//   });
+//   if (formValues) {
+//     Swal.fire(JSON.stringify(formValues));
+//     console.log(this.in1);
+//   }
+// }
+
+
+
+
 
 
 

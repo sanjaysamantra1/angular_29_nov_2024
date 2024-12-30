@@ -22,43 +22,9 @@
     <div class="row h-25" style="height: 20px; background-color: aquamarine">
       @for(product of searchedProducts | paginate: { itemsPerPage: 4,
       currentPage: p}; track $index){
-      <div class="col-sm-3">
-        <div
-          class="card"
-          id="cardstyle"
-          style="height: 100%; background-color: white"
-        >
-          <div
-            style="height: auto; max-height: 50%; min-height: 50%"
-            class="d-flex justify-content-center align-items-center"
-          >
-            <img
-              style="max-height: 100%; min-height: auto"
-              src="{{ product.image }}"
-              class="card-img-top"
-              alt="..."
-            />
-          </div>
-          <div
-            class="card-body"
-            style="
-              max-height: 100%;
-              min-height: auto;
-              text-wrap: balance;
-              overflow: hidden;
-              background-color: blueviolet;
-            "
-          >
-            <h5 class="card-title">{{ product.title }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">
-              {{ product.rating.rate }}/5 ({{ product.rating.count }} Total
-              reviews)
-            </h6>
-            <h5 class="card-title">${{ product.price }}</h5>
-            <p class="card-title">{{ product.description }}</p>
-          </div>
+        <div class="col">
+          <app-product-card [product]="product"></app-product-card>
         </div>
-      </div>
       }
       <div class="row mt-4">
         <div style="text-align: center">

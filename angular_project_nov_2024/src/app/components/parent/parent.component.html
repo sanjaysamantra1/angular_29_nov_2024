@@ -1,0 +1,16 @@
+<div class="align-items-center text-center">
+
+
+<p>parent Here!</p>
+
+
+<div class="row">
+
+<div class="col">
+<app-child-1 [emps]="employee" (deleteEvent)="deleteEmployee($event)"></app-child-1>
+</div>
+<div class="col">
+<app-child-2 (empevent)="getEmpFromChild2($event)"></app-child-2>
+</div>
+</div>
+</div>

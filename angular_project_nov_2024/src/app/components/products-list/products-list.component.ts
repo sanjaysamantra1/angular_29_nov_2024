@@ -4,12 +4,14 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass, faStar, faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-products-list',
   imports: [NgxPaginationModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    ProductCardComponent
   ],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.css'
@@ -24,6 +26,7 @@ faArrowDown : any= faArrowDown;
 searchedItem:String = '';
 searchedProducts: any=this.productsArr;
 product:any;
+
 
 searchItem(s:any){
   s=s.toLowerCase()
