@@ -5,12 +5,12 @@ import { Component, EventEmitter } from '@angular/core';
   imports: [],
   templateUrl: './child1.component.html',
   styleUrl: './child1.component.css',
-  inputs: ['a'],
+  inputs: ['ab'],
   outputs: ['carsEvent']
 })
 export class Child1Component {
 
-  a: any;
+  ab: any;
   myName = 'Sachin Tendulkar';
   myAge = 45;
   cars = ['Tata', 'Honda', 'maruti'];

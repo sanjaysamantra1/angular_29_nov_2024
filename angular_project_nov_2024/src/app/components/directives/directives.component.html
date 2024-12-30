@@ -84,7 +84,8 @@
     <button class="btn btn-primary" (click)="addNewEmployee()">Add new Emp</button>
 
     <div class="border p-2">
-        Ngstyle and ng class
+        <h2 highlight>Ngstyle and ng class (OR) Attribute directives.
+        <br>These can use data binding, where as structural directives key words do not use data binding (for, if, switch etc..)</h2>
 
         <input type="number" [(ngModel)]='num'>
         <p [style.color]="num % 2 == 0 ? 'blue' : 'red'"> {{num}} is {{num % 2 == 0 ?'even':'odd'}} </p>
@@ -95,5 +96,11 @@
 
         <button class="btn" [ngClass]="{'btn-primary': flag}">Helloo</button>
         <button class="btn mx-1" [class.btn-success]="flag">Helloo</button>
+    </div>
+
+    <div>
+        <h2>Custom Directive</h2>
+        <input type = "text" numberOnly />
+        <!-- Input Box is host element for numberonly directive -->
     </div>
 </div>

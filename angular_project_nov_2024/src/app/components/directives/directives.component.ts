@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { HttpBackend } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NumberOnlyDirective } from '../../directives/numberonly.directive';
+import { HighlightDirective } from '../../directives/highlight.directive';
 
 @Component({
   selector: 'app-directives',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NumberOnlyDirective, HighlightDirective],
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.css'
 })

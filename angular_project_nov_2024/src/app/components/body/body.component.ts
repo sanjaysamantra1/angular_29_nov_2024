@@ -7,10 +7,12 @@ import { Demo1Component } from "../demo1/demo1.component";
 import { EmployeeCRUDComponent } from "../employee-crud/employee-crud.component";
 import { PipesComponent } from "../pipes/pipes.component";
 import { ParentComponent } from "../parent/parent.component";
+import { MyModalComponent } from "../my-modal/my-modal.component";
+import { FormModalComponent } from "../form-modal/form-modal.component";
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent],
+  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

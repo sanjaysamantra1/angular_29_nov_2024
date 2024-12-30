@@ -3,10 +3,13 @@ import * as employees from './employees.json';
 import { NgxPaginationModule } from 'ngx-pagination';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
+import { EmployeeListComponent } from "../employee-list/employee-list.component";
+import { EmployeeFormModelComponent } from "../employee-form-model/employee-form-model.component";
+import { FormModalComponent } from "../form-modal/form-modal.component";
 
 @Component({
   selector: 'app-employee-crud',
-  imports: [NgxPaginationModule, FormsModule],
+  imports: [NgxPaginationModule, FormsModule, EmployeeListComponent, EmployeeFormModelComponent, FormModalComponent],
   templateUrl: './employee-crud.component.html',
   styleUrl: './employee-crud.component.css'
 })
@@ -16,8 +19,7 @@ export class EmployeeCRUDComponent {
   copyOfEmployees: any = this.employees;
 
   p: any;
-  showFlag: boolean = false;
-  selectedEmployee: any = '';
+  showEmployeeFormModel: boolean = false;
 
   eId: number = 0;
   eName: string = '';
@@ -26,10 +28,10 @@ export class EmployeeCRUDComponent {
 
   employeeObject = Object.create(null);
 
-  getCurrentRecord(employee: any) {
-    console.log("Current Record ", employee.eId);
-    this.showFlag = !this.showFlag;
-    this.selectedEmployee = employee;
+  toggleModel() {
+    console.log("Before Click ", this.showEmployeeFormModel);
+    this.showEmployeeFormModel = !this.showEmployeeFormModel;
+    console.log("After Click ", this.showEmployeeFormModel);
   }
 
   getRecordToDelete(employee: any) {
@@ -37,13 +39,8 @@ export class EmployeeCRUDComponent {
     this.showDeleteAlert(employee);
   }
 
-  insertNewRecord() {
-    console.log(this.eId + ' ' + this.eName + ' ' + this.eGender + ' ' + this.eSalary);
-    this.employeeObject.eId = this.eId;
-    this.employeeObject.name = this.eName;
-    this.employeeObject.sal = this.eSalary;
-    this.employeeObject.gender = this.eGender;
-    console.log(this.employeeObject);
+  insertNewRecord(employeeObject: any) {
+    console.log(employeeObject);
 
     Swal.fire({
       position: "center",
@@ -53,12 +50,9 @@ export class EmployeeCRUDComponent {
       timer: 1500
     });
 
-    this.employees.push(this.employeeObject);
-    this.employeeObject = null;
-    this.eId = 0;
-    this.eName = '';
-    this.eSalary = 0;
-    this.eGender = '';
+    this.employees.push(employeeObject);
+    console.log(employeeObject);
+    console.log(this.employees)
   }
 
   showDeleteAlert(employee: any) {
