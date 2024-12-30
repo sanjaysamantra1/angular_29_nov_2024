@@ -15,6 +15,12 @@ export class EmployeeListComponent {
   showFlag: boolean = false;
   selectedEmployee: any = '';
   employeeEvent = new EventEmitter();
+  flag: boolean = true;
+
+  onClickChange() {
+    console.log(!this.flag);
+    return this.flag = !this.flag;
+  }
 
   getCurrentRecord(employee: any) {
     console.log("Current Record ", employee.eId);

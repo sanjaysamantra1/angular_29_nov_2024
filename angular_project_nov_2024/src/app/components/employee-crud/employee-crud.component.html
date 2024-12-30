@@ -3,7 +3,7 @@
         employee </button>
     <br> -->
     
-    <app-form-modal (addEmployeeEvent)="insertNewRecord($event)"></app-form-modal> <hr>
+    <app-form-modal (addEmployeeEvent)="insertNewRecord($event)"></app-form-modal>
     
     <app-employee-list [employees] = 'employees'  #empListRef (employeeEvent)="getRecordToDelete($event)" ></app-employee-list>
     <!-- <app-employee-form-model (employeeEvent)="insertNewRecord($event)"></app-employee-form-model> -->

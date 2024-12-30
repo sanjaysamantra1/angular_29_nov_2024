@@ -1,28 +1,65 @@
-<table class="table table-light table-striped table-bordered border-primary">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Salary</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Details</th>
-            <th scope="col">Delete</th>
-        </tr>
-    </thead>
-    @for(employee of employees | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
-    <tbody>
-        <tr scope="row">
-            <th>{{employee.eId}}</th>
-            <td>{{employee.name}}</td>
-            <td>{{employee.sal}}</td>
-            <td>{{employee.gender}}</td>
-            <td><button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    (click)="getCurrentRecord(employee)"> Details </button></td>
-            <td><button class="btn mx-1 btn-danger" (click)="getRecordToDelete(employee)"> Delete </button></td>
-        </tr>
-    </tbody>
+<button class="btn mx-1 mb-1 mt-2 btn btn-info" (click)="onClickChange()">Toggle to {{flag ? "Card View" : "List View"}}
+</button>
+
+<div>
+    @if (flag == true) {
+    <table class="table table-light table-striped table-bordered border-primary">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Details</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        @for(employee of employees | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
+        <tbody>
+            <tr scope="row">
+                <th>{{employee.eId}}</th>
+                <td>{{employee.name}}</td>
+                <td>{{employee.sal}}</td>
+                <td>{{employee.gender}}</td>
+                <td><button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal"
+                        (click)="getCurrentRecord(employee)"> Details </button></td>
+                <td><button class="btn mx-1 btn-danger" (click)="getRecordToDelete(employee)"> Delete </button></td>
+            </tr>
+        </tbody>
+        }
+    </table>
+    } @else {
+    <div class="row">
+        @for(employee of employees| paginate: { itemsPerPage: 4, currentPage: p };track $index){
+        <div class="col-sm-3">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjWGGs4b5kwJavNNlUaFNRl3TY9hWEJDNsg&s"
+                    class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Id : {{employee.eId}}</h5>
+                    <p class="card-text">Name : {{employee.name}}</p>
+                    <p class="card-text">Salary : {{employee.sal}}</p>
+                    <p class="card-text">Gender: {{employee.gender}}</p>
+                    <div class="row">
+                        <div class="col">
+                            <a>
+                                <button class="btn mx-1 btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#detailsModal" (click)="getCurrentRecord(employee)"> Details
+                                </button>
+                            </a>
+                            <a>
+                                <button class="btn mx-1 btn-danger" (click)="getRecordToDelete(employee)"> Delete
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
     }
-</table>
+</div>
 
 <div>
     <div class="row mt-2">
@@ -32,7 +69,7 @@
     </div>
 </div>
 
-<div class="modal" id="exampleModal" tabindex="-1">
+<div class="modal" id="detailsModal" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
