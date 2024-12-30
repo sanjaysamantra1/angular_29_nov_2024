@@ -1,0 +1,68 @@
+Basic interpolation binding <h3>My name is : {{myName}}</h3>
+Basic property binding <h3>My name is : <span [innerHTML]='myName'></span></h3>
+property binding with bind syntax <h3>My name is : <span bind-innerHTML="myName"></span></h3>
+
+using text box interpolation
+<input type="text"  value={{myName}}>
+using text box property
+<input type="text" [value]="myName">
+<input type="text" bind-value="myName">
+
+Two way data binding:
+<input type="text" [(ngModel)]="myName">
+<br>
+using image
+<br>
+<img src="{{my_img}}">
+<img [src]="my_img">
+<img bind-src="my_img">
+<br>
+<button class="btn btn-primary" disabled="{{flag}}">button</button>
+<button class="btn btn-primary" [disabled]="flag">button</button>
+<button class="btn btn-primary" bind-disabled="flag">button</button>
+
+
+<button (click)="f1()">invoke</button>
+<button on-click="f1()">invoke</button>
+
+<table  [width]="myWidth" [attr.height]="myHeight">
+    <tbody>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+        </tr>
+    </tbody>
+</table>
+
+Template Reference:
+
+<input   #box1>
+<input  ref-box2>
+<button (click)="addition(box1.value,box2.value)">result</button>
+addition of {{box1.value}} and {{box2.value}} is {{result}}

@@ -1,0 +1,55 @@
+
+<div class="myself text-center">
+
+    
+
+    <table class="table table-bordered table-striped ">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Position</th>
+    <th>Salary</th>
+            </tr>
+        </thead>
+       
+      
+
+            @for (emp of employees; track emp) {
+                <tbody>
+                <tr>
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.position}}</td>
+                    <td>{{emp.salary}}</td>
+                </tr>
+            </tbody>
+
+            }
+       
+    </table>
+
+    
+</div>
+
+<br>
+
+<div class="row">
+
+<div class="col sm-6">
+    <div>my child data {{child1Ref.employeeDataToChild1}}</div>
+
+    <app-employee-child1  #child1Ref [employeeDataToChild1]="employees" (deleteEmployeeEvent)="deletedEmployee($event)"></app-employee-child1>
+</div>
+
+
+<div class="col sm-6">
+
+    <app-employee-child2 [child1Reference]="child1Ref" (addEmployeeEvent)="addingEmployee($event)" ></app-employee-child2>
+</div>
+
+</div>
+
+
+
+

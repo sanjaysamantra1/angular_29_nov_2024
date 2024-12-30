@@ -1,0 +1,53 @@
+<div>
+    <h3>Add Employee</h3>
+
+    <form (ngSubmit)="addEmployee(newEmployee.name,newEmployee.position,newEmployee.salary)">
+
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" [(ngModel)]="newEmployee.name" name="name">
+
+        </div>
+        <div>
+            <label for="position">Position</label>
+            <input type="text" id="position" [(ngModel)]="newEmployee.position" name="position">
+        </div>
+        <div>
+            <label for="salary">Salary</label>
+            <input type="number" id="salary" [(ngModel)]="newEmployee.salary" name="salary">
+
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+
+    </form>
+</div>
+
+
+
+
+
+<table class="table table-bordered table-striped ">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+
+
+
+    @for (emp of child1Reference.employeeDataToChild1; track emp) {
+    <tbody>
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.position}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+    </tbody>
+
+    }
+
+</table>

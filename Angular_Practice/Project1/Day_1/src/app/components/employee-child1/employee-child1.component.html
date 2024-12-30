@@ -1,0 +1,26 @@
+<table class="table table-bordered table-striped ">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+        </tr>
+
+    </thead>
+   
+
+    @for (emp of employeeDataToChild1; track emp) {
+        <tbody>
+        <tr scope="row">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.position}}</td>
+            <td>{{emp.salary}}</td>
+            <td><button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button></td>
+        </tr>
+    </tbody>
+    }
+
+
+</table>
