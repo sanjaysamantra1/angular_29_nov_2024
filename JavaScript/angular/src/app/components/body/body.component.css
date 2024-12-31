@@ -21,3 +21,9 @@
 #modal-title{
     color: black;
 }
+
+.img-styl{
+    width: 100%;
+    object-fit: cover;
+    margin-top: 20px;
+}

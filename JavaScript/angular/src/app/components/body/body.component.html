@@ -36,124 +36,56 @@
         </div>
       </div>
       
-      <app-databinding></app-databinding>
+  
+      <img class="img-styl" src="https://rukminim1.flixcart.com/flap/3600/3600/image/f4c5cdea70491fdc.jpg">
+
+
+      <button class="btn btn-primary my-4" (click)="dataBindingF()">DataBinding Concept and Assignment</button>
+      @if(dataBinding){<app-databinding></app-databinding>}
      
-      <app-directives></app-directives>
-    
-      <app-user-list></app-user-list>
+      <button class="btn btn-primary my-4" (click)="directivesF()">Directives Concept and Assignment</button>
+      @if(directives){<app-directives></app-directives>
+      <app-user-list></app-user-list>}
       
-      <app-demo1>
+      <button class="btn btn-primary my-4" (click)="productListF()">ProductList Assignment</button>
+      @if(productList){<app-demo1>
         <h3>Hi, This is Rohith
         </h3>
         <h3 class="text-center">ASSIGNMENT
         </h3>
-      </app-demo1>
+      </app-demo1>}
 
 
-
-
-      <!-- <app-modal>
-        <table class="table-bordered table table-striped">
-            <tbody>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-                <tr>
-                    <td>data-1</td>
-                    <td>data-2</td>
-                    <td>data-3</td>
-                    <td>data-4</td>
-                    <td>data-5</td>
-                </tr>
-            </tbody>
-        </table>
-    </app-modal>  -->
-
-
-    <app-modal>
-        <h1 id="modal-title content">Registration Form</h1>
+      <button class="btn btn-primary my-4" (click)="modalConceptF()">Modal Concept and Assignment</button>
+    @if(modalConcept){<app-modal>
+        <h1 id="modal-title content" style="color: black;">Registration Form</h1>
         <form>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <label for="exampleInputEmail1" class="form-label" style="color: black;">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div id="emailHelp" class="form-text" style="color: black;">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <label for="exampleInputPassword1" class="form-label" style="color: black;">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <label class="form-check-label" for="exampleCheck1" style="color: black;">Check me out</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </app-modal>
+    <app-employee-crud></app-employee-crud>}
 
-    <app-employee-crud></app-employee-crud>
-    <app-pipes></app-pipes>
-    <app-parent></app-parent>
+
+    <button class="btn btn-primary my-4" (click)="pipesF()">Pipes Concept and Assignment</button>
+    @if(Pipes){<app-pipes></app-pipes>}
+
+    <button class="btn btn-primary my-4" (click)="parentChildF()">Parent-child Concept and Assignment</button>
+    @if(ParentChild){
+      <app-parent></app-parent>
     <app-employeecrudparent></app-employeecrudparent>
-
+    }
     </div>
 </div>

@@ -17,4 +17,32 @@ import { EmployeecrudparentComponent } from '../employeecrudparent/employeecrudp
 })
 export class BodyComponent {
 
+  dataBinding:boolean=false;
+  directives: boolean=false;
+  productList:boolean=false;
+  modalConcept: boolean =false;
+  Pipes: boolean =false;
+  ParentChild: boolean =false;
+
+
+
+  dataBindingF(){
+    this.dataBinding=!this.dataBinding;
+  }
+  directivesF(){
+    this.directives=!this.directives;
+  }
+  productListF(){
+    this.productList=!this.productList;
+  }
+  modalConceptF(){
+    this.modalConcept=!this.modalConcept;
+  }
+  pipesF(){
+    this.Pipes=!this.Pipes;
+  }
+  parentChildF(){
+    this.ParentChild=!this.ParentChild;
+  }
+
 }
