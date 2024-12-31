@@ -13,7 +13,7 @@
 </p>
 <div>
     <p [hidden]="flag">{{val}}</p>
-    <button (click)="flag=!flag">{{flag ? 'SHOW' : 'HIDE'}}</button>
+    <button class="btn btn-primary" (click)="flag=!flag">{{flag ? 'SHOW' : 'HIDE'}}</button>
 </div>
 
 <br/>
@@ -62,12 +62,13 @@
 
 <input [(ngModel)]="val1" type="number" placeholder="Enter first value">
 <input class=mx-3 [(ngModel)]="val2" type="number" placeholder="Enter first value">
-<select [(ngModel)]="operator" (change)="calculate()">
+<select [(ngModel)]="operator">
     <option value="+">+</option>
     <option value="-">-</option>
     <option value="*">*</option>
     <option value="%">%</option>
 </select>
+<button class=" btn btn-primary mx-3" (click)="calculate()">Submit</button>
 <div>Result: {{res}}</div>
 
 </div>
@@ -81,7 +82,7 @@
 
 <div> 
     <input class="assignment5" [type]="isPass ? 'password' : 'text'" [(ngModel)]="passwordValue" placeholder="Enter Text"> 
-    <button class="mx-3" (click)="togglePasswordVisibility()">{{isPass ? 'SHOW' : 'HIDE'}}</button>
+    <button class="btn btn-primary mx-3" (click)="togglePasswordVisibility()">{{isPass ? 'SHOW' : 'HIDE'}}</button>
  </div>
 
 
@@ -91,10 +92,10 @@
   <p> Assignment 6: create a counter example with 3 controls(increment,decrement,reset) 
  </p>
 
-<button  (click)="counterr('increment')">INCREMENT</button>
+<button  class="btn btn-primary" (click)="counterr('increment')">INCREMENT</button>
 <input class="mx-3" [(ngModel)]="counter">
-<button  (click)="counterr('decrement')">DECREMENT</button>
-<button class="mx-3 my-2"  (click)="counterr('reset')">RESET</button>
+<button  class="btn btn-primary" (click)="counterr('decrement')">DECREMENT</button>
+<button class=" btn btn-primary mx-3 my-2"  (click)="counterr('reset')">RESET</button>
 
 
 
