@@ -17,13 +17,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
 })
 export class AppComponent {
   title = 'angular';
-  isDarkMode = false; // Global theme state
+  isDark = true; // Global theme state
 
   toggleTheme(): void{
-    this.isDarkMode=!this.isDarkMode;
+    this.isDark=!this.isDark;
 
 
-    if(this.isDarkMode){
+    if(this.isDark){
       document.body.classList.add('dark-theme');
       document.body.classList.remove('light-theme');
     }

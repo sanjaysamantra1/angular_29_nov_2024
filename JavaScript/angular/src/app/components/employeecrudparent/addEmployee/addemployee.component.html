@@ -7,26 +7,26 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Employee</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">Add New Employee</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <h3>Add New Employee</h3>
           <form (ngSubmit)="addEmployee()" class="mb-3">
             <div class="my-3">
-              <label for="eId">EmpId: </label>
+              <label for="eId" style="color: black;">EmpId: </label>
               <input class="mx-3" type="number" id="eId" [(ngModel)]="newEmployee.eId" name="eId" required />
             </div>
             <div class="my-3">
-              <label for="name">Name: </label>
+              <label for="name" style="color: black;">Name: </label>
               <input class="mx-3" type="text" id="name" [(ngModel)]="newEmployee.name" name="name" required />
             </div>
             <div class="my-3">
-              <label for="sal">Salary: </label>
+              <label for="sal" style="color: black;">Salary: </label>
               <input class="mx-3" type="number" id="sal" [(ngModel)]="newEmployee.sal" name="sal" required />
             </div>
             <div class="my-3">
-              <label for="gender">Gender: </label>
+              <label for="gender" style="color: black;">Gender: </label>
               <select class="mx-3" id="gender" [(ngModel)]="newEmployee.gender" name="gender" required>
                 <option value="" disabled>Select Gender</option>
                 <option value="male">Male</option>

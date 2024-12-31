@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-employeelist',
@@ -6,7 +6,8 @@ import { Component, EventEmitter } from '@angular/core';
   templateUrl: './employeelist.component.html',
   styleUrl: './employeelist.component.css',
   inputs:['employees'],
-  outputs:['deleteEmp']
+  outputs:['deleteEmp'],
+  encapsulation:ViewEncapsulation.None
 })
 export class EmployeelistComponent {
 employees: any[] = [];

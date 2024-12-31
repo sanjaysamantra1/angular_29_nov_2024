@@ -1,15 +1,19 @@
-<p>demo1 works!</p>
+<!-- <p>demo1 works!</p> -->
 <button class="mb-4 mx-3" (click)="openMyAlert()">Show Alert</button>
 <button class="mb-4" (click)="openMySnackBar()">Show SnackBarAlert</button>
 
-<!-- <ng-content></ng-content> -->
 
-<!-- Search and Sort Controls -->
+<p>Assignment :
+  -Read data from a static array and display list of products
+    https://fakestoreapi.com/products
+  -implement pagination
+  -implement search functionality (Search By Title)
+  -implement sort functionality (Price Asc, Price desc)</p>
 <div class="d-flex justify-content-center align-items-center mb-4">
-    <!-- Search Bar -->
+
     <input type="text" class="form-control w-25" [(ngModel)]="searchText" (input)="filterProducts()" placeholder="Search by title" />
     
-    <!-- Sort Buttons -->
+
     <div>
       <button class="btn btn-secondary mx-3" (click)="sortByPrice('asc')">Price: Low to High</button>
       <button class="btn btn-secondary ms-2" (click)="sortByPrice('desc')">Price: High to Low</button>

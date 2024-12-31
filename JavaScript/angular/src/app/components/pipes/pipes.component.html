@@ -83,7 +83,15 @@ maxFractionDigits = 5  -->
     <button class="btn btn-primary mx-2" (click)="pushingDataToArr(newnum.value)">Add New Value</button>
 </div>
 
-<p>ASSIGNMENT</p>
+<p class="my-4">Assignment - 4:
+    ==========
+    1. Create a custom pipe(ordinal) that displays a cardinal number in ordinal format.
+       input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th
+    2. create a custom pipe called age which takes a date and returns the age in years.
+    3. declare an array of employee objects. display them in a table.
+       create a custom pipe Salutation that will add 'mr. / miss.' before the employee name.
+    4. declare an array of employee objects. display them in a table. 
+       add a search-box above the table. create a custom-pipe to filter/search employees data.</p>
 <div>
     <p>--------------------------Q1-------------------------</p>
 @for(a of arr; track $index){
@@ -107,10 +115,9 @@ maxFractionDigits = 5  -->
 
 
 
-<p>--------------------------Q3-------------------------</p>
+<p>--------------------------Q3&Q4-------------------------</p>
 
 <h2>Employee List</h2>
-<p>--------------------------Q4-------------------------</p>
 <input [(ngModel)]="searchText" placeholder="Search..." />
 <!-- <button class="mx-3" >SEARCH</button> -->
 <div class="container my-3">

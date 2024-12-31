@@ -33,7 +33,7 @@ export class HighlightDirective {
   
   @HostListener('mouseenter') 
   onMouseEnter(){
-   this.highlightService.highlight(this.elemet,'yellow','red');
+   this.highlightService.highlight(this.elemet,'yellow','orange');
    console.log('mouse entered');
   }
 

@@ -1,8 +1,10 @@
 @import 'bootstrap/dist/css/bootstrap.css';
 
 body {
-  background-color: white; 
-  color: black;
+  /* background-color: white; 
+  color: black; */
+  background-color: #121212;
+  color: white;
   overflow-x: hidden;
 }
 
@@ -16,3 +18,15 @@ body.light-theme {
   color: black;
 }
 
+
+body.dark-theme .horizontal-list-container,
+body.dark-theme .horizontal-list {
+  background-color: #121212;
+  color: white;
+}
+
+body.light-theme .horizontal-list-container,
+body.light-theme .horizontal-list {
+  background-color: white;
+  color: #121212;
+}

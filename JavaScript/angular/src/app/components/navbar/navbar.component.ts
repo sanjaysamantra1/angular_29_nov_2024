@@ -6,11 +6,14 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
   imports: [CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
-  
+  inputs:['isDarkMode'],
+  outputs:['toggleTheme']
 })
 export class NavbarComponent {
-@Input() isDarkMode! : boolean;
-@Output() toggleTheme = new EventEmitter<void>(); 
+
+  isDarkMode:any;
+  
+toggleTheme = new EventEmitter<void>(); 
 
 onToggleTheme():void{
   this.toggleTheme.emit();
