@@ -1,0 +1,12 @@
+<div class="employee-container">
+  <p>Assignment-9</p>
+  @if (showForm) {
+    <app-employee-crud-child-1 (employeeAdded)="addEmployee($event)" ></app-employee-crud-child-1>
+  }
+
+  <app-employee-crud-child-2 [employees]="employees" (view)="viewEmployee($event)" (delete)="deleteEmployee($event)"></app-employee-crud-child-2>
+
+  <div class="action-button">
+    <button class="btn add-employee-btn" (click)="showForm = true"> Add Employee </button>
+  </div>
+</div>

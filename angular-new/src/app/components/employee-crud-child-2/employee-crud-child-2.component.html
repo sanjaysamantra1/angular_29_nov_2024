@@ -1,0 +1,29 @@
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Salary</th>
+        <th>    Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees; track employee) {
+        <tr>
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>
+            <button class="btn view-btn" (click)="view.emit(employee)"> View </button>
+            <button class="btn delete-btn" (click)="delete.emit(employee.id)"> Delete </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,59 @@
+.inline-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.ordinal-item {
+  margin-right: 10px;
+  font-size: 16px; 
+}
+
+.table-container {
+  width: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.thead {
+  background-color: #007bff;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.th {
+  padding: 12px;
+  text-align: left;
+}
+
+.tbody {
+  background-color: #fff;
+  color: #333;
+}
+
+.tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.td {
+  padding: 10px;
+  text-align: left;
+}
+
+.td.gender-column {
+  text-transform: capitalize;
+}
+
+.td.age-column {
+  text-align: center;
+}
+

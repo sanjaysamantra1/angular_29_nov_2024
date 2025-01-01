@@ -1,0 +1,65 @@
+<div>
+    <button>Assignment-1 </button>
+    <p> Question 1: </p>
+    <div>
+        <p [hidden]="flag">{{val}}</p>
+        <button (click)="flag=!flag">{{flag ? 'SHOW' : 'HIDE'}}</button>
+    </div>
+    
+    <br/>
+    
+    <p> Question 2: </p>
+    <div>
+        <textarea rows="4" cols="20" maxlength="{{textLength}}" [(ngModel)]="text"></textarea>
+        <div>Remaining characters: {{ textLength - (text.length || 0) }}</div>
+    </div>
+    
+    <br/>
+    
+    <p> Question 3: </p>
+    <select [(ngModel)]="State">
+        <option value="WB">West Bengal</option>
+        <option value="RJ">Rajasthan</option>
+        <option value="UP">Uttar Pradesh</option>
+        <option value="MP">Madhya Pradesh</option>
+        <option value="HR">Haryana</option>
+        <option value="BR">Bihar</option>
+        <option value="JK">Jammu & Kashmir</option>
+        <option value="OD">Odisha</option>
+        <option value="UK">Uttarakhand</option>
+        <option value="CH">Chattisgarh</option>
+    </select>
+    <div> You selected: {{State}}</div>
+    
+    <br/>
+    
+    <div>
+        <p> Question 4: </p>
+        <input [(ngModel)]="val1" type="number" placeholder="Enter first value">
+        <input [(ngModel)]="val2" type="number" placeholder="Enter second value">
+        <select [(ngModel)]="operator" (change)="calculate()">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="%">%</option>
+        </select>
+        <div>Result: {{res}}</div>
+    </div>
+    
+    <br/>
+    
+    <div>
+        <p> Question 5: Toggle Input Type</p>
+        <input [type]="isPassword ? 'password' : 'text'" placeholder="Enter your password" /><br/>
+        <button (click)="isPassword = !isPassword">{{ isPassword ? 'Show Password' : 'Hide Password' }}</button>
+    </div>
+    
+    <br/>
+    
+    <div>
+        <p> Question 6</p>
+        <input [(ngModel)]="counter">
+        <button (click)="counterr('increment')">INCREMENT</button>
+        <button (click)="counterr('decrement')">DECREMENT</button>
+        <button (click)="counterr('reset')">RESET</button>
+</div>

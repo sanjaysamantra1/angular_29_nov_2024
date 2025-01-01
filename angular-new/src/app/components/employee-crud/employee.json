@@ -1,0 +1,82 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "department": "Engineering",
+      "designation": "Software Developer",
+      "email": "johndoe@example.com",
+      "salary": 85000
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "department": "Marketing",
+      "designation": "Marketing Manager",
+      "email": "janesmith@example.com",
+      "salary": 95000
+    },
+    {
+      "id": 3,
+      "name": "Michael Johnson",
+      "department": "Finance",
+      "designation": "Financial Analyst",
+      "email": "michaelj@example.com",
+      "salary": 78000
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "department": "Human Resources",
+      "designation": "HR Coordinator",
+      "email": "emilyd@example.com",
+      "salary": 62000
+    },
+    {
+      "id": 5,
+      "name": "David Wilson",
+      "department": "Sales",
+      "designation": "Sales Executive",
+      "email": "davidw@example.com",
+      "salary": 70000
+    },
+    {
+      "id": 6,
+      "name": "Sarah Taylor",
+      "department": "IT",
+      "designation": "IT Support Specialist",
+      "email": "saraht@example.com",
+      "salary": 68000
+    },
+    {
+      "id": 7,
+      "name": "Chris Brown",
+      "department": "Engineering",
+      "designation": "DevOps Engineer",
+      "email": "chrisb@example.com",
+      "salary": 89000
+    },
+    {
+      "id": 8,
+      "name": "Jessica White",
+      "department": "Design",
+      "designation": "UI/UX Designer",
+      "email": "jessicaw@example.com",
+      "salary": 75000
+    },
+    {
+      "id": 9,
+      "name": "Paul Miller",
+      "department": "Customer Support",
+      "designation": "Support Representative",
+      "email": "paulm@example.com",
+      "salary": 56000
+    },
+    {
+      "id": 10,
+      "name": "Laura Harris",
+      "department": "Legal",
+      "designation": "Legal Advisor",
+      "email": "laurah@example.com",
+      "salary": 102000
+    }
+  ]

@@ -1,0 +1,63 @@
+<div>
+  <button>Assignment-8</button>
+  <p>Question-1</p>
+<div class="inline-container">
+  @for (num of nums; track num) {
+    <p class="ordinal-item">{{ num | ordinalpipe }}</p>
+  }
+</div>
+
+<div class="border p-3">
+  <p>Question-2</p>
+  <h5>Custom Pipe - Age:</h5>
+  <div>Please selct a date to calculate your Age:</div>
+  <input type="date" [(ngModel)]="dob">
+  <div>DOB: {{ dob | date }}</div>
+  <div>Age: {{ dob | agepipe }}</div>
+</div>
+
+<div class="table-container">
+  <p>Question-3</p>
+  <table class="table" border="1">
+    <thead class="thead">
+      <tr class="tr">
+        <th class="th">Name</th>
+        <th class="th">Gender</th>
+        <th class="th">Age</th>
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      @for (employee of employees; track employee) {
+        <tr class="tr">
+          <td class="td">{{ employee.name | salutationpipe: employee.gender }}</td>
+          <td class="td gender-column">{{ employee.gender }}</td>
+          <td class="td age-column">{{ employee.age }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<div>
+    <p>Question-4</p>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search employees" class="search-box" />
+      <table class="table-container">
+                  <thead class="thead">
+                      <tr class="tr">
+                          <th class="th">Name</th>
+                          <th class="th">Gender</th>
+                          <th class="th">Age</th>
+                      </tr>
+                  </thead>
+                  <tbody class="tbody">
+                      @for (employee of employees | searchpipe: searchTerm; track employee) {
+                          <tr class="tr">
+                              <td class="td">{{ employee.name }}</td>
+                              <td class="td gender-column">{{ employee.gender }}</td>
+                              <td class="td age-column">{{ employee.age }}</td>
+              </tr>
+              }
+          </tbody>
+      </table>
+</div>
+</div>
