@@ -108,4 +108,33 @@
         </select>
         <div>You selected:: {{selectedState}}</div>
     </div>
+    <div>
+        Assignment:4 (Arithmetic operations with dropdown) <br />
+        <input class="mx-2" #box12 />
+        <input ref-box22 class="mx-2" />
+        <select [(ngModel)]="selectedOperation" (change) ="operationsNeedToDo($event)" >>
+            <option>+</option>
+            <option>-</option>
+            <option>/</option>
+            <option>*</option>
+            <option>%</option>
+        </select>
+        <div>Total is {{result}}</div>
+    </div>
+    <div>
+        Assignment:5 (password-show/hide)<br />
+        <input class="mx-2" [type]="password" />
+        <button (click)="changeType()">
+            {{flag ? 'SHOW' : 'HIDE'}}
+        </button>
+    </div>
+    <div>
+        Assignment:6 (counter)<br />
+        <button (click)="countter=countter+1">Increment</button>
+        <button (click)="countter=countter-1">Decrement</button>
+        <button (click)="countter=0">Reset</button>
+        <div>Count:: {{countter}}</div>
+
+    </div>
+
 </div>

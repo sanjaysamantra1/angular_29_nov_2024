@@ -18,6 +18,7 @@ import { ParentComponent } from '../parent/parent.component';
     PipesComponent,
     ParentComponent
   ],
+
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
