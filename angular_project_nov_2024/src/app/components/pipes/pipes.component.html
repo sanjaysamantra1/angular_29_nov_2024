@@ -1,0 +1,90 @@
+<h3 class="text-center">Let's Learn Pipes</h3>
+
+<div class="border p-2">
+    <div>Name is: {{myName}}</div>
+    <div>Name is: {{myName | uppercase}}</div>
+    <div>Name is: {{myName | lowercase}}</div>
+    <div>Name is: {{myName | titlecase}}</div>
+
+    <div>Salary is: {{sal }}</div>
+    <div>Salary is: {{sal | currency}}</div>
+    <div>Salary is: {{sal | currency : 'INR'}}</div>
+    <!-- input | pipeName : argument -->
+    <div>Salary is: {{sal | currency : '&euro;'}}</div>
+    <div>Salary is: {{sal | currency : '&#20803;'}}</div>
+    <hr />
+    <div>Today is: {{today}}</div>
+    <div>Today is: {{today | date}}</div>
+    <div>Today is: {{today | date : 'fullDate'}}</div>
+    <div>Today is: {{today | date : 'mediumDate'}}</div>
+    <div>Today is: {{today | date : 'shortDate'}}</div>
+    <div>Today is: {{today | date : 'fullTime'}}</div>
+    <div>Today is: {{today | date : 'mediumTime'}}</div>
+    <div>Today is: {{today | date : 'shortTime'}}</div>
+    <div>Today is: {{today | date : 'dd-MMMM-yyyy'}}</div>
+    <hr />
+    <div>Today is: {{today | date : 'dd-MMMM-yyyy' | uppercase}}</div>
+    <div>Today is: {{today | date : 'dd-MMMM-yyyy' | lowercase}}</div>
+    <hr />
+
+    <div>{{ 12.111222333 | number: "3.2-5" }}</div>
+    <div>{{ 12.1 | number: "3.2-5" }}</div>
+    <div>{{ 0.5 | number:'3.2-5'}} </div>
+    <div>{{ 0.5 | percent }} </div>
+    <div>{{ 0.75 | percent }} </div>
+    <hr />
+    <div>{{ user }}</div>
+    <div>{{ user | json }}</div>
+
+    @for(entry of user | keyvalue;track $index){
+    <h5>{{entry.key}}---{{entry.value}}</h5>
+    }
+    <hr />
+    <div>{{arr1}}</div>
+    <div>{{arr1 | slice : 2 }}</div>
+    <div>{{arr1 | slice : 2 :5}}</div>
+    <div>{{arr1 | slice : 1 : -1}}</div>
+</div>
+
+<div class="border p-3">
+    <h3>Custom Pipe Remaining Characters:</h3>
+    <textarea [(ngModel)]="msg" maxlength="100"></textarea>
+    <div>Remaining Chars: {{msg | remaining }}</div>
+
+    <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
+    <div>Remaining Chars: {{msg2 | remaining : 200}}</div>
+</div>
+<div class="border p-3">
+    <h3>Custom Pipe - Age:</h3>
+    <div>Please selct a date to calculate your Age:</div>
+    <input type="date" [(ngModel)]="dob">
+    <div>DOB: {{ dob | date }}</div>
+    <div>Age: {{ dob | age }}</div>
+</div>
+<div class="border p-3">
+    <h3>Custom Pipe - Truncate:</h3>
+    <div>{{ longStr }}</div>
+    <div>{{ longStr | truncate }}</div>
+    <div>{{ longStr | truncate : 12 }}</div>
+    <div>{{ longStr | truncate : 12 : true }}</div>
+    <div>{{ longStr | truncate : 12:false : '####' }}</div>
+</div>
+<div class="border p-3">
+    <h3>Pure / Impure Pipe</h3>
+    <div>
+        Without Sort Pipe:
+        @for(ele of arr1;track $index){
+        <span>{{ele}} &nbsp;</span>
+        }
+    </div>
+    <div>
+        With Sort Pipe (pure):
+        @for(ele of arr2 | mysort;track $index){
+            <span>{{ele}} &nbsp;</span>
+        }
+        <div>
+            Add a new Number: <input #newnum />
+            <button class="btn btn-primary mx-1" (click)="pushDataToArr(newnum.value)">Add New val</button>
+        </div>
+    </div>
+</div>
