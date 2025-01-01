@@ -1,7 +1,16 @@
 <div class="container mt-4">
-
-  <!-- Table Format -->
-  <h2 class="mb-4 text-primary">Team Members - Table View</h2>
+  
+  <div class="form-check form-switch">
+    <input type="checkbox" id="themeSwitch" (change)="toggleDarkMode()" />
+    <label for="themeSwitch">{{ isDarkMode ? 'Dark Mode' : 'Light Mode' }}</label>
+  </div>
+  
+  <div class="form-check form-switch mb-4">
+    <button (click)="toggleView()">Click Here</button>
+  </div>
+  
+  @if(flag){
+    <h2 class="mb-4 text-primary">Team Members - Table View</h2>
   <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped">
       <thead class="table-dark">
@@ -24,19 +33,14 @@
       </tbody>
     </table>
   </div>
-
+  }@else{
   <div class="container mt-4">
-
-      <!-- Card Format -->
       <h2 class="mb-4 text-primary">Team Members - Card View</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         @for (member of teamMembers; track member.memberId) {
           <div class="col">
             <div class="card shadow-sm" style="width: 18rem;">
-              <!-- Placeholder Image -->
               <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="{{ member.fullName }}">
-    
-              <!-- Card Body -->
               <div class="card-body">
                 <h5 class="card-title">{{ member.fullName }}</h5>
                 <p class="card-text">
@@ -49,7 +53,7 @@
           </div>
         }
       </div>
-    
     </div>
-    
+  }
 </div>
+  

@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {NgxPaginationModule} from 'ngx-pagination';
-import { CommonModule } from '@angular/common';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import * as productsData from './items.json'; 
+import { PaginationCardsComponent } from '../pagination-cards/pagination-cards.component';
 
 @Component({
   selector: 'app-paginationassign',
   imports: [
-    NgxPaginationModule, FormsModule, CommonModule
-  ],
+    NgxPaginationModule,
+    FormsModule,
+    PaginationCardsComponent
+],
   templateUrl: './paginationassign.component.html',
   styleUrl: './paginationassign.component.css'
 })

@@ -1,26 +1,12 @@
-<p>paginationassign works!</p>
-
 <input type="text" [(ngModel)]="searchingTerm">
 <button (click)="search()">Search</button>
 <button (click)="sortProducts('ascending')">Ascending</button>
 <button (click)="sortProducts('descending')">Ascending</button>
 <div class="row">
     @for(items of filtereditems | paginate: { itemsPerPage: 3, currentPage: p}; track $index ){
-        <div class="col-sm-3 mb-4">
-            <div class="card" style="width: 18rem;">
-                <img src={{items.image}} class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                  <h5 class="card-title">{{items.title}}</h5>
-                  <p class="card-text">{{items.description}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><Strong>Category : </Strong> {{items.category}}</li>
-                  <li class="list-group-item"><Strong>Price : </Strong> {{items.price}}</li>
-                  <li class="list-group-item"><Strong>Rating : </Strong> {{items.rating.rate}}</li>
-                  <li class="list-group-item"><Strong>No.of Ratings : </Strong> {{items.rating.count}}</li>
-                </ul>
-            </div>
-        </div>
+      <div class="col">
+        <app-pagination-cards [items] = "items"> </app-pagination-cards>
+      </div>
     }
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
