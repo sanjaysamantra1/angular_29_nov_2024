@@ -11,7 +11,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-root', // will give in index.html
-  imports: [RouterOutlet,NavbarComponent,CategoryComponent,CarouselComponent,BodyComponent,FooterComponent,FormsModule,NgxPaginationModule],
+  imports: [NavbarComponent,CategoryComponent,CarouselComponent,BodyComponent,FooterComponent,FormsModule,NgxPaginationModule],
   templateUrl: './app.component.html', //passess this html and css to that index.html in body
   styleUrl: './app.component.css'
 })

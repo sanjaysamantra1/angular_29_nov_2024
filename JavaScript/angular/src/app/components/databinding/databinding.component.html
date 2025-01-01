@@ -13,6 +13,7 @@
 </p>
 <div>
     <p [hidden]="flag">{{val}}</p>
+    
     <button class="btn btn-primary" (click)="flag=!flag">{{flag ? 'SHOW' : 'HIDE'}}</button>
 </div>
 
@@ -62,7 +63,7 @@
 
 <input [(ngModel)]="val1" type="number" placeholder="Enter first value">
 <input class=mx-3 [(ngModel)]="val2" type="number" placeholder="Enter first value">
-<select [(ngModel)]="operator">
+<select class="btn btn-secondary" [(ngModel)]="operator">
     <option value="+">+</option>
     <option value="-">-</option>
     <option value="*">*</option>
@@ -81,7 +82,7 @@
 </p>
 
 <div> 
-    <input class="assignment5" [type]="isPass ? 'password' : 'text'" [(ngModel)]="passwordValue" placeholder="Enter Text"> 
+    <input class="assignment5" bind-type="isPass ? 'password' : 'text'" [(ngModel)]="passwordValue" placeholder="Enter Text"> 
     <button class="btn btn-primary mx-3" (click)="togglePasswordVisibility()">{{isPass ? 'SHOW' : 'HIDE'}}</button>
  </div>
 

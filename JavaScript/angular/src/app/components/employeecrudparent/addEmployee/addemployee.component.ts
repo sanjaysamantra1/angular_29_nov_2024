@@ -17,11 +17,11 @@ newEmployee = {eId:0,name:'',sal:0,gender:'Male'};
 addEmp = new EventEmitter<any>();
 
 addEmployee(){
-  console.log('Adding employee:', this.newEmployee);
+  // console.log('Adding employee:', this.newEmployee);
   this.addEmp.emit(this.newEmployee);
-  console.log(this.newEmployee);
+  // console.log(this.newEmployee);
   this.newEmployee = {eId:0,name:'',sal:0,gender:'Male'};
-  console.log(this.newEmployee);
+  // console.log(this.newEmployee);
   
 }
 

@@ -46,7 +46,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @for(emp of employees;track $index){
+                    @for(emp of employeesDataFromParent;track $index){
                     <tr>
                       <td>{{ $index + 1 }}</td>
                       <td>{{ emp.eId }}</td>

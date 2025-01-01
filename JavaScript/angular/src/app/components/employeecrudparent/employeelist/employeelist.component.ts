@@ -5,12 +5,12 @@ import { Component, EventEmitter, ViewEncapsulation } from '@angular/core';
   imports: [],
   templateUrl: './employeelist.component.html',
   styleUrl: './employeelist.component.css',
-  inputs:['employees'],
+  inputs:['employeesDataFromParent'],
   outputs:['deleteEmp'],
   encapsulation:ViewEncapsulation.None
 })
 export class EmployeelistComponent {
-employees: any[] = [];
+  employeesDataFromParent: any[] = [];
 
 deleteEmp = new EventEmitter();
 

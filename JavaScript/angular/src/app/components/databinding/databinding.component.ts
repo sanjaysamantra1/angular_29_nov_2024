@@ -72,5 +72,10 @@ export class DatabindingComponent {
   displayPhone(phone:string){
     this.phone=phone;
   }
+
+
+  
+  valk = ( e: any) => {
+    e.target.value};
   
 }
