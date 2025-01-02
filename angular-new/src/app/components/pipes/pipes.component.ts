@@ -6,15 +6,13 @@ import { DatePipe } from '@angular/common';
 import { SalutationpipePipe } from '../../pipes/salutationpipe.pipe';
 import { SearchpipePipe } from '../../pipes/searchpipe.pipe';
 
-
-
 @Component({
   selector: 'app-pipes',
   imports: [
+    FormsModule,
     OrdinalpipePipe,
     AgepipePipe,
     DatePipe,
-    FormsModule,
     SalutationpipePipe,
     SearchpipePipe
   ],
@@ -22,7 +20,7 @@ import { SearchpipePipe } from '../../pipes/searchpipe.pipe';
   styleUrl: './pipes.component.css'
 })
 export class PipesComponent {
-  nums =  [1, 2, 3, 4, 11, 21, 22, 23, 31] ;
+  nums =  [1, 2, 3, 4, 11, 21, 22, 23, 31, 111] ;
   dob:any;
   employees = [
     { name: 'John Doe', gender: 'Male', age: 30 },

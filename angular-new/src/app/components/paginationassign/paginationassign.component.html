@@ -1,7 +1,7 @@
 <input type="text" [(ngModel)]="searchingTerm">
 <button (click)="search()">Search</button>
 <button (click)="sortProducts('ascending')">Ascending</button>
-<button (click)="sortProducts('descending')">Ascending</button>
+<button (click)="sortProducts('descending')">Descending</button>
 <div class="row">
     @for(items of filtereditems | paginate: { itemsPerPage: 3, currentPage: p}; track $index ){
       <div class="col">

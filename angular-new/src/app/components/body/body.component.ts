@@ -18,8 +18,7 @@ import { DatabindingassignComponent } from '../databindingassign/databindingassi
     PaginationassignComponent,
     PipesComponent,
     EmployeeCrudComponent
-    // Demo2Component,
-],
+    ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

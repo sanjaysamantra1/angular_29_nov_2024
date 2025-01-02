@@ -4,7 +4,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'ordinalpipe'
 })
 export class OrdinalpipePipe implements PipeTransform {
-
   transform(value: number): string {
     const lastDigit = value % 10;
     const lastTwoDigits = value % 100;
