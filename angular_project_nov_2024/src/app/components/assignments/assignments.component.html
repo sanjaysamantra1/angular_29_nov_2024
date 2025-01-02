@@ -1,0 +1,248 @@
+<h1>Assignments:</h1>
+
+1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
+
+<div>
+    <p [hidden]="flag">Hello Chenna FULL STACK DEV</p>
+    <button (click)="flag = !flag">{{flag ? "Show" : "Hide"}}</button>
+</div>
+
+
+2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.
+
+<div>
+    <textarea maxlength="100" [(ngModel)]="msg">
+    </textarea>
+    <p>remaining Characters : {{100 - msg.length}} </p>
+</div>
+
+3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph
+
+<div>
+    <select [(ngModel)]="selectedState">
+        <option selected value="">Select a state</option>
+        <option value="AZ">Arizona</option>
+        <option value="KS">Kansas</option>
+        <option value="IL">Illinois</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NY">New York</option>
+    </select>
+    <p>Selected State : {{selectedState}}</p>
+</div>
+
+4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations
+
+<div>
+    Enter 1st number : <input type="number" #box1> <br><br>
+    Enter 2nd number : <input type="number" ref-box2> <br><br>
+
+    <select [(ngModel)]="selectedOperator">
+        <option value="+">Add</option>
+        <option value="-">Sub</option>
+        <option value="*">Mul</option>
+        <option value="/">Div</option>
+    </select>
+    <p>Result is : {{operationPerformed(box1.value, box2.value, selectedOperator)}}</p>
+</div>
+
+5. create a input box, toggle the type of that input box to (text/password)
+<div>
+    <input [type]="qwerty">
+    <button (click)="fun1()">{{flag1 ? "text": "password"}} </button>
+</div>
+
+6. create a counter example with 3 controls(increment,decrement,reset)
+<div>
+    <p>Counter : {{counterValue}}</p>
+
+    <button (click)="counterValue = counterValue + 1">Increment</button>
+    <button (click)="counterValue = counterValue - 1">Decrement</button>
+    <button (click)="counterValue = 0">Reset</button>
+</div>
+<br>
+<p>7. Declare an array of users, display users in card & table format. <br>
+    add a button/switch to toggle between table view and card view.<br>
+    https://jsonplaceholder.typicode.com/users</p>
+
+<div>
+    <button (click)="flag2=!flag2">{{flag2 ? "Show Table" : "Show In Cards"}}</button>
+
+    @if(flag2){
+    <div class="row" style="justify-content: space-evenly;">
+        @for(user of users; track $index){
+        <div class="card" style="width: 18rem;">
+            <img src="https://ahivetech.com/wp-content/uploads/2023/07/236831-min.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Name: {{user.name}}-{{user.id}}</h5>
+                <p class="card-text">City: {{user.address.city}}</p>
+                <p class="card-text">Zipcode: {{user.address.zipcode}}</p>
+            </div>
+        </div>
+        }
+    </div>
+    }
+    @else{
+    <table class="table table-success table-striped" style="text-align: center;">
+        <thead>
+            <tr>
+                <th scope="col">User ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">User City</th>
+                <th scope="col">User Zipcode</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(user of users; track $index){
+            <tr>
+                <th scope="row">{{user.id}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.address.city}}</td>
+                <td>{{user.address.zipcode}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    }
+</div>
+
+
+
+<div>
+    create 1 EmployeeCRUD component
+    <br>
+    display list of employees in a table(data comes from an array)
+    <br>
+    user should be able to delete Employee (ask user confirmation)
+    <br>
+    view the details of each employee in a modal (bootstrap)
+    <br>
+    add a new employee to the table (insert a new record to the array)
+    use sweetAlert to display messages ('Added Successfully')
+</div>
+<br>
+<div>
+    <div class="d-grid gap-2">
+    <button class="btn btn-primary mx-2" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop123">Add New User</button>
+                    <div class="modal fade" id="staticBackdrop123">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">User Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    User Name: <input #box1231><br>
+                                    User ID: <input #box1232><br>
+                                    User Salary: <input #box1233><br>
+                                    User Gender: <input #box1234><br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary"
+                                        data-bs-dismiss="modal" >Close</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="adddUser(box1231.value, box1232.value, box1233.value, box1234.value)">Understood</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    <br>
+    <table class="table table-success table-striped" style="text-align: center;">
+        <thead>
+            <tr>
+                <th scope="col">User ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">User Salary</th>
+                <th scope="col">User Gender</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(user of employee; track $index){
+            <tr>
+                <th scope="row">{{user.eId}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.sal}}</td>
+                <td>{{user.gender}}</td>
+                <td><button class="btn btn-primary mx-2" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" (click)="selectedUser(user)">View</button>
+                    <div class="modal fade" id="staticBackdrop">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">User Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>Name: {{selectedUser1?.name}} - {{selectedUser1?.eId}} </h5>
+                                    <p>User Salary {{selectedUser1?.sal}}</p>
+                                    <p>Gender: {{selectedUser1?.gender}}</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-danger mx-2" (click)="deleteuser(user)">Delete</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+</div>
+
+
+<div>
+13.    Create a custom pipe(ordinal) that displays a cardinal number in ordinal format.
+<br>input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th
+
+<br>
+</div>
+
+<div>
+    <input [(ngModel)] = "custompipeinput1">
+    <p>Output here is : {{ custompipeinput1 | ordinal }}</p>
+</div>
+
+
+<div>
+15.    declare an array of employee objects. display them in a table.<br>
+    create a custom pipe Salutation that will add 'mr. / miss.' before the employee name.<br><br>
+    
+16.    declare an array of employee objects. display them in a table. <br>
+    add a search-box above the table. create a custom-pipe to filter/search employees data.<br>
+</div>
+<br>
+
+Search Here: <input  [(ngModel)]="searchText">
+<table class="table table-success table-striped" style="text-align: center;">
+    <thead>
+        <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">User Name</th>
+            <th scope="col">User Salary</th>
+            <th scope="col">User Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(user of employee | searchFilter : searchText; track $index){
+        <tr>
+            <th scope="row">{{user.eId}}</th>
+            <td>{{user.name | mrMiss : user.gender}}</td>
+            <td>{{user.sal}}</td>
+            <td>{{user.gender}}</td>
+        </tr>
+        }
+    </tbody>
+</table>

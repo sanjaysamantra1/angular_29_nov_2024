@@ -5,12 +5,14 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 //import { CarouselComponent } from './components/carousel/carousel.component';
 //import { CategoriesComponent } from './components/categories/categories.component';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { AssignmentsComponent } from './components/assignments/assignments.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     NavbarComponent,
-    EmployeeComponent],
+    AssignmentsComponent],
+    // EmployeeComponent],
     //CategoriesComponent,
     //CarouselComponent,
     //BodyComponent,
