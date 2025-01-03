@@ -1,0 +1,30 @@
+<p>child2 works!</p>
+<!-- <p>{{id}}</p> -->
+<!-- <p>{{mobile}}</p> -->
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Serial Number</th>
+        <th>Name</th>
+        <th>Designation</th>
+      </tr>
+    </thead>
+      <tbody>
+   
+        @for(employee of child2employees; track $index){
+         <tr>
+            <td>{{employee.serialNo}}</td >
+            <td>{{employee.name}}</td>
+            <td>{{employee.designation}}</td>
+            <td><button (click) = "childDelEmployee(employee)">Delete</button></td>
+             <td><button (click) = "childViewEmployee(employee.serialNo)">view</button></td>
+            
+         </tr>
+ 
+
+        }
+
+
+
+
+
