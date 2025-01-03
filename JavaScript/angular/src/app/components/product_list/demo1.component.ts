@@ -5,7 +5,7 @@ import * as data from './products.json'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ProductListCardComponent } from '../product-list-card/product-list-card.component';
+import { ProductListCardComponent } from './product-list-card/product-list-card.component';
 
 @Component({
   selector: 'app-demo1',
@@ -17,6 +17,7 @@ export class Demo1Component {
 
 
   products = (data as any).default;
+  
   filteredProducts = [...this.products];
   p: any;
   searchText: string = ''; 

@@ -13,7 +13,7 @@ export class NavbarComponent {
 
   isDarkMode:any;
   
-toggleTheme = new EventEmitter<void>(); 
+toggleTheme = new EventEmitter(); 
 
 onToggleTheme():void{
   this.toggleTheme.emit();

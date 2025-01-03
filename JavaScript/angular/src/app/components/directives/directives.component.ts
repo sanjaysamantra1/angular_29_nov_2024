@@ -63,7 +63,7 @@ addNewEmployee() {
 ];
 }
 
-faStar=faStar;
+faStar: any =faStar;
 faPlane=faPlane;
 
 

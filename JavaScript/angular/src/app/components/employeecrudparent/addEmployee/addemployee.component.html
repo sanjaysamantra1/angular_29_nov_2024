@@ -15,19 +15,19 @@
           <form (ngSubmit)="addEmployee()" class="mb-3">
             <div class="my-3">
               <label for="eId" style="color: black;">EmpId: </label>
-              <input class="mx-3" type="number" id="eId" [(ngModel)]="newEmployee.eId" name="eId" required />
+              <input class="mx-3" type="number"  [(ngModel)]="newEmployee.eId" name="eId" required />
             </div>
             <div class="my-3">
               <label for="name" style="color: black;">Name: </label>
-              <input class="mx-3" type="text" id="name" [(ngModel)]="newEmployee.name" name="name" required />
+              <input class="mx-3" type="text"  [(ngModel)]="newEmployee.name" name="name" required />
             </div>
             <div class="my-3">
               <label for="sal" style="color: black;">Salary: </label>
-              <input class="mx-3" type="number" id="sal" [(ngModel)]="newEmployee.sal" name="sal" required />
+              <input class="mx-3" type="number"  [(ngModel)]="newEmployee.sal" name="sal" required />
             </div>
             <div class="my-3">
               <label for="gender" style="color: black;">Gender: </label>
-              <select class="mx-3" id="gender" [(ngModel)]="newEmployee.gender" name="gender" required>
+              <select class="mx-3"  [(ngModel)]="newEmployee.gender" name="gender" required>
                 <option value="" disabled>Select Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>

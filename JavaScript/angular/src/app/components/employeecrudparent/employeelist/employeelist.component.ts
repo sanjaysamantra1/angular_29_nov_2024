@@ -7,7 +7,7 @@ import { Component, EventEmitter, ViewEncapsulation } from '@angular/core';
   styleUrl: './employeelist.component.css',
   inputs:['employeesDataFromParent'],
   outputs:['deleteEmp'],
-  encapsulation:ViewEncapsulation.None
+  // encapsulation:ViewEncapsulation.None
 })
 export class EmployeelistComponent {
   employeesDataFromParent: any[] = [];

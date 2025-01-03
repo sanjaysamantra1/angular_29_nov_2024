@@ -82,7 +82,7 @@
 </p>
 
 <div> 
-    <input class="assignment5" bind-type="isPass ? 'password' : 'text'" [(ngModel)]="passwordValue" placeholder="Enter Text"> 
+    <input class="assignment5" [type]="isPass ? 'password' : 'text'" [(ngModel)]="passwordValue" placeholder="Enter Text"> 
     <button class="btn btn-primary mx-3" (click)="togglePasswordVisibility()">{{isPass ? 'SHOW' : 'HIDE'}}</button>
  </div>
 
@@ -101,7 +101,7 @@
 
 
 
-<p>Templete Reference Variables</p>
+<!-- <p>Templete Reference Variables</p>
   <input #primary placeholder="Enter the Number">
   <button (click)="displayPhone(primary.value)">Submit</button>
-  <p>{{phone}}</p>
+  <p>{{phone}}</p> -->

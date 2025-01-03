@@ -20,7 +20,7 @@ export class PipesComponent {
   myName: string = 'Rohith RudraPati';
   sal : number = 5000;
   today= new Date();
-  arr : number[] =[25,3,78,1];
+  arr : number[] =[21,22,23,24];
   arr2 : number[] =[25,3,78,1];
   arrval : number[] = [];
   user = {name:"Rohith",lastname:"Rudrapati",age:24,profession:"Gamer"};
