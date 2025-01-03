@@ -1,0 +1,116 @@
+<div class="container-fluid py-4">
+  <div class="container">
+      <!-- Assignment 1: Show/Hide Paragraph -->
+     
+      <div class="assignment mb-5">
+        <p class="mb-3">Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph</p>
+          <p [hidden]="isVisible" class="alert alert-danger">{{ message }}</p>
+          <button class="btn btn-outline-success" (click)="isVisible = !isVisible">
+              {{ isVisible ? 'SHOW' : 'HIDE' }}
+          </button>
+      </div>
+      @if(!isVisible){
+        <p>sample</p>
+      }
+        
+
+      <!-- Assignment 2: Textarea with Remaining Characters -->
+      <p class="mb-3">Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.</p>
+      <div class="assignment mb-4">
+          <textarea
+              rows="4"
+              cols="20"
+              maxlength="{{ maxCharacters }}"
+              [(ngModel)]="userInput"
+              class="form-control mb-2"
+          ></textarea>
+          <div>Remaining characters: <span class="fw-bold">{{ maxCharacters - userInput.length }}</span></div>
+      </div>
+
+      <!-- Assignment 3: Dropdown with State Selection -->
+      <p class="mb-3">Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph</p>
+      <div class="assignment mb-5">
+          <select [(ngModel)]="currentState" class="form-select mb-2" aria-placeholder="Select The State">
+              <option value="California">California</option>
+              <option value="New York">New York</option>
+              <option value="Texas">Texas</option>
+              <option value="Florida">Florida</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Georgia">Georgia</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="Michigan">Michigan</option>
+          </select>
+          <div>You selected: <span class="fw-bold">{{ currentState }}</span></div>
+      </div>
+
+      <!-- Assignment 4: Arithmetic Operations -->
+      <p class="mb-3">Have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations</p>
+      <div class="assignment mb-5">
+          <input
+              [(ngModel)]="number1"
+              type="number"
+              placeholder="Enter first number"
+              class="form-control d-inline-block w-auto mb-2"
+          />
+          <input
+              class="form-control d-inline-block w-auto mx-3 mb-2"
+              [(ngModel)]="number2"
+              type="number"
+              placeholder="Enter second number"
+          />
+          <select [(ngModel)]="mathOperator" class="form-select d-inline-block w-auto mb-2">
+              <option value="+">Add</option>
+              <option value="-">Subtract</option>
+              <option value="*">Multiply</option>
+              <option value="%">Mod Division</option>
+          </select>
+          <button class="btn btn-outline-success d-inline-block" (click)="performCalculation()">
+              Submit
+          </button>
+          <div class="mt-2">Result: <span class="fw-bold">{{ result }}</span></div>
+      </div>
+
+      <!-- Assignment 5: Password Toggle -->
+      <p class="mb-3">Create an input box, toggle the type of that input box to (text/password)</p>
+      <div class="assignment mb-5">
+          <input
+              [type]="isPasswordVisible ? 'text' : 'password'"
+              [(ngModel)]="passwordInput"
+              placeholder="Enter Text"
+              class="form-control d-inline-block w-auto mb-2"
+          />
+          <button class="btn btn-outline-success" (click)="togglePasswordVisibility()">
+              {{ isPasswordVisible ? 'HIDE' : 'SHOW' }}
+          </button>
+      </div>
+
+      <!-- Assignment 6: Counter -->
+      <p class="mb-3">Create a counter example with 3 controls(increment,decrement,reset)</p>
+      <div class="assignment mb-5">
+          <p class="fs-4">{{ counterValue }}</p>
+          <input class="form-control w-auto d-inline-block mb-2 mx-3" [(ngModel)]="counterValue" />
+
+          <div class="btn-group">
+              <button class="btn btn-outline-success" (click)="updateCounter('increase')">
+                  INCREMENT
+              </button>
+              <button class="btn btn-outline-success" (click)="updateCounter('decrease')">
+                  DECREMENT
+              </button>
+              <button class="btn btn-outline-success" (click)="updateCounter('reset')">
+                  RESET
+              </button>
+          </div>
+      </div>
+
+      <!-- Template Reference Variables -->
+      <p class="mb-3">Template Reference Variables</p>
+      <div class="assignment">
+          <input #inputBox class="form-control d-inline-block w-auto mb-2" placeholder="Enter the number" />
+          <button class="btn btn-outline-success" (click)="showPhoneNumber(inputBox.value)">Submit</button>
+          <p class="mt-2">{{ enteredPhoneNumber }}</p>
+      </div>
+  </div>
+</div>
