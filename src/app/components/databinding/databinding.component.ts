@@ -32,7 +32,7 @@ export class DatabindingComponent {
      console.log('Selected State:', this.selectedState);
    }
  
-   //calculate
+   //calculate Functionality
    input1: number = 0;
    input2: number = 0;
    selectedOperation: string = '+';

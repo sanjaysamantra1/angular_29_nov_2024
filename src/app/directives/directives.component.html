@@ -1,0 +1,33 @@
+<h2 class="border p-2">This is Directive components</h2>
+
+
+<div class="container">
+    <h2>Employee Details</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Department</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @for(employee of employees; track $index){
+            <tr >
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.position }}</td>
+                <td>{{ employee.department }}</td>
+            </tr>
+        }
+    </table>
+    <div><h5>font awesome Icons</h5>
+    <fa-icon [icon]="fastar"></fa-icon
+        
+        
+        
+        
+        ></div>
+</div>

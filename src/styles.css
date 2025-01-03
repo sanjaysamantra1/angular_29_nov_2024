@@ -1,1 +1,25 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+body.isDarkMode{
+    background-color: black;
+    color: white;
+}
+body.isNotDarkMode{
+    background-color: white;
+    color: black;
+}
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex: 1; /* Ensures the main content takes up remaining space */
+  }
+  
+  footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }

@@ -1,3 +1,4 @@
+<div class="center-container">
 <div>
     <button (click)="togglePara()">Paragraph!</button>
     <p *ngIf="isVisible">This is a toggleable paragraph!</p>
@@ -10,9 +11,15 @@
     rows="5"
     cols="30"
   ></textarea>
-  <div>{{ remainingChars }} characters remaining</div>
+  <div [ngClass]="{
+    'remaining-chars': true,
+    'warning': remainingChars <= 20 && remainingChars > 0,
+    'error': remainingChars === 0
+  }">{{ remainingChars }} characters remaining</div>
+</div>
   
   <div>
+    <h2>DROP DOWN</h2>
     <label for="stateSelect">Select a state: </label>
     <select
       id="stateSelect"
@@ -23,6 +30,7 @@
     </select>
   </div>
   <p>You selected: {{ selectedState }}</p>
+  <div class="center-container">
   
   <div>
     <label>Input 1: </label>
@@ -40,6 +48,7 @@
     <button (click)="calculate()">Calculate</button>
     <p>Result: {{ result }}</p>
   </div>
+  </div>
   
   <div>
   <label for="passwordInput">Enter Password:</label>
@@ -49,13 +58,16 @@
   </button>
   </div>
   <p>Input Value: {{ inputValue }}</p>
-  
+
+  <div class="center-container">
   <div style="text-align: center; margin: 20px;">
   <h2>Counter: {{ counter }}</h2>
   <button (click)="increment()">Increment</button>
   <button (click)="decrement()">Decrement</button>
   <button (click)="reset()">Reset</button>
   </div>
+</div>
+
   
   
   

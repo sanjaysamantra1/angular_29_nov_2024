@@ -1,7 +1,22 @@
-<app-navbar></app-navbar>
-<app-category></app-category>
-<app-carousel></app-carousel>
-<app-body></app-body>
-<app-footer></app-footer>
-<app-databinding></app-databinding> 
-<router-outlet> </router-outlet>
+<div class="container">
+    <main>
+        
+        <section><app-navbar [isDark]="darkMode" (toggleMode) ="toggleMode()" ></app-navbar></section>
+
+        <section><app-category></app-category></section>
+        <section><app-carousel></app-carousel></section>
+        <section><app-body></app-body></section>
+        <section><app-databinding></app-databinding> </section>
+<section><router-outlet> </router-outlet></section>
+<section><app-directives></app-directives></section>
+<section><app-t-cards></app-t-cards></section>
+<section><app-product-list></app-product-list></section>
+<section><app-employee-crud></app-employee-crud></section>
+<section><app-custom-pipe></app-custom-pipe></section>
+<section><app-empcrudassignment></app-empcrudassignment></section>
+
+</main>
+<footer>
+    <app-footer></app-footer>
+</footer>
+</div>

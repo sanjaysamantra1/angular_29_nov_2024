@@ -1,0 +1,17 @@
+.remaining-chars {
+    color: green;
+  }
+  
+  .remaining-chars.warning {
+    color: orange;
+  }
+  
+  .remaining-chars.error {
+    color: red;
+  }
+  .center-container {
+    text-align: center; 
+    max-width: 500px;   
+    margin: 0 auto;
+  }
+  

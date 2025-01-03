@@ -1,0 +1,65 @@
+<div class="container" >
+  <div class="row">
+  
+<p class="text-center">Ordinal Pipe!!!</p>
+<p class="text-center">For 21, the ordinal number is {{21|ordinal}}</p>
+<p class="text-center">For 22, the ordinal number is {{22|ordinal}}</p>
+<p class="text-center">For 23, the ordinal number is {{23|ordinal}}</p>
+<p class="text-center">For 24, the ordinal number is {{24|ordinal}}</p>
+
+<p class="text-center">***************</p>
+<p class="text-center">Age Pipe!!!</p>
+<p class="text-center">Birth Date 2000-03-15 has {{'2000-03-15'|age}} of age</p>
+<p class="text-center">Birth Date 1988-02-07 has {{'1988-02-07'|age}} of age</p>
+<P class="text-center">Birth Date 1996-07-05 has {{'1996-07-05'|age}} of age</P>
+<P class="text-center">Birth Date 1992-05-24 has {{'1992-05-24'|age}} of age</P>
+
+<p class="text-center">***************</p>
+<p class="text-center">Salutation Pipe!!!</p>
+<table class="table table-striped">
+   <thead>
+    <tr>
+        <th>Employee Name</th>
+        <th>Gender</th>
+        <th>Employee Name with Salutation </th>
+    </tr>
+    </thead> 
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.name}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.name|salutation:employee.gender}}</td>
+        </tr>
+    </tbody>
+   
+  </table>
+  <p class="text-center">***************</p>
+  <p class="text-center">Employee Filter Pipe!!!</p>
+  <div>
+    <input
+      type="text"
+      [(ngModel)]="searchQuery"
+      placeholder="Search employees"
+      class="form-control"
+    />
+  </div>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employeeData of employeesData | employeefilter:searchQuery">
+        <td>{{ employeeData.name }}</td>
+        <td>{{ employeeData.gender }}</td>
+        <td>{{ employeeData.department }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+  

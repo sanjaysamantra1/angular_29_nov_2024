@@ -1,0 +1,12 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <app-emplistchild [EmployeeListData]="Employees" (employeeemitter)="deleteThisRecord($event)"></app-emplistchild>
+      </div>
+      <div class="col">
+        <app-addempchild  (employeeAddition)="AddRecord($event)"></app-addempchild>
+      </div>
+     
+    </div>
+  </div>

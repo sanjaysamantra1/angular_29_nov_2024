@@ -1,0 +1,68 @@
+<div>
+    <div class ="container">
+        <button class="btn btn-outline-secondary" (click)="changeView()">
+      Button Toggle 
+        </button>
+    </div>
+    @if (viewToggle) {
+        <div class="container" id="">
+            <br>
+            <div class="row" style="padding: 2;">
+                @for (employee of Employees | paginate: {itemsPerPage:4, currentPage: pageNumber}; track $index) {
+                    <div class="col-sm-3">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjWGGs4b5kwJavNNlUaFNRl3TY9hWEJDNsg&s" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Member Name: {{employee.name}}</h5>
+                              <p class="card-text">Salary: {{employee.sal}}</p>
+                              <p class="card-text">Gender: {{employee.gender}}</p>
+                              <p class="card-text">Membership Number: {{employee.employeeId}}</p>
+                              <a href="#" class="btn btn-primary">Constituency Details</a>
+                            </div>
+                          </div>
+                    </div>
+                    
+                }
+            </div>
+            <div>
+                <div class="mt-3" style="text-align: center">
+                    <pagination-controls (pageChange)="pageNumber  = $event"></pagination-controls>
+                </div>
+            </div>
+            <br>
+        </div>
+    }
+    @else{
+        <div class="container">
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Employee ID</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Employee Salary</th>
+                        <th scope="col">Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (employee of Employees | paginate: {itemsPerPage:3, currentPage: pageNumber}; track $index)
+                    {
+                    <tr>
+                        <td>{{employee.employeeId}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.sal}}</td>
+                        <td>{{employee.gender}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            <br>
+        </div>
+        
+        <div>
+            <div class="mt-3" style="text-align: center">
+                <pagination-controls (pageChange)="pageNumber  = $event"></pagination-controls>
+            </div>
+        </div>
+    }
+</div>

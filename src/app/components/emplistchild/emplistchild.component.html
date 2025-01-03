@@ -1,0 +1,23 @@
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>Employee Name</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (let employee of EmployeeListData; let i = index) {
+            <tr >
+                <td>{{i+1}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.salary}}</td>
+                <td><button (click)="deleteThisRecord(i)">Delete</button></td>
+            </tr>
+        }   
+        </tbody>
+      </table>
+    
+</div>

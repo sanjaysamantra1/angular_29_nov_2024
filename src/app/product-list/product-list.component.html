@@ -1,0 +1,39 @@
+<div class="product-list">
+    <h2>Product List</h2>
+  
+    <!-- Search input for filtering by title -->
+    <div class="mb-3">
+      <input 
+        type="text" 
+        [(ngModel)]="searchQuery" 
+        class="form-control" 
+        placeholder="Search by title" />
+    </div>
+  
+    <!-- Sort buttons -->
+    <div class="mb-3">
+      <button 
+        class="btn btn-outline-secondary" 
+        (click)="toggleSortOrder()">
+        Sort by Price: {{ sortOrder === 'asc' ? 'Ascending' : 'Descending' }}
+      </button>
+    </div>
+  
+    <!-- Row to display products side by side -->
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let product of filteredProducts | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+        <!-- Card for each product -->
+        <div class="card">
+          <img class="card-img-top product-image" [src]="product.image" alt="Product image"> <!-- Adding the class for styling -->
+          <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">${{ product.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pagination controls -->
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+  </div>
+  

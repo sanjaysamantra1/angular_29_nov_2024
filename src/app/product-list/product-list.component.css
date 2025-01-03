@@ -1,0 +1,23 @@
+.product-list {
+    padding: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px; /* Adds spacing between cards */
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  .product-image {
+    width: 100%;  /* Ensures the image takes up the full width of the container */
+    height: 200px; /* Sets a fixed height for the image */
+    object-fit: contain; /* Ensures the whole image is visible without cropping */
+  }
+  
+  
