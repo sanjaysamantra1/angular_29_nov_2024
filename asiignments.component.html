@@ -1,0 +1,290 @@
+
+
+ 
+<div>
+    <p [hidden]="flag">{{val}}</p>
+    <button (click)="flag=!flag">{{flag ? 'SHOW' : 'HIDE'}}</button>
+</div>
+
+
+
+
+<div>
+  <textarea row=" 4" cols ="10" maxlength="{{maxValue}}" [(ngModel)]="text"></textarea>
+  <p>  remaining chars : {{maxValue - text.length}}</p>
+</div>
+
+
+
+
+<select [(ngModel)] = "selectedstate">
+    <option>select a state</option>
+    <option value="AP">andhra pradesh</option>
+    <option value="TS">Telangana</option>
+</select>
+<p> selected state is :{{selectedstate}}</p>
+
+
+
+
+
+
+<input type="text" [(ngModel)]="input3">
+<input type="text" [(ngModel)]="input4">
+<select [(ngModel)]="operation1value">
+  <option>select operator</option>
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option> 
+</select>
+<button (click)="operator1()">submit</button>
+<div>result is {{result1}}</div>
+
+
+
+<div>
+  <p [hidden] = "set" >{{typeval}} </p>
+  <button (click) = "set=!set">{{set ? 'show' : 'hide'}}</button>
+  </div>
+
+
+
+
+
+
+
+
+<div>
+  <input [(ngModel)] = "counter">
+  <button (click) = "increment()">increment</button>
+  <button (click) = "decrement()">decrement</button>
+  <button (click) = "reset()">reset</button>
+</div>
+
+
+
+
+
+
+  
+
+
+<div>
+    <p> Toggle View From Table to Cards</p>
+    <button (click) = "toggleView()">{{flag ? 'hide' : 'show'}}</button>
+</div><div>
+    @if(flag) {
+      <table class="table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>address</th>
+            <th>email</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(user of users; track $index) {
+            <tr>
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.email}}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+    @else {
+      <div class="card-group">
+        <div class="row">
+          @for(user of users; track $index) {
+            <div class="col-sm-3">
+              <div class="card">
+                <img src="https://imgproxy.attic.sh/unsafe/rs:fit:768:768:1:1/t:1:FF00FF:false:false/pngo:false:true:256/aHR0cHM6Ly9hdHRp/Yy5zaC91bDRraHdm/MjJ2dmZkbmsyN2wx/cWE3dHV2MDNn.png" style="max-width: 250px;max-height: 300px;">
+                <h3 class="card-body">{{user.id}}</h3>
+                <p class="card-body">{{user.name}}</p>
+                <p class="card-body">{{user.username}}</p>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+
+
+
+
+
+  
+
+
+
+<div>
+
+
+
+
+    <p> employee data</p>
+
+     <button (click)="addemp()">addemployee</button> 
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Serial Number</th>
+        <th>Name</th>
+        <th>Designation</th>
+      </tr>
+    </thead>
+      <tbody>
+   
+        @for(employee of employees; track $index){
+         <tr>
+            <td>{{employee.serialNo}}</td >
+            <td>{{employee.name}}</td>
+            <td>{{employee.designation}}</td>
+            <td><button (click) = "delete(employee)">Delete</button></td>
+            <td><button (click) = "view(employee)">view</button></td>
+            
+         </tr>
+ 
+
+        }
+
+    </tbody>
+</table>
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{display :displayStyle}">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Employee Serial No</strong>{{viewEmployee?.serialNo}}</p>
+                <p><strong>Empoyee name :</strong>{{viewEmployee?.name}}</p>
+                <p><strong>Employee designation :</strong>{{viewEmployee?.designation}}</p>
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()" >Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     <div>
+      <app-child1employee (employeeEvent)="putEvent($event)"></app-child1employee>
+      <app-child2 [child2employees]="employees" (delEmp)="delete($event)" (viewEmp)="view($event)"></app-child2>
+     </div>
+
+    <div>
+
+
+     
+    
+  
+
+
+      
+        
+
+<div>
+
+  <p>-----question 13----</p>
+
+<p>{{ 21 | ordinal }}</p> 
+<p>{{ 22 | ordinal }}</p>
+<p>{{ 23 | ordinal }}</p> 
+<p>{{ 24 | ordinal }}</p> 
+<p>{{ 11 | ordinal }}</p> 
+<p>{{ 112 | ordinal }}</p> 
+
+</div>
+
+
+<div>
+  <h2>Age Calculation</h2>
+  <p>Birth Date: {{ birthDate | date }}</p>
+  <p>Age: {{ birthDate | birthdaypipe }}</p>
+</div>
+
+
+
+
+
+<input type="text" [(ngModel)] = "searchemployee">
+<button (click)="searchfromtable()">searchitem</button>
+
+<table border-center="1" class="table">
+  <thead>
+    <tr>
+      <th>serialNo</th>
+      <th>Name</th>
+      <th>Designation</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    @for(employee of employees | inputSearch: searchText; track $index){
+      <tr>
+        <td class="col">{{ employee.serialNo }}</td>
+        <td class = "col" >{{employee.name}}</td>
+        <td class="col">{{ employee.gender | salutationpipe:employee.gender }}</td>
+        <td class = "col">{{employee.designation}}</td>
+        
+      </tr>
+   }
+  </tbody>
+</table>
+
+
+
+<div class="container" >
+  <p class="lead font-weight-normal"> Try our New Website Colors you can use the "Change Color Button" to change website color</p>
+  <a class="btn btn-outline-secondary" (click)="changeColor()">Change Color</a>
+</div>
+
+
+
+
+
+<div>
+
+
+  <input type="text" [(ngModel)] = "searchforitem">
+  <button (click)="sortnewproducts('ascending')">ascending</button>
+  <button (click)=" sortnewproducts('descending')">descending</button>
+  <button (click)="search()">serachitem</button>
+<div class="row">
+  @for(product of products| paginate: { itemsPerPage: 4, currentPage: p}; track $index ){
+      
+      <div class="col-sm-3">
+          <div class="card" style="width: 18rem;">
+              <img src={{product.image}} class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text">{{product.description}}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><Strong>Category : </Strong> {{product.category}}</li>
+                <li class="list-group-item"><Strong>Price : </Strong> {{product.price}}</li>
+                <li class="list-group-item"><Strong>Rating : </Strong> {{product.rating.rate}} <Strong>No.of ratings : </Strong> {{product.rating.count}}</li>
+                
+              </ul>
+              
+          </div>
+      </div>
+     
+  }
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+  </div>
