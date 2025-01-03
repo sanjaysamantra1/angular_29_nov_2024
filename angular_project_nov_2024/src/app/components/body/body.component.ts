@@ -9,10 +9,11 @@ import { PipesComponent } from "../pipes/pipes.component";
 import { ParentComponent } from "../parent/parent.component";
 import { MyModalComponent } from "../my-modal/my-modal.component";
 import { FormModalComponent } from "../form-modal/form-modal.component";
+import { FatherComponent } from "../father/father.component";
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent],
+  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

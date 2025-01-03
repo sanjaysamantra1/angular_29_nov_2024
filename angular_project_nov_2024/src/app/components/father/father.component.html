@@ -1,0 +1,7 @@
+<p>father works!</p>
+<p>I am parent my data of aParent is - {{aParent}}</p>
+<p>I am parent my data of bParent is - {{bParent}}</p>
+<p>My child3 data using reference is {{child3Ref.child3Data}}</p>
+<p>My child3 data using event binding is {{myChild3Data}}</p>
+<app-son [aParentToSon] = 'aParent' [myBrothersMoney] = 'child3Ref.child3Data'></app-son>
+<app-child3 [chenna]= 'bParent' #child3Ref (sendDataToParent)="received($event)"></app-child3>
