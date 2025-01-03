@@ -103,4 +103,31 @@
         </select>
         <div>You selected:: {{selectedState}}</div>
     </div>
+    <div>
+        Assignment:4
+        <input #i1>
+        <input #i2>
+        <select [(ngModel)]="op">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <!-- <button class="btn btn-primary" (click)="operation(box1.value,box2.value)">operation</button> -->
+        {{operation(i1.value,i2.value,op)}}
+    </div>
+
+    <div>
+        <input [type]="change"/>
+        <button class="btn btn-primary" (click)="toggletext()">{{togglebtn}}</button>
+      </div>
+<div>
+    Assignment:6 Counter <br />
+    <div>Counter: {{resValue}}</div>
+    <button (click)="resValue = resValue+1">Increment</button>
+    <button (click)="resValue = resValue-1">Decrement</button>
+    <button (click)="resValue = 0">Reset</button>
+</div>
+
+
 </div>

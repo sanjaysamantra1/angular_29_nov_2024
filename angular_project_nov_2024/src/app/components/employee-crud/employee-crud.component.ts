@@ -4,10 +4,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import Swal from 'sweetalert2';
 import { FormsModule } from '@angular/forms';
 import { SalutationPipe } from '../../pipes/salutation.pipe';
+import { Empchild1Component } from '../empchild1/empchild1.component';
+import { Empchild2Component } from "../empchild2/empchild2.component";
+import { FilterempPipe } from '../../pipes/filteremp.pipe';
 
 @Component({
   selector: 'app-employee-crud',
-  imports: [NgxPaginationModule, CommonModule, FormsModule,SalutationPipe],
+  imports: [NgxPaginationModule, CommonModule, FormsModule, SalutationPipe, Empchild1Component, Empchild2Component, FilterempPipe],
   templateUrl: './employee-crud.component.html',
   styleUrl: './employee-crud.component.css'
 })
@@ -91,14 +94,14 @@ export class EmployeeCRUDComponent {
       }
     )
     this.inputID = 0;
-      this.inputName= "";
-      this.inputSalary = 0;
-      this.inputGender= "";
+    this.inputName = "";
+    this.inputSalary = 0;
+    this.inputGender = "";
 
   }
 
 
-msg:string="";
+  msg: string = "";
 
 }
 

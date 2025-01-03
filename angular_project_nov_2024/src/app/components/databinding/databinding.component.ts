@@ -22,7 +22,11 @@ export class DatabindingComponent {
   msg: string = '';
   selectedState: string = '';
   
-
+  resValue:number=0;
+  change:string='';
+  togglebtn:string='Password';
+  
+  
 
   f1() {
     console.log('F1 called.....')
@@ -30,4 +34,29 @@ export class DatabindingComponent {
   addition(n1: any, n2: any) {
     console.log(`Addition of ${n1} and ${n2} is ${+n1 + +n2}`)
   }
+  op:any;
+  output=0;
+  operation(n1:any,n2:any,ops:string){
+    switch(ops){
+      case "+": return +n1 + +n2; 
+      case "-": return +n1- +n2;
+      case "*": return +n1* +n2;
+      case "/":return +n1/+n2;
+      default:return null;
+
+    }
+  }
+  toggletext(){
+    if(this.change=='text')
+    {
+      this.change='password';
+      this.togglebtn='Text';
+    }
+    else{
+      this.change='text';
+      this.togglebtn='Password';
+    }
+  }
+  
+
 }

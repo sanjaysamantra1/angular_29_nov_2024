@@ -1,0 +1,31 @@
+<p>student-list works!</p>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>index</th>
+            <th>sid</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(stu of students ;track $index ){
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{stu.sId}}</td>
+                <td>{{stu.name }}</td>
+                <td>{{stu.sal}}</td>
+                <td>{{stu.gender}}</td>
+                <!-- <td><button class="btn mx-1 btn-primary" (click)="view(emp)">View</button></td>-->
+                <td><button class="btn mx-1 btn-danger" (click)="sendDataToParent(stu)">Delete</button></td>
+            </tr>
+        }@empty {
+            No Employee Found
+        }
+    </tbody>
+</table>
+       

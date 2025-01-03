@@ -1,0 +1,30 @@
+<div class="container">
+    <input type="search" placeholder="search" #key>
+    <button type="search" class="btn btn-primary" (click)="searchProducts(key.value)"  >Search</button>
+    <button class="btn btn-primary mx-2" (click)="sortproductsASC()">Asc</button>
+        <button class="btn btn-primary" (click)="sortproductsDSC()">Desc</button>
+    <div class="row">
+        @if(items.length===0){
+            <h2>No items Found</h2>
+        }
+        @else{
+        @for(item of items  | paginate: { itemsPerPage: 5, currentPage: p };track $index;){
+            
+            <div class="card" style="width: 18rem;">
+                <img  src={{item.image}} class="card-img-top" alt="..." height="160px" width="30px">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <h2>{{item.price | currency}}</h2>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+            }
+
+        }
+        <div class="offset-4">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+        </div>
+        
+    </div>
+</div>
