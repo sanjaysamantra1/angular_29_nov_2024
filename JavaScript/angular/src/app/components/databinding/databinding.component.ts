@@ -15,6 +15,7 @@ export class DatabindingComponent {
   textLength = 100;
   text = '';
   diff = this.textLength - this.text.length;
+  
   selectedState = "Please Select The State";
 
 
