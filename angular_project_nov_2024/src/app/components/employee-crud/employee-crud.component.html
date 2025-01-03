@@ -1,10 +1,16 @@
 <div class="container mt-4">
-    <div class="d-flex justify-content-end mb-3">
+    <!-- <div class="d-flex justify-content-end mb-3">
       <button class="btn btn-success mb-2" (click)="toggleEmployeeForm()">New Employee</button>
-    </div>
+    </div> -->
+
+<div>
+  <app-child1-employee-crud (EmployeeEvent)="getEvent($event)"></app-child1-employee-crud>
+  <app-child2-employee-details [employeeListFromParent]="employeeList" (viewEmp)="viewEmployeeDetails($event)" (delEmp)="removeEmployee($event)"></app-child2-employee-details>
+</div>
   
     <!-- Employee Form -->
-    <div *ngIf="formVisible" class="container mt-4 mb-2">
+  <!-- @if(formVisible){
+    <div class="container mt-4 mb-2">
       <h3>Register Employee</h3>
       <form #employeeRegistrationForm="ngForm" (submit)="handleFormSubmit(employeeRegistrationForm)">
         <div class="mb-3">
@@ -18,7 +24,7 @@
         <div class="mb-3">
           <label for="dept" class="form-label">Department</label>
           <input type="text" id="dept" name="dept" class="form-control" ngModel required />
-        </div>
+       </div>
         <div class="mb-3">
           <label for="role" class="form-label">Role</label>
           <input type="text" id="role" name="role" class="form-control" ngModel required />
@@ -34,9 +40,10 @@
         <button type="submit" class="btn btn-primary mt-2">Save</button>
       </form>
     </div>
+  } -->
   
     <!-- Employee List -->
-    <div class="table-responsive">
+    <!-- <div class="table-responsive">
       <table class="table table-bordered table-hover">
         <thead class="table-dark">
           <tr>
@@ -50,7 +57,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let emp of employeeList; let i = index">
+          @for(emp of employeeList; track $index){
+          <tr>
             <td>{{ emp.empId }}</td>
             <td>{{ emp.fullName }}</td>
             <td>{{ emp.dept }}</td>
@@ -62,8 +70,9 @@
               <button class="btn btn-danger" (click)="removeEmployee(emp.empId)">Remove</button>
             </td>
           </tr>
+        }
         </tbody>
       </table>
     </div>
   </div>
-  
+   -->

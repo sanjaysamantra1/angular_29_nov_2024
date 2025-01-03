@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchPipe implements PipeTransform {
 
   transform(employees: any[], searchText: string): any[] {
-    if (!searchText) return employees; // If no search text, return the full list
-    searchText = searchText.toLowerCase(); // Convert search text to lowercase
+    if (!searchText) return employees; 
+    searchText = searchText.toLowerCase();
     return employees.filter(employee => 
       employee.name.toLowerCase().includes(searchText) ||
       employee.gender.toLowerCase().includes(searchText) ||

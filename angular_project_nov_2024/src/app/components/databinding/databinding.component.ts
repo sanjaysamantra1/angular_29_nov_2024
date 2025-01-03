@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DOCUMENT } from '@angular/common';
+import { EmployeeTableAndCardFormatComponent } from "../employee-table-and-card-format/employee-table-and-card-format.component";
 
 
 @Component({
   selector: 'app-databinding',
-  imports: [ // modules , directives,components,pipes
-    FormsModule
-  ],
+  imports: [
+    FormsModule,
+    EmployeeTableAndCardFormatComponent
+],
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css'
 })
@@ -83,10 +85,5 @@ export class DatabindingComponent {
     this.count = 0;
   }
 
-  employees = [
-    { id: 1, name: 'John Doe', position: 'Software Engineer', department: 'IT' },
-    { id: 2, name: 'Jane Smith', position: 'Product Manager', department: 'Management' },
-    { id: 3, name: 'Mike Johnson', position: 'UI/UX Designer', department: 'Design' },
-    { id: 4, name: 'Alice Brown', position: 'QA Engineer', department: 'Quality Assurance' },
-  ];
+  
 }

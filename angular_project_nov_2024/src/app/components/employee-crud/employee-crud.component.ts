@@ -3,16 +3,23 @@ import Swal from 'sweetalert2';
 import * as data from './employees.json';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Child1EmployeeCrudComponent } from "../child1-employee-crud/child1-employee-crud.component";
+import { Child2EmployeeDetailsComponent } from "../child2-employee-details/child2-employee-details.component";
 
 @Component({
   selector: 'app-employee-crud',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, Child1EmployeeCrudComponent, Child2EmployeeDetailsComponent],
   templateUrl: './employee-crud.component.html',
   styleUrls: ['./employee-crud.component.css'],
 })
 export class EmployeeCrudComponent {
   employeeList: any[] = (data as any).default;
   formVisible: boolean = false;
+
+  EmployeeDetails:any;
+  getEvent(newEmployee:any){
+    this.employeeList.push(newEmployee);
+  }
 
   // Toggle form visibility
   toggleEmployeeForm(): void {
@@ -50,6 +57,10 @@ export class EmployeeCrudComponent {
       if (result.isConfirmed) {
         this.employeeList = this.employeeList.filter((emp) => emp.empId !== id);
         Swal.fire('Deleted!', 'Employee record has been removed.', 'success');
+        console.log("Deleted from parent");
+        console.log(this.employeeList);
+        
+        
       }
     });
   }

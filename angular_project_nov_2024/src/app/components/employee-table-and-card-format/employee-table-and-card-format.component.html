@@ -1,0 +1,61 @@
+<div class="container mt-4">
+
+  <div>
+    <h3 class = "text-primary">Employee List</h3>
+    <button class="btn btn-primary" (click)="isTableView=!isTableView">
+      {{isTableView? 'Switch to Card View': 'Switch to Table View'}}
+    </button>
+  </div>
+
+    <!-- Table Format -->
+  <div [hidden]="!isTableView">
+    <h2 class="mb-4 text-primary">Employee List - Table Format</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Department</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (employee of employees; track $index) {
+            <tr>
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.position }}</td>
+              <td>{{ employee.department }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+        <!-- Card Format -->
+      <div [hidden]="isTableView">
+        <h2 class="mb-4 text-primary">Employee List - Card Format</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          @for (employee of employees; track $index) {
+            <div class="col">
+              <div class="card shadow-sm" style="width: 18rem;">
+                <!-- Placeholder Image -->
+                <img src="{{employee.image_url}}" class="card-img-top" alt="{{ employee.name }}">
+      
+                <!-- Card Body -->
+                <div class="card-body">
+                  <h5 class="card-title">{{ employee.name }}</h5>
+                  <p class="card-text">
+                    <strong>Position:</strong> {{ employee.position }}<br>
+                    <strong>Department:</strong> {{ employee.department }}
+                  </p>
+                  <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>

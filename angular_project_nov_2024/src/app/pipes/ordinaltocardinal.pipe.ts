@@ -11,7 +11,7 @@ export class OrdinaltocardinalPipe implements PipeTransform {
     const suffixes = ['th', 'st', 'nd', 'rd'];
     const v = value % 100;
     const suffix =
-      suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0];
+      suffixes[(v -20) % 10] || suffixes[v] || suffixes[0];
 
     return `${value}${suffix}`;
   }

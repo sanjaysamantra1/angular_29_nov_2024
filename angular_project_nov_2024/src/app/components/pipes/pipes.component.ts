@@ -21,8 +21,6 @@ import { SearchPipe } from '../../pipes/search.pipe';
 })
 export class PipesComponent {
   today = new Date();
-  msg: string = '';
-  msg2: string = '';
   dob: any;
   numbers = [1, 2, 3, 4, 21, 22, 23, 24];
   searchText: string = '';

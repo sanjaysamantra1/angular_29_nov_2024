@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import * as productsData from './products.json'; 
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-pagination-assignment',
-  imports: [  NgxPaginationModule, CommonModule, FormsModule],
+  imports: [  NgxPaginationModule, CommonModule, FormsModule, ProductCardComponent],
   templateUrl: './pagination-assignment-component.component.html',
   styleUrl: './pagination-assignment-component.component.css'
 })
@@ -30,8 +31,7 @@ export class PaginationAssignmentComponent  implements OnInit{
     }
     else{
       this.filteredProducts = this.products.sort((a,b) => b.price - a.price);
-    }
-    
+    }   
   }
 
   ngOnInit() {
@@ -39,5 +39,4 @@ export class PaginationAssignmentComponent  implements OnInit{
     this.filteredProducts = [...this.products] // Assign the imported data
     console.log(this.products); 
   }
-
 }

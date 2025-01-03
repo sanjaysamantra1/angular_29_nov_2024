@@ -1,0 +1,42 @@
+<p>Child 1 works</p>
+<button (click)="flag=true">Add Employee</button>
+
+@if(flag){
+
+    <div class="container mt-4 mb-2">
+        <h3>Register Employee</h3>
+        <form #formData="ngForm" (submit)="sendEmployeeDataToParent($event,formData)">
+          <div class="mb-3">
+            <label for="empId" class="form-label">Employee ID</label>
+            <input type="number" id="empId" name="empId" class="form-control" ngModel required />
+          </div>
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" id="fullName" name="fullName" class="form-control" ngModel required />
+          </div>
+          <div class="mb-3">
+            <label for="dept" class="form-label">Department</label>
+            <input type="text" id="dept" name="dept" class="form-control" ngModel required />
+          </div>
+          <div class="mb-3">
+            <label for="role" class="form-label">Role</label>
+            <input type="text" id="role" name="role" class="form-control" ngModel required />
+          </div>
+          <div class="mb-3">
+            <label for="emailAddress" class="form-label">Email</label>
+            <input type="email" id="emailAddress" name="emailAddress" class="form-control" ngModel required />
+          </div>
+          <div class="mb-3">
+            <label for="monthlySalary" class="form-label">Monthly Salary</label>
+            <input type="number" id="monthlySalary" name="monthlySalary" class="form-control" ngModel required />
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">Save</button>
+        </form>
+      </div>
+
+
+
+
+
+
+}

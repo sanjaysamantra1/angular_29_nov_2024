@@ -1,31 +1,14 @@
-<p>pagination-assignment-component works!</p>
+<div class = "container mt-4">
 <input type="text" [(ngModel)]="searchTerm">
 <button (click)="search()">Search</button>
 <button (click)="sortProducts('ascending')">Ascending</button>
 <button (click)="sortProducts('descending')">Descending</button>
 <div class="row">
     @for(product of filteredProducts | paginate: { itemsPerPage: 3, currentPage: p}; track $index ){
-        <!-- <div class="col-md-4 mb-4"> -->
-        <div class="col-sm-3 mb-4">
-            <div class="card" style="width: 18rem;">
-                <img src={{product.image}} class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                  <h5 class="card-title">{{product.title}}</h5>
-                  <p class="card-text">{{product.description}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><Strong>Category : </Strong> {{product.category}}</li>
-                  <li class="list-group-item"><Strong>Price : </Strong> {{product.price}}</li>
-                  <li class="list-group-item"><Strong>Rating : </Strong> {{product.rating.rate}} <Strong>No.of ratings : </Strong> {{product.rating.count}}</li>
-                  
-                </ul>
-                <!-- <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div> -->
-            </div>
+        <div class="col">
+          <app-product-card [product] ="product" ></app-product-card>
         </div>
-        
-    }
+   }
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
 </div>

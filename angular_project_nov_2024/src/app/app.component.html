@@ -1,4 +1,19 @@
 <app-navbar></app-navbar>
+<div class="theme-toggle-container">
+    <div class="form-check form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        id="themeToggle"
+        [(ngModel)]="isDarkTheme"
+        (click)="toggleTheme()"
+      />
+      <label class="form-check-label" for="themeToggle">
+        {{ isDarkTheme ? 'Dark Theme' : 'Light Theme' }}
+      </label>
+    </div>
+  </div>
+  
 <app-categories></app-categories>
 <app-carousel></app-carousel>
 <app-body></app-body>

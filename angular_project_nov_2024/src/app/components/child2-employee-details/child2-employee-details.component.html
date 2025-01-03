@@ -1,0 +1,34 @@
+<p>child2-employee-details works!</p>
+<div>employeeListFromParent</div>
+<!-- Employee List -->
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Department</th>
+          <th>Role</th>
+          <th>Email</th>
+          <th>Monthly Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(emp of employeeListFromParent; track $index){
+        <tr>
+          <td>{{ emp.empId }}</td>
+          <td>{{ emp.fullName }}</td>
+          <td>{{ emp.dept }}</td>
+          <td>{{ emp.role }}</td>
+          <td>{{ emp.emailAddress }}</td>
+          <td>{{ emp.monthlySalary }}</td>
+          <td>
+            <button class="btn btn-info me-1" (click)="viewChildEmployee(emp)">Details</button>
+            <button class="btn btn-danger" (click)="delChildEmployee(emp.empId)">Remove</button>
+          </td>
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
