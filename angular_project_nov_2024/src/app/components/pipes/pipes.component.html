@@ -66,13 +66,13 @@
 
 <div class="border p-3">
     <h3>Custom Pipe - Ordinal:</h3>
-    <input type="number" [(ngModel)]="num">
+    <input type="number" [(ngModel)]="num" placeholder="Enter a number">
     <div>{{ num | ordinal }}</div>
-</div>
+  </div>
 
-<div class="border p-3">
+  <div class="border p-3">
     <h3>Custom Pipe - Salutation:</h3>
-    <input type="text" [(ngModel)]="searchInput" placeholder="Search for an employee" />
+    <input type="text" [(ngModel)]="input" placeholder="Search for an employee" />
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -84,7 +84,7 @@
             </tr>
         </thead>
         <tbody>
-            @for(emp of employees | filterByValue : searchInput ;track $index){
+            @for(emp of employees | filterByChar : input ;track $index){
             <tr>
                 <td>{{$index+1}}</td>
                 <td>{{emp?.eId}}</td>

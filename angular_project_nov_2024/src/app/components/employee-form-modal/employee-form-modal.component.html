@@ -1,0 +1,65 @@
+<!-- <div class="modal" id="exampleModal1" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Employee Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label class="form-label">Employee Id</label>
+                <input type="number" class="form-control" id="eId" [(ngModel)]="eId">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="ename" [(ngModel)]="eName">
+                <label class="form-label">Salary</label>
+                <input type="number" class="form-control" id="esalary" [(ngModel)]="eSalary">
+                <label class="form-label">Gender</label>
+                <input type="text" class="form-control" id="egender" [(ngModel)]="eGender">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="insertNewRecord()">Save
+                    changes</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <form>
+    <div class="mb-3">
+        <label class="form-label">Employee Id</label>
+        <input type="number" class="form-control" [(ngModel)]="eId">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="eName">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Salary</label>
+        <input type="number" class="form-control" [(ngModel)]="eSalary">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <input type="text" class="form-control" [(ngModel)]="eGender">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="insertNewRecord()">Submit</button>
+</form> -->
+
+
+<div class="modal-header">
+    <h5 class="modal-title">Employee Details</h5>
+</div>
+<br>
+<div class="modal-body">
+    <label class="form-label">Employee Id</label>
+    <input type="number" class="form-control" id="eId" [(ngModel)]="eId">
+    <label class="form-label">Name</label>
+    <input type="text" class="form-control" id="ename" [(ngModel)]="eName">
+    <label class="form-label">Salary</label>
+    <input type="number" class="form-control" id="esalary" [(ngModel)]="eSalary">
+    <label class="form-label">Gender</label>
+    <input type="text" class="form-control" id="egender" [(ngModel)]="eGender">
+</div>
+<br>
+
+<button type="button" class="btn btn-primary" (click)="insertNewRecord()">Save
+    changes</button>

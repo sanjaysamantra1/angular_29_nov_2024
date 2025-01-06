@@ -11,19 +11,20 @@ import { FilterPipe } from '../../pipes/filter.pipe';
 @Component({
   selector: 'app-pipes',
   imports: [
-    CommonModule,
     FormsModule,
+    CommonModule,
     RemainingPipe,
     AgePipe,
     TruncatePipe,
     OrdinalPipe,
-    FilterPipe,
-    SalutationPipe
+    SalutationPipe,
+    FilterPipe
   ],
   templateUrl: './pipes.component.html',
   styleUrl: './pipes.component.css'
 })
 export class PipesComponent {
+
   myName: string = 'SacHiN teNdUlKaR';
   sal: number = 5000;
   today = new Date();
@@ -33,17 +34,14 @@ export class PipesComponent {
   msg2: string = '';
   dob: any;
   longStr = 'Hellooo Hiiiiiiiiii , Good Morning , How are you?'
-
   num: number = 0;
-  searchInput: string = '';
+  input: string = '';
 
   employees: any = [
-    { "eId": 101, "name": "Cindy", "sal": 80000, "gender": "F"},
-    { "eId": 102, "name": "Gina", "sal": 10000, "gender": "F"},
-    { "eId": 103, "name": "Jordan", "sal": 75000, "gender": "M" },
-    { "eId": 104, "name": "Kate", "sal": 90000, "gender": "M" },
-    { "eId": 105, "name": "Zachary", "sal": 60000, "gender": "F" },
+    { "eId": 101, "name": "sanjay", "sal": 5000, "gender": "male" },
+    { "eId": 104, "name": "geeta", "sal": 8000, "gender": "female" },
+    { "eId": 103, "name": "sameer", "sal": 7000, "gender": "male" },
+    { "eId": 102, "name": "sita", "sal": 9000, "gender": "female" }
   ];
-
 
 }

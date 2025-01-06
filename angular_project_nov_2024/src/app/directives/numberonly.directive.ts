@@ -9,7 +9,7 @@ export class NumberonlyDirective {
   myBgColor: string = '';
 
   @HostListener('keyup', ['$event.target.value'])
-  handleKeyUp(value: string) {
+  abc(value: string) {
     let regex = new RegExp(/^[0-9]*$/);
     if (!regex.test(value)) {
       this.myBgColor = 'red';

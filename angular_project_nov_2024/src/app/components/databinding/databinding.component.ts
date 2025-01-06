@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-databinding',
@@ -20,36 +20,40 @@ export class DatabindingComponent {
   num2 = 0;
   msg: string = '';
   selectedState: string = '';
-  selectedOperator: string = '';
+  operator: string = '';
   flag1: boolean = false;
-  text: string = 'text';
-  counterValue : number = 0;
+  text : string = 'text';
+  counter : number = 0;
+
 
   f1() {
     console.log('F1 called.....')
   }
-
-  addition(n1: any, n2: any) {
-    console.log(`Addition of ${n1} and ${n2} is ${+n1 + +n2}`)
+  addition(num1: any, num2: any) {
+    console.log(`Addition of ${num1} and ${num2} is ${+num1 + +num2}`)
   }
 
-  operations(n1: any, n2: any, opr: any) {
-    switch(opr){
-      case 'Add':
-        return +n1 + +n2;
-      case 'Sub':
-        return +n1 - +n2;
-      case 'Mul':
-        return +n1 * +n2;
-      case 'Div':
-        return +n1 / +n2;
-    }
+  calculation(num1: any, num2: any, operator: string) {
+    switch(operator) {
+      case '+':
+        return +num1 + +num2;
+      case "-":
+        return +num1 - +num2;
+      case "*":
+        return +num1 * +num2;
+      case "/":
+        return +num1 / +num2;
+      case "%":
+        return +num1 % +num2
+      }
     return null;
   }
 
-  clickEvent(){
+  clickEvent() {
     this.flag1 = !this.flag1;
-    this.flag1 ? this.text='password' : this.text='text';
+    console.log(this.flag1);
+    this.flag1 ? this.text= "password" : this.text = "text";
   }
-  
+
+
 }

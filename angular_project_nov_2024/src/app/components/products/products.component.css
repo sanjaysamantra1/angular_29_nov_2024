@@ -1,0 +1,17 @@
+#title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+}
+
+#button-addon1 {
+    background-color: aqua;
+    color: black;
+}
+
+#button-addon2 {
+    background-color: blanchedalmond;
+    color: black;
+}

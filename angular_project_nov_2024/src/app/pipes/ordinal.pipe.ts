@@ -4,19 +4,25 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'ordinal'
 })
 export class OrdinalPipe implements PipeTransform {
+  transform(value: number): string {
+    if (value == null || isNaN(value)) return ''; 
 
-  transform(number: any): any {
-    if (number.toString() == "11" || number.toString() == "12" || number.toString() == "13") {
-      return number + "th"
-    } else if (number.toString().endsWith(1)) {
-      return number + 'st';
-    } else if (number.toString().endsWith(2)) {
-      return number + 'nd';
-    } else if (number.toString().endsWith(3)){
-      return number + 'rd';
-    } else {
-      return number + "th"
+    const lastDigit = value % 10;
+    const lastTwoDigits = value % 100;
+
+    if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
+      return `${value}th`;
+    }
+
+    switch (lastDigit) {
+      case 1:
+        return `${value}st`;
+      case 2:
+        return `${value}nd`;
+      case 3:
+        return `${value}rd`;
+      default:
+        return `${value}th`;
     }
   }
-
 }
