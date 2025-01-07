@@ -14,8 +14,22 @@ export class ParentComponent {
   b = 200;
   parentCars: any;
 
+  // Component Life cycle 
+
+  constructor() {
+    console.log("Parent constructor")
+  }
+  ngOnInit() {
+    console.log('Parent ngOnInit');
+  }
+  ngOnChanges() {
+    console.log('Parent ngOnChanges');
+  }
+
   getDataFromChild(carsFromChild: any) {
     this.parentCars = carsFromChild;
   }
+
+
 
 }

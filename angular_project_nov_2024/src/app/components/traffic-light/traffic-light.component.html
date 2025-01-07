@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <div class="traffic-light-container traffic-light-vertical">
+      <div
+        *ngFor="let color of colorsArray"
+        class="traffic-light"
+        [style.backgroundColor]="color === selectedColor ? color : ''">
+      </div>
+    </div>
+  </div>
+  

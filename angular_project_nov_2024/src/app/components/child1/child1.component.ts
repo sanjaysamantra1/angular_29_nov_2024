@@ -1,4 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-child1',
@@ -11,6 +12,7 @@ import { Component, EventEmitter } from '@angular/core';
 export class Child1Component {
 
   ab: any;
+  // a: any;
   myName = 'Sachin Tendulkar';
   myAge = 45;
   cars = ['Tata', 'Honda', 'maruti'];
