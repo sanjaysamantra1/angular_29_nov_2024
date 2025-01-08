@@ -37,7 +37,36 @@ export class EmployeeCRUDComponent {
     this.showDeleteAlert(employee);
   }
 
-  insertNewRecord(employee: any) {
+  insertNewRecord() {
+    this.employeeObject.eId = this.eId;
+    this.employeeObject.eName = this.eName;
+    this.employeeObject.eSalary = this.eSalary;
+    this.employeeObject.eGender = this.eGender;
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Saved",
+      showConfirmButton: false,
+      timer: 1500
+    });
+
+    if (this.eId == 0 || this.eId == undefined) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!"
+      });
+    } else {
+      this.employees.push(this.employeeObject);
+    }
+
+    this.eId  = 0;
+    this.eName  = '';
+    this.eSalary = 0;
+    this.eGender = '';
+  }
+
+  insertNewRecord1(employee: any) {
 
     Swal.fire({
       position: "center",
@@ -76,10 +105,7 @@ export class EmployeeCRUDComponent {
           text: `Employee ${deletedEmployee[0].name} deleted.`,
           icon: "success"
         });
-      } else if (
-
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
         swalWithBootstrapButtons.fire({
           title: "Cancelled",
           text: `Employee ${employee.name} is safe :)`,

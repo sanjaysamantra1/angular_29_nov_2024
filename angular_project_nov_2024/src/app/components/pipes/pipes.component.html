@@ -33,9 +33,9 @@
 
   <hr>
 
-  <div>{{ 12.111222333 | number: "3.2-5" }}</div>
-  <div>{{ 12.1 | number: "3.2"}}</div>
-  <div>{{ 0.5 | number: "3.2-5"}}</div>
+  <div>{{ 12.111222333 | number: "3.2-5" }}</div>   // 012.11
+  <div>{{ 12.1 | number: "3.2"}}</div>  // 012.10
+  <div>{{ 0.5 | number: "3.2-5"}}</div> // 000.50
   <div>{{ 0.5 | percent}}</div>
   <div>{{ 0.75 | percent}}</div>
 
@@ -65,7 +65,7 @@
     <h3>Custom pipes:</h3>
 
     <textarea [(ngModel)]="msg" maxlength="100"></textarea>
-    <div>Remaining chars : {{msg | remaining}}</div>
+    <div>Remaining chars : {{msg | remaining }}</div>
 
     <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
     <div>Remaining chars : {{msg2 | remaining : 200}}</div>
@@ -97,6 +97,7 @@
   </div>
 
   <hr>
+
   <div>
   <h3>Custom Ordinal pipe:</h3>
 
@@ -109,6 +110,7 @@
   <hr>
   <div>
     <h4>Custom Salutation pipe</h4>
+    <input type="text" [(ngModel)]="searchInput">
     <table class="table table-light table-striped table-bordered border-primary">
       <thead>
         <th>eid</th>
@@ -120,7 +122,6 @@
         <tbody>
           <tr>
             <td>{{emp.eId}}</td>
-            <td>{{emp.name}}</td>
             <td>{{emp | salutation}}</td>      
             <td>{{emp.sal}}</td>  
             <td>{{emp.gender}}</td>         

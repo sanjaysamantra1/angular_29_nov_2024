@@ -84,41 +84,43 @@
     <button (click)="addition(box1.value, box2.value)">Addition</button>
   </div>
 
+  <!-- 1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
   <div>
     Assignment:1 (Toggle)
-    <h1 [hidden]="flag">Hellooooooooooooooooooooo Angularrrrrrrrrr</h1>
-    <button (click)="flag = !flag">
-      {{ flag ? "SHOW" : "HIDE" }}
-    </button>
+    <p [hidden]="flag">This is the content for toggling...</p>
+    
+    <button (click)="flag = !flag">{{ flag ? "Show Content" : "Hide Content" }}</button>
   </div>
 
+  <br>
+
+  2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters.
   <div>
     Assignment:2 (Remaining Char) <br />
     <textarea rows="4" cols="20" maxlength="100" [(ngModel)]="msg"></textarea>
     <div>Remaining Characters: {{ 100 - msg.length }}</div>
-  </div>
+  </div> 
 
+  <br>
+
+  3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph 
   <div>
     Assignment:3 (Selected State) <br />
     <select [(ngModel)]="selectedState">
+      <option selected value="">Select any state</option>
       <option>Andhra Pradesh</option>
-      <option>Karnataka</option>
+      <option value="KA">Karnataka</option>
       <option>State-3</option>
       <option>State-4</option>
       <option>State-5</option>
-      <option>State-6</option>
-      <option>State-7</option>
-      <option>State-8</option>
-      <option>State-9</option>
-      <option>State-10</option>
     </select>
-    <div>You selected:: {{ selectedState }}</div>
-    <!-- <input class="mx-2" [(ngModel)]="selectedState"  /> -->
+    <div>Your Selected state :: {{ selectedState }}</div>
   </div>
 
-  <div class="border p-2">
-    Assignment 4:
+  <br>
 
+  4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations
+  <div class="border p-2">
     <input class="mx-2" #num1 />
     <input ref-num2 class="mx-2" />
     <select [(ngModel)]="selectedOperator">
@@ -130,21 +132,83 @@
     <p>{{ operations(num1.value, num2.value, selectedOperator) }}</p>
   </div>
 
+  <br>
+
+  5. create a input box, toggle the type of that input box to (text/password)
   <div class="border p-2">
-    Assignment 5:
     <input class="mx-2" bind-type="mode"/>
     <button (click)="clickEvent()">
         {{ flag1 ? 'Password' : 'Text' }}
     </button>
-      
   </div>
 
+  <br>
+
+  6. Create a counter example with 3 controls (increment,decrement,reset)
   <div>
-    Assignment:6
     <div>Counter: {{counterValue}}</div>
     <button (click)="counterValue = counterValue+1">Increment</button>
     <button (click)="counterValue = counterValue-1">Decrement</button>
     <button (click)="counterValue = 0">Reset</button>
-</div>
+  </div>
+
+  7. Declare an array of users, display users in card & table format. 
+  add a button/switch to toggle between table view and card view.
+  https://jsonplaceholder.typicode.com/users
+
+  8. create 1 EmployeeCRUD component
+
+  9. display list of employees in a table (data comes from an array)
+
+  10. user should be able to delete Employee (ask user confirmation)
+
+  11. view the details of each employee in a modal (bootstrap)
+
+  12. add a new employee to the table (insert a new record to the array)
+      use sweetAlert to display messages ('Added Successfully')
+
+  13. Create a custom pipe(ordinal) that displays a cardinal number in ordinal format.
+    input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th
+
+    <div>
+      <p>Enter a cardinal number : </p>
+      <input type="number" [(ngModel)] = 'cardinalNumber'>
+      <div>
+        <p>Ordinal Number : {{cardinalNumber | ordinal}}
+      </div>
+    </div>
+
+  14. create a custom pipe called age which takes a date and returns the age in years.
+
+    <div>
+      <p>Enter dob </p>
+      <input type="date" [(ngModel)] = "dob">
+      <p>Age is :: {{dob | age}}</p>
+    </div>
+
+  15. declare an array of employee objects. display them in a table.
+    create a custom pipe Salutation that will add 'mr. / miss.' before the employee name.
+    <div>
+      <table class="table table-light table-striped table-bordered border-primary">
+        <thead>
+          <tr>
+            <th>eId</th>
+            <th>name</th>
+            <th>sal</th>
+            <th>gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(emp of employees; track $index){
+            <tr>
+              <td>{{emp.eId}}</td>
+              <td>{{emp | salutation}}</td>
+              <td>{{emp.sal}}</td>
+              <td>{{emp.gender}}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div> -->
 
 </div>

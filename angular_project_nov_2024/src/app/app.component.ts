@@ -11,8 +11,8 @@ import { EmployeeCRUDComponent } from './components/employees-crud/employees-cru
   selector: 'app-root',
   imports: [
     NavbarComponent,
-    // CategoriesComponent,
-    // CarouselComponent,
+    CategoriesComponent,
+    CarouselComponent,
     BodyComponent,
     FooterComponent,
     EmployeesComponent,

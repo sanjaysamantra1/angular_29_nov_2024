@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { text } from '@fortawesome/fontawesome-svg-core';
+import { OrdinalPipe } from '../../pipes/ordinal.pipe';
+import { AgePipe } from '../../pipes/age.pipe';
+import { SalutationPipe } from '../../pipes/salutation.pipe';
 
 @Component({
   selector: 'app-databinding',
-  imports: [ // modules , directives,components,pipes
-    FormsModule
+  imports: [
+    FormsModule,
+    OrdinalPipe,
+    AgePipe,
+    SalutationPipe
   ],
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css'
@@ -19,15 +26,29 @@ export class DatabindingComponent {
   num1 = 0;
   num2 = 0;
   msg: string = '';
+  msg1 : string = '';
   selectedState: string = '';
   selectedOperator: string = '';
   flag1: boolean = false;
   mode: string = 'text';
   counterValue : number = 0;
+  mode1: string = 'text';
+  cardinalNumber : any;
+  dob: any;
+
+  modeChange(){
+    this.flag = !this.flag;
+    this.flag ? this.mode1 = 'password' : this.mode1 = 'text' 
+  }
 
   f1() {
     console.log('F1 called.....');
     this.myName = "vamsi";
+  }
+
+  ass1(){
+    if(this.flag1==false)
+      return 
   }
 
   addition(n1: any, n2: any) {
@@ -52,5 +73,37 @@ export class DatabindingComponent {
     this.flag1 = !this.flag1;
     this.flag1 ? this.mode='password' : this.mode='text';
   }
-  
+
+  employees = [
+    {
+        "eId": 1,
+        "name": "dheeraj",
+        "sal": 300000,
+        "gender": "male"
+    },
+    {
+        "eId": 2,
+        "name": "maddula",
+        "sal": 200000,
+        "gender": "male"
+    },
+    {
+        "eId": 3,
+        "name": "sridhar",
+        "sal": 150000,
+        "gender": "male"
+    },
+    {
+        "eId": 4,
+        "name": "vijaya",
+        "sal": 125000,
+        "gender": "female"
+    },
+    {
+        "eId": 5,
+        "name": "lakshmi",
+        "sal": 100000,
+        "gender": "female"
+    }
+]
 }

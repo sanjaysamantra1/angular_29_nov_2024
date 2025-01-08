@@ -1,8 +1,9 @@
 <div>
-    <!-- <button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Add an
+    <button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1"> Add an
         employee </button>
-    <br> -->
-    <!-- <table class="table table-light table-striped table-bordered border-primary">
+    <br>
+
+    <table class="table table-light table-striped table-bordered border-primary">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -13,10 +14,10 @@
                 <th scope="col">Delete</th>
             </tr>
         </thead>
-        @for(employee of employees | paginate: { itemsPerPage: 5, currentPage: p }; track $index) {
+        @for(employee of employees; track $index) {
         <tbody>
             <tr scope="row" id="{{employee.eId}}">
-                <th>{{employee.eId}}</th>
+                <td>{{employee.eId}}</td>
                 <td>{{employee.name}}</td>
                 <td>{{employee.sal}}</td>
                 <td>{{employee.gender}}</td>
@@ -27,6 +28,14 @@
         </tbody>
         }
     </table>
+     <div>
+        <div class="row mt-2">
+            <div style="text-align: center;">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+
 
     <div class="modal" id="exampleModal" tabindex="-1">
         <div class="modal-dialog">
@@ -48,7 +57,7 @@
         </div>
     </div>
 
-    <div class="modal" id="exampleModal1" tabindex="-1">
+     <div class="modal" id="exampleModal1" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -72,9 +81,11 @@
                 </div>
             </div>
         </div>
-    </div> -->
-    <app-form-modal (addEmployeeEvent)="insertNewRecord($event)"></app-form-modal> <hr>
+    </div>
     
-    <app-employee-list [employees] = 'employees'  #empListRef (employeeEvent)="getRecordToDelete($event)" ></app-employee-list>
+    
+    <app-form-modal (addEmployeeEvent)="insertNewRecord1($event)"></app-form-modal> <hr>
+    
+    <app-employee-list [employees] = 'employees' #empListRef (employeeEvent)="getRecordToDelete($event)" ></app-employee-list>
 
 </div>

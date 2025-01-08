@@ -10,6 +10,7 @@ import { ParentComponent } from '../parent/parent.component';
 import { Child1Component } from '../child1/child1.component';
 import { Child2Component } from '../child2/child2.component';
 import { EmployeeCRUDComponent } from '../employees-crud/employees-crud.component';
+import { NgDoCheckComponent } from '../ng-do-check/ng-do-check.component';
 
 @Component({
   selector: 'app-body',
@@ -24,7 +25,8 @@ import { EmployeeCRUDComponent } from '../employees-crud/employees-crud.componen
     ParentComponent,
     Child1Component,
     Child2Component,
-    EmployeeCRUDComponent
+    EmployeeCRUDComponent,
+    NgDoCheckComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

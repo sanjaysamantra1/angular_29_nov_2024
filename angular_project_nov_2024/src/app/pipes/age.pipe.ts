@@ -10,8 +10,11 @@ export class AgePipe implements PipeTransform {
     if(!value) return '';
 
     const currentYear = new Date().getFullYear();
+
     const dobYear = new Date(value).getFullYear();
+
     const age = currentYear - dobYear;
+    
     return age + 'years old';
   }
 

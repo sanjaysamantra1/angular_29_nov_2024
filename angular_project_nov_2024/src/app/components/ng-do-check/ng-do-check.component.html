@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <div class='traffic-light-container traffic-light-container--vertical'>
+        @for (color of colorsArr; track $index) {
+            <div class="traffic-light" [style.background-color]="color == selectedColor ? selectedColor:'' " style="text-align: center; padding-top: 15px;" >
+                <b style="color: white;">{{color == selectedColor ? currentText : ''}}</b>
+            </div>
+        }
+    </div>
+</div>
