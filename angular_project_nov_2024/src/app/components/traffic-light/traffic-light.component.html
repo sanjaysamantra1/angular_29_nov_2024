@@ -1,0 +1,7 @@
+<div class="trafficSquare" style="justify-content: center; display: flex;">
+    <div class="trafficLight">
+        @for(color of colorsArr; track $index) {
+        <span class="red" [style.background-color]="color === selectedColor ? selectedColor:'' "></span>
+        }
+    </div>
+</div>
