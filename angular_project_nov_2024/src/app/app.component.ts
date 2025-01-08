@@ -7,6 +7,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { ProductsComponent } from './components/products/products.component';
 import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.component';
+import { StudentCrudComponent } from './components/student-crud/student-crud.component';
+import { TrafficLightComponent } from './traffic-light/traffic-light.component';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +20,10 @@ import { EmployeeCRUDComponent } from './components/employee-crud/employee-crud.
     BodyComponent,
     EmployeeComponent,
     ProductsComponent,
-    FooterComponent,
+    
     EmployeeCRUDComponent,
+    StudentCrudComponent,
+    FooterComponent
   ],
   template: `
     <app-navbar></app-navbar>

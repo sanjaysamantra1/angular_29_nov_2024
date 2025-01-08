@@ -7,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class OrdinalPipe implements PipeTransform {
   transform(value: number): string {
     if ((value==0)||(value==null)) return '';
-    
+        
     const j = value % 10;
     const k = value % 100;
     

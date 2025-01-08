@@ -1,0 +1,5 @@
+<p>student-crud works!</p>
+<div class="border p-2">
+    <app-add-students (addStudent)="add_Student($event)"></app-add-students>
+    <app-students-list [students_arr]="students_arr" (deleteEvent)="delete_Student($event)"></app-students-list>
+</div>
