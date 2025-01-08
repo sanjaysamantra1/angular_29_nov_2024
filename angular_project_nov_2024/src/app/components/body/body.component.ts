@@ -6,17 +6,19 @@ import { Demo1Component } from '../demo1/demo1.component';
 import { MyModalComponent } from '../my-modal/my-modal.component';
 import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from '../parent/parent.component';
+import { TrafficLightComponent } from '../traffic-light/traffic-light.component';
 
 @Component({
   selector: 'app-body',
   imports: [
-    DatabindingComponent,
-    DirectivesComponent,
-    UserListComponent,
-    Demo1Component,
-    MyModalComponent,
-    PipesComponent,
-    ParentComponent
+    // DatabindingComponent,
+    // DirectivesComponent,
+    // UserListComponent,
+    // Demo1Component,
+    // MyModalComponent,
+    // PipesComponent,
+    ParentComponent,
+    // TrafficLightComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

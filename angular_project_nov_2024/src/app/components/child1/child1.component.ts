@@ -1,4 +1,5 @@
-import { Component, EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-child1',
@@ -18,4 +19,37 @@ export class Child1Component {
   sendDataToParent() {
     this.carsEvent.emit(this.cars); // using EventEmitter object emit the data
   }
+
+  constructor(private httpClient: HttpClient) {
+    console.log("Child constructor");
+
+  }
+  ngOnChanges(myChanges: SimpleChanges) { // n times
+    console.log('Child ngOnChanges');
+    console.log(myChanges);
+  }
+  ngOnInit() {
+    console.log('Child ngOnInit'); // 1 time
+    this.httpClient.get('https://jsonplaceholder.typicode.com/users').subscribe(data => {
+      console.log(data)
+    });
+  }
+  // ngDoCheck() {
+  //   console.log('Child ngDoCheck');
+  // }
+  // ngAfterContentInit() {
+  //   console.log('Child ngAfterContentInit');
+  // }
+  // ngAfterContentChecked() {
+  //   console.log('Child ngAfterContentChecked')
+  // }
+  // ngAfterViewInit() {
+  //   console.log('Child ngAfterViewInit');
+  // }
+  // ngAfterViewChecked() {
+  //   console.log('Child ngAfterViewChecked');
+  // }
+  // ngOnDestroy() {
+  //   console.log('Child ngOnDestory');
+  // }
 }
