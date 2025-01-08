@@ -1,0 +1,8 @@
+<h5>TRAFFIC LIGHT ASSIGNMENT</h5>
+<div class="wrapper">
+    <div class="traffic-light-container traffic-light-container-vertical">
+        @for(color of colorsArray; track $index){
+            <div class="traffic-light" [style.background-color]="color===selectedColor ? selectedColor:''"></div>
+        }
+    </div>
+</div>

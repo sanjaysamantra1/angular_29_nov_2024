@@ -12,7 +12,11 @@
 <p> Assignment 1: Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph
 </p>
 <div>
-    <p [hidden]="flag">{{val}}</p>
+    <!-- <p [hidden]="flag">{{val}}</p> -->
+    @if(flag){
+        <p>{{val}}</p>
+    }
+
     
     <button class="btn btn-primary" (click)="flag=!flag">{{flag ? 'SHOW' : 'HIDE'}}</button>
 </div>
@@ -82,7 +86,7 @@
 </p>
 
 <div> 
-    <input class="assignment5" [type]="isPass ? 'password' : 'text'" [(ngModel)]="passwordValue" placeholder="Enter Text"> 
+    <input [type]="isPass ? 'password' : 'text'" [(ngModel)]="passwordValue" placeholder="Enter Text"> 
     <button class="btn btn-primary mx-3" (click)="togglePasswordVisibility()">{{isPass ? 'SHOW' : 'HIDE'}}</button>
  </div>
 

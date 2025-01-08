@@ -90,5 +90,10 @@
       <app-parent></app-parent>
     <app-employeecrudparent></app-employeecrudparent>
     }
+
+    <button class="btn btn-primary my-4 mb-5" (click)="trafficLightF()">Traffic Light Assignment</button>    
+    @if(trafficLight){
+      <app-trafficlight></app-trafficlight>
+    }
     </div>
 </div>

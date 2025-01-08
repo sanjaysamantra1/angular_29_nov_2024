@@ -19,6 +19,7 @@ export class Demo1Component {
   products = (data as any).default;
   
   filteredProducts = [...this.products];
+  
   p: any;
   searchText: string = ''; 
 

@@ -8,10 +8,11 @@ import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component'
 import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from '../parent/parent.component';
 import { EmployeecrudparentComponent } from '../employeecrudparent/employeecrudparent.component';
+import { TrafficlightComponent } from '../trafficlight/trafficlight.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,DirectivesComponent,UserListComponent,Demo1Component,ModalComponent,EmployeeCRUDComponent,PipesComponent,ParentComponent,EmployeecrudparentComponent],
+  imports: [DatabindingComponent,DirectivesComponent,UserListComponent,Demo1Component,ModalComponent,EmployeeCRUDComponent,PipesComponent,ParentComponent,EmployeecrudparentComponent,TrafficlightComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
@@ -23,7 +24,7 @@ export class BodyComponent {
   modalConcept: boolean =false;
   Pipes: boolean =false;
   ParentChild: boolean =false;
-
+  trafficLight: boolean=false;
 
 
   dataBindingF(){
@@ -45,4 +46,7 @@ export class BodyComponent {
     this.ParentChild=!this.ParentChild;
   }
 
+  trafficLightF(){
+    this.trafficLight=!this.trafficLight;
+  }
 }

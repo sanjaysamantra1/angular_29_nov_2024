@@ -39,11 +39,11 @@
         </div>
         <div class="my-3">
             <label for="name">Name : </label>
-            <input class="mx-3" type="text" id="name" [(ngModel)]="newEmployee.name" name="name" required />
+            <input class="mx-3" type="text"  [(ngModel)]="newEmployee.name" name="name" required />
         </div>
         <div class="my-3">
             <label for="sal">Salary : </label>
-            <input class="mx-3" type="number" id="sal" [(ngModel)]="newEmployee.sal" name="sal" required />
+            <input class="mx-3" type="number"  [(ngModel)]="newEmployee.sal" name="sal" required />
         </div>
         <div class="my-3">
             <label for="gender">Gender : </label>
@@ -78,12 +78,12 @@
           <td>{{ emp.gender }}</td>
           <td>
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModall">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModall'+$index">
     VIEW
   </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" [attr.id]="'exampleModall'+$index" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

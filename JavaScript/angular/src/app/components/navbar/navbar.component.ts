@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -13,9 +13,9 @@ export class NavbarComponent {
 
   isDarkMode:any;
   
-toggleTheme = new EventEmitter(); 
 
-onToggleTheme():void{
+toggleTheme = new EventEmitter();
+onToggleTheme(){
   this.toggleTheme.emit();
 }
 }
