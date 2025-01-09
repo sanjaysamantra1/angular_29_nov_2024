@@ -1,0 +1,159 @@
+<select [(ngModel)]="selectedOption">
+    <option>All Employees</option>
+    <option>Male Employees</option>
+    <option>Female Employees</option>
+</select>
+
+<button class="btn btn-secondary mx-3" (click)="view=!view">CHANGE VIEW</button>
+
+@if(view){
+  <div class="container mt-5">
+@if(selectedOption==='All Employees'){
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(emp of allEmp;track $index){
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ emp.eId }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.sal }}</td>
+            <td>{{ emp.gender }}</td>
+          </tr>
+      }
+        </tbody>
+      </table>
+}
+
+
+@if(selectedOption==='Male Employees'){
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(emp of maleEmp;track $index){
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ emp.eId }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.sal }}</td>
+            <td>{{ emp.gender }}</td>
+          </tr>
+      }
+        </tbody>
+      </table>
+}
+
+
+@if(selectedOption==='Female Employees'){
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(emp of femaleEmp;track $index){
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>{{ emp.eId }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.sal }}</td>
+            <td>{{ emp.gender }}</td>
+          </tr>
+      }
+        </tbody>
+      </table>
+}
+  </div>
+}
+
+
+@else{
+
+@if(selectedOption==='All Employees'){
+<div class="container mt-5">
+    <div class="row d-flex flex-row ">
+      @for (emp of allEmp; track $index) {
+        <div class="col-sm-3 mx-4"> 
+          <div class="card my-3 show" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">ID: {{emp.eId}}</h5>
+              <p class="card-text">NAME: {{emp.name}}</p>
+              <p class="card-text">SALARY: {{emp.sal}}</p>
+              <p class="card-text">GENDER: {{emp.gender}}</p>
+            </div>
+          </div>
+        </div>
+    }
+      @empty {
+        <p>No Users Found</p>
+      }
+    </div>
+  </div>
+}
+
+@if(selectedOption==='Male Employees'){
+    <div class="container mt-5">
+        <div class="row d-flex flex-row ">
+          @for (emp of maleEmp; track $index) {
+            <div class="col-sm-3 mx-4"> 
+              <div class="card my-3 show" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">ID: {{emp.eId}}</h5>
+                  <p class="card-text">NAME: {{emp.name}}</p>
+                  <p class="card-text">SALARY: {{emp.sal}}</p>
+                  <p class="card-text">GENDER: {{emp.gender}}</p>
+                </div>
+              </div>
+            </div>
+        }
+          @empty {
+            <p>No Users Found</p>
+          }
+        </div>
+      </div>
+    }
+
+    @if(selectedOption==='Female Employees'){
+        <div class="container mt-5">
+            <div class="row d-flex flex-row ">
+              @for (emp of femaleEmp; track $index) {
+                <div class="col-sm-3 mx-4"> 
+                  <div class="card my-3 show" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">ID: {{emp.eId}}</h5>
+                      <p class="card-text">NAME: {{emp.name}}</p>
+                      <p class="card-text">SALARY: {{emp.sal}}</p>
+                      <p class="card-text">GENDER: {{emp.gender}}</p>
+                    </div>
+                  </div>
+                </div>
+            }
+              @empty {
+                <p>No Users Found</p>
+              }
+            </div>
+          </div>
+        }
+
+    }

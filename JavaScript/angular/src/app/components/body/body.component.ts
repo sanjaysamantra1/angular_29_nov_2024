@@ -9,10 +9,14 @@ import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from '../parent/parent.component';
 import { EmployeecrudparentComponent } from '../employeecrudparent/employeecrudparent.component';
 import { TrafficlightComponent } from '../trafficlight/trafficlight.component';
+import { Math1Component } from '../math1/math1.component';
+import { Math2Component } from '../math2/math2.component';
+import { UsersComponent } from '../../components/users/users.component';
+import { EmployeecompComponent } from '../employeecomp/employeecomp.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,DirectivesComponent,UserListComponent,Demo1Component,ModalComponent,EmployeeCRUDComponent,PipesComponent,ParentComponent,EmployeecrudparentComponent,TrafficlightComponent],
+  imports: [DatabindingComponent,DirectivesComponent,UserListComponent,Demo1Component,ModalComponent,EmployeeCRUDComponent,PipesComponent,ParentComponent,EmployeecrudparentComponent,TrafficlightComponent,Math1Component,Math2Component,UsersComponent,EmployeecompComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
@@ -25,7 +29,10 @@ export class BodyComponent {
   Pipes: boolean =false;
   ParentChild: boolean =false;
   trafficLight: boolean=false;
-
+  appUsers:boolean =false;
+  math1:boolean=false;
+  math2:boolean=false;
+  empcomp:boolean=false;
 
   dataBindingF(){
     this.dataBinding=!this.dataBinding;

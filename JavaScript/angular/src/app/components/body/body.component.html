@@ -95,5 +95,27 @@
     @if(trafficLight){
       <app-trafficlight></app-trafficlight>
     }
+
+    <button class="btn btn-primary my-4 mb-5" (click)="math1=!math1">Math1</button>   
+    @if(math1){
+      <app-math1></app-math1>
+    }
+
+    <button class="btn btn-primary my-4 mb-5" (click)="math2=!math2">Math2</button>   
+    @if(math2){
+      <app-math2></app-math2>
+    }
+
+    <button class="btn btn-primary my-4 mb-5" (click)="appUsers=!appUsers">Users Comp</button>   
+    @if(appUsers){
+      <app-users></app-users>
+    } 
+    
+
+    <button class="btn btn-primary my-4 mb-5" (click)="empcomp=!empcomp">EmployeeCompAssignment</button>  
+    @if(empcomp){
+      <app-employeecomp></app-employeecomp>
+    } 
+    
     </div>
 </div>
