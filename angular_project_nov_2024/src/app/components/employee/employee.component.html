@@ -1,0 +1,23 @@
+<div>
+    <select [(ngModel)] = "selectedValue">
+        <option value="all" selected>All</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <div class="row">
+        @for(employee of employees; track $index){
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjWGGs4b5kwJavNNlUaFNRl3TY9hWEJDNsg&s"
+                    class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Id : {{employee.eId}}</h5>
+                    <p class="card-text">Name : {{employee.name}}</p>
+                    <p class="card-text">Salary : {{employee.sal}}</p>
+                    <p class="card-text">Gender: {{employee.gender}}</p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

@@ -11,10 +11,11 @@ import { MyModalComponent } from "../my-modal/my-modal.component";
 import { FormModalComponent } from "../form-modal/form-modal.component";
 import { FatherComponent } from "../father/father.component";
 import { TrafficLightComponent } from "../traffic-light/traffic-light.component";
+import { EmployeeComponent } from "../employee/employee.component";
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent],
+  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent, EmployeeComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
