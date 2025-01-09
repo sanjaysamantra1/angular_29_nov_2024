@@ -8,17 +8,19 @@ import { PipesComponent } from '../pipes/pipes.component';
 import { DatabindingComponent } from '../databinding/databinding.component';
 import { EmployeeAssignmentComponent } from '../employee-assignment/employee-assignment.component';
 import { DatabindingassignComponent } from '../databindingassign/databindingassign.component';
+import { TrafficSignalComponent } from "../traffic-signal/traffic-signal.component";
 
 @Component({
   selector: 'app-body',
   imports: [
-    DatabindingassignComponent,
-    EmployeeAssignmentComponent,
-    UserListComponent,
-    PaginationassignComponent,
-    PipesComponent,
-    EmployeeCrudComponent
-    ],
+    // DatabindingassignComponent,
+    // EmployeeAssignmentComponent,
+    // UserListComponent,
+    // PaginationassignComponent,
+    // PipesComponent,
+    // EmployeeCrudComponent,
+    TrafficSignalComponent
+],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

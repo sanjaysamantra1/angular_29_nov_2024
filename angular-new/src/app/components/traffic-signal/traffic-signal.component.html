@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div class='traffic-light-container traffic-light-container--vertical'>
+    @for (color of signalColors; track color) {
+      <div>
+        <div class="traffic-light" [style.background-color]="color === activeColor ? activeColor:'' ">
+        </div>
+      </div>
+    }
+  </div>
+</div>
