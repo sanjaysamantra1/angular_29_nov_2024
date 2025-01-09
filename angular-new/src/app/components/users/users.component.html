@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <div class="row d-flex flex-row ">
+      @for (user of users; track $index) {
+        <div class="col-sm-3 mx-4"> 
+          <div class="card my-3 show" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">NAME: {{user.name}}</h5>
+              <p class="card-text">POSITION: {{user.username}}</p>
+              <p class="card-text">DEPARTMENT: {{user.email}}</p>
+            </div>
+          </div>
+        </div>
+      }
+      @empty {
+        <p>No Users Found</p>
+      }
+    </div>
+  </div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Employee List</h2>
+
+  <div class="filter">
+    <label for="filter">Show: </label>
+    <select id="filter" [(ngModel)]="filterCriteria" (change)="onFilterChange(filterCriteria)">
+        <option value="allEmployees">All Employees</option>
+        <option value="male">Male Employees</option>
+        <option value="female">Female Employees</option>
+      </select>      
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (emp of filteredEmployees; track emp) {
+        <tr>
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.gender }}</td>
+          <td>{{ emp.position }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

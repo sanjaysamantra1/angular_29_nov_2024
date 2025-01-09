@@ -9,6 +9,8 @@ import { DatabindingComponent } from '../databinding/databinding.component';
 import { EmployeeAssignmentComponent } from '../employee-assignment/employee-assignment.component';
 import { DatabindingassignComponent } from '../databindingassign/databindingassign.component';
 import { TrafficSignalComponent } from "../traffic-signal/traffic-signal.component";
+import { UsersComponent } from "../users/users.component";
+import { EmployeeComponent } from '../employee/employee.component';
 
 @Component({
   selector: 'app-body',
@@ -19,7 +21,9 @@ import { TrafficSignalComponent } from "../traffic-signal/traffic-signal.compone
     // PaginationassignComponent,
     // PipesComponent,
     // EmployeeCrudComponent,
-    TrafficSignalComponent
+    // TrafficSignalComponent,
+    EmployeeComponent,
+    UsersComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
