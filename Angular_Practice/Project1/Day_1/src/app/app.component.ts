@@ -10,10 +10,13 @@ import { ProductsComponent } from "./components/products/products.component";
 import { EmployeecrudComponent } from "./components/employeecrud/employeecrud.component";
 import { PipesComponent } from "./components/pipes/pipes.component";
 import { EmployeeParentComponent } from "./components/employee-parent/employee-parent.component";
+import { EmpCrudPracticeComponent } from "./components/emp-crud-practice/emp-crud-practice.component";
+import { TrafficLightComponent } from "./components/traffic-light/traffic-light.component";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, CategoriesComponent, CarouselComponent, BodyComponent, FooterComponent, EmployeeComponent, ProductsComponent, EmployeecrudComponent, PipesComponent, EmployeeParentComponent],
+  imports: [RouterOutlet, NavbarComponent, CategoriesComponent, CarouselComponent, BodyComponent, FooterComponent, EmployeeComponent, ProductsComponent, EmployeecrudComponent, PipesComponent, EmployeeParentComponent, EmpCrudPracticeComponent, TrafficLightComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

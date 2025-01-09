@@ -29,14 +29,12 @@
       }
     </tbody>
   </table>
-
+</div>
 
   <div
     class="modal fade"
     id="addEmployeeModal"
     tabindex="-1"
-    aria-labelledby="addEmployeeModalLabel"
-    aria-hidden="true"
     >
     <div class="modal-dialog">
       <div class="modal-content">
@@ -106,15 +104,14 @@
             </div>
           </div>
         </div>
-      </div>
+      
 
 
       <div
         class="modal fade"
         id="viewEmployeeModal"
         tabindex="-1"
-        aria-labelledby="viewEmployeeModalLabel"
-        aria-hidden="true">
+        >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -123,14 +120,14 @@
                 type="button"
                 class="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"
+             
               ></button>
             </div>
             <div class="modal-body">
-              <p><strong>ID:</strong> {{ selectedEmployee?.id }}</p>
-              <p><strong>Name:</strong> {{ selectedEmployee?.name }}</p>
-              <p><strong>Position:</strong> {{ selectedEmployee?.position }}</p>
-              <p><strong>Salary:</strong> {{ selectedEmployee?.salary }}</p>
+              <p><strong>ID:</strong> {{ selectedEmployee.id }}</p>
+              <p><strong>Name:</strong> {{ selectedEmployee.name }}</p>
+              <p><strong>Position:</strong> {{ selectedEmployee.position }}</p>
+              <p><strong>Salary:</strong> {{ selectedEmployee.salary }}</p>
             </div>
             <div class="modal-footer">
               <button

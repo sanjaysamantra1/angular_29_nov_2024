@@ -1,0 +1,71 @@
+[
+    { "eId": 101,
+     "name": "Scott",
+      "sal": 90000, 
+      "gender": "male"
+     },
+    { "eId": 102, "name": "Dany", "sal": 180000, "gender": "female" },
+    { "eId": 103, "name": "Ken", "sal": 200000, "gender": "male" },
+    { "eId": 104, "name": "Rita", "sal": 90000, "gender": "female"},
+    { "eId": 105, "name": "Tim", "sal": 180000, "gender": "male"},
+    {
+        "eId": 106,
+        "name": "sanjay",
+        "sal": 5000,
+        "gender": "male"
+    },
+    {
+        "eId": 107,
+        "name": "geeta",
+        "sal": 8000,
+        "gender": "female"
+    },
+    {
+        "eId": 108,
+        "name": "sameer",
+        "sal": 7000,
+        "gender": "male"
+    },
+    {
+        "eId": 109,
+        "name": "sita",
+        "sal": 9000,
+        "gender": "female"
+    },
+    {
+        "eId": 110,
+        "name": "tom",
+        "sal": 8000,
+        "gender": "male"
+    },
+    {
+        "eId": 111,
+        "name": "kohli",
+        "sal": 8000,
+        "gender": "male"
+    },
+    {
+        "eId": 112,
+        "name": "rohit",
+        "sal": 8000,
+        "gender": "male"
+    },
+    {
+        "eId": 113,
+        "name": "pavan",
+        "sal": 8000,
+        "gender": "male"
+    },
+    {
+        "eId": 114,
+        "name": "dhanush",
+        "sal": 8000,
+        "gender": "male"
+    },
+    {
+        "eId": 115,
+        "name": "sathwik",
+        "sal": 8000,
+        "gender": "male"
+    }
+  ]

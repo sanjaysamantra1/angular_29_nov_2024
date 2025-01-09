@@ -23,18 +23,10 @@
     <button class="btn btn-primary mx-2" [disabled]="flag">btn-2</button>
     <button class="btn btn-primary" bind-disabled="flag">btn-3</button>
 
-    <button
-      (click)="f1()"
-      class="btn btn-primary mx-2"
-      [ariaLabel]="myAriaLabel"
-    >
+    <button (click)="f1()" class="btn btn-primary mx-2" [ariaLabel]="myAriaLabel">
       invoke F1
     </button>
-    <button
-      on-click="f1()"
-      class="btn btn-primary mx-2"
-      [attr.aria-label]="myAriaLabel"
-    >
+    <button on-click="f1()" class="btn btn-primary mx-2" [attr.aria-label]="myAriaLabel">
       invoke F1
     </button>
   </div>
@@ -131,11 +123,11 @@
   <div class="border p-2">
     Assignment 5:
 
-    <input class="mx-2" bind-type="text"/>
+    <input class="mx-2" bind-type="text" />
     <button (click)="clickEvent()">
-        {{ flag1 ? 'Password' : 'Text' }}
-      </button>
-      
+      {{ flag1 ? 'Password' : 'Text' }}
+    </button>
+
   </div>
 
   <div>
@@ -145,8 +137,8 @@
     <button (click)="counterValue = counterValue-1">Decrement</button>
     <button (click)="counterValue = 0">Reset</button>
 
-    
-   
-</div>
+
 
   </div>
+
+</div>

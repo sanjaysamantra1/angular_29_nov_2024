@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OrdinalPipe } from '../../pipes/ordinal.pipe';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+
 import { AgePipe } from '../../pipes/age.pipe';
 import { generate } from 'rxjs';
 import { SalutationPipe } from '../../pipes/salutation.pipe';

@@ -1,0 +1,118 @@
+<h2>Employee Crud Pratice</h2>
+
+<table class="table table-bordered  table-striped">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+
+    @for (emp of employees | paginate:{itemsPerPage:4, currentPage:p}; track $index) {
+        <tbody>
+            <tr>
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.position}}</td>
+                <td>{{emp.salary}}</td>
+                <td><button class="btn btn-primary" name="view" (click)="viewEmp(emp)" data-bs-toggle="modal" data-bs-target="#viewModal">view
+                </button></td>
+                <td><button class="btn btn-danger" name="delete" (click)="deleteEmp(emp)">Delete</button></td>
+            </tr>
+        </tbody>
+    }
+</table>
+<pagination-controls (pageChange)="p =$event"></pagination-controls>
+
+
+
+<!-- code for view in modal -->
+
+  <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="View Data">Employee Data</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <p><strong>Id</strong>{{selectedEmp.id}}</p>
+        <p><strong>Name</strong>{{selectedEmp.name}}</p>
+        <p><strong>Position</strong>{{selectedEmp.position}}</p>
+        <p><strong>Salary</strong>{{selectedEmp.salary}}</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<button class="btn btn-primary" (click)="changeValue()"><p> Toggle to{{flag? "List" :"Table"}}</p></button>
+
+
+  <div class="container">
+    <div>
+       @if(flag==true){
+        <table class="table table-stripped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            @for (emp of employees; track $index) {
+                <tbody>
+                    <tr>
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.name}}</td>
+                    <td>{{emp.position}}</td>
+                    <td>{{emp.salary}}</td>
+                    
+                    </tr>
+                </tbody>
+
+            }
+        </table>
+        }
+        @else 
+        {
+            <div class="row">
+            @for (emp of employees; track $index) {
+                
+                    <div class="col sm-6">
+                        <div class="card-group">
+                    
+                            <div class="card">
+                                
+                              <div class="card-body">
+                                <h5 class="card-title">{{emp.name}}</h5>
+                                <p class="card-text">{{emp.id}}</p>
+                                <p class="card-text">{{emp.position}}</p>
+                                <p class="card-text">{{emp.salary}}</p>
+                               
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                
+               
+                }
+    </div>
+            
+        }
+    </div>
+   
+    
+  </div>
+
