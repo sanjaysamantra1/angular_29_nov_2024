@@ -1,4 +1,4 @@
-.BestDeal{
+ /* .hi{ 
     margin: 70px;
     list-style: none;
     display: flex;
@@ -18,9 +18,17 @@ border-radius: 7;
   }
   a {
     text-align: center;
-    margin: 10px 0; /* Adjust margin to add space above and below */
-    display: block; /* Ensures the link takes up its own line */
-    text-decoration: none; /* Remove underline */
-    color: #007BFF; /* Default link color */
-    font-size: 14px; /* Set font size */
+    margin: 10px 0; 
+    display: block; 
+    text-decoration: none;
+    color: #007BFF; 
+    font-size: 14px;  }*/
+
+
+img {
+  width: 300px;
+  height: 300px;
+}
+.margin{
+  border-radius: 100%;
 }

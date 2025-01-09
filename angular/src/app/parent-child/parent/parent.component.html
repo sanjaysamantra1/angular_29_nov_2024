@@ -1,0 +1,37 @@
+<p>parent works!</p>
+<div class="container mt-4">
+    <h2>Employee Management</h2>
+  
+    
+    <app-child1 (employeeAdded)="addEmployee($event)"></app-child1>
+  
+    
+    <app-child2
+      [employees]="employees"
+      (viewEmployee)="viewEmployee($event)"
+      (deleteEmployee)="deleteEmployee($event)"
+    ></app-child2>
+  
+   
+    <div id="employeeModal" class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: isModalOpen ? 'block' : 'none' }">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Employee Details</h5>
+            <button type="button" class="close" (click)="closeModal()">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p><strong>ID:</strong> {{ selectedEmployee?.id }}</p>
+            <p><strong>Name:</strong> {{ selectedEmployee?.name }}</p>
+            <p><strong>Department:</strong> {{ selectedEmployee?.department }}</p>
+            <p><strong>Position:</strong> {{ selectedEmployee?.position }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+

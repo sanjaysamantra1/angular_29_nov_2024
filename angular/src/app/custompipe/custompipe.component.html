@@ -1,0 +1,60 @@
+<div class="border container ">
+<div class="container-sm">
+<div style="color: brown; font-style: italic;"><h1>Custom Pipe assignments </h1></div>
+<br>
+<br>
+<div>
+<div style="font-style: italic;"><h4>Q.No1</h4></div>
+<label for="rankInput" class="form-label fw-bold" style="font-size: 24px;">Enter your rank:</label>
+<input id="rankInput" type="number" class="form-control-sm mx-3" [(ngModel)]="inputvalue"/>
+</div>
+<h3 class="mt-5 mx-3">The rank is: {{ inputvalue | ordinal }}</h3>
+
+<br>
+<br>
+
+<h4>Q.No2</h4>
+<label for="ageInput" class="form-label fw-bold mx-3" style="font-size: 24px;">Enter your date of birth</label>
+<input birthdate="dobInput" type="date" class="form-control-sm" [(ngModel)]="dob"/>
+
+<h3 class="mt-5 style mx-2">Your age is :{{ dob | age}}</h3>
+
+<h4>Q.No3 - Q.No4</h4>
+
+<input [(ngModel)]="searchtext"placeholder="search">
+<div>
+<table class="table table-bordered table-striped">
+<thead>
+    <tr>
+       <th>sl.No</th>
+       <th>Eid</th>
+       <th>name </th> 
+       <th>gender</th> 
+       <th>yearsOfrule</th>
+       <th>good cm</th>
+       <th>cont of element </th>
+    </tr>
+</thead>
+<tbody>
+@for(emp of empolyeelist | search:searchtext ; track $index){
+
+    <tr>
+        <td>{{$index +1}}</td>
+        <td>{{emp.id}}</td>
+        <td>{{emp.name | gender : emp.gender}}</td>  
+        <td>{{emp.gender}}</td>
+        <td>{{emp.yearsOfrule}}</td>
+        <td>{{$even}}</td>
+        <td>{{$count}}</td>
+    </tr>
+}@empty {
+    no empolyees found
+}
+
+    </tbody>
+</table>
+</div>
+
+
+</div>
+</div>

@@ -1,10 +1,8 @@
-.category{
- margin: 50px;
- list-style: none;
- display: flex;
- justify-content: space-between;
-}
 
-.category li {
-    display: flex;
+.category img{
+    width: 100px;
+    height: 100px;
+}
+.category div{
+    font-weight: bolder;
 }

@@ -1,0 +1,32 @@
+
+<p>pagination works!</p>
+<div>
+<input type ="text" [(ngModel)]="searchterm" class="form-control mb-3" placeholder="products you want">
+<button (click)="search()" class="btn btn-primary mx-3>">Search</button>
+<button (click)="sortingProducts('ascending')" class="btn btn-primary mx-2">Ascending</button>
+<button (click)="sortingProducts('descending')" class="btn btn-primary mx-2">descending</button> 
+
+
+<div style="text-align: right; padding: 10px;">
+  <select (change)="sortingProducts($event)"
+    style="padding: 8px 15px; border: 2px solid #007bff; border-radius: 5px; background-color: #f1f1f1; color: #333; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;">
+    <option>Sort</option>
+    <option value="ascending">Ascending</option>
+    <option value="descending">Descending</option>
+  </select>
+</div>
+
+
+
+
+<div class="col d-flex justify-content-center align-items-center" >
+
+    @for(product of searchedproducts | paginate: {itemsPerPage :3, currentPage: page}; track $index) {
+    <app-productslist [mylist]="product"></app-productslist>
+    }
+</div>
+<div class="d-flex justify-content-center my-3">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
+</div> 
+<!-- </div> -->

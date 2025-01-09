@@ -1,137 +1,161 @@
+<div style="text-align: center;">
+  <!-- Assignment 1 -->
 
-    <!-- Assignment 1 -->
-    <section>
-      <h3>Assignment 1: Toggle Text</h3>
-      <p [hidden]="!showText">Welcome to the Angular app!</p>
-      <button (click)="showText = !showText">
-        {{ showText ? 'HIDE' : 'SHOW' }}
-      </button>
-    </section>
-  
-    <hr/>
-  
-    <!-- Assignment 2 -->
-    <section>
-      <h3>Assignment 2: Character Counter</h3>
-      <textarea [(ngModel)]="inputText" maxlength="{{ maxTextLength }}"></textarea>
-      <p>Remaining characters: {{ maxTextLength - inputText.length }}</p>
-    </section>
-  
-    <hr/>
-  
-    <!-- Assignment 3 -->
-    <section>
-      <h3>Assignment 3: State Selection</h3>
-      <select [(ngModel)]="selectedState">
-        <option value="Telangana">Telangana</option>
-        <option value="Andhra Pradesh">Andhra Pradesh</option>
-        <option value="Tamil Nadu">Tamil Nadu</option>
-        <option value="Goa">Goa</option>
-      </select>
-      <p>You selected: {{ selectedState || 'None' }}</p>
-    </section>
-  
-    <hr/>
-  
-    <!-- Assignment 4 -->
-    <section>
-      <h3>Assignment 4: Simple Calculator</h3>
-      <input type="number" [(ngModel)]="number1" placeholder="Number 1">
-      <input type="number" [(ngModel)]="number2" placeholder="Number 2">
-      <select [(ngModel)]="operator">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-      </select>
-      <button (click)="calculate()">Calculate</button>
-      <p>Result: {{ result }}</p>
-    </section>
-  
-    <hr/>
-  
-    <!-- Assignment 5 -->
-    <section>
-      <h3>Assignment 5: Toggle Password</h3>
-      <input [type]="passwordVisible ? 'text' : 'password'" placeholder="Enter Password">
-      <button (click)="passwordVisible = !passwordVisible">
-        {{ passwordVisible ? 'HIDE' : 'SHOW' }}
-      </button>
-    </section>
-  
-    <hr/>
-  
-    <div>
-        <h3>Assignment 6: Counter</h3>
-        <button (click)="incrementCounter()">Increment</button>
-        <p>Counter: {{ counter }}</p>
-        <button (click)="decrementCounter()">Decrement</button>
-        <button (click)="resetCounter()">Reset</button>
+  <section>
+    <h3>Assignment 1: Toggle Text</h3>
+    <p [hidden]="!showText">Welcome to the Angular app!</p>
+    <button (click)="showText = !showText">
+      {{ showText ? "HIDE" : "SHOW" }}
+    </button>
+  </section>
+  <hr />
+
+  <!-- Assignment 2 -->
+  <section>
+    <h3>Assignment 2: Character Counter</h3>
+    <textarea
+      [(ngModel)]="inputText"
+      maxlength="{{ maxTextLength }}" 
+    ></textarea>
+    <p>Remaining characters: {{ maxTextLength - inputText.length }}</p>
+  </section>
+  <hr />
+
+  <!-- Assignment 3 -->
+  <section>
+    <h3>Assignment 3: State Selection</h3>
+    <select [(ngModel)]="selectedState">
+      <option value="Telangana">Telangana</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Goa">Goa</option>
+    </select>
+    <p>You selected: {{ selectedState || "None" }}</p>
+  </section>
+  <hr />
+
+  <!-- Assignment 4 -->
+  <section>
+    <h3>Assignment 4: Simple Calculator</h3>
+    <input type="number" [(ngModel)]="number1" placeholder="Number 1" />
+    <input type="number" [(ngModel)]="number2" placeholder="Number 2" />
+    <select [(ngModel)]="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <button (click)="calculate()">Calculate</button>
+    <h3>Result: {{ result }}</h3>
+  </section>
+  <hr />
+
+  <!-- Assignment 5 -->
+  <section>
+    <h3>Assignment 5: Toggle Password</h3>
+    <input
+      [type]="passwordVisible ? 'text' : 'password'"
+      placeholder="Enter Password"
+    />
+    <button (click)="passwordVisible = !passwordVisible">
+      {{ passwordVisible ? "HIDE" : "SHOW" }}
+    </button>
+  </section>
+
+
+  <hr />
+
+  <div>
+    <h3>Assignment 6: Counter</h3>
+    <button (click)="incrementCounter()">Increment</button>
+    <p>Counter: {{ counter }}</p>
+    <button (click)="decrementCounter()">Decrement</button>
+    <button (click)="resetCounter()">Reset</button>
+  </div>
+</div>
+
+
+
+
+  <hr />
+  <br />
+  <br />
+  <br />
+
+
+  <div style="text-align: center;">
+  <br />
+  <div><h1>Assignment</h1></div>
+  <hr>
+
+  <div class="container">
+    <!-- Toggle Button -->
+    <button class="btn btn-primary" (click)="toggleView()">
+      {{ isTableVisible ? "Switch to Card View" : "Switch to Table View" }}
+    </button>
+    <hr>
+    <button class="btn btn-primary" (mouseover)="toggleView()">
+      {{ isTableVisible ? "Switch to Card View" : "Switch to Table View" }}
+    </button>
+
+    @if (isTableVisible) {
+    <div class="container mt-4">
+      <h2 class="mb-4 text-primary">Employee List - Table Format</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+          <thead class="table-light">
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Department</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (employee of employees; track employee.id) {
+            <tr>
+              <td>{{ employee.id }}</td>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.position }}</td>
+              <td>{{ employee.department }}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
       </div>
+    </div>
+    }
 
-<br>
-<br>
-<br>
+    <div class="container mt-4">
+      @if (!isTableVisible) {
+      <h2 class="mb-4 text-primary">Employee List - Card Format</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @for (employee of employees; track employee.id) {
+        <div class="col">
+          <div class="card shadow-sm" style="width: 18rem">
+            <!-- Placeholder Image -->
+            <!-- <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="{{ employee.name }}"> -->
+            <img
+              [src]="employee.imageUrl"
+              class="card-img-b"
+              alt="{{ employee.name }}"
+            />
 
-<h1>assignment12_07</h1>
-<br>
-
-      <!-- ASSIGNMENT 12/16/24 -->
-      <div class="container mt-4">
-
-        <!-- Table Format -->
-        <h2 class="mb-4 text-primary">Employee List - Table Format</h2>
-        <div class="table-responsive">
-          <table class="table table-bordered table-hover table-striped">
-            <thead class="table-dark">
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Department</th>
-              </tr>
-            </thead>
-            <tbody>
-              @for (employee of employees; track employee.id) {
-                <tr>
-                  <td>{{ employee.id }}</td>
-                  <td>{{ employee.name }}</td>
-                  <td>{{ employee.position }}</td>
-                  <td>{{ employee.department }}</td>
-                </tr>
-              }
-            </tbody>
-          </table>
-        </div>
-      
-        
-        <div class="container mt-4">
-    
-            <!-- Card Format -->
-            <h2 class="mb-4 text-primary">Employee List - Card Format</h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-              @for (employee of employees; track employee.id) {
-                <div class="col">
-                  <div class="card shadow-sm" style="width: 18rem;">
-                    <!-- Placeholder Image -->
-                    <!-- <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="{{ employee.name }}"> -->
-                    <img [src]="employee.imageUrl" class="card-img-top" alt="{{ employee.name }}" />
-
-                    <!-- Card Body -->
-                    <div class="card-body">
-                      <h5 class="card-title">{{ employee.name }}</h5>
-                      <p class="card-text">
-                        <strong>Position:</strong> {{ employee.position }}<br>
-                        <strong>Department:</strong> {{ employee.department }}
-                      </p>
-                      <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                  </div>
-                </div>
-              }
+            <!-- Card Body -->
+            <div class="card-body">
+              <h5 class="card-title">{{ employee.name }}</h5>
+              <p class="card-text">
+                <strong>Position:</strong> {{ employee.position }}<br />
+                <strong>Department:</strong> {{ employee.department }}
+              </p>
+              <a href="#" class="btn btn-primary">View Details</a>
             </div>
-          
           </div>
-          
-      
+        </div>
+        }
       </div>
+      }
+      <!-- <h2 class="mb-4 text-primary">Employee List - Card Format</h2> -->
+    </div>
+  </div>
+</div>

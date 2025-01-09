@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-body',
-  imports: [],
   templateUrl: './body.component.html',
-  styleUrl: './body.component.css'
+  styleUrls: ['./body.component.css'] // Corrected the property name
 })
-export class BodyComponent {
-
-}
+export class BodyComponent {}

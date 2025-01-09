@@ -1,0 +1,23 @@
+
+.btn-view {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .btn-delete {
+    background-color: #dc3545; /* Red color */
+    color: white;
+    border: none;
+  }
+  
+  /* Hover effects */
+  .btn-view:hover {
+    background-color: #0056b3; /* Darker blue */
+  }
+  
+  .btn-delete:hover {
+    background-color: #c82333; /* Darker red */
+  }
+  

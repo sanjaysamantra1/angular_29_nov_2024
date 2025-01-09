@@ -1,2 +1,64 @@
-<p>assignment2 works!</p>
-<ol> cars , van, bus</ol>
+<div class="container mt-4">
+  <h2>Andhra Pradesh Chief Ministers List</h2>
+
+  <!-- Add Chief Minister Form -->
+  <div class="mb-4">
+    <input type="text" placeholder="Name" [(ngModel)]="newEmployee.name" class="form-control mb-2" />
+    <input type="text" placeholder="Tenure" [(ngModel)]="newEmployee.department" class="form-control mb-2" />
+    <button class="btn btn-success" (click)="addEmployee()">Add Chief Minister</button>
+  </div>
+
+  <!-- Chief Ministers Table -->
+  <table class="table table-bordered table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!-- <th>Position</th> -->
+        <th>Tenure</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees; track trackById($index, employee)) {
+        <tr>
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <!-- <td>{{ employee.position }}</td> -->
+          <td>{{ employee.department }}</td>
+          <td>
+            <button class="btn btn-view btn-sm" (click)="viewEmployee(employee)">View</button>
+            <button class="btn btn-delete btn-sm" (click)="deleteEmployee(employee.id)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- Modal for Chief Minister Details -->
+  <div
+    id="employeeModal"
+    class="modal"
+    tabindex="-1"
+    role="dialog"
+    [ngStyle]="{ display: isModalOpen ? 'block' : 'none' }"
+    >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Chief Minister Details</h5>
+          <button type="button" class="close" (click)="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p><strong>ID:</strong> {{ selectedEmployee?.id }}</p>
+          <p><strong>Name:</strong> {{ selectedEmployee?.name }}</p>
+          <p><strong>Position:</strong> {{ selectedEmployee?.position }}</p>
+          <p><strong>Tenure:</strong> {{ selectedEmployee?.department }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

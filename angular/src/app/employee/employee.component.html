@@ -1,0 +1,41 @@
+<div class="dropdown-container">
+    <label for="employeeFilter">Filter Employees:</label>
+    <select
+      id="employeeFilter"
+      [(ngModel)]="dropdownValue"
+      (change)="onDropdownChange(dropdownValue)"
+    >
+      <option value="allEmployees">All Employees</option>
+      <option value="maleEmployees">Male Employees</option>
+      <option value="femaleEmployees">Female Employees</option>
+    </select>
+  </div>
+
+
+
+<div class="container mt-4">
+    <h2 class="mb-4 text-primary">Employee List - Table Format</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped">
+        <thead class="table-light">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for (employee of employees ; track employee) {
+                <tr>
+                  <td>{{ employee.id }}</td>
+                  <td>{{ employee.name }}</td>
+                  <td>{{ employee.gender }}</td>
+                  <td>{{ employee.position }}</td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+        

@@ -1,0 +1,63 @@
+
+    <div class="container-sm"><h3>Data binding</h3></div>
+        <div class="container-mt4">
+<div class="border container">
+    <div>{{myname}}</div>
+    <div> my name is : <span [innerHTML]="myname"></span></div>
+    <div> my name is : <span bind-innerHTML="myname"></span></div>
+ <img src="{{img}}" alt="" width="100px"class="mx-4"/>
+ <img [src]="img" alt="" width="100px"/>
+
+ <div class="mx-4">
+    <input type="text" value="{{myname}}" class="mx-2"/>
+    <input type="text" [value]="myname" class="mx-2"/>
+    <input type="text" bind-value="myname" class="mx-2"/>
+ </div>
+<br>
+<br>
+<br>
+<h1 class="container"> hello iam gopichand </h1>
+<br>
+<br>
+<br>
+
+
+<div>
+   1way: <button class="btn btn-primary" disabled="{{flag}}" >btn-1</button>
+   1 way: <button class="btn btn-primary" [disabled]="flag">btn-2</button>
+   1 way: <button class="btn btn-primary" bind-disabled="flag">btn-1</button>
+   1 way: <button class="btn btn-primary" disabled="{{flag}}">btn-1</button>
+</div>
+
+<div>
+    2 way : <input type="text" [(ngModel)]="myname" class="mx-2">
+</div>
+<!-- //interpolation binding not reacting to boolean values// -->
+<div>
+ <button class="btn btn-secondary" (click)="(vtoc())">input</button>
+</div>
+
+<div class="boredr p-2">
+<div> Template Reference variable : </div>
+<input class="mx-2" #box1>
+<input class="mx-2" ref-box2>
+<button (click)="addition(box1.value,box2.value)">Addition</button>
+</div>
+<hr>
+
+
+<div width="100%">
+<select [(ngModel)]="selectedState">
+    <option value="ny">newyork</option>
+    <option value="nw">newhampshire</option>
+    <option value="tn">tennise</option>
+    <option value="ga">georgiea</option>
+    <option value="ts">telangana</option>
+    <option value="ap">andhra</option>
+    <option value="s1">state7</option>
+    <option value="s2">state8</option>
+    <option value="s3">state9</option>
+    <option value="s4">state10</option>
+</select>
+<div>selecte state ::{{selectedState}}</div>
+</div>

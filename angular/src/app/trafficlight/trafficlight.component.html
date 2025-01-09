@@ -1,0 +1,11 @@
+<p>trafficlight works!</p>
+<div class="wrapper">
+  <div class='traffic-light-container traffic-light-container--vertical'>
+    @for (color of colorsArr; track $index) {
+      <div> 
+        <div class="traffic-light" [style.background-color]="color === selectedColor ? selectedColor:'' ">
+         </div> 
+      </div>
+    }
+  </div>
+</div>

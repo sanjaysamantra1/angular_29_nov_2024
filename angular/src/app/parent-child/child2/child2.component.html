@@ -1,0 +1,31 @@
+<p>child2 works!</p>
+
+
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Position</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (employee of employees; track trackById($index, employee)) {
+      <tr>
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.position }}</td>
+        <td>
+          <button class="btn btn-success btn-sm" (click)="onViewEmployee(employee)">View</button>
+          <button class="btn btn-danger btn-sm" (click)="onDeleteEmployee(employee.id)">Delete</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+
