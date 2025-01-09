@@ -10,6 +10,12 @@ import { ParentComponent } from "../parent/parent.component";
 import { MyModalComponent } from "../my-modal/my-modal.component";
 import { FormModalComponent } from "../form-modal/form-modal.component";
 import { TrafficLightComponent } from '../traffic-light/traffic-light.component';
+import { Math1Component } from '../math1/math1.component';
+import { Math2Component } from '../math2/math2.component';
+import { UsersComponent } from '../users/users.component';
+import { Demo2Component } from '../demo2/demo2.component';
+import { EmpDetailsComponent } from '../empdetails/empdetails.component';
+
 
 @Component({
   selector: 'app-body',
@@ -23,7 +29,13 @@ import { TrafficLightComponent } from '../traffic-light/traffic-light.component'
             MyModalComponent, 
             FormModalComponent, 
             DatabindingComponent,
-            TrafficLightComponent],
+            TrafficLightComponent,
+            Math1Component,
+            Math2Component,
+            UsersComponent,
+            Demo2Component,
+            EmpDetailsComponent
+            ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
