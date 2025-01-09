@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class UsersComponent {
 
   users:any;
-
+  view:boolean=false;
   constructor(private http:HttpClient){
   }
 

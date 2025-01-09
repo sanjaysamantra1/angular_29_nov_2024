@@ -1,3 +1,7 @@
+ 
+<button class="btn btn-secondary mx-3" (click)="view=!view">CHANGE VIEW</button>
+
+ @if(view){
  <div class="container mt-5">
               <div class="row d-flex flex-row ">
                 @for (user of users; track $index) {
@@ -5,8 +9,8 @@
                     <div class="card my-3 show" style="width: 18rem;">
                       <div class="card-body">
                         <h5 class="card-title">NAME: {{user.name}}</h5>
-                        <p class="card-text">POSITION: {{user.username}}</p>
-                        <p class="card-text">DEPARTMENT: {{user.email}}</p>
+                        <p class="card-text">USERNAME: {{user.username}}</p>
+                        <p class="card-text">EMAIL: {{user.email}}</p>
                       </div>
                     </div>
                   </div>
@@ -16,3 +20,29 @@
                 }
               </div>
             </div>
+          }
+
+@else{
+  <div class="container mt-5">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>USERNAME</th>
+                  <th>EMAIL</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(user of users;track $index){
+                <tr>
+                  <td>{{ $index + 1 }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.username }}</td>
+                  <td>{{ user.email }}</td>
+                </tr>
+            }
+              </tbody>
+            </table>
+  </div>
+          }
