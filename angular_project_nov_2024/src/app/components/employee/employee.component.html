@@ -1,22 +1,26 @@
 <p>employee works!</p>
-<button (click)="toggleMode()">{{flag ? 'DARK' : 'LIGHT'}}</button>
 <button (click)="flag1=!flag1">{{flag1 ? 'SHOW CARDS' : 'SHOW TABLE'}}</button>
+<select [(ngModel)]="selectedOption">
+    <option value="">All Employees</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+</select>
 @if(flag1){
 <div class="abc">  
     <table>
         <tr>
             <th>Employee ID</th>
             <th>Employee Name</th>
-            <th>Employee Email</th>
-            <th>Employee Address Zipcode</th>
+            <th>Employee Salary</th>
+            <th>Employee Gender</th>
         </tr>
     
-    @for(emp of myProducts ; track $index){
+    @for(emp of employee ; track $index){
         <tr>
-        <td> {{emp.id}} </td>
-        <td> {{emp.username}} </td>
-        <td> {{emp.email}} </td>
-        <td> {{emp.address.zipcode}} </td>
+        <td> {{emp.eId}} </td>
+        <td> {{emp.name}} </td>
+        <td> {{emp.sal}} </td>
+        <td> {{emp.gender}} </td>
     </tr>
     }
 
@@ -28,14 +32,14 @@
 
 
 <div class="row">
-    @for(emp of myProducts | paginate: { itemsPerPage: 3, currentPage: p}; track $index){
+    @for(emp of employee | paginate: { itemsPerPage: 3, currentPage: p}; track $index){
         <div class ="col-sm-4">
     <div class="card">
         <div class="card-body text-center">
-      <h5 class="card-title">Employee Name :{{emp.username}}</h5>
+      <h5 class="card-title">Employee Name :{{emp.name}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.id}}</h6>
-      <h5 class="card-text">Email :{{emp.email}}</h5>
-      <h5 class="card-text">Address Zipcode :{{emp.address.zipcode}}</h5>
+      <h5 class="card-text">Salary :{{emp.sal}}</h5>
+      <h5 class="card-text">Gender :{{emp.gender}}</h5>
     </div>
     </div>
 </div>
@@ -49,3 +53,56 @@
 <hr/>
 
 }
+
+
+<!-- 
+
+@if(flag1){
+    <div class="abc">  
+        <table>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Email</th>
+                <th>Employee Address Zipcode</th>
+            </tr>
+        
+        @for(emp of employee ; track $index){
+            <tr>
+            <td> {{emp.id}} </td>
+            <td> {{emp.username}} </td>
+            <td> {{emp.email}} </td>
+            <td> {{emp.address.zipcode}} </td>
+        </tr>
+        }
+    
+    </table>
+    </div>
+    <hr/>
+    }
+    @else{
+    
+    
+    <div class="row">
+        @for(emp of employee | paginate: { itemsPerPage: 3, currentPage: p}; track $index){
+            <div class ="col-sm-4">
+        <div class="card">
+            <div class="card-body text-center">
+          <h5 class="card-title">Employee Name :{{emp.username}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.id}}</h6>
+          <h5 class="card-text">Email :{{emp.email}}</h5>
+          <h5 class="card-text">Address Zipcode :{{emp.address.zipcode}}</h5>
+        </div>
+        </div>
+    </div>
+    }
+        <div class ="row mt-4">
+            <div style="text-align:center">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+        </div>
+    </div>
+    <hr/>
+    
+    }
+     -->

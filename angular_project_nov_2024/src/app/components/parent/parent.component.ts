@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Child1Component } from '../child-1/child-1.component';
 import { Child2Component } from '../child-2/child-2.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-parent',
@@ -24,12 +25,35 @@ export class ParentComponent {
 
   getEmpFromChild2(newEmp: any){
     this.employee.push(newEmp);
+    Swal.fire({
+      title: "Success",
+      text: "New Employee Added",
+      icon: "success"
+    });
   }
 index:any;
   deleteEmployee(emp: any){
     this.index = this.employee.indexOf(emp);
     if(this.index != null){
-      this.employee.splice(this.index,1);
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.employee.splice(this.index,1);
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+        }
+      });
+      
     }
   }
 

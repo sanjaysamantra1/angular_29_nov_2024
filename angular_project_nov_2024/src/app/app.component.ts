@@ -4,19 +4,20 @@ import { Component } from '@angular/core';
 //import { BodyComponent } from './components/body/body.component';
 //import { CarouselComponent } from './components/carousel/carousel.component';
 //import { CategoriesComponent } from './components/categories/categories.component';
-//import { EmployeeComponent } from './components/employee/employee.component';
+import { EmployeeComponent } from './components/employee/employee.component';
 //import { ProductsListComponent } from './components/products-list/products-list.component';
 //import { CrudopsComponent } from './components/crudops/crudops.component';
 //import { ParentCrudopsComponent } from './components/parent-crudops/parent-crudops.component';
-import { ParentComponent } from './components/parent/parent.component';
+//import { ParentComponent } from './components/parent/parent.component';
+import { AssignmentsComponent } from './components/assignments/assignments.component';
 //import { PipescomponentComponent } from './components/pipescomponent/pipescomponent.component';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    ParentComponent
+  imports: [//AssignmentsComponent,
+    //ParentComponent
     //NavbarComponent,
-    //EmployeeComponent
+    EmployeeComponent
     //PipescomponentComponent,
     //CrudopsComponent,
     //ParentCrudopsComponent
