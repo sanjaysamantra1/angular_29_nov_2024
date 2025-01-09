@@ -19,14 +19,22 @@ export class EmpDetailsComponent{
   }
 
   ngDoCheck() {
-    console.log(this.input);
-    if (this.input == "male") {
-      this.emp = this.employeeService.getMaleEmployees();
-    } else if (this.input == "female") {
-      this.emp = this.employeeService.getFemaleEmployees();
-    } else if (this.input == "all") {
-      this.emp = this.employeeService.getAllEmployees();
+    console.log('Selected Value:', this.input);
+    
+    switch (this.input) {
+      case 'male':
+        this.emp = this.employeeService.getMaleEmployees();
+        break;
+      case 'female':
+        this.emp = this.employeeService.getFemaleEmployees();
+        break;
+      case 'all':
+      default:
+        this.emp = this.employeeService.getAllEmployees();
+        break;
     }
+    
+    console.log('Filtered Employees:', this.emp);
   }
-
 }
+  
