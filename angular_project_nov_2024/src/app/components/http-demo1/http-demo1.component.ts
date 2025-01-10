@@ -10,7 +10,8 @@ import { Component } from '@angular/core';
 export class HttpDemo1Component {
   constructor(private httpClient: HttpClient) {
     // this.fetchDataJavascript();
-    this.fetchDataAngular();
+    // this.fetchDataAngular();
+    this.fetchDataAngular2();
   }
 
   fetchDataJavascript() {
@@ -33,20 +34,32 @@ export class HttpDemo1Component {
 
   fetchDataAngular() {
     const users_url = 'https://jsonplaceholder.typicode.com/users';
-    let user_obs = this.httpClient.get(users_url);
-    console.log(user_obs);
-    // We can get data from observable using subscribe()
-
-    this.httpClient.get(users_url).subscribe(
-      (res) => { 
-        console.log(res)
+    this.httpClient.get(users_url).subscribe( // subscribe() is a higherOrder,takes 3 callback
+      (response) => {
+        console.log(response)
       },
-      (err) => { 
+      (err) => {
         console.log(err)
       },
-      () => { 
+      () => {
         console.log('completed')
-      },
+      }
     );
   }
+
+  fetchDataAngular2() {
+    const users_url = 'https://jsonplaceholder.typicode.com/users';
+    this.httpClient.get(users_url, { observe: 'response' }).subscribe({
+      next: (response) => {
+        console.log(response)
+      },
+      error: (err) => {
+        console.log(err)
+      },
+      complete: () => {
+        console.log('all data received')
+      }
+    })
+  }
+
 }

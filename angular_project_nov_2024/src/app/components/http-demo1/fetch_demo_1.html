@@ -1,0 +1,22 @@
+<script>
+    const user_url = 'https://jsonplaceholder.ypicode.com/users';
+    const userPromise = fetch(user_url);
+    // to read data from promise  1. then()  2. async-await
+    userPromise.then( // then() is higherOrder , it takes 2 callbacks,success,error
+        (response) => {
+            console.log('response...', response); // response is not final data
+            response.json().then(
+                (finalData) => {
+                    console.log(finalData)
+                },
+                (err) => {
+                    console.log(err)
+                }
+            )
+        },
+        (err) => {
+            console.log('error block')
+            console.log(err);
+        }
+    ); 
+</script>

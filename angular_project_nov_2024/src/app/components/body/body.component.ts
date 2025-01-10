@@ -28,8 +28,9 @@ import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
     // Demo2Component,
     // Math1Component,
     // Math2Component
-    // UsersComponent
-    HttpDemo1Component
+    UsersComponent
+    // HttpDemo1Component
+    
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

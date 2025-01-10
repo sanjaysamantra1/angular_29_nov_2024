@@ -9,11 +9,15 @@ import { Component } from '@angular/core';
 })
 export class UsersComponent {
   users: any;
+  isLoading:boolean = false;
+
   constructor(private httpClient: HttpClient) {
   }
   ngOnInit() {
+    this.isLoading = true;
     const users_url = 'https://jsonplaceholder.typicode.com/users';
     this.httpClient.get(users_url).subscribe(response => {
+      this.isLoading = false;
       console.log(response);
       this.users = response;
     })
