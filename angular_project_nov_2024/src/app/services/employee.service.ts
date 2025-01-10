@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,23 +6,33 @@ import { Injectable } from '@angular/core';
 })
 export class EmployeeService {
 
-  employee: any;
+  employee: any = [];
+  copyData: any;
   
-  constructor() {}
+  constructor(private httpobj: HttpClient) {
+    this.httpobj.get("http://localhost:8080/employee/").subscribe(Response=>{
+      //console.log(Response);
+      this.employee= Response;
+      this.copyData = this.employee
+    });
+    //this.copyData = this.employee;
+    //console.log("from the service1"+this.employee)
+  }
+  
+  
   getEmployees(){
-    return this.employee = [
-      { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
-      { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
-      { eId: 103, name: 'sameer', sal: 7000, gender: 'male' },
-      { eId: 102, name: 'sita', sal: 9000, gender: 'female' },
-      { eId: 105, name: 'deepak', sal: 8000, gender: 'male' }
-    ];
+    
+    //console.log("from the method"+this.copyData);
+    return this.employee;
   }
   getFilteredEmp(s: String){
-    this.employee= this.getEmployees();
-    this.employee= this.employee.filter((emp: any) => {
-      return emp.gender === s;
+    this.copyData= this.getEmployees();
+    // console.log("Before"+s)
+    this.copyData= this.copyData.filter((emp: any) => {
+
+      return emp.empGender === s;
     });
-    return this.employee;
+    // console.log(this.copyData)
+    return this.copyData;
   }
 }

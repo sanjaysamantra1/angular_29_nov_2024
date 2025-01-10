@@ -5,6 +5,8 @@
     <option value="male">Male</option>
     <option value="female">Female</option>
 </select>
+<!-- <div>{{employee | json}}</div> -->
+ <!-- <div>{{flag2}}</div> -->
 @if(flag1){
 <div class="abc">  
     <table>
@@ -17,11 +19,13 @@
     
     @for(emp of employee ; track $index){
         <tr>
-        <td> {{emp.eId}} </td>
-        <td> {{emp.name}} </td>
-        <td> {{emp.sal}} </td>
-        <td> {{emp.gender}} </td>
+        <td> {{emp.empId}} </td>
+        <td> {{emp.empName}} </td>
+        <td> {{emp.empSalary}} </td>
+        <td> {{emp.empGender}} </td>
     </tr>
+    }@empty{
+        <fa-icon [icon]="faSpinner"></fa-icon>
     }
 
 </table>
@@ -32,17 +36,19 @@
 
 
 <div class="row">
-    @for(emp of employee | paginate: { itemsPerPage: 3, currentPage: p}; track $index){
+    @for(emp of employee | paginate: { itemsPerPage: 3, currentPage: p}; track emp.empId){
         <div class ="col-sm-4">
     <div class="card">
         <div class="card-body text-center">
-      <h5 class="card-title">Employee Name :{{emp.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.id}}</h6>
-      <h5 class="card-text">Salary :{{emp.sal}}</h5>
-      <h5 class="card-text">Gender :{{emp.gender}}</h5>
+      <h5 class="card-title">Employee Name :{{emp.empName}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.empId}}</h6>
+      <h5 class="card-text">Salary :{{emp.empSalary}}</h5>
+      <h5 class="card-text">Gender :{{emp.empGender}}</h5>
     </div>
     </div>
 </div>
+}@empty{
+    <fa-icon [icon]="faSpinner"></fa-icon>
 }
     <div class ="row mt-4">
         <div style="text-align:center">
