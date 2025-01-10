@@ -1,5 +1,11 @@
+@if(users == undefined) {
+      <div class="spinner-border m-5" role="status" id="spinner">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+}@else {
+
 <div>
-    <select [(ngModel)] = "selectedValue">
+    <select [(ngModel)]="selectedValue">
         <option value="all" selected>All</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
@@ -21,3 +27,4 @@
         }
     </div>
 </div>
+}

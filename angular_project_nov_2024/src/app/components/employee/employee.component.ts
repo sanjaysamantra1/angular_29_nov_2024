@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-employee',
@@ -10,11 +11,19 @@ import { FormsModule } from '@angular/forms';
 })
 export class EmployeeComponent {
 
-  employees:any;
+  employees: any;
   selectedValue: string = "all";
   employeeService = inject(EmployeeService);
+  users: any;
+
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
+    const users_url = 'https://jsonplaceholder.typicode.com/users';
+    this.httpClient.get(users_url).subscribe(response => {
+      console.log(response);
+      this.users = response;
+    })
     this.employees = this.employeeService.employees;
   }
 
