@@ -14,7 +14,10 @@ import { Math1Component } from '../math1/math1.component';
 import { Math2Component } from '../math2/math2.component';
 import { UsersComponent } from '../users/users.component';
 import { Demo2Component } from '../demo2/demo2.component';
-import { EmpDetailsComponent } from '../empdetails/empdetails.component';
+// import { EmpDetailsComponent } from '../empdetails/empdetails.component';
+import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
+import { EmployeeComponent } from '../employee/employee.component';
+
 
 
 @Component({
@@ -34,7 +37,9 @@ import { EmpDetailsComponent } from '../empdetails/empdetails.component';
             Math2Component,
             UsersComponent,
             Demo2Component,
-            EmpDetailsComponent
+            // EmpDetailsComponent,
+            HttpDemo1Component,
+            EmployeeComponent
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

@@ -1,0 +1,40 @@
+<div>
+    <select [(ngModel)] = "selectedValue">
+        <option value="all" selected>All Employees</option>
+        <option value="female">Female Employees</option>
+        <option value="male">Male Employees</option>
+    </select>
+    <br><hr>
+    <div>
+        <table class="table table-light table-striped table-bordered border-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Gender</th>
+                </tr>
+            </thead>
+            @for(employee of employees;track $index) {
+            <tbody>
+                <tr>
+                    <th scope="row">{{employee.eId}}</th>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.sal}}</td>
+                    <td>{{employee.gender}}</td>
+                </tr>
+            </tbody>
+            }
+        </table>
+
+        <div>
+            <div class="row mt-2">
+                <!-- <div style="text-align: center;">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    
+</div>
