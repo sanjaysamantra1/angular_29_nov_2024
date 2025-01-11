@@ -11,6 +11,7 @@ import { DatabindingassignComponent } from '../databindingassign/databindingassi
 import { TrafficSignalComponent } from "../traffic-signal/traffic-signal.component";
 import { UsersComponent } from "../users/users.component";
 import { EmployeeComponent } from '../employee/employee.component';
+import { UserComponent } from "../user/user.component";
 
 @Component({
   selector: 'app-body',
@@ -22,8 +23,9 @@ import { EmployeeComponent } from '../employee/employee.component';
     // PipesComponent,
     // EmployeeCrudComponent,
     // TrafficSignalComponent,
-    EmployeeComponent,
-    UsersComponent
+    // EmployeeComponent,
+    // UsersComponent,
+    UserComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

@@ -5,8 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class EmployeeService {
 
-  constructor() {}
-
   private employees = [
     { id: 1, name: 'John Doe', gender: 'male', position: 'Software Engineer' },
     { id: 2, name: 'Jane Smith', gender: 'female', position: 'Project Manager' },

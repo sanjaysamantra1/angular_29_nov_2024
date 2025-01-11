@@ -1,0 +1,42 @@
+<div>
+  <h4>User Management</h4>
+
+  <form (ngSubmit)="addUser()">
+    <input [(ngModel)]="formData.name" name="name" placeholder="Name" />
+    <input [(ngModel)]="formData.email" name="email" placeholder="Email" />
+    <button type="submit">{{ isEditMode ? 'Update' : 'Add' }} User</button>
+    @if (isEditMode) {
+      <button type="button" (click)="resetForm()">Cancel</button>
+    }
+  </form>
+
+  @if (isLoading) {
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+  }@else {
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of users; track user) {
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <button (click)="editUser(user)">Edit</button>
+              <button (click)="deleteUser(user.id)">Delete</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
