@@ -1,0 +1,32 @@
+[
+    {
+        "eId": 1,
+        "name": "Kaksh",
+        "sal": 70000,
+        "gender": "male"
+    },
+    {
+        "eId": 2,
+        "name": "Raj",
+        "sal": 200000,
+        "gender": "male"
+    },
+    {
+        "eId": 3,
+        "name": "Aaryan",
+        "sal": 150000,
+        "gender": "male"
+    },
+    {
+        "eId": 4,
+        "name": "Renukha",
+        "sal": 125000,
+        "gender": "female"
+    },
+    {
+        "eId": 5,
+        "name": "Thrisha",
+        "sal": 100000,
+        "gender": "female"
+    }
+]
