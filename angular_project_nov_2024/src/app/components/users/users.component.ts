@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Iuser } from '../../models/iuser';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user-model';
 
 @Component({
   selector: 'app-users',
@@ -8,18 +11,15 @@ import { Component } from '@angular/core';
   styleUrl: './users.component.css'
 })
 export class UsersComponent {
-  users: any;
-  isLoading:boolean = false;
+  users: User[] = [];
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private userService: UserService) {
   }
   ngOnInit() {
-    this.isLoading = true;
-    const users_url = 'https://jsonplaceholder.typicode.com/users';
-    this.httpClient.get(users_url).subscribe(response => {
-      this.isLoading = false;
-      console.log(response);
+    this.userService.getAllUsers().subscribe((response: User[]) => {
       this.users = response;
+      console.log(this.users);
+      // this.users = [ {} , {} ]   this.users = [ User1 , User2]
     })
   }
 }
