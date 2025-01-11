@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-traffic-light',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './traffic-light.component.html',
   styleUrl: './traffic-light.component.css'
 })
@@ -12,6 +12,7 @@ export class TrafficLightComponent {
   colorsArray: string[];
   selectedColor: string = 'red';
   timer: any;
+  isSpinning: boolean = false;
 
   constructor(){
     this.inputColor = {
@@ -27,6 +28,8 @@ export class TrafficLightComponent {
     {
       this.selectedColor = nextColor;
     }, duration)
+
+    
   }
 
 }

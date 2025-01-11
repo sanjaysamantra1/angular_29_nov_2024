@@ -1,10 +1,20 @@
-<div class="wrapper">
-    <div class="traffic-light-container traffic-light-vertical">
-      <div
-        *ngFor="let color of colorsArray"
-        class="traffic-light"
-        [style.backgroundColor]="color === selectedColor ? color : ''">
+<div class="container">
+  @if (isSpinning) {
+    <div class="spinner-grow" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  }
+
+  @if (!isSpinning) {
+    <div class="wrapper">
+      <div class="traffic-light-container traffic-light-vertical">
+        @for (color of colorsArray; track color) {
+          <div
+            class="traffic-light"
+            [style.backgroundColor]="color === selectedColor ? color : ''">
+          </div>
+        }
       </div>
     </div>
-  </div>
-  
+  }
+</div>
