@@ -1,0 +1,130 @@
+@if(users == undefined) {
+    <div class="spinner-border m-5" role="status" id="spinner">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+}@else { 
+    <div>
+        <app-user-form (addEmployeeEvent)="insertNewRecord($event)"></app-user-form>
+        <button class="btn mx-1 mb-1 mt-2 btn btn-info" (click)="onClickChange()">Toggle to {{flag ? "Card View" : "List View"}}
+        </button>
+    
+        @if (flag == true) {
+            <table class="table table-light table-striped table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Salary</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Update</th>
+                    </tr>
+                </thead>
+                @for(user of users | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
+                <tbody>
+                    <tr scope="row">
+                        <th>{{user.id}}</th>
+                        <td>{{user.name}}</td>
+                        <td>{{user.sal}}</td>
+                        <td>{{user.gender}}</td>
+                        <td><button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal"
+                                (click)="getCurrentRecord(user)"> Details </button></td>
+                        <td><button class="btn mx-1 btn-danger" (click)="getRecordToDelete(user)"> Delete </button></td>
+                        <td><button class="btn mx-1 btn-secondary" data-bs-toggle="modal" data-bs-target="#updateModal" 
+                            (click)="getRecordToUpdate(user)"> Update </button></td>
+                    </tr>
+                </tbody>
+                }
+            </table>
+            } @else {
+            <div class="row">
+                @for(user of users| paginate: { itemsPerPage: 4, currentPage: p };track $index){
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjWGGs4b5kwJavNNlUaFNRl3TY9hWEJDNsg&s"
+                            class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Id : {{user.id}}</h5>
+                            <p class="card-text">Name : {{user.name}}</p>
+                            <p class="card-text">Salary : {{user.sal}}</p>
+                            <p class="card-text">Gender: {{user.gender}}</p>
+                            <div class="row">
+                                <div class="col">
+                                    <a>
+                                        <button class="btn mx-1 btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#detailsModal" (click)="getCurrentRecord(user)"> Details
+                                        </button>
+                                    </a>
+                                    <a>
+                                        <button class="btn mx-1 btn-danger" (click)="getRecordToDelete(user)"> Delete
+                                        </button>
+                                    </a>
+                                    <a>
+                                        <button class="btn mx-1 btn-secondary" data-bs-toggle="modal" data-bs-target="#updateModal" 
+                            (click)="getRecordToUpdate(user)"> Update </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+            }
+    
+    </div>
+
+    <div>
+        <div class="row mt-2">
+            <div style="text-align: center;">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="detailsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Employee Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><b>Id</b> - {{selectedEmployee.id}}</p>
+                    <p><b>Name</b> - {{selectedEmployee.name}}</p>
+                    <p><b>Salary</b> - {{selectedEmployee.sal}}</p>
+                    <p><b>Gender</b> - {{selectedEmployee.gender}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">User Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" id="ename" [(ngModel)]="eName">
+                    <label class="form-label">Salary</label>
+                    <input type="number" class="form-control" id="esalary" [(ngModel)]="eSalary">
+                    <label class="form-label">Gender</label>
+                    <input type="text" class="form-control" id="egender" [(ngModel)]="eGender">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateNewRecord()">Update
+                        changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
