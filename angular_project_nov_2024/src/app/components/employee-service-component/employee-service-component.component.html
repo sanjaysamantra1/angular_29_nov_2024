@@ -1,0 +1,39 @@
+@if(employees == undefined) {
+    <div class="spinner-border m-5" role="status" id="spinner">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+}
+@else {
+    <div>
+        <div>
+            <select [(ngModel)] = "selectedOption">
+                <option value="all" selected>All Employees</option>
+                <option value="male">Male Employees</option>
+                <option value="female">Female Employees</option>
+            </select>
+        </div>
+
+        <div>
+            <table class = "table table-light table-striped table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th>Eid</th>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(emp of employees; track $index){
+                        <tr>
+                            <td>{{emp.eId}}</td>
+                            <td>{{emp.name}}</td>
+                            <td>{{emp.sal}}</td>
+                            <td>{{emp.gender}}</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

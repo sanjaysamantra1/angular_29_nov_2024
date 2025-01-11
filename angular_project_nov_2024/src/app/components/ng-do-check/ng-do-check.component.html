@@ -1,4 +1,5 @@
-<div class="wrapper">
+<h3 style="text-align: center; margin-top: 20px;">Traffic Signal</h3>
+<div class="wrapper" style="margin-top: 50px;">
     <div class='traffic-light-container traffic-light-container--vertical'>
         @for (color of colorsArr; track $index) {
             <div class="traffic-light" [style.background-color]="color == selectedColor ? selectedColor:'' " style="text-align: center; padding-top: 15px;" >

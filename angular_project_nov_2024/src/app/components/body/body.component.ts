@@ -11,6 +11,10 @@ import { Child1Component } from '../child1/child1.component';
 import { Child2Component } from '../child2/child2.component';
 import { EmployeeCRUDComponent } from '../employees-crud/employees-crud.component';
 import { NgDoCheckComponent } from '../ng-do-check/ng-do-check.component';
+import { Math1Component } from '../math1/math1.component';
+import { Math2Component } from '../math2/math2.component';
+import { UsersComponent } from '../users/users.component';
+import { EmployeeServiceComponentComponent } from '../employee-service-component/employee-service-component.component';
 
 @Component({
   selector: 'app-body',
@@ -26,7 +30,11 @@ import { NgDoCheckComponent } from '../ng-do-check/ng-do-check.component';
     Child1Component,
     Child2Component,
     EmployeeCRUDComponent,
-    NgDoCheckComponent
+    NgDoCheckComponent,
+    Math1Component,
+    Math2Component,
+    UsersComponent,
+    EmployeeServiceComponentComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
