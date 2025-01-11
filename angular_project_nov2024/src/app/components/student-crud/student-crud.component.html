@@ -1,0 +1,5 @@
+<!-- Component Communication Assignment -->
+<div class="border p-2">
+    <app-add-student (addStudent)="addNewStudent($event)"></app-add-student>
+    <app-student-list [students]="students" (studentEvent)="getDataFromChild($event)"></app-student-list>
+</div>

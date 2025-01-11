@@ -1,0 +1,141 @@
+<!-- <p>crud-employees works!</p> -->
+ <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add Employee
+</button>
+@if(isLoading){
+  <div class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+}@else{
+
+<table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">EID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Salary</th>
+        <th scope="col">ID</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    @for(emp of employees;track $index){
+        <tr>
+            <th scope="row">{{emp.eId}}</th>
+            <td>{{emp.firstName}}</td>
+            <td>{{emp.lastName}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.id}}</td>
+            <td><button type="button" class="btn btn-primary mx-3" data-bs-toggle="modal" data-bs-target="#updateModal" (click)="getRecordToUpdate(emp)" >
+              Update
+            </button></td>
+            <td><button class="btn btn-danger" (click)="deleteEmployee(emp.id)" >Delete</button></td>
+        </tr>
+    }
+    
+     
+      
+    </tbody>
+  </table>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Eid</label>
+            <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="eId">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="firstName" >
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="lastName">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Gender</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="gender">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Salary</label>
+            <input type="number" class="form-control" id="exampleInputPassword1"[(ngModel)]="sal">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">id</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="id">
+          </div>
+          <!-- <button type="submit" class="btn btn-primary" (click)="crudEmployeesService.addEmployee()">Submit</button> -->
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" (click)="addEmployee()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- updatemodal -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">User Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+        
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Eid</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="eId">
+              <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="firstName" >
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="lastName">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Gender</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="gender">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Salary</label>
+              <input type="number" class="form-control" id="exampleInputPassword1"[(ngModel)]="sal">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">id</label>
+              <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="id">
+            </div>
+            <!-- <button type="submit" class="btn btn-primary" (click)="crudEmployeesService.addEmployee()">Submit</button> -->
+         
+        </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateEmployee()">Update
+                  changes</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+}

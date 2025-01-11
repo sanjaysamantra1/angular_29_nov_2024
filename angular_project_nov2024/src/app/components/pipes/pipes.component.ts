@@ -27,7 +27,7 @@ export class PipesComponent {
   sal :number =5000;
   today= new Date();
   user = { name: 'sachin', 'profession': 'cricketer', age: 50, address: 'Mumbai' };
-  arr=[10,20,30,40,50,60];
+  arr=[20,10,40,50,30,60];
   msg:string="";
   msg2: string = '';
   dob: any;

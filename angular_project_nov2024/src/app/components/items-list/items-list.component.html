@@ -1,0 +1,31 @@
+<!-- <p>items-list works!</p> -->
+ <div class="container">
+    <input type="search" placeholder="Search Items ..." #searchTerm/>
+    <button class="btn btn-primary mx-2" (click)="searchProducts(searchTerm.value)">Search</button>
+
+    <button class="btn btn-primary mx-2" (click)="sortProductsAsc()">Sort by Asc</button>
+    <button class="btn btn-primary mx-2" (click)="sortProductsDesc()">Sort by Desc</button>
+    <div class="row">
+        @if(items.length==0){
+            <h2>No Items Found</h2>
+        }
+        @else{
+        @for(item of items | paginate: { itemsPerPage: 10, currentPage: p}; track $index; ){
+            <div class="card" style="width: 18rem;">
+                <img src="{{item.image}}" class="card-img-top" alt="..." height="250px" width="50px">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <h3 class="card-text">{{item.price | currency}}</h3> 
+                  <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+        }
+    }
+    </div>
+    <div class="row">
+        <div class="offset-1">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+ </div>

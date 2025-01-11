@@ -1,52 +1,31 @@
-
-<button (click)="toggleMode()">{{flag ? 'DARK' : 'LIGHT'}}</button>
-<button (click)="flag1=!flag1">{{flag1 ? 'SHOW CARDS' : 'SHOW TABLE'}}</button>
-@if(flag1){
-<div class="abc">
-    <table>
-        <tr>
-            <th>Employee ID</th>
-            <th>Name</th>
-            <th>Designation</th>
-            
-        </tr>
-
-    @for(emp of myProducts ; track $index){
-        <tr>
-        <td> {{emp.id}} </td>
-        <td> {{emp.username}} </td>
-        <td> {{emp.email}} </td>
-        <td> {{emp.address.zipcode}} </td>
-    </tr>
-    }
-
-</table>
+<!-- <p>employee works!</p> -->
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Filter Employees
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" (click)="employeeService.displayAll()">All Employees</a></li>
+    <li><a class="dropdown-item" (click)="employeeService.displayMale()">Male Employees</a></li>
+    <li><a class="dropdown-item"  (click)="employeeService.displayFemale()">Female Employees</a></li>
+  </ul>
 </div>
-<hr/>
-}
-@else{
-
-
-<div class="row">
-    @for(emp of myProducts | paginate: { itemsPerPage: 3, currentPage: p}; track $index){
-        <div class ="col-sm-4">
-    <div class="card">
-        <div class="card-body text-center">
-      <h5 class="card-title">Employee Name :{{emp.username}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Employee ID :{{emp.id}}</h6>
-      <h5 class="card-text">Email :{{emp.email}}</h5>
-      <h5 class="card-text">Address Zipcode :{{emp.address.zipcode}}</h5>
-    </div>
-    </div>
-</div>
-}
-    <div class ="row mt-4">
-        <div style="text-align:center">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
-    </div>
-    </div>
-</div>
-<hr/>
-
-}
-
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">EmpId</th>
+        <th scope="col">EName</th>
+        <th scope="col">Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(emp of employeeService.selectedemployees; track $index){
+            <tr>
+                <th scope="row">{{$index+1}}</th>
+                <td>{{emp.eid}}</td>
+                <td>{{emp.ename}}</td>
+                <td>{{emp.gender}}</td>
+              </tr>
+        }
+    </tbody>
+  </table>

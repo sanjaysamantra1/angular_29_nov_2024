@@ -1,0 +1,25 @@
+<!-- <p>student-list works!</p> -->
+<div class="container border p-3">
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+            <th>Sl No</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            @for (student of students; track $index) {
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{student.sid}}</td>
+                    <td>{{student.sname}}</td>
+                    <td>{{student.gender}}</td>
+                    <td><button type="button" class="btn btn-danger" (click)="sendDatatoParent(student)">Delete</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
