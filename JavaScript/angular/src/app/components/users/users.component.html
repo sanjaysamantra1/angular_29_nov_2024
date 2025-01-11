@@ -1,5 +1,12 @@
  
+ @if(isLoading){
+  <div class="spinner-border">
+    <!-- Loading -->
+  </div>
+ }
+ @else{
 <button class="btn btn-secondary mx-3" (click)="view=!view">CHANGE VIEW</button>
+
 
  @if(view){
  <div class="container mt-5">
@@ -46,3 +53,4 @@
             </table>
   </div>
           }
+        }
