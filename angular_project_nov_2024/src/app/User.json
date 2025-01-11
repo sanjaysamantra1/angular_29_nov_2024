@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "id": 101,
+      "name": "sanjay",
+      "sal": 5000,
+      "gender": "male"
+    },
+    {
+      "id": 104,
+      "name": "geeta",
+      "sal": 8000,
+      "gender": "female"
+    },
+    {
+      "id": 103,
+      "name": "sameer",
+      "sal": 7000,
+      "gender": "male"
+    },
+    {
+      "id": 102,
+      "name": "sita",
+      "sal": 9000,
+      "gender": "female"
+    },
+    {
+      "id": 105,
+      "name": "tom",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 106,
+      "name": "kohli",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 107,
+      "name": "rohit",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 108,
+      "name": "pavan",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 109,
+      "name": "dhanush",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 110,
+      "name": "sathwik",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 111,
+      "name": "chenna",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 112,
+      "name": "dheeraj",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 113,
+      "name": "venkat",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 114,
+      "name": "sankeerth",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 115,
+      "name": "vamsi",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 116,
+      "name": "teja",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": 117,
+      "name": "deepak",
+      "sal": 8000,
+      "gender": "male"
+    },
+    {
+      "id": "2ffd",
+      "name": "test",
+      "sal": 5000,
+      "gender": "male"
+    },
+    {
+      "name": "kawin1234",
+      "sal": 5000,
+      "gender": "Male",
+      "id": "0411"
+    }
+  ]
+}

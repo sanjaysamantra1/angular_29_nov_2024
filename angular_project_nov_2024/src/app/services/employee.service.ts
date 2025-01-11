@@ -10,10 +10,14 @@ export class EmployeeService {
   copyData: any;
   
   constructor(private httpobj: HttpClient) {
-    this.httpobj.get("http://localhost:8080/employee/").subscribe(Response=>{
+    this.httpobj.get("http://localhost:8080/employee/").subscribe((Response=>{
       //console.log(Response);
       this.employee= Response;
       this.copyData = this.employee
+    }), (err)=>{
+      console.log(err);
+    }, ()=>{
+      
     });
     //this.copyData = this.employee;
     //console.log("from the service1"+this.employee)
