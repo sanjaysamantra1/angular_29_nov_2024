@@ -17,6 +17,7 @@ import { Demo2Component } from '../demo2/demo2.component';
 // import { EmpDetailsComponent } from '../empdetails/empdetails.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { EmployeeComponent } from '../employee/employee.component';
+import { UserComponent } from '../user/user.component';
 
 
 
@@ -39,7 +40,8 @@ import { EmployeeComponent } from '../employee/employee.component';
             Demo2Component,
             // EmpDetailsComponent,
             HttpDemo1Component,
-            EmployeeComponent
+            EmployeeComponent,
+            UserComponent
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
