@@ -58,15 +58,18 @@ export class UserComponent {
 
   getRecordToDelete(employee: any) {
     console.log("Delete ", employee);
-    this.userService.deleteUser(employee.id);
-    this.getUsers();
+    this.userService.deleteUser(employee.id).subscribe(data => {
+      console.log(data);
+      this.getUsers();
+    });
   }
 
   insertNewRecord(employeeObject: any) {
     console.log(employeeObject);
-    this.userService.saveUser(employeeObject);
-    this.users = this.userService.getUsers();
-    this.getUsers();
+    this.userService.saveUser(employeeObject).subscribe(data => {
+      console.log(data);
+      this.getUsers();
+    });
   }
 
   getRecordToUpdate(employee: any) {
@@ -84,8 +87,10 @@ export class UserComponent {
     this.updateUserObject.gender = this.eGender;
     console.log(this.updateUserId);
     console.log(this.updateUserObject);
-    this.userService.updateUser(this.updateUserId, this.updateUserObject);
-    this.getUsers();
+    this.userService.updateUser(this.updateUserId, this.updateUserObject).subscribe(data => {
+      console.log(data);
+      this.getUsers();
+    });
   }
 
 }

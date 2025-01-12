@@ -28,22 +28,16 @@ export class UserService {
   }
 
   saveUser(userDetails: any) {
-    this.httpClient.post(this.users_url, userDetails).subscribe(response => {
-      console.log(response);
-    })
+    return this.httpClient.post(this.users_url, userDetails);
   }
 
   updateUser(userId: number, updateObject: any) {
     let update_url = this.users_url + "/" + userId;
-    this.httpClient.put(update_url, updateObject).subscribe(response => {
-      console.log(response);
-    })
+    return this.httpClient.put(update_url, updateObject);
   }
 
   deleteUser(userId: number) {
     let delete_url = this.users_url + "/" + userId;
-    this.httpClient.delete(delete_url).subscribe(response => {
-      console.log(response);
-    })
+    return this.httpClient.delete(delete_url);
   }
 }
