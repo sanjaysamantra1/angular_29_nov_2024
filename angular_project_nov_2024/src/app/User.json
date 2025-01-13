@@ -103,16 +103,10 @@
       "gender": "male"
     },
     {
-      "id": "2ffd",
       "name": "test",
       "sal": 5000,
-      "gender": "male"
-    },
-    {
-      "name": "kawin1234",
-      "sal": 5000,
-      "gender": "Male",
-      "id": "0411"
+      "gender": "Female",
+      "id": "2ffd"
     }
   ]
 }

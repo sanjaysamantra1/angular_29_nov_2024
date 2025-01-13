@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
 //import { ParentComponent } from './components/parent/parent.component';
 //import { AssignmentsComponent } from './components/assignments/assignments.component';
 import { UserCrudComponent } from './components/user-crud/user-crud.component';
+import { LoadingComponent } from './components/loading/loading.component';
 //import { PipescomponentComponent } from './components/pipescomponent/pipescomponent.component';
 
 @Component({
@@ -18,10 +19,12 @@ import { UserCrudComponent } from './components/user-crud/user-crud.component';
   imports: [//AssignmentsComponent,
     //ParentComponent
     //NavbarComponent,
-    // EmployeeComponent
+    
     //PipescomponentComponent,
     //CrudopsComponent,
-    //ParentCrudopsComponent
+    //ParentCrudopsComponent,
+    //EmployeeComponent,
+    LoadingComponent,
     UserCrudComponent
   ],
   //

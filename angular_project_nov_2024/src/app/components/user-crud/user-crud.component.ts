@@ -22,23 +22,31 @@ export class UserCrudComponent {
   }
 
   getAllUser(){
-    this.users = this.userCrudObj.getAllUserForComponent();
+    this.userCrudObj.getAllUsers().subscribe((responce)=>{
+      this.users = responce;
+    });
     this.flag = true;
     //console.log(this.users)
   }
 
   getOneUser(userId: any){
-    this.users = this.userCrudObj.getOneUser(userId);
+    this.userCrudObj.getOneUser(userId).subscribe((responce)=>{
+      this.users = responce;
+    });
   }
 
   addNewUser(form: any){
-    this.userCrudObj.addNewUser(form);
+    console.log(form);
+    this.userCrudObj.addNewUser(form);  
+    //this.getAllUser();
   }
   deleteUser(userId: any){
     this.userCrudObj.deleteUser(userId);
+    this.getAllUser();
   }
   UpdateExistingUser(form: any, id: any){
     this.userCrudObj.updateUser(form, id);
+    this.getAllUser();
   }
 
 

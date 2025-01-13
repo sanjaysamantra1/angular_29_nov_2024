@@ -12,18 +12,20 @@ export class UserCrudService {
   }
 
   getAllUsers(){
-    this.httpObj.get(this.url).subscribe((Response)=>{
-      //console.log(Response);
-      this.users = Response;
-    })
+     return this.httpObj.get(this.url);
+    // .subscribe((Response)=>{
+    //   //console.log(Response);
+    //   this.users = Response;
+    //})
   }
 
   getOneUser(userId: number){
     
-    this.httpObj.get(this.url+userId).subscribe((Response)=>{
-      //console.log(Response);
-      this.users = Response;
-    })
+    return this.httpObj.get(this.url+userId);
+    // .subscribe((Response)=>{
+    //   //console.log(Response);
+    //   this.users = Response;
+    // })
   }
   addNewUser(body: any){
     this.httpObj.post(this.url, body).subscribe();
