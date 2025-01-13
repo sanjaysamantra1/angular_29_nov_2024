@@ -7,16 +7,18 @@ import { loggerInterceptor } from './interceptors/logger.interceptor';
 import { tokenInterceptor } from './interceptors/token.interceptor';
 import { retryInterceptor } from './interceptors/retry.interceptor';
 import { errorInterceptor } from './interceptors/error.interceptor';
+import { loadingInterceptor } from './interceptors/loading.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(withInterceptors([
-      loggerInterceptor,
+      // loggerInterceptor,
       // tokenInterceptor,
       // retryInterceptor,
-      // errorInterceptor
+      // errorInterceptor,
+      loadingInterceptor
     ]))
   ]
 };

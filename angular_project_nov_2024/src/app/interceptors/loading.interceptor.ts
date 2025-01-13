@@ -5,8 +5,12 @@ import { LoadingService } from '../services/loading.service';
 
 export const loadingInterceptor: HttpInterceptorFn = (req, next) => {
   const loaderService = inject(LoadingService);
+  console.log('show loading...');
   loaderService.show();
   return next(req).pipe(
-    finalize(() => loaderService.hide()),
+    finalize(() => {
+      console.log('Hide loading....');
+      loaderService.hide()
+    }),
   );
 };
