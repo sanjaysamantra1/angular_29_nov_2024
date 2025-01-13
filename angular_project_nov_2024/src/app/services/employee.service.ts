@@ -39,14 +39,14 @@ export class EmployeeService {
 
   getMaleEmployees(){
     this.maleEmployees = this.employees.filter((e: any) => {
-      return e.gender === "male";
+      return e.gender == "male";
     })
     return this.maleEmployees;
   }
 
   getFemaleEmployees(){
     this.femaleEmployees = this.employees.filter((e: any) => {
-      return e.gender === "female";
+      return e.gender == "female";
     })
     return this.femaleEmployees;
   }

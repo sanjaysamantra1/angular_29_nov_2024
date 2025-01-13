@@ -15,6 +15,8 @@ import { Math1Component } from '../math1/math1.component';
 import { Math2Component } from '../math2/math2.component';
 import { UsersComponent } from '../users/users.component';
 import { EmployeeServiceComponentComponent } from '../employee-service-component/employee-service-component.component';
+import { EmpCrudHttpServiceComponent } from '../emp-crud-http-service/emp-crud-http-service.component';
+import { ProductListComponent } from '../product-list/product-list.component';
 
 @Component({
   selector: 'app-body',
@@ -34,7 +36,9 @@ import { EmployeeServiceComponentComponent } from '../employee-service-component
     Math1Component,
     Math2Component,
     UsersComponent,
-    EmployeeServiceComponentComponent
+    EmployeeServiceComponentComponent,
+    EmpCrudHttpServiceComponent,
+    ProductListComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
