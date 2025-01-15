@@ -18,6 +18,8 @@ import { Demo2Component } from '../demo2/demo2.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { EmployeeComponent } from '../employee/employee.component';
 import { UserComponent } from '../user/user.component';
+import { ProductListComponent } from '../product-list/product-list.component';
+import { LoadingComponent } from '../loading/loading.component';
 
 
 
@@ -41,7 +43,9 @@ import { UserComponent } from '../user/user.component';
             // EmpDetailsComponent,
             HttpDemo1Component,
             EmployeeComponent,
-            UserComponent
+            UserComponent,
+            ProductListComponent,
+            LoadingComponent
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

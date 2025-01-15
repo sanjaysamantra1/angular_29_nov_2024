@@ -6,7 +6,9 @@
     <input [(ngModel)]="formData.name" name="name" placeholder="Name" />
     <input [(ngModel)]="formData.email" name="email" placeholder="Email" />
     <button type="submit">{{ editData ? 'Update' : 'Add' }} User</button>
-    <button *ngIf="editData" type="button" (click)="formChangeMode()">Cancel</button>
+    @if (editData) {
+      <button type="button" (click)="formChangeMode()">Cancel</button>
+    }
   </form>
 
   <!-- Spinner while loading -->
@@ -18,28 +20,28 @@
 
   <!-- Table displaying user data -->
   @else {
-    <table class="table table-light table-striped table-bordered border-primary">
-      <thead>
+  <table class="table table-light table-striped table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of users; track user) {
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Actions</th>
+          <th scope="row">{{ user.id }}</th>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button class="btn mx-1 btn-primary" (click)="editUser(user)">Edit</button>
+            <button class="btn mx-1 btn-danger" (click)="deleteUser(user.id)">Delete</button>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        @for (user of users; track user) {
-          <tr>
-            <th scope="row">{{ user.id }}</th>
-            <td>{{ user.name }}</td>
-            <td>{{ user.email }}</td>
-            <td>
-              <button class="btn mx-1 btn-primary" (click)="editUser(user)">Edit</button>
-              <button class="btn mx-1 btn-danger" (click)="deleteUser(user.id)">Delete</button>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  }
+      }
+    </tbody>
+  </table>
+}
 </div>

@@ -1,0 +1,21 @@
+<!-- <p>product-list works!</p> -->
+<h2 class="text-center">Product List</h2>
+<div class="container">
+    <div class="row">
+        @for(product of products ;track $index){
+        <div class="col-sm-3">
+            <div class="card">
+                <img src="{{product.image}}" class="card-img-top" alt="..." style="height:200px">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{product.category}}</h5>
+                    <p class="card-text">{{product.id}}</p>
+                    <p class="card-text">{{product.title}}</p>
+                    <p class="card-text text-truncate">{{product.description}}</p>
+                    <p class="card-text">{{product.price}}</p>
+                    <a href="#" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
