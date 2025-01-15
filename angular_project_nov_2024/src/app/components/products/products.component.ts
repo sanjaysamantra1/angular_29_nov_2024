@@ -5,6 +5,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faPlane, faArrowDown19, faArrowUp91, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from "../product-card/product-card.component";
+import { HttpClient } from '@angular/common/http';
+import { LoadingService } from '../../services/loading.service';
 
 
 @Component({
@@ -15,7 +17,8 @@ import { ProductCardComponent } from "../product-card/product-card.component";
 })
 export class ProductsComponent {
 
-  productList = (products as any).default;
+  // productList = (products as any).default;
+  productList: any = '';
   p: any;
   faStar: any = faStar;
   faPlane: any = faPlane;
@@ -23,8 +26,33 @@ export class ProductsComponent {
   faArrowUp91: any = faArrowUp91;
   faSearch: any = faSearch;
   inputValue: string = '';
+  isLoading: boolean = false;
 
   copyOfProducts: any[] = this.productList;
+
+  constructor(private httpClient: HttpClient, private loadingService: LoadingService) { }
+
+  ngOnInit() {
+    const product_url = "https://fakestoreapi.com/products";
+    this.isLoading = this.loadingService.show();
+
+    this.httpClient.get(product_url).subscribe(response => {
+      this.productList = response;
+        this.isLoading = this.loadingService.hide();
+    });
+
+  }
+
+  ngDoCheck() {
+    // if(this.productList == '') {
+    //   this.isLoading = this.loadingService.show();
+    //   // setTimeout(() => {
+    //   //   console.log("Hello");
+    //   // }, 2000)
+    // } else {
+    //   this.isLoading = this.loadingService.hide();
+    // }
+  }
 
   getInputValue() {
     console.log(this.inputValue);

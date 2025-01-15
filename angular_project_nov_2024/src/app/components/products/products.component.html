@@ -1,33 +1,39 @@
-<div>
-    <div class="input-group mb-3" style="width: fit-content;">
-        <input type="text" placeholder="Search" style="border-color: black;"
-            [(ngModel)]="inputValue">
-        <button class="btn btn-primary" type="button" id="button-addon1" (click)="getInputValue()">Search <fa-icon
-                [icon]="faSearch"></fa-icon></button>
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="ascending()">Asc
-            <fa-icon [icon]="faArrowDown19"></fa-icon>
-        </button>
-        <button class="btn btn-outline-secondary" type="button" id="button-addon3" (click)="descending()">Desc
-            <i class="fa-solid fa-arrow-up-9-1"></i>
-            <fa-icon [icon]="faArrowUp91"></fa-icon>
-        </button>
-    </div>
-    <div class="border p-2 row">
-        @if (productList.length > 0) {
-        @for (product of productList | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
-        <div class="col-sm-3">
-            <app-product-card [product] = 'product'></app-product-card>
+@if(isLoading) {
+    <div class="spinner-border m-5" role="status" id="spinner">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+} @else {
+    <div>
+        <div class="input-group mb-3" style="width: fit-content;">
+            <input type="text" placeholder="Search" style="border-color: black;"
+                [(ngModel)]="inputValue">
+            <button class="btn btn-primary" type="button" id="button-addon1" (click)="getInputValue()">Search <fa-icon
+                    [icon]="faSearch"></fa-icon></button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="ascending()">Asc
+                <fa-icon [icon]="faArrowDown19"></fa-icon>
+            </button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon3" (click)="descending()">Desc
+                <i class="fa-solid fa-arrow-up-9-1"></i>
+                <fa-icon [icon]="faArrowUp91"></fa-icon>
+            </button>
         </div>
-        }
-        <div>
-            <div class="row mt-2">
-                <div style="text-align: center;">
-                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <div class="border p-2 row">
+            @if (productList.length > 0) {
+            @for (product of productList | paginate: { itemsPerPage: 4, currentPage: p }; track $index) {
+            <div class="col-sm-3">
+                <app-product-card [product] = 'product'></app-product-card>
+            </div>
+            }
+            <div>
+                <div class="row mt-2">
+                    <div style="text-align: center;">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
                 </div>
             </div>
+            } @else {
+            <b style="color: red;">There are no Products to display!!!!</b>
+            }
         </div>
-        } @else {
-        <b style="color: red;">There are no Products to display!!!!</b>
-        }
     </div>
-</div>
+}
