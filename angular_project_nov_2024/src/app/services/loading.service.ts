@@ -17,5 +17,5 @@ export class LoadingService {
 
   hide(): void {
     this.loadIcon.next(false);
-  }
+  } 
 }

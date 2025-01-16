@@ -20,6 +20,7 @@ import { EmployeeComponent } from '../employee/employee.component';
 import { UserComponent } from '../user/user.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { LoadingComponent } from '../loading/loading.component';
+import { ObservablesComponent } from '../observables/observables.component';
 
 
 
@@ -45,7 +46,8 @@ import { LoadingComponent } from '../loading/loading.component';
             EmployeeComponent,
             UserComponent,
             ProductListComponent,
-            LoadingComponent
+            LoadingComponent,
+            ObservablesComponent
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
