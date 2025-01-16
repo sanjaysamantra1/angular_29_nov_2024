@@ -16,6 +16,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
 import { LoadingComponent } from '../loading/loading.component';
 import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
 import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
+import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.component';
 
 @Component({
   selector: 'app-body',
@@ -38,6 +39,7 @@ import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.c
     // LoadingComponent,
     // ObservableDemo1Component
     ObservableDemo2Component
+    // ObservableDemo3Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

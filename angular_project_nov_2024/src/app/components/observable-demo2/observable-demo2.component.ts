@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { filter, forkJoin, from, interval, map, Observable, of, range, take } from 'rxjs';
+import { catchError, concatMap, exhaustMap, filter, forkJoin, from, fromEvent, interval, map, mergeMap, Observable, of, range, take } from 'rxjs';
 
 @Component({
   selector: 'app-observable-demo2',
@@ -18,7 +18,10 @@ export class ObservableDemo2Component {
     // this.ofDemo();
     // this.intervalDemo();
     // this.rangeDemo()
-    this.forkJoinDemo()
+    // this.forkJoinDemo()
+    // this.mergeMapDemo()
+    // this.concatMapDemo();
+    this.exhaustMapDemo();
   }
   fromDemo() {
     let cars = ['Tata', 'Honda', 'Maruti', 'Hundai'];
@@ -60,6 +63,54 @@ export class ObservableDemo2Component {
     forkJoin(allObservables).subscribe(responses => {
       console.log(responses)
     })
+  }
+  mergeMapDemo() {
+    let userPublisher = of(1, 2, 3, 4, 5);
+    userPublisher.pipe(mergeMap(userId => {
+      if (userId == 3) {
+        return this.httpClient.get(`https://fkestoreapi.com/carts/${userId}`).pipe(catchError(error => {
+          return of(undefined);
+        }))
+      } else {
+        return this.httpClient.get(`https://fakestoreapi.com/carts/${userId}`)
+      }
+    })).subscribe({
+      next: (res) => {
+        console.log('response...')
+        console.log(res)
+      },
+      error: (err) => {
+        console.log('Error.....', err)
+      }
+    });
+  }
+  concatMapDemo() {
+    let userPublisher = of(1, 2, 3, 4, 5);
+    userPublisher.pipe(concatMap(userId => {
+      if (userId == 3) {
+        return this.httpClient.get(`https://fkestoreapi.com/carts/${userId}`).pipe(catchError(error => {
+          return of(undefined);
+        }))
+      } else {
+        return this.httpClient.get(`https://fakestoreapi.com/carts/${userId}`)
+      }
+    })).subscribe({
+      next: (res) => {
+        console.log('response...')
+        console.log(res)
+      },
+      error: (err) => {
+        console.log('Error.....', err)
+      }
+    });
+  }
+
+  exhaustMapDemo() {
+    const clicks = fromEvent(document, 'click');
+    const result = clicks.pipe(
+      exhaustMap(() => this.httpClient.get('https://fakestoreapi.com/products'))
+    );
+    result.subscribe((x) => console.log(x));
   }
 }
 

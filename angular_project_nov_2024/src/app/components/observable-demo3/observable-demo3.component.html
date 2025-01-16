@@ -1,0 +1,17 @@
+<div class="jumbotron">
+    <h1>Search Something</h1>
+    <form [formGroup]="searchForm">
+        <input formControlName="searchField" />
+    </form>
+    <table class="table bordered">
+        <tbody>
+            @for(user of searchResult$ | async ; track $index;){
+                <tr>
+                    <td>{{user.name}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.height}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
