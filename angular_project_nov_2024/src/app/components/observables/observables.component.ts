@@ -1,24 +1,27 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { filter, forkJoin, from, interval, map, Observable, of, range, take } from 'rxjs';
+import { catchError, concatMap, exhaustMap, filter, forkJoin, from, fromEvent, interval, map, mergeMap, Observable, of, range, take } from 'rxjs';
 
 @Component({
-  selector: 'app-observables',
+  selector: 'app-observable-demo2',
   imports: [CommonModule],
-  templateUrl: './observables.component.html',
-  styleUrl: './observables.component.css'
+  templateUrl: './observable-demo2.component.html',
+  styleUrl: './observable-demo2.component.css'
 })
 export class ObservablesComponent {
   constructor(private httpClient: HttpClient) {
 
   }
   ngOnInit() {
-    this.fromDemo();
-    this.ofDemo();
-    this.intervalDemo();
-    this.rangeDemo()
-    this.forkJoinDemo()
+    // this.fromDemo();
+    // this.ofDemo();
+    // this.intervalDemo();
+    // this.rangeDemo()
+    // this.forkJoinDemo()
+    // this.mergeMapDemo()
+    // this.concatMapDemo();
+    // this.exhaustMapDemo();
   }
   fromDemo() {
     let cars = ['Tata', 'Honda', 'Maruti', 'Hundai'];
@@ -52,14 +55,61 @@ export class ObservablesComponent {
     only_5.subscribe((val: any) => console.log(val));
   }
   forkJoinDemo() {
-    let userNames = ['sanjaysamantra1','navyaswe'];
+    let userNames = ['sanjaysamantra1', 'TanojT', 'BalajiPavan'];
 
     let allObservables = userNames.map(userName => {
-    return this.httpClient.get(`https://api.github.com/users/${userNames}`)
-    // return this.httpClient.get(`https://api.github.com/${userNames}`)
+      return this.httpClient.get(`https://api.github.com/users/${userName}`)
     });
     forkJoin(allObservables).subscribe(responses => {
-    console.log(responses)
+      console.log(responses)
     })
+  }
+  mergeMapDemo() {
+    let userPublisher = of(1, 2, 3, 4, 5);
+    userPublisher.pipe(mergeMap(userId => {
+      if (userId == 3) {
+        return this.httpClient.get(`https://fkestoreapi.com/carts/${userId}`).pipe(catchError(error => {
+          return of(undefined);
+        }))
+      } else {
+        return this.httpClient.get(`https://fakestoreapi.com/carts/${userId}`)
+      }
+    })).subscribe({
+      next: (res) => {
+        console.log('response...')
+        console.log(res)
+      },
+      error: (err) => {
+        console.log('Error.....', err)
+      }
+    });
+  }
+  concatMapDemo() {
+    let userPublisher = of(1, 2, 3, 4, 5);
+    userPublisher.pipe(concatMap(userId => {
+      if (userId == 3) {
+        return this.httpClient.get(`https://fkestoreapi.com/carts/${userId}`).pipe(catchError(error => {
+          return of(undefined);
+        }))
+      } else {
+        return this.httpClient.get(`https://fakestoreapi.com/carts/${userId}`)
+      }
+    })).subscribe({
+      next: (res) => {
+        console.log('response...')
+        console.log(res)
+      },
+      error: (err) => {
+        console.log('Error.....', err)
+      }
+    });
+  }
+
+  exhaustMapDemo() {
+    const clicks = fromEvent(document, 'click');
+    const result = clicks.pipe(
+      exhaustMap(() => this.httpClient.get('https://fakestoreapi.com/products'))
+    );
+    result.subscribe((x) => console.log(x));
   }
 }

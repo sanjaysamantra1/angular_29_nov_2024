@@ -21,6 +21,8 @@ import { UserComponent } from '../user/user.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { LoadingComponent } from '../loading/loading.component';
 import { ObservablesComponent } from '../observables/observables.component';
+import { SwitchmapComponent } from '../switchmap/switchmap.component';
+
 
 
 
@@ -47,7 +49,8 @@ import { ObservablesComponent } from '../observables/observables.component';
             UserComponent,
             ProductListComponent,
             LoadingComponent,
-            ObservablesComponent
+            ObservablesComponent,
+            SwitchmapComponent
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
