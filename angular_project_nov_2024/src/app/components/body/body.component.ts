@@ -17,6 +17,8 @@ import { UsersComponent } from '../users/users.component';
 import { EmployeeServiceComponentComponent } from '../employee-service-component/employee-service-component.component';
 import { EmpCrudHttpServiceComponent } from '../emp-crud-http-service/emp-crud-http-service.component';
 import { ProductListComponent } from '../product-list/product-list.component';
+import { Demo2Component } from "../demo2/demo2.component";
+import { HttpDemo1Component } from "../http-demo1/http-demo1.component";
 
 @Component({
   selector: 'app-body',
@@ -38,11 +40,14 @@ import { ProductListComponent } from '../product-list/product-list.component';
     UsersComponent,
     EmployeeServiceComponentComponent,
     EmpCrudHttpServiceComponent,
-    ProductListComponent
+    ProductListComponent,
+    Demo1Component,
+    Demo2Component,
+    HttpDemo1Component
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
 export class BodyComponent {
-
+  flag: boolean = true;
 }

@@ -10,7 +10,6 @@ import { MathService } from '../../services/math.service';
 export class Math1Component {
 
   constructor(public mathService: MathService){
-  
   }
 
   ngOnInit(){

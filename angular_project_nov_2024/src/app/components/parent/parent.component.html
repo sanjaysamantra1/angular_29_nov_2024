@@ -1,7 +1,7 @@
 <div class="border text-center">
-    <div>This is parent component</div>
-    <div>{{parentA}} - is my data</div>
-    <div>{{parentB}} - is my data</div>
+    <div id="mydiv1">This is parent component</div>
+    <div>{{parentA}} - is my data, <input #inputBox type="number" [(ngModel)]="parentA"/></div>
+    <div>{{parentB}} - is my data, <input #inputBox type="number" [(ngModel)]="parentB"/></div>
     <!-- <div>My child1 data name is {{child1Ref.childA}}</div>
     <div>My child1 age is {{child1Ref.childB}}</div> -->
     <div>My child1's cars data is {{parentCars}}</div>
