@@ -1,0 +1,10 @@
+<script>
+     const user_url='https://jsonplaceholder.typicode.com/users';
+     fetch(user_url).then(responce=>{
+        response.json().then(finalData=>{
+            console.log(finalData)
+        })
+     }).catch(err=>{
+        console.log((err))
+     })
+</script>

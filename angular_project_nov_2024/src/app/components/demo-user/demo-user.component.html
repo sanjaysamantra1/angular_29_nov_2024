@@ -1,0 +1,28 @@
+<h2 class="text-center">User LIst</h2>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-stripped">
+
+            <tbody>
+                @for(user of users ;track $index){
+                <tr>
+                    <td>{{user.eId}}</td>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.sal}}</td>
+
+                </tr>
+                
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+

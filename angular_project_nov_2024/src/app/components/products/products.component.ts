@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import * as products from './products.json';
+//import * as products from './products.json';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar, faPlane, faArrowDown19, faArrowUp91, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
 import { ProductCardComponent } from "../product-card/product-card.component";
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -14,8 +15,12 @@ import { ProductCardComponent } from "../product-card/product-card.component";
   styleUrl: './products.component.css'
 })
 export class ProductsComponent {
+  constructor(private httpclient:HttpClient){
 
-  productList = (products as any).default;
+  }
+  
+  //productList = (products as any).default;
+  productList:any=undefined;
   p: any;
   faStar: any = faStar;
   faPlane: any = faPlane;
@@ -25,6 +30,12 @@ export class ProductsComponent {
   inputValue: string = '';
 
   copyOfProducts: any[] = this.productList;
+  ngOnInit() {
+    const prod_url = 'https://fakestoreapi.com/products'
+    this.httpclient.get(prod_url).subscribe(response => {
+      this.productList = response;
+    })
+  }
 
   getInputValue() {
     console.log(this.inputValue);

@@ -1,0 +1,79 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            
+            <th>Eid</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+            <th>id</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @for(intern of interns ;track $index ){
+        <tr>
+            <td>{{intern.eId}}</td>
+            <td>{{intern.Name}}</td>
+            <td>{{intern.sal}}</td>
+            <td>{{intern.gender}}</td>
+            <td>{{intern.id}}</td>
+            <!-- <td><button class="btn mx-1 btn-primary" (click)="view(emp)">Update</button></td> -->
+            <td><button class="btn mx-1 btn-danger" (click)="deleteInternComp(intern.id)">Delete</button></td>
+            <td><button class="btn mx-1 btn-success">Update</button></td>
+
+
+        </tr>
+        }@empty {
+        No Employee Found
+        }
+    </tbody>
+</table>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Intern
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="number" id="id" name="id" class="form-control" [(ngModel)]="eId"/>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" [(ngModel)]="Name"/>
+                </div>
+                <div class="mb-3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input type="number" id="salary" name="salary" class="form-control" [(ngModel)]="sal"/>
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label" >Gender</label>
+                    <select id="gender" name="gender" class="form-control" [(ngModel)]="gender">
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+
+                    </select>
+                </div>
+                
+            </form>    
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addInternComp()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> 
