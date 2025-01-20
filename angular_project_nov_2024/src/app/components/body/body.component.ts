@@ -19,6 +19,7 @@ import { EmpCrudHttpServiceComponent } from '../emp-crud-http-service/emp-crud-h
 import { ProductListComponent } from '../product-list/product-list.component';
 import { Demo2Component } from "../demo2/demo2.component";
 import { HttpDemo1Component } from "../http-demo1/http-demo1.component";
+import { UserWithModelComponent } from "../user-with-model/user-with-model.component";
 
 @Component({
   selector: 'app-body',
@@ -43,7 +44,8 @@ import { HttpDemo1Component } from "../http-demo1/http-demo1.component";
     ProductListComponent,
     Demo1Component,
     Demo2Component,
-    HttpDemo1Component
+    HttpDemo1Component,
+    UserWithModelComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

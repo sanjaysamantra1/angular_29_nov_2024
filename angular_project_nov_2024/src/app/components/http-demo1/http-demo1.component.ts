@@ -36,10 +36,10 @@ export class HttpDemo1Component {
 
   fetchDataAngular(){
     const users_url = 'https://jsonplaceholder.typicode.com/users';
-    let users_obj = this.httpClient.get(users_url);
-    console.log(users_obj);
-  
+    // let users_obj = this.httpClient.get(users_url);
+    // console.log(users_obj);
     // we can get data from observable using subscribe()
+    // subscribe() is a higher order function which takes 3 callback functions
 
     this.httpClient.get(users_url).subscribe(
       (response) => {
@@ -54,4 +54,19 @@ export class HttpDemo1Component {
     )
   }
 
+
+  fetchDataAngular2(){
+    const users_url = 'https://jsonplaceholder.typicode.com/users';
+    this.httpClient.get(users_url, { observe : "response" }).subscribe({
+      next : (response) => {
+        console.log(response);
+      },
+      error : (error) => {
+        console.log(error);
+      },
+      complete : () => {
+        console.log('completed');
+      }
+    });
+  }
 }

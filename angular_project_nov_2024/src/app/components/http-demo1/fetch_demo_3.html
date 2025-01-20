@@ -1,0 +1,14 @@
+<script>
+
+    async function fetchUsers(){
+        try{
+            const user_url = 'https://jsonplaceholder.typicode.com/users';
+            let response = await fetch(user_url);
+            let finalData = await response.json();
+            console.log(finalData);
+        } catch(err){
+            console.log('something went wrong');
+        }
+    }
+    fetchUsers();
+</script>
