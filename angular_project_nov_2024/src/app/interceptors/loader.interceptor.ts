@@ -5,8 +5,12 @@ import { finalize } from 'rxjs';
 
 export const loaderInterceptor: HttpInterceptorFn = (req, next) => {
   const loaderService = inject(LoaderService);
+  console.log('show loading....');
   loaderService.show();
   return next(req).pipe(
-    finalize(() => loaderService.hide())
+    finalize(() => {
+      console.log('hide loading....');
+      loaderService.hide();
+    }),
   );
 };

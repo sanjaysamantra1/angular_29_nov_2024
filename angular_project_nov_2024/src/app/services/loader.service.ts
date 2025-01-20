@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Injectable({
@@ -6,30 +7,44 @@ import Swal from 'sweetalert2';
 })
 export class LoaderService {
 
-  public isVisible = false;
+  private loadingSubject = new BehaviorSubject<boolean>(false);
+  loading$ = this.loadingSubject.asObservable();    // loading$ is observable, anyone can consume, here loading component
 
   constructor() {
   }
 
   show(){
-    if (!this.isVisible) {
-      this.isVisible = true;
-      Swal.fire({
-        title: 'Loading...',
-        text: 'Please wait.',
-        allowOutsideClick: false,
-        showConfirmButton: false,
-        didOpen: () => {
-          Swal.showLoading();
-        },
-      });
-    }
+    this.loadingSubject.next(true);
   }
 
   hide(){
-    if (this.isVisible) {
-      Swal.close();
-      this.isVisible = false;
-    }
+    this.loadingSubject.next(false);
   }
+
+  
+  // the below is without using behaviour subject
+
+  // public isVisible = false;
+
+  // show(){
+  //   if (!this.isVisible) {
+  //     this.isVisible = true;
+  //     Swal.fire({
+  //       title: 'Loading...',
+  //       text: 'Please wait.',
+  //       allowOutsideClick: false,
+  //       showConfirmButton: false,
+  //       didOpen: () => {
+  //         Swal.showLoading();
+  //       },
+  //     });
+  //   }
+  // }
+
+  // hide(){
+  //   if (this.isVisible) {
+  //     Swal.close();
+  //     this.isVisible = false;
+  //   }
+  // }
 }

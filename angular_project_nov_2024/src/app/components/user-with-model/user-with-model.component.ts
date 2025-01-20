@@ -33,4 +33,5 @@ export class UserWithModelComponent {
           // this.users = [{}, {}] is not equal to this.users = userObj1, userObj2]
         })
       }
+      
 }

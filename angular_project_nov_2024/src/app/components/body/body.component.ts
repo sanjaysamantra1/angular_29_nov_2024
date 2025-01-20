@@ -20,6 +20,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
 import { Demo2Component } from "../demo2/demo2.component";
 import { HttpDemo1Component } from "../http-demo1/http-demo1.component";
 import { UserWithModelComponent } from "../user-with-model/user-with-model.component";
+import { LoadingComponent } from "../loading/loading.component";
 
 @Component({
   selector: 'app-body',
@@ -45,7 +46,8 @@ import { UserWithModelComponent } from "../user-with-model/user-with-model.compo
     Demo1Component,
     Demo2Component,
     HttpDemo1Component,
-    UserWithModelComponent
+    UserWithModelComponent,
+    LoadingComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
