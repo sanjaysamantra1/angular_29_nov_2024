@@ -1,0 +1,24 @@
+<script>
+    const user_url = 'https://jsonplaceholder.typicode.com/users';
+    const userPromise = fetch(user_url);
+    // to read data from promise 1. fetch 2. async await
+
+    userPromise.then( // then is higherOrder, it takes 2 callbacks, success, error
+        (response) => {
+            console.log(response); // response is not final response
+            // console.log(response.json()); // this is also returning promise
+            response.json().then(
+                (finalResponse) => {
+                    console.log(finalResponse);
+                },  
+                (err) => {
+                    console.log(err);
+                }
+            );
+        },
+        (err) => {
+            console.log(err);
+        }
+    );
+
+</script>

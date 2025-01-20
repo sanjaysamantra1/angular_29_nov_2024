@@ -18,10 +18,12 @@ import { Math1Component } from "../math1/math1.component";
 import { Math2Component } from "../math2/math2.component";
 import { FormDemo1Component } from "../form-demo-1/form-demo-1.component";
 import { HttpDemo1Component } from "../http-demo1/http-demo1.component";
+import { UsersComponent } from "../users/users.component";
+import { UserWithModelsComponent } from "../user-with-models/user-with-models.component";
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent, EmployeeComponent, UserComponent, Demo2Component, Math1Component, Math2Component, FormDemo1Component, HttpDemo1Component],
+  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent, EmployeeComponent, UserComponent, Demo2Component, Math1Component, Math2Component, FormDemo1Component, HttpDemo1Component, UsersComponent, UserWithModelsComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

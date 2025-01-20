@@ -11,7 +11,8 @@ export class HttpDemo1Component {
 
   constructor(private httpClient: HttpClient) {
     // this.fetchDataJavascript();
-    this.fetchDataAngular();
+    // this.fetchDataAngular();
+    this.fetchDataAngular2();
   }
 
   fetchDataJavascript() {
@@ -37,7 +38,7 @@ export class HttpDemo1Component {
     let user_obs = this.httpClient.get(users_url);
     console.log(user_obs);
     // we can get data from observable from subscribe() method
-    this.httpClient.get(users_url).subscribe(
+    this.httpClient.get(users_url).subscribe( // subscribe is a higherOrder, takes 3 callbacks
       (res) => {
         console.log(res);
       },
@@ -50,4 +51,20 @@ export class HttpDemo1Component {
     )
   }
 
+  fetchDataAngular2() {
+    const users_url = 'https://jsonplaceholder.typicode.com/users';
+    this.httpClient.get(users_url, { observe: 'response' }).subscribe({
+      next: (response) => {
+        // by default there will be { observe: 'response' }
+        console.log(response); // from here we cen get the status code when we set the second parameter to { observe: 'response' }
+        console.log(response.body) // if observe is 'response' then we need to access data from response.body
+      },
+      error: (err) => {
+        console.log(err);
+      },
+      complete: () => {
+        console.log("All data received");
+      }
+    })
+  }
 }

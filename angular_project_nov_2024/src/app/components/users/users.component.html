@@ -1,0 +1,26 @@
+<div class="container">
+    @if(isLoading){
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading....</span>
+        </div>
+    }@else{
+        <div class="row">
+            @for(user of users;track $index){
+            <div class="col-sm-3">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjWGGs4b5kwJavNNlUaFNRl3TY9hWEJDNsg&s"
+                        class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{user.username}}</h5>
+                        <p class="card-text">{{user.name}}</p>
+                        <p class="card-text">{{user.email}}</p>
+                        <p class="card-text">{{user.address.city}}</p>
+                        <p class="card-text">{{user.phone}}</p>
+                        <a href="#" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    }
+</div>

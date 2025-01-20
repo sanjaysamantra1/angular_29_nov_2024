@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <table class="table table-light table-striped table-bordered border-primary">
+            @for(user of users; track $index) {
+            <tbody>
+                <tr scope="row">
+                    <th>{{user.id}}</th>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.sal}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.getFullName()}}</td>
+                    <td>{{user.getYearlySalary()}}</td>
+                    <td><button class="btn mx-1 btn-primary"> Details </button></td>
+                    <td><button class="btn mx-1 btn-danger"> Delete </button></td>
+                    <td><button class="btn mx-1 btn-secondary"> Update </button></td>
+                </tr>
+            </tbody>
+            }
+        </table>
+    </div>
+</div>
