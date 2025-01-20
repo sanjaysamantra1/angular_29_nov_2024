@@ -21,7 +21,10 @@ import { UserComponent } from '../user/user.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { LoadingComponent } from '../loading/loading.component';
 import { ObservablesComponent } from '../observables/observables.component';
-import { SwitchmapComponent } from '../switchmap/switchmap.component';
+// import { SwitchmapComponent } from '../switchmap/switchmap.component';
+import { Message1Component } from '../message1/message1.component';
+import { Message2Component } from '../message2/message2.component';
+import { Message3Component } from '../message3/message3.component';
 
 
 
@@ -44,13 +47,16 @@ import { SwitchmapComponent } from '../switchmap/switchmap.component';
             UsersComponent,
             Demo2Component,
             // EmpDetailsComponent,
-            HttpDemo1Component,
-            EmployeeComponent,
-            UserComponent,
-            ProductListComponent,
-            LoadingComponent,
-            ObservablesComponent,
-            SwitchmapComponent
+            // HttpDemo1Component,
+            // EmployeeComponent,
+            // UserComponent,
+            // ProductListComponent,
+            // LoadingComponent,
+            // ObservablesComponent,
+            // SwitchmapComponent,
+            Message1Component,
+            Message2Component,
+            Message3Component
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
