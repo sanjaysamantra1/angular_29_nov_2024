@@ -27,15 +27,15 @@ export class EmpSubjectService {
       
   }
     
-  addUser(user: any): void {
+  addUser(emp: any): void {
       const currentEmp = this.empData.getValue();
-      user.id = currentEmp.length ? currentEmp[currentEmp.length - 1].id + 1 : 1; 
-      currentEmp.push(user);
+      emp.id = currentEmp.length ? currentEmp[currentEmp.length - 1].id + 1 : 1; 
+      currentEmp.push(emp);
       this.empData.next(currentEmp); 
   }
 
-  deleteUser(userId: number): void {
-      const currentEmp = this.empData.getValue().filter(user => user.id !== userId);
+  deleteUser(empId: number): void {
+      const currentEmp = this.empData.getValue().filter(user => user.id !== empId);
       this.empData.next(currentEmp); 
     }
 
