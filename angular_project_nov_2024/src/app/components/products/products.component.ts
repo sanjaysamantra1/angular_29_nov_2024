@@ -34,11 +34,8 @@ export class ProductsComponent {
 
   ngOnInit() {
     const product_url = "https://fakestoreapi.com/products";
-    this.isLoading = this.loadingService.show();
-
     this.httpClient.get(product_url).subscribe(response => {
       this.productList = response;
-        this.isLoading = this.loadingService.hide();
     });
 
   }

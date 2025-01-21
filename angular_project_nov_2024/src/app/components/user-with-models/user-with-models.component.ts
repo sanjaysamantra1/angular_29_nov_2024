@@ -17,6 +17,13 @@ export class UserWithModelsComponent {
   constructor(private userWithModalService: UserWithModalService) {
   }
 
+  // ngOnInit(){
+  //   this.userService.getAllUsers().subscribe((response : Iuser[]) => {
+  //     this.users = response;
+  //     // this.users = [{}, {}] is not equal to this.users = userObj1, userObj2]
+  //   })
+  // }
+
   ngOnInit() {
     this.userWithModalService.getAllUsers().subscribe((response: UserModel[]) => {
       this.users = response;
