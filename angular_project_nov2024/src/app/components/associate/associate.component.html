@@ -1,0 +1,15 @@
+<!-- <p>associate works!</p> -->
+<table class="table table-bordered table-striped">
+    
+    <tbody>
+        @for(msg of messages;track $index){
+        <tr>
+            <td>{{msg.text}}</td>
+            <td>{{msg.id}}</td>
+            <td>{{msg.sal}}</td>
+            <td><button  class="btn btn-danger" (click)="delRecord(msg.id)">Delete</button></td>
+            <td><button  class="btn btn-primary">View</button></td>
+        </tr>
+        }
+    </tbody>
+</table>

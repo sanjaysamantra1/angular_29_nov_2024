@@ -1,0 +1,6 @@
+<!-- <p>associate2 works!</p> -->
+
+
+<input #newMsg placeholder="Enter Employee Name"/><input type=number #id placeholder="Enter id"/><input #sal placeholder="Enter salary"/>
+<button class="btn btn-primary" (click)="addRecord(newMsg.value,+id.value,+sal.value)">Add Record</button>
+<button  class="btn btn-danger" (click)="clearRecords()">Delete All</button>
