@@ -13,7 +13,9 @@ import { FormsModule } from '@angular/forms';
 export class CrudEmployeesComponent {
   employees:any;
   isLoading:boolean = false;
+
 constructor(public crudEmployeesService:CrudEmployeesService,private httpClient: HttpClient){}
+
 employeeObject = Object.create(null);
 eId: number = 0;
 firstName: string = '';
@@ -23,20 +25,24 @@ gender: string = '';
 id:string='';
 updateUserId: number = 0;
 
-
+employees_url = 'http://localhost:3000/employees';
 ngOnInit(){
   this.isLoading = true;
-  const employees_url = 'http://localhost:3000/employees';
+  this.getUsers();
   
-    this.httpClient.get(employees_url).subscribe(response => {
-      this.isLoading = false;
-    console.log(response);
-    this.employees = response;
-
-    })
+    
 
 }
-// ngDoCheck(){}
+
+getUsers() {
+  this.httpClient.get(this.employees_url).subscribe(response => {
+   console.log(response);
+   this.employees = response;
+   this.isLoading = false;
+
+   })
+}
+
 // getAllEmployees(){
 //   this.isLoading = true;
 //   const employees_url = 'http://localhost:3000/employees';
@@ -46,6 +52,7 @@ ngOnInit(){
 //     console.log(response);
 //     this.employees = response;})
 // }
+
 addEmployee(){
       this.employeeObject.eId = this.eId;
       this.employeeObject.firstName = this.firstName;
@@ -53,9 +60,18 @@ addEmployee(){
       this.employeeObject.sal = this.sal;
       this.employeeObject.gender = this.gender;
       this.employeeObject.id = this.id;
-      this.crudEmployeesService.addNewEmployee(this.employeeObject);
-      // this.getAllEmployees()
+      this.crudEmployeesService.addNewEmployee(this.employeeObject).subscribe({
+        next: (response) => {
+          console.log('Employee added successfully:', response);
+          this.getUsers();
 
+        },
+        error: (error) => {
+          console.error('Error occurred while adding employee:', error);
+        }
+      });
+      
+      // this.getAllEmployees()
       this.eId = 0;
       this.firstName = '';
       this.lastName = '';
@@ -64,8 +80,20 @@ addEmployee(){
       this.id='';
 }
 deleteEmployee(Id: any){
-  this.crudEmployeesService.deleteEmployee(Id);
-  // this.getAllEmployees()
+  this.crudEmployeesService.deleteEmployee(Id).subscribe({
+    next: (response) => {
+      console.log('Employee added successfully:', response);
+      this.getUsers();
+
+    },
+    error: (error) => {
+      console.error('Error occurred while adding employee:', error);
+    }
+
+  });
+  
+  
+ 
 }
 updateEmployee(){
       this.employeeObject.eId = this.eId;
@@ -74,8 +102,18 @@ updateEmployee(){
       this.employeeObject.sal = this.sal;
       this.employeeObject.gender = this.gender;
       this.employeeObject.id = this.id;
-      this.crudEmployeesService.updateEmployee(this.id,this.employeeObject);
-      // this.getAllEmployees()
+      this.crudEmployeesService.updateEmployee(this.id,this.employeeObject).subscribe({
+        next: (response) => {
+          console.log('Employee added successfully:', response);
+          this.getUsers();
+        },
+        error: (error) => {
+          console.error('Error occurred while adding employee:', error);
+        }
+  
+      });
+      
+      
 }
 getRecordToUpdate(emp:any){
   this.updateUserId = emp.eId;

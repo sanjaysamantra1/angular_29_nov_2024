@@ -11,45 +11,20 @@ export class CrudEmployeesService {
   
     addNewEmployee(employeeObject:any){
       
-      const employees_url='http://localhost:3000/employees';
-      this.httpClient.post(employees_url,employeeObject).subscribe({
-        next: (response) => {
-          console.log('Employee added successfully:', response);
-        },
-        error: (error) => {
-          console.error('Error occurred while adding employee:', error);
-        }
-      });
+      //const employee_url='http://localhost:3000/employees';
+      return this.httpClient.post(this.employee_url,employeeObject);
 
     
     }
 
     deleteEmployee(id:any){
-      this.httpClient.delete(this.employee_url+id).subscribe({
-        next: (response) => {
-          console.log('Employee added successfully:', response);
-        },
-        error: (error) => {
-          console.error('Error occurred while adding employee:', error);
-        }
-
-      });
-      
+     return this.httpClient.delete(this.employee_url+id);
       
     
   }
   updateEmployee(id:any,employeeObject:any){
-    this.httpClient.put(this.employee_url+id,employeeObject).subscribe({
-      next: (response) => {
-        console.log('Employee added successfully:', response);
-      },
-      error: (error) => {
-        console.error('Error occurred while adding employee:', error);
-      }
-
-    });
+    return this.httpClient.put(this.employee_url+id,employeeObject);
   }
-  
 
 
 }
