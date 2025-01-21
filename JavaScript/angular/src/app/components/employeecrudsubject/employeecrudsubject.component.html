@@ -1,0 +1,96 @@
+<div class="container mt-4">
+    <h1>Employee List</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+         <th>Id</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Designation</th>
+          <th>Salary</th>
+          <th>Actions</th>
+          <th>
+            <button class="btn btn-primary" (click)="openForm('add')">ADD EMPLOYEE</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(employee of employees;track $index){
+        <tr>
+        <td>{{$index}}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.gender }}</td>
+          <td>{{ employee.designation }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="openForm('update',$index,employee)">UPDATE</button>
+            <button class="btn btn-danger mx-3" (click)="deleteEmp($index)">DELETE</button>
+          </td>
+        </tr>
+    }
+      </tbody>
+    </table>
+
+
+
+
+    <div class="mt-4">
+        <h3>{{ isEditMode ? 'Update Employee' : 'Add Employee' }}</h3>
+        <form #empForm="ngForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              [(ngModel)]="formData.name"
+              name="name"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select class="form-select" [(ngModel)]="formData.gender" name="gender" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <!-- </div> -->
+          <div class="mb-3">
+            <label for="designation" class="form-label">Designation</label>
+            <input
+              type="text"
+              class="form-control"
+              id="designation"
+              [(ngModel)]="formData.designation"
+              name="designation"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="salary" class="form-label">Salary</label>
+            <input
+              type="number"
+              class="form-control"
+              id="salary"
+              [(ngModel)]="formData.salary"
+              name="salary"
+              required
+            />
+          </div>
+          
+          <button
+            type="button"
+            class="btn btn-primary mb-4"
+            [disabled]="!formData.name || !formData.salary || !formData.gender || !formData.designation"
+            (click)="submitForm()"
+          >
+            {{ isEditMode ? 'Update' : 'Add' }}
+          </button>
+        </form>
+      </div>
+    </div>
+
+  

@@ -1,1 +1,24 @@
-<p>http-demo1 works!</p>
+@if(isDataLoaded){
+  <div class="container mt-5">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>USERNAME</th>
+          <th>EMAIL</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(user of users;track $index){
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+        </tr>
+    }
+      </tbody>
+    </table>
+</div>
+}

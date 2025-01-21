@@ -8,10 +8,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { Demo1Component } from './components/product_list/demo1.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @Component({
   selector: 'app-root', // will give in index.html
-  imports: [RouterOutlet,NavbarComponent,CategoryComponent,CarouselComponent,BodyComponent,FooterComponent,FormsModule,NgxPaginationModule],
+  imports: [RouterOutlet,NavbarComponent,CategoryComponent,CarouselComponent,BodyComponent,FooterComponent,FormsModule,NgxPaginationModule,LoaderComponent],
   templateUrl: './app.component.html', //passess this html and css to that index.html in body
   styleUrl: './app.component.css'
 })

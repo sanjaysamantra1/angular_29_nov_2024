@@ -1,6 +1,9 @@
 <div class="container mt-5">
+    @if(isLoading){
     <div class="spinner">
-
+    </div>
+    }
+    @else{
         <table class="table table-striped">
             <thead>
               <tr>
@@ -29,8 +32,7 @@
           }
             </tbody>
           </table>
-    
-        </div>
+        }
 
           <div class="mt-4">
             <h3>{{ isEditMode ? 'Update Employee' : 'Add Employee' }}</h3>

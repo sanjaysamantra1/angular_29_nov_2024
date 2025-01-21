@@ -15,10 +15,13 @@ import { UsersComponent } from '../../components/users/users.component';
 import { EmployeecompComponent } from '../employeecomp/employeecomp.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { EmpcrudhttpComponent } from '../empcrudhttp/empcrudhttp.component';
+import { LoaderComponent } from '../loader/loader.component';
+import { ObservableComponent } from '../observable/observable.component';
+import { EmployeecrudsubjectComponent } from '../employeecrudsubject/employeecrudsubject.component';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent,DirectivesComponent,UserListComponent,Demo1Component,ModalComponent,EmployeeCRUDComponent,PipesComponent,ParentComponent,EmployeecrudparentComponent,TrafficlightComponent,Math1Component,Math2Component,UsersComponent,EmployeecompComponent,HttpDemo1Component,EmpcrudhttpComponent],
+  imports: [DatabindingComponent,DirectivesComponent,UserListComponent,Demo1Component,ModalComponent,EmployeeCRUDComponent,PipesComponent,ParentComponent,EmployeecrudparentComponent,TrafficlightComponent,Math1Component,Math2Component,UsersComponent,EmployeecompComponent,HttpDemo1Component,EmpcrudhttpComponent,LoaderComponent,ObservableComponent,EmployeecrudsubjectComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
@@ -35,6 +38,9 @@ export class BodyComponent {
   math1:boolean=false;
   math2:boolean=false;
   empcomp:boolean=false;
+  empcrudassgn:boolean=false;
+  loaderAssignment:boolean=false;
+
 
   dataBindingF(){
     this.dataBinding=!this.dataBinding;

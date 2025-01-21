@@ -1,4 +1,7 @@
 <div class="container mt-4 body">
+
+  <app-loader></app-loader>
+
     <div class="row text-center">
       <div class="col-md-3">
         <div class="card h-80">
@@ -117,7 +120,23 @@
       <app-employeecomp></app-employeecomp>
     } 
     
+    
+    <button class="btn btn-primary my-4 mb-5" (click)="empcrudassgn=!empcrudassgn">EmployeeCRUD-HTTP-Assignment</button>  
+    @if(empcrudassgn){
+      <app-empcrudhttp></app-empcrudhttp>
+    }
+
+    <button class="btn btn-primary my-4 mb-5" (click)="loaderAssignment=!loaderAssignment">Loader Assignment</button>  
+    @if(loaderAssignment){
     <app-http-demo1></app-http-demo1>
-    <app-empcrudhttp></app-empcrudhttp>
+    }
+
+    <app-observable></app-observable>
+
+
+
+    <app-employeecrudsubject></app-employeecrudsubject>
+
+
     </div>
 </div>

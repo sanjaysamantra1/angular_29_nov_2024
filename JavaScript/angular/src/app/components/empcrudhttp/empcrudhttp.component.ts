@@ -14,7 +14,7 @@ export class EmpcrudhttpComponent {
   isLoading = false;
   // isModalOpen =false;
   isEditMode = false;
-  formData: any = { id: 0, name: '', sal: 0, gender: '' };
+  formData: any = { id: '0', name: '', sal: 0, gender: '' };
 
 
 
@@ -53,7 +53,15 @@ export class EmpcrudhttpComponent {
       
     }
     else{
-      this.formData={ id: 0, name: '', sal: 0, gender: ''};
+      // console.log(this.employees[(this.employees.length-1)]);
+      const lastVal = this.employees[(this.employees.length-1)];
+
+      console.log(lastVal);
+      
+      // idVal=this.employees[(this.employees.length)-1]+1;
+      this.formData={ id: ++lastVal.id, name: '', sal: 0, gender: ''};
+      console.log(this.formData);
+      
     }
   }
 
@@ -86,6 +94,8 @@ export class EmpcrudhttpComponent {
 
 
   deleteEmp(id:number){
+    console.log(id);
+    
     this.empCrud.deleteEmployees(id).subscribe(
       (res)=>{
         console.log('Employee deleted', res); 
