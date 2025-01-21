@@ -7,8 +7,8 @@ import { Observable, switchMap, map } from 'rxjs';
 @Component({
   selector: 'app-switchmap',
   imports: [FormsModule, ReactiveFormsModule, CommonModule],
-  templateUrl: './observable-demo3.component.html',
-  styleUrl: './observable-demo3.component.css'
+  templateUrl: './observables.component.html',
+  styleUrl: './observables.component.css'
 })
 export class switchmapComponent {
   searchResult$: Observable<any> | undefined;

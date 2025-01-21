@@ -6,8 +6,8 @@ import { catchError, concatMap, exhaustMap, filter, forkJoin, from, fromEvent, i
 @Component({
   selector: 'app-observable-demo2',
   imports: [CommonModule],
-  templateUrl: './observable-demo2.component.html',
-  styleUrl: './observable-demo2.component.css'
+  templateUrl: './observables.component.html',
+  styleUrl: './observables.component.css'
 })
 export class ObservablesComponent {
   constructor(private httpClient: HttpClient) {

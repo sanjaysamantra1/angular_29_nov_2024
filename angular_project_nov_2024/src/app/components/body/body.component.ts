@@ -25,6 +25,7 @@ import { ObservablesComponent } from '../observables/observables.component';
 import { Message1Component } from '../message1/message1.component';
 import { Message2Component } from '../message2/message2.component';
 import { Message3Component } from '../message3/message3.component';
+import { EmpCrudSubjectComponent } from '../emp-crud-subject/emp-crud-subject.component';
 
 
 
@@ -54,9 +55,10 @@ import { Message3Component } from '../message3/message3.component';
             // LoadingComponent,
             // ObservablesComponent,
             // SwitchmapComponent,
-            Message1Component,
-            Message2Component,
-            Message3Component
+            // Message1Component,
+            // Message2Component,
+            // Message3Component,
+            EmpCrudSubjectComponent
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

@@ -1,0 +1,42 @@
+<!-- <p>emp-crud-subject works!</p> -->
+
+<h1>Employee CRUD</h1>
+
+
+
+<form (ngSubmit)="addEmp()" class="mb-3">
+  <div>
+    <label for="eid">Employee ID:</label>
+    <input id="eid" type="number" [(ngModel)]="newEmp.eid" name="eid" placeholder="Enter ID" required>
+  </div>
+  <div>
+    <label for="name">Name:</label>
+    <input id="name" type="text" [(ngModel)]="newEmp.name" name="name" placeholder="Enter Name" required>
+  </div>
+  <div>
+    <label for="sal">Salary:</label>
+    <input id="sal" type="number" [(ngModel)]="newEmp.sal" name="sal" placeholder="Enter Salary" required>
+  </div>
+  <button type="submit">Add Employee</button>
+</form>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of emp">
+      <td>{{ employee.eid }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.sal }}</td>
+      <td>
+        <button (click)="deleteEmp(employee.eid)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
