@@ -21,6 +21,8 @@ import { SubjectDemo1Component } from '../subject-demo1/subject-demo1.component'
 import { Message1Component } from '../message1/message1.component';
 import { Message2Component } from '../message2/message2.component';
 import { Message3Component } from '../message3/message3.component';
+import { SignalDemo1Component } from '../signal-demo1/signal-demo1.component';
+import { SignalDemo2Component } from '../signal-demo2/signal-demo2.component';
 
 @Component({
   selector: 'app-body',
@@ -45,9 +47,11 @@ import { Message3Component } from '../message3/message3.component';
     // ObservableDemo2Component
     // ObservableDemo3Component
     // SubjectDemo1Component
-    Message1Component,
-    Message2Component,
-    Message3Component
+    // Message1Component,
+    // Message2Component,
+    // Message3Component
+    // SignalDemo1Component
+    SignalDemo2Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
