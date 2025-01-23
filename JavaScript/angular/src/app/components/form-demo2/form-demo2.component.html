@@ -1,0 +1,47 @@
+<div class="text-center border">
+    <h4>Template Driven Form</h4>
+
+    <form #myForm="ngForm" (submit)="submitMyForm(myForm.value)" (reset)="reset(myForm)">
+        <!-- <p> -->
+            <label>First Name:</label>
+            <input name="firstName" #fName="ngModel" [(ngModel)]="user.firstName" required minlength="5" />
+            <div class="text-danger" *ngIf="fName.invalid && fName.dirty">
+                <span *ngIf="fName.hasError('required')">First Name is required.</span>
+                <span *ngIf="fName.hasError('minlength')">Minimum 3 characters required.</span>
+              </div>
+        <!-- </p> -->
+        <p>
+            <label for="lastName">Last Name:</label>
+            <input id="lastName" name="lastName" #lName="ngModel" [(ngModel)]="user.lastName">
+        </p>
+        <p>
+            <label for="email">email:</label>
+            <input name="email" [(ngModel)]="user.email" #email="ngModel" required email>
+            <span class="text-danger" *ngIf="email.dirty && email.hasError('required')">email is required</span>
+            <span class="text-danger" *ngIf="email.dirty && email.hasError('email')">email format is not correct</span>
+        </p>
+        <fieldset ngModelGroup="address">
+            <p>
+                <label for="street">street:</label>
+                <input name="street" [(ngModel)]="user.address.street">
+            </p>
+            <p>
+                <label for="city">city:</label>
+                <input name="city" [(ngModel)]="user.address.city">
+            </p>
+            <p>
+                <label for="pincode">pincode:</label>
+                <input name="pincode" [(ngModel)]="user.address.pincode" #pincode="ngModel" required pattern="[0-9]{6}">
+                <span class="text-danger" *ngIf="pincode.dirty && pincode.hasError('required')">pincode is required</span>
+            <span class="text-danger" *ngIf="pincode.dirty && pincode.hasError('pattern')">pincode format is not correct</span>
+            </p>
+        </fieldset>
+        <input type="submit" value="submit" [disabled]="myForm.invalid" />
+        <input type="reset" value="reset" />
+    </form>
+    <h2>{{myForm.status}}</h2>
+    <pre>
+        <!-- {{myForm.value | json}} -->
+    </pre>
+
+</div>

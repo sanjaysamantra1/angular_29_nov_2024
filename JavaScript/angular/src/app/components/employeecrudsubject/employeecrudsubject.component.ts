@@ -12,7 +12,8 @@ export class EmployeecrudsubjectComponent {
 
   employees: any[] = [];
   isEditMode = false;
-  formData: any = { id:'',name: '', gender: '', designation: '', salary: 0 };
+  formData: any = { id:'',
+    name: '', gender: '', designation: '', salary: 0 };
 
   constructor(private employeeService: EmployeeservicesubjectService) { }
 

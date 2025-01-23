@@ -1,0 +1,125 @@
+<div class="container">
+    <h3 class="text-center mb-4">Registration Form</h3>
+  
+    <form  #myForm="ngForm" (ngSubmit)="submitForm(myForm)" (reset)="resetForm(myForm)">
+      
+        <div>
+        <label for="firstName">First Name:</label>
+        <input
+        class="mx-2"
+          type="text"
+          name="firstName"
+          [(ngModel)]="user.firstName"
+          #firstName="ngModel"
+          required
+          minlength="3"
+        />
+        <div class="text-danger" *ngIf="firstName.invalid && firstName.dirty">
+          <span *ngIf="firstName.hasError('required')">First Name is required.</span>
+          <span *ngIf="firstName.hasError('minlength')">Minimum 3 characters required.</span>
+        </div>
+      </div>
+  
+
+      <div class="my-4">
+        <label for="lastName">Last Name:</label>
+        <input
+        class="mx-2"
+          type="text"
+          name="lastName"
+          [(ngModel)]="user.lastName"
+          #lastName="ngModel"
+          required
+        />
+        <div class="text-danger" *ngIf="lastName.invalid && lastName.dirty">
+          <span *ngIf="lastName.hasError('required')">Last Name is required.</span>
+        </div>
+      </div>
+  
+
+      <div class="my-4">
+        <label>Gender:</label>
+        <label class="mx-2">
+          <input type="radio" name="gender" [(ngModel)]="user.gender" value="Male" #gender="ngModel" required />
+          Male
+        </label>
+        <label class="mx-2">
+          <input type="radio" name="gender" [(ngModel)]="user.gender" value="Female" required />
+          Female
+        </label>
+        <div class="text-danger" *ngIf="gender.invalid && gender.dirty">
+          Gender is required.
+        </div>
+      </div>
+
+      
+      <div>
+        <label>Intrested in Gaming : </label>
+        <input class="mx-3" type="checkbox" name="hobbies" [(ngModel)]="user.hobbies">
+      </div>
+  
+
+      <div class="my-4">
+        <label for="country">Country:</label>
+        <select class="mx-2" name="country" [(ngModel)]="user.country" #country="ngModel" required >
+          <option  value="">Select your country</option>
+          @for(country of countries; track $index){
+              <option [value]="country">{{ country }}</option>
+          }
+        </select>
+        <div class="text-danger" *ngIf="country.invalid && country.dirty">
+          Country is required.
+        </div>
+      </div>
+  
+
+      <div class="my-4">
+        <label for="about">About Yourself:</label>
+        <textarea
+        class="mx-2"
+          name="about"
+          [(ngModel)]="user.about"
+          #about="ngModel"
+          required
+          minlength="10"
+        ></textarea>
+        <div class="text-danger" *ngIf="about.invalid && about.dirty">
+          <span *ngIf="about.hasError('required')">About yourself is required.</span>
+          <span *ngIf="about.hasError('minlength')">Minimum 10 characters required.</span>
+        </div>
+      </div>
+  
+
+      <div class="mb-4">
+        <button type="submit" [disabled]="myForm.invalid">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </div>
+  
+
+
+  <style>
+
+    input.ng-valid{
+        border: 4px solid green;
+    }
+    input.ng-invalid{
+        border: 2px solid red;
+    }
+
+    
+    select.ng-valid{
+        border: 4px solid green;
+    }
+    select.ng-invalid{
+        border: 2px solid red;
+    }
+
+    textarea.ng-valid{
+        border: 4px solid green;
+    }
+    textarea.ng-invalid{
+        border: 2px solid red;
+    }
+  </style>
