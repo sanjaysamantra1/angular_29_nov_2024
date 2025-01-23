@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { FormsModule } from '@angular/forms';
 
@@ -10,14 +10,17 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent{
+export class UserComponent implements OnInit{
   users: any = [];
   isLoading = true;
   formData: { id?: number; name: string; email: string } = { name: '', email: '' };
   isEditMode = false;
 
   constructor(private userService: UsersService) {
-    this.fetchUsers();
+  }
+  
+  ngOnInit(): void {
+    this.fetchUsers();  
   }
 
   fetchUsers(): void {

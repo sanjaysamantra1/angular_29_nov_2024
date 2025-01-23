@@ -12,6 +12,8 @@ import { TrafficSignalComponent } from "../traffic-signal/traffic-signal.compone
 import { UsersComponent } from "../users/users.component";
 import { EmployeeComponent } from '../employee/employee.component';
 import { UserComponent } from "../user/user.component";
+import { LoadingComponent } from "../loading/loading.component";
+import { EmployeeCrudSubjectComponent } from "../employee-crud-subject/employee-crud-subject.component";
 
 @Component({
   selector: 'app-body',
@@ -22,10 +24,7 @@ import { UserComponent } from "../user/user.component";
     // PaginationassignComponent,
     // PipesComponent,
     // EmployeeCrudComponent,
-    // TrafficSignalComponent,
-    // EmployeeComponent,
-    // UsersComponent,
-    UserComponent
+    EmployeeCrudSubjectComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

@@ -1,0 +1,64 @@
+<div>
+  <h2>Employee Management</h2>
+
+  <div class="employee-form">
+    <h3>{{ isEditMode ? 'Update Employee' : 'Add Employee' }}</h3>
+    <form #employeeForm="ngForm" (ngSubmit)="submitForm(employeeForm)">
+      <div class="form-group">
+        <label for="id">Employee ID:</label>
+        <input type="number" id="id" name="id" class="form-control" [(ngModel)]="editingEmployee.id " [readonly]="isEditMode"  />
+      </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          type="text" id="name" name="name" class="form-control" [(ngModel)]="editingEmployee.name "  />
+      </div>
+      <div class="form-group">
+
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" class="form-control" [(ngModel)]="editingEmployee.department "  />
+      </div>
+      <div class="form-group">
+        <label for="designation">Designation:</label>
+        <input type="text" id="designation" name="designation" class="form-control" [(ngModel)]="editingEmployee.position "  />
+      </div>
+      <div class="form-group">
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" name="salary" class="form-control" [(ngModel)]="editingEmployee.salary"  />
+      </div>
+      <button type="submit" class="btn submit-btn"> {{ isEditMode ? 'Update' : 'Submit' }} </button>
+      @if (isEditMode) {
+        <button type="button" class="btn cancel-btn" (click)="cancelEdit()"> Cancel </button>
+      }
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (employee of employees; track employee) {
+        <tr>
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.department }}</td>
+          <td>{{ employee.position }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>
+            <button class="btn" (click)="editEmployee(employee.id)">Update</button>
+            <button class="btn" (click)="deleteEmployee(employee.id)">Delete</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
