@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { passwordMatchValidator } from '../../validators/passwordmatchvalidator';
+import { ageRangeValidator } from '../../validators/ageRangeValidator';
 
 @Component({
   selector: 'app-form-demo3',
@@ -38,13 +40,16 @@ export class FormDemo3Component {
     this.registerForm = this.fb.group({
       firstName: ['sachin', [Validators.required, Validators.minLength(5)]],
       lastName: [],
+      age: [25, [Validators.required,ageRangeValidator(18,60)]],
       email: [],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
       address: this.fb.group({
         street: [],
         city: [],
         pincode: [],
       })
-    })
+    }, { validators: passwordMatchValidator() })
   }
 
   submitMyForm(formData: any) {

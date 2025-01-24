@@ -57,8 +57,8 @@ import { FormDemo4Component } from '../form-demo4/form-demo4.component';
     // SignalDemo1Component
     // SignalDemo2Component
     // FormDemo1Component,
-    // FormDemo2Component
-    // FormDemo3Component
+    // FormDemo2Component,
+    FormDemo3Component,
     FormDemo4Component
   ],
   templateUrl: './body.component.html',

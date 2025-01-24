@@ -6,11 +6,11 @@
       FirstName:
       <input formControlName="firstName">
       @if (registerForm.controls.firstName.hasError('required')) {
-        <span class="text-danger">FirstName is
+      <span class="text-danger">FirstName is
         required</span>
       }
       @if (registerForm.controls.firstName.hasError('minlength')) {
-        <span class="text-danger">Minimum 5 chars</span>
+      <span class="text-danger">Minimum 5 chars</span>
       }
     </p>
     <p>
@@ -18,8 +18,29 @@
       <input formControlName="lastName">
     </p>
     <p>
+      Age:
+      <input formControlName="age">
+      @if (registerForm.controls.age.hasError('invalidAge')) {
+        <span class="text-danger">Please enter age between 18-60</span>
+        }
+    </p>
+    <p>
       email:
       <input formControlName="email">
+    </p>
+    <p>
+      password:
+      <input formControlName="password">
+      @if (registerForm.hasError('passwordMismatch')) {
+        <span class="text-danger">Password & confirmPassword mismatch</span>
+        }
+    </p>
+    <p>
+      confirm password:
+      <input formControlName="confirmPassword">
+      @if (registerForm.hasError('passwordMismatch')) {
+        <span class="text-danger">Password & confirmPassword mismatch</span>
+        }
     </p>
     <div formGroupName="address">
       <p>
