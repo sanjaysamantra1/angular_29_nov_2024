@@ -1,0 +1,71 @@
+<h3 class="text-center">Model Driven Form</h3>
+
+<form [formGroup]="registerForm" (submit)="submit(registerForm)" class="border p-2 offset-4 col-4">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName" />
+    <span class="text-danger" *ngIf="registerForm.controls['firstName'].hasError('required')">First Name is Required</span>
+    <span class="text-danger" *ngIf="registerForm.controls['firstName'].hasError('minlength')">Minimum 5 characters required</span>
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName" />
+    <span class="text-danger" *ngIf="registerForm.controls['lastName'].hasError('required')">Last Name is Required</span>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" />
+    <span class="text-danger" *ngIf="registerForm.controls['email'].hasError('required')">Email is Required</span>
+    <span class="text-danger" *ngIf="registerForm.controls['email'].hasError('email')">Invalid Email Format</span>
+  </div>
+  <div>
+    <label>Gender:</label>
+    <label><input type="radio" formControlName="gender" value="Male" /> Male</label>
+    <label><input type="radio" formControlName="gender" value="Female" /> Female</label>
+    <span class="text-danger" *ngIf="registerForm.controls['gender'].hasError('required')">Gender is Required</span>
+  </div>
+  <div>
+    <label for="preferences">Preferences:</label>
+    <label><input type="checkbox" formControlName="subscribe" /> Subscribe to Newsletter</label>
+  </div>
+  <div formGroupName="address">
+    <div>
+      <label for="city">City:</label>
+      <input id="city" formControlName="city" />
+      <span class="text-danger" *ngIf="registerForm.get('address.city')?.hasError('required')">City is Required</span>
+    </div>
+    <div>
+      <label for="state">State:</label>
+      <input id="state" formControlName="state" />
+    </div>
+    <div>
+      <label for="pin">PIN:</label>
+      <input id="pin" formControlName="pin" />
+      <span class="text-danger" *ngIf="registerForm.get('address.pin')?.hasError('minlength')">Minimum 5 digits required</span>
+    </div>
+  </div>
+  <div>
+    <label for="comments">Comments:</label>
+    <textarea id="comments" formControlName="comments"></textarea>
+  </div>
+  <div>
+    <label for="country">Country:</label>
+    <select id="country" formControlName="country">
+      <option value="">Select Country</option>
+      <option value="UK">Australia</option>
+      <option value="UK">Canada</option>
+      <option value="India">India</option>
+      <option value="UK">UK</option>
+      <option value="USA">USA</option>
+    </select>
+    <span class="text-danger" *ngIf="registerForm.controls['country'].hasError('required')">Country is Required</span>
+  </div>
+  <div>
+    <input type="submit" value="Submit" [disabled]="registerForm.invalid" />
+    <input type="reset" value="Clear" class="mx-1" />
+  </div>
+</form>
+
+<pre>
+  {{ registerForm.value | json }}
+</pre>

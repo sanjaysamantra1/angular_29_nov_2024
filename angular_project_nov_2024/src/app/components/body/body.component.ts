@@ -26,6 +26,9 @@ import { Message1Component } from '../message1/message1.component';
 import { Message2Component } from '../message2/message2.component';
 import { Message3Component } from '../message3/message3.component';
 import { EmpCrudSubjectComponent } from '../emp-crud-subject/emp-crud-subject.component';
+import { Form1Component } from '../form1/form1.component';
+import { Form2Component } from '../form2/form2.component';
+import { RegistrationformComponent } from '../registrationform/registrationform.component';
 
 
 
@@ -58,7 +61,10 @@ import { EmpCrudSubjectComponent } from '../emp-crud-subject/emp-crud-subject.co
             // Message1Component,
             // Message2Component,
             // Message3Component,
-            EmpCrudSubjectComponent
+            // EmpCrudSubjectComponent,
+            Form1Component,
+            Form2Component,
+            RegistrationformComponent
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
