@@ -21,10 +21,12 @@ import { HttpDemo1Component } from "../http-demo1/http-demo1.component";
 import { UsersComponent } from "../users/users.component";
 import { UserWithModelsComponent } from "../user-with-models/user-with-models.component";
 import { LoadingComponent } from "../loading/loading.component";
+import { TemplateDrivenFormComponent } from "../template-driven-form/template-driven-form.component";
+import { TemplateDrivenForm2Component } from "../template-driven-form2/template-driven-form2.component";
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent, EmployeeComponent, UserComponent, Demo2Component, Math1Component, Math2Component, FormDemo1Component, HttpDemo1Component, UsersComponent, UserWithModelsComponent, LoadingComponent],
+  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent, EmployeeComponent, UserComponent, Demo2Component, Math1Component, Math2Component, FormDemo1Component, HttpDemo1Component, UsersComponent, UserWithModelsComponent, LoadingComponent, TemplateDrivenFormComponent, TemplateDrivenForm2Component],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
