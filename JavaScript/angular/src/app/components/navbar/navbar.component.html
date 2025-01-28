@@ -3,7 +3,7 @@
   'navbar-light bg-light': !isDarkMode
 }">
   <div class="container-fluid">
-    <a class="nav-link navbar-brand" href="#">ShopCart</a>
+    <a class="nav-link navbar-brand" routerLink="home" routerLinkActive="active-link">ShopCart</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -37,10 +37,10 @@
 
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Cart</a>
+          <a class="nav-link"  href="/cart" routerLink="cart">Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/login">Login</a>
+          <a class="nav-link" aria-current="page" href="/login" routerLink="login">Login</a>
         </li>
       </ul>
     </div>

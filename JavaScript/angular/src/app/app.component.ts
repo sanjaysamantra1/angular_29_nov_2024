@@ -9,10 +9,11 @@ import { Demo1Component } from './components/product_list/demo1.component';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoaderComponent } from './components/loader/loader.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @Component({
   selector: 'app-root', // will give in index.html
-  imports: [RouterOutlet,NavbarComponent,CategoryComponent,CarouselComponent,BodyComponent,FooterComponent,FormsModule,NgxPaginationModule,LoaderComponent],
+  imports: [RouterOutlet,NavbarComponent,CategoryComponent,CarouselComponent,BodyComponent,FooterComponent,FormsModule,NgxPaginationModule,LoaderComponent,CartComponent],
   templateUrl: './app.component.html', //passess this html and css to that index.html in body
   styleUrl: './app.component.css'
 })

@@ -21,8 +21,8 @@ export class FormDemo1Component {
 
   countries = ['United States', 'Canada', 'Australia', 'India'];
 
-  submitForm(form: any) {
-    console.log('Form Submitted!', form.value);
+  submitForm(myForm: any) {
+    console.log('Form Submitted!', myForm.value);
   }
 
   resetForm(myForm: any) {
