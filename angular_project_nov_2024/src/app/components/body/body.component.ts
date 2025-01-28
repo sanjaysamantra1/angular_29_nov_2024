@@ -29,6 +29,7 @@ import { EmpCrudSubjectComponent } from '../emp-crud-subject/emp-crud-subject.co
 import { Form1Component } from '../form1/form1.component';
 import { Form2Component } from '../form2/form2.component';
 import { RegistrationformComponent } from '../registrationform/registrationform.component';
+import { RouterOutlet } from '@angular/router';
 
 
 
@@ -62,9 +63,10 @@ import { RegistrationformComponent } from '../registrationform/registrationform.
             // Message2Component,
             // Message3Component,
             // EmpCrudSubjectComponent,
-            Form1Component,
-            Form2Component,
-            RegistrationformComponent
+            // Form1Component,
+            // Form2Component,
+            // RegistrationformComponent,
+            RouterOutlet
             ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
