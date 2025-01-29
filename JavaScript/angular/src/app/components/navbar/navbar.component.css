@@ -15,3 +15,9 @@
   .seaching .search-button {
     width: 100px; /* Adjust the button width if necessary */
   }
+
+
+
+  .active{
+    background-color: grey;
+}
