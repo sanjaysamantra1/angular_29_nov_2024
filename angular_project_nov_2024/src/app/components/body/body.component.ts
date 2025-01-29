@@ -21,6 +21,12 @@ import { Demo2Component } from "../demo2/demo2.component";
 import { HttpDemo1Component } from "../http-demo1/http-demo1.component";
 import { UserWithModelComponent } from "../user-with-model/user-with-model.component";
 import { LoadingComponent } from "../loading/loading.component";
+import { ObservableDemo1Component } from "../observable-demo1/observable-demo1.component";
+import { ObservableDemo2Component } from "../observable-demo2/observable-demo2.component";
+import { SignalDemo1Component } from "../signal-demo1/signal-demo1.component";
+import { SignalDemo2Component } from "../signal-demo2/signal-demo2.component";
+import { FormDemo1Component } from "../form-demo1/form-demo1.component";
+import { FormDemo2Component } from "../form-demo2/form-demo2.component";
 
 @Component({
   selector: 'app-body',
@@ -47,7 +53,13 @@ import { LoadingComponent } from "../loading/loading.component";
     Demo2Component,
     HttpDemo1Component,
     UserWithModelComponent,
-    LoadingComponent
+    LoadingComponent,
+    ObservableDemo1Component,
+    ObservableDemo2Component,
+    SignalDemo1Component,
+    SignalDemo2Component,
+    FormDemo1Component,
+    FormDemo2Component
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

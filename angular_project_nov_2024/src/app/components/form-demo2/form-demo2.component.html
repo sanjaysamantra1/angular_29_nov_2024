@@ -1,0 +1,53 @@
+ <div class="text-center">
+    <h4>Template Driven Form</h4>
+
+    <form #myForm="ngForm" (submit)="submitMyForm(myForm.value)" (reset)="reset(myForm)">
+        <p>
+            <label for="firstName">FirstName:</label>
+            <input name="firstName" #fName="ngModel" [(ngModel)] = "user.firstName" required minlength="5">
+            @if(fName.dirty && fName.hasError('required')){
+                <span class="text-danger">FirstName is required</span>
+            }
+            @if(fName.dirty && fName.hasError('minlength')){
+                <span class="text-danger">Minimum 5 characters required</span>
+            }
+            
+            <!-- <h3>{{firstName.value}}</h3> -->
+            <!-- <h3>{{myForm.value.firstName}}</h3> -->
+             value:{{fName.value}}, valid?:{{fName.valid}}
+             value using form :{{myForm.value.firstName}}
+        </p>
+        <p>
+            <label for="lastName">LastName:</label>
+            <input id="lastName" name="lastName" #lName="ngModel" [(ngModel)] = "user.lastName">
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input name="email" #email="ngModel" [(ngModel)] = "user.email" required email>
+            <span class="text-danger" *ngIf="email.dirty && email.hasError('required')">Email is required</span>
+            <span class="text-danger" *ngIf="email.dirty && email.hasError('email')">Email format is not correct</span>
+        </p>
+        <fieldset ngModelGroup="address">
+            <p>
+                <label for="street">Street:</label>
+                <input name="street" [(ngModel)] = "user.address.street">
+            </p>
+            <p>
+                <label for="city">City:</label>
+                <input name="city" [(ngModel)] = "user.address.city">
+            </p>
+            <p>
+                <label for="pincode"> Pincode:</label>
+                <input name="pincode" [(ngModel)] = "user.address.pincode"#pincode= "ngModel" required pattern="[0-9]{6}">
+                <span class="text-danger" *ngIf="pincode.dirty && pincode.hasError('required')">pincode is required</span>
+                <span class="text-danger" *ngIf="pincode.dirty && pincode.hasError('pattern')">pincode format is not correct</span>
+            </p>
+        </fieldset>
+        <input type="submit" value="Submit" [disabled] = "myForm.invalid">
+        <input type="reset" value="Reset">
+    </form>
+    <h2>{{myForm.status}} {{myForm.value.firstName}}</h2>
+    <pre>
+        {{myForm.value | json}}
+    </pre>
+ </div>
