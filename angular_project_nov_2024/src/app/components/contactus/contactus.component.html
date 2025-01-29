@@ -1,1 +1,10 @@
 <h2 class="text-center">This is Contact Us Component</h2>
+
+<form name='myForm' (submit)="submitMyForm()">
+    Name:
+    <input name='uname' [(ngModel)]='name' required /><br><br>
+    Age:
+    <input name='uage'  [(ngModel)]='age' />
+    <input type="submit" value="submit" />
+</form>
+<h1>Form has changes:: {{hasChanges?'Yes':'No'}}</h1>
