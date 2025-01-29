@@ -34,10 +34,48 @@ import { SignalDemo1Component } from "../signal-demo1/signal-demo1.component";
 import { SignalDemo2Component } from "../signal-demo2/signal-demo2.component";
 import { TemplateDrivenForm3Component } from "../template-driven-form3/template-driven-form3.component";
 import { TemplateDrivenForm4Component } from "../template-driven-form4/template-driven-form4.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent, EmployeeComponent, UserComponent, Demo2Component, Math1Component, Math2Component, FormDemo1Component, HttpDemo1Component, UsersComponent, UserWithModelsComponent, LoadingComponent, TemplateDrivenFormComponent, TemplateDrivenForm2Component, ObservableDemo1Component, ObservableDemo2Component, ObservableDemo3Component, Message1Component, Message2Component, Message3Component, SubjectDemo1Component, SignalDemo1Component, SignalDemo2Component, TemplateDrivenForm3Component, TemplateDrivenForm4Component],
+  imports: [
+    DatabindingComponent, 
+    EmployeesComponent, 
+    DirectivesComponent, 
+    Demo1Component, 
+    ProductsComponent, 
+    EmployeeCRUDComponent, 
+    PipesComponent, 
+    ParentComponent, 
+    MyModalComponent, 
+    FormModalComponent, 
+    FatherComponent, 
+    TrafficLightComponent, 
+    EmployeeComponent, 
+    UserComponent, 
+    Demo2Component, 
+    Math1Component, 
+    Math2Component, 
+    FormDemo1Component, 
+    HttpDemo1Component, 
+    UsersComponent, 
+    UserWithModelsComponent, 
+    LoadingComponent, 
+    TemplateDrivenFormComponent, 
+    TemplateDrivenForm2Component, 
+    ObservableDemo1Component, 
+    ObservableDemo2Component, 
+    ObservableDemo3Component, 
+    Message1Component,
+    Message2Component,
+    Message3Component,
+    SubjectDemo1Component,
+    SignalDemo1Component,
+    SignalDemo2Component,
+    TemplateDrivenForm3Component,
+    TemplateDrivenForm4Component,
+    RouterOutlet
+  ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })

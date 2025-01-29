@@ -9,5 +9,7 @@
         <p class="card-text">{{product.rating.rate}} <fa-icon [icon]="faStar"></fa-icon>
             ({{product.rating.count}}) reviews</p>
         <!-- <a href="#" class="btn btn-primary">Details</a> -->
+        <a href="#" class="btn btn-primary" [routerLink]="['/productdetails']" 
+                    [queryParams]="{id:product.id,category:product.category,price:product.price}">Details</a>
     </div>
 </div>
