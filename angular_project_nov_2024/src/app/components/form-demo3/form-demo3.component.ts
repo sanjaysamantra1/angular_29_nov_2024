@@ -48,7 +48,8 @@ export class FormDemo3Component {
         city: [],
         pincode: [],
       })
-    }, { validators: passwordMatchValidator() })
+    // }, { validators: passwordMatchValidator() })
+    })
   }
 
   submitMyForm(formData: any) {
