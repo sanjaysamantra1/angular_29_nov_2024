@@ -1,0 +1,60 @@
+<div class="border text-center">
+    <p>form-demo3 works!</p>
+    <form [formGroup]="registerForm" (submit)="submitMyForm(registerForm)" class="border p-2">
+        <p>
+            FirstName:
+            <input formControlName="firstName">
+            <span class="text-danger" *ngIf="registerForm.controls.firstName.hasError('required')">FirstName is
+                required</span>
+            <span class="text-danger" *ngIf="registerForm.controls.firstName.hasError('minlength')">Minimum 5 chars</span>
+        </p>
+        <p>
+            lastName:
+            <input formControlName="lastName">
+        </p>
+        <p>
+            Age:
+            <input formControlName="age">
+            @if (registerForm.controls.age.hasError('invalidAge')) {
+              <span class="text-danger">Please enter age between 18-60</span>
+              }
+          </p>
+        <p>
+            email:
+            <input formControlName="email">
+        </p>
+        <p>
+            password:
+            <input formControlName="password">
+            @if (registerForm.hasError('passwordMismatch')) {
+              <span class="text-danger">Password & confirmPassword mismatch</span>
+              }
+          </p>
+          <p>
+            confirm password:
+            <input formControlName="confirmPassword">
+            @if (registerForm.hasError('passwordMismatch')) {
+              <span class="text-danger">Password & confirmPassword mismatch</span>
+              }
+          </p>
+        <div formGroupName="address">
+            <p>
+                street:
+                <input formControlName="street">
+            </p>
+            <p>
+                city:
+                <input formControlName="city">
+            </p>
+            <p>
+                pincode:
+                <input formControlName="pincode">
+            </p>
+        </div>
+        <input type="submit" value="submit" class="mx-1">
+        <input type="reset" value="reset">
+    </form>
+    <button (click)="setFormValue()">set value</button>
+    <button (click)="patchFormValue()">patch value</button>
+    <pre>{{registerForm.value | json}}</pre>
+</div>
