@@ -1,0 +1,13 @@
+<p>signal-demo1 works!</p>
+
+<div class="border">
+    <h4>Num value is {{num()}}</h4>
+    <h4>Square value is {{numSquare()}}</h4>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()" class="m-1">Reset</button>
+    <button (click)="increment()">Increment</button>
+	<hr/>
+	 @for(msg of messages();track $index){
+		<div>{{msg}}</div>
+     }
+</div>

@@ -1,0 +1,21 @@
+<div class="border text-center">
+    User Details using signal
+    <div>
+        UserId : {{userId()}}
+        <button class="btn btn-primary" (click)="increment()">Increment</button>
+    </div>
+    <div class="col-sm-4 offset-4">
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjWGGs4b5kwJavNNlUaFNRl3TY9hWEJDNsg&s"
+                class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{user?.username}}</h5>
+                <p class="card-text">{{user?.name}}</p>
+                <p class="card-text">{{user?.email}}</p>
+                <p class="card-text">{{user?.address?.city}}</p>
+                <p class="card-text">{{user?.phone}}</p>
+                <a href="#" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+    </div>
+</div>
