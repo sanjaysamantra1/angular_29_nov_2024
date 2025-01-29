@@ -23,10 +23,13 @@ import { UserWithModelsComponent } from "../user-with-models/user-with-models.co
 import { LoadingComponent } from "../loading/loading.component";
 import { TemplateDrivenFormComponent } from "../template-driven-form/template-driven-form.component";
 import { TemplateDrivenForm2Component } from "../template-driven-form2/template-driven-form2.component";
+import { ObservableDemo1Component } from "../observable-demo1/observable-demo1.component";
+import { ObservableDemo2Component } from "../observable-demo2/observable-demo2.component";
+import { ObservableDemo3Component } from "../observable-demo3/observable-demo3.component";
 
 @Component({
   selector: 'app-body',
-  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent, EmployeeComponent, UserComponent, Demo2Component, Math1Component, Math2Component, FormDemo1Component, HttpDemo1Component, UsersComponent, UserWithModelsComponent, LoadingComponent, TemplateDrivenFormComponent, TemplateDrivenForm2Component],
+  imports: [DatabindingComponent, EmployeesComponent, DirectivesComponent, Demo1Component, ProductsComponent, EmployeeCRUDComponent, PipesComponent, ParentComponent, MyModalComponent, FormModalComponent, FatherComponent, TrafficLightComponent, EmployeeComponent, UserComponent, Demo2Component, Math1Component, Math2Component, FormDemo1Component, HttpDemo1Component, UsersComponent, UserWithModelsComponent, LoadingComponent, TemplateDrivenFormComponent, TemplateDrivenForm2Component, ObservableDemo1Component, ObservableDemo2Component, ObservableDemo3Component],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
