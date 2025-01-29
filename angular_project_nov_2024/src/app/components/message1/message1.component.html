@@ -1,0 +1,10 @@
+<p>message1 works!</p>
+<table class="table table-bordered">
+    <tbody>
+        @for(msg of messages;track $index){
+        <tr>
+            <td>{{msg.text}}</td>
+        </tr>
+        }
+    </tbody>
+</table>
