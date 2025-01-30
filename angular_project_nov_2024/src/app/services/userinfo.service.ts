@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserinfoService {
 
-  userRole: string = 'student';
+  userRole: string = 'teacher';
 
   constructor() { }
 }
