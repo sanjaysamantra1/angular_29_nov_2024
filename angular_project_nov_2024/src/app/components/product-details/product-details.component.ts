@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,9 +14,14 @@ export class ProductDetailsComponent {
 
   }
   ngOnInit() {
-    this.activatedRoute.queryParams.subscribe(MyQueryParams => {
-      console.log(MyQueryParams);
-      this.product = MyQueryParams;
-    });
+    // this.activatedRoute.queryParams.subscribe((MyQueryParams: any) => {
+    //   this.http.get(`http://fakestoreapi.com/products/${MyQueryParams?.id}`).subscribe(response => {
+    //     this.product = response;
+    //   })
+    // });
+
+    this.activatedRoute.data.subscribe((response:any) => {
+      this.product = response.product;
+    })
   }
 }

@@ -1,11 +1,13 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { LargeComponent } from '../large/large.component';
 
 @Component({
   selector: 'app-aboutus',
   imports: [
-    RouterLink
+    RouterLink,
+    LargeComponent
   ],
   templateUrl: './aboutus.component.html',
   styleUrl: './aboutus.component.css'
