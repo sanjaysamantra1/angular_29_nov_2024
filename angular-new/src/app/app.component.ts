@@ -7,18 +7,20 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DatabindingComponent } from './components/databinding/databinding.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { Demo2Component } from './components/demo2/demo2.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [
     NavbarComponent, 
-    CategoriesComponent, 
-    CarouselComponent, 
-    BodyComponent, 
-    FooterComponent, 
-    DatabindingComponent,
-    DirectivesComponent,
-    Demo2Component
+    // CategoriesComponent, 
+    // CarouselComponent, 
+    // BodyComponent, 
+    // FooterComponent, 
+    // DatabindingComponent,
+    // DirectivesComponent,
+    // Demo2Component,
+    RouterOutlet
    ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

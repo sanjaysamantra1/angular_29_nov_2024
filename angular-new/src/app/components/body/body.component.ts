@@ -14,17 +14,19 @@ import { EmployeeComponent } from '../employee/employee.component';
 import { UserComponent } from "../user/user.component";
 import { LoadingComponent } from "../loading/loading.component";
 import { EmployeeCrudSubjectComponent } from "../employee-crud-subject/employee-crud-subject.component";
+import { RegistrationFormComponent } from "../registration-form/registration-form.component";
 
 @Component({
   selector: 'app-body',
   imports: [
     // DatabindingassignComponent,
     // EmployeeAssignmentComponent,
-    // UserListComponent,
+    UserListComponent,
     // PaginationassignComponent,
     // PipesComponent,
     // EmployeeCrudComponent,
-    EmployeeCrudSubjectComponent
+    // EmployeeCrudSubjectComponent,
+    // RegistrationFormComponent
 ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

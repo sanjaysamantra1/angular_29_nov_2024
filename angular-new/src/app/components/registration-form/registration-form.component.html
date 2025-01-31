@@ -1,0 +1,80 @@
+<div class="container">
+  <h2>Registration Form</h2>
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)" novalidate>
+    <!-- Name Input -->
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" class="form-control" [(ngModel)]="user.name" #name="ngModel" required />
+      @if (name.invalid && name.touched) {
+        <div class="error">
+          Name is required.
+        </div>
+      }
+    </div>
+
+    <!-- Gender Radio Buttons -->
+    <div>
+      <label>Gender:</label>
+      <div>
+        <input type="radio" id="male" name="gender" value="Male" [(ngModel)]="user.gender" #gender="ngModel" required/>
+        <label for="male">Male</label>
+      </div>
+      <div>
+        <input type="radio" id="female" name="gender" value="Female" [(ngModel)]="user.gender" />
+        <label for="female">Female</label>
+      </div>
+      @if (gender.invalid && registrationForm.submitted) {
+        <div class="error">
+          Please select a gender.
+        </div>
+      }
+    </div>
+
+    <!-- Skills Checkboxes -->
+    <div>
+      <label>Skills:</label>
+      <div>
+        <input type="checkbox" id="java" name="skills" [(ngModel)]="user.skills" value="Java" />
+        <label for="java">Java</label>
+      </div>
+      <div>
+        <input type="checkbox" id="angular" name="skills" [(ngModel)]="user.skills" value="Angular" />
+        <label for="angular">Angular</label>
+      </div>
+      <div>
+        <input type="checkbox" id="sql" name="skills" [(ngModel)]="user.skills" value="SQL" />
+        <label for="sql">SQL</label>
+      </div>
+    </div>
+
+    <!-- Dropdown -->
+    <div>
+      <label for="country">Country:</label>
+      <select id="country" name="country" class="form-control" [(ngModel)]="user.country" #country="ngModel" required >
+        <option value="" disabled>Select your country</option>
+        @for (c of countries; track c) {
+          <option [value]="c">{{ c }}</option>
+        }
+      </select>
+      @if (country.invalid && country.touched) {
+        <div class="error">
+          Country is required.
+        </div>
+      }
+    </div>
+
+    <!-- Message Textarea -->
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" class="form-control" [(ngModel)]="user.message" #message="ngModel" required ></textarea>
+      @if (message.invalid && message.touched) {
+        <div class="error">
+          Message is required.
+        </div>
+      }
+    </div>
+    
+<!-- Submit Button -->
+    <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
+  </form>
+</div>

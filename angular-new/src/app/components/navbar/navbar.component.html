@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,4 +33,14 @@
         </form>
       </div>
     </div>
+  </nav> -->
+  <nav>
+    <div class="navigation">
+      <button class="nav-btn" [routerLink]="['/dashboard']" routerLinkActive="active-btn">Dashboard</button>
+      <button class="nav-btn" [routerLink]="['/profile']" routerLinkActive="active-btn">Profile</button>
+      <button class="nav-btn" [routerLink]="['/settings']" routerLinkActive="active-btn">Settings</button>
+      <button class="nav-btn" [routerLink]="['/users']" routerLinkActive="active-btn">Users</button> 
+      <button class="btn btn-primary" [routerLink]="['/productdetails']" [queryParams]="{id:x.id,name:x.name,price:x.price}">View Details</button>
+    </div>
   </nav>
+
