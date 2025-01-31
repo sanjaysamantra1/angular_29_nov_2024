@@ -8,6 +8,8 @@ import { tokenInterceptor } from './interceptors/token.interceptor';
 import { retryInterceptor } from './interceptors/retry.interceptor';
 import { errorInterceptor } from './interceptors/error.interceptor';
 import { loadingInterceptor } from './interceptors/loading.interceptor';
+import { provideStore } from '@ngrx/store';
+import { counterReducer } from './ngrx/reducers/counter.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,6 +21,7 @@ export const appConfig: ApplicationConfig = {
       // retryInterceptor,
       // errorInterceptor,
       loadingInterceptor
-    ]))
+    ])),
+    provideStore({ count: counterReducer })
   ]
 };
