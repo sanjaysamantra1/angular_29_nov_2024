@@ -1,0 +1,20 @@
+<h3>This is Employee CRUD using Ngrx</h3>
+
+<table class="table table-bordered table-striped">
+    <thead></thead>
+    <tbody>
+        @for(employee of employees;track $index){
+            <tr>
+                <td>{{employee.id}}</td>
+                <td>{{employee.eId}}</td>
+                <td>{{employee.fName}}</td>
+                <td>{{employee.lName}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.email}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteEmp(employee.id)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

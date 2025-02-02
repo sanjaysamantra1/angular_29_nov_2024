@@ -10,18 +10,22 @@ import { errorInterceptor } from './interceptors/error.interceptor';
 import { loadingInterceptor } from './interceptors/loading.interceptor';
 import { provideStore } from '@ngrx/store';
 import { counterReducer } from './ngrx/reducers/counter.reducer';
+import { provideEffects } from '@ngrx/effects';
+import { employeesReducer } from './ngrx/reducers/employee.reducer';
+import { EmployeeEffects } from './ngrx/effects/employee.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(withInterceptors([
-      // loggerInterceptor,
-      // tokenInterceptor,
-      // retryInterceptor,
-      // errorInterceptor,
-      loadingInterceptor
+        // loggerInterceptor,
+        // tokenInterceptor,
+        // retryInterceptor,
+        // errorInterceptor,
+        loadingInterceptor
     ])),
-    provideStore({ count: counterReducer })
-  ]
+    provideStore({ count: counterReducer,employees:employeesReducer }),
+    provideEffects(EmployeeEffects)
+]
 };
