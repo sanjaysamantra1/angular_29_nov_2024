@@ -13,19 +13,20 @@ import { counterReducer } from './ngrx/reducers/counter.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { employeesReducer } from './ngrx/reducers/employee.reducer';
 import { EmployeeEffects } from './ngrx/effects/employee.effects';
+import { todoReducer } from './ngrx/reducers/todo.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(withInterceptors([
-        // loggerInterceptor,
-        // tokenInterceptor,
-        // retryInterceptor,
-        // errorInterceptor,
-        loadingInterceptor
+      // loggerInterceptor,
+      // tokenInterceptor,
+      // retryInterceptor,
+      // errorInterceptor,
+      loadingInterceptor
     ])),
-    provideStore({ count: counterReducer,employees:employeesReducer }),
+    provideStore({ count: counterReducer, employees: employeesReducer, todoArr: todoReducer }),
     provideEffects(EmployeeEffects)
-]
+  ]
 };

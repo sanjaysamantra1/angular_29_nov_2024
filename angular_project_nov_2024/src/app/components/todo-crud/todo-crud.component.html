@@ -1,0 +1,11 @@
+<p>todo-crud works!</p>
+
+<ol>
+    @for(todo of todos$ |async;track $index){
+        <li>
+            <span>{{todo.text}}</span>
+            <button class="btn btn-danger m-2">Del</button>
+            <button class="btn btn-secondary">Toggle</button>
+        </li>
+    }
+</ol>
