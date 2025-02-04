@@ -40,7 +40,7 @@ Angular Course Content
 -Form
 -Routing
 -Lazy Loading
--NgRx (State management)
 -Build & Deploy
+-NgRx (State management)
 -Angular Material
 -Unit testing (Jasmine + Karma)

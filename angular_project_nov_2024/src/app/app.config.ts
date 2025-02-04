@@ -14,6 +14,7 @@ import { provideEffects } from '@ngrx/effects';
 import { employeesReducer } from './ngrx/reducers/employee.reducer';
 import { EmployeeEffects } from './ngrx/effects/employee.effects';
 import { todoReducer } from './ngrx/reducers/todo.reducer';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,6 +28,6 @@ export const appConfig: ApplicationConfig = {
       loadingInterceptor
     ])),
     provideStore({ count: counterReducer, employees: employeesReducer, todoArr: todoReducer }),
-    provideEffects(EmployeeEffects)
+    provideEffects(EmployeeEffects), provideAnimationsAsync()
   ]
 };

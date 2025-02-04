@@ -13,7 +13,6 @@ import { Observable } from 'rxjs';
 })
 export class TodoCrudComponent {
   todos$: Observable<any> | undefined;
-
   constructor(private store: Store) {
     this.todos$ = this.store.select((state: any) => state.todoArr);
   }
