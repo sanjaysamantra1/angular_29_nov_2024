@@ -1,0 +1,128 @@
+@if(members == undefined) {
+<div class="spinner-border m-5" role="status" id="spinner">
+    <span class="visually-hidden">Loading...</span>
+</div>
+}@else {
+<div>
+    <app-fetch-user (addEmployeeEvent)="addNewMember($event)"></app-fetch-user>
+    <button class="btn mx-1 mb-1 mt-2 btn btn-info" (click)="onClickChange()">Toggle to {{flag ? "Card View" :
+        "ListView"}}
+    </button>
+
+    @if (flag == true) {
+    <table class="table table-light table-striped table-bordered border-primary">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Details</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        @for(member of members | paginate: { itemsPerPage: 4, currentPage: pageNumber }; track $index) {
+        <tbody>
+            <tr scope="row">
+                <th>{{member.id}}</th>
+                <td>{{member.name}}</td>
+                <td>{{member.sal}}</td>
+                <td>{{member.gender}}</td>
+                <td><button class="btn mx-1 btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal"
+                        (click)="getCurrentMember(member)"> Details </button></td>
+                <td><button class="btn mx-1 btn-danger" (click)="deleteMember(member)"> Delete </button></td>
+                <td><button class="btn mx-1 btn-secondary" data-bs-toggle="modal" data-bs-target="#updateModal"
+                        (click)="getMemberToUpdate(member)"> Update </button></td>
+            </tr>
+        </tbody>
+        }
+    </table>
+    } @else {
+    <div class="row">
+        @for(member of members| paginate: { itemsPerPage: 4, currentPage: pageNumber };track $index){
+        <div class="col-sm-3">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOjWGGs4b5kwJavNNlUaFNRl3TY9hWEJDNsg&s"
+                    class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Id : {{member.id}}</h5>
+                    <p class="card-text">Name : {{member.name}}</p>
+                    <p class="card-text">Salary : {{member.sal}}</p>
+                    <p class="card-text">Gender: {{member.gender}}</p>
+                    <div class="row">
+                        <div class="col">
+                            <a>
+                                <button class="btn mx-1 btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#detailsModal" (click)="getCurrentMember(member)"> Details
+                                </button>
+                            </a>
+                            <a>
+                                <button class="btn mx-1 btn-danger" (click)="deleteMember(member)"> Delete
+                                </button>
+                            </a>
+                            <a>
+                                <button class="btn mx-1 btn-secondary" data-bs-toggle="modal"
+                                    data-bs-target="#updateModal" (click)="getMemberToUpdate(member)"> Update </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    }
+
+</div>
+<div>
+    <div class="row mt-2">
+        <div style="text-align: center;">
+            <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="detailsModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Employee Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><b>Id</b> - {{selectedMember.id}}</p>
+                <p><b>Name</b> - {{selectedMember.name}}</p>
+                <p><b>Salary</b> - {{selectedMember.sal}}</p>
+                <p><b>Gender</b> - {{selectedMember.gender}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">member Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="ename" [(ngModel)]="memberName">
+                <label class="form-label">Salary</label>
+                <input type="number" class="form-control" id="esalary" [(ngModel)]="memberSalary">
+                <label class="form-label">Gender</label>
+                <input type="text" class="form-control" id="egender" [(ngModel)]="memberGender">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateNewMember()">Update
+                    changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+}

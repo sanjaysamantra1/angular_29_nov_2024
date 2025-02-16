@@ -1,0 +1,7 @@
+.mat-toolbar{
+    background-color: rgb(22, 11, 11);
+    color: white;
+  }
+  .mat-button{
+    margin: 10px;
+  }

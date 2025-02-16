@@ -5,32 +5,4 @@
     border: 2px solid #ddd;
     background-color: #f9f9f9;
   }
-  
-  .leftpanel,
-  .rightpanel {
-    flex: 1;
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #ccc;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Individual panel styling */
-  .leftpanel {
-    border-color: #cdd8d8;
-    background-color: #e9dfdf;
-  }
-  
-  .rightpanel {
-    border-color: #cce3ce;
-    background-color: #e5ffe5;
-  }
-  
-  /* Image styling */
-  img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-  }
+

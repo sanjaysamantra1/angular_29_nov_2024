@@ -1,4 +1,50 @@
-<div class="container">
+<mat-grid-list cols="4" rowHeight="150px">
+    <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background]="'lightblue'">
+        <div class="tile-content">
+            <h3>Cardinal Number Converter</h3>
+            <input type="number" [(ngModel)]="input" placeholder="Enter a Number">
+            <p>Cardinal Number: {{ input | cardinal }}</p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="2" [style.background]="'lightgreen'">
+        <div class="tile-content">
+            <h3>Custom Pipe - Age:</h3>
+            <div>Please selct a date to calculate your Age:</div>
+            <input type="date" [(ngModel)]="dob">
+            <div>DOB: {{ dob | date : 'shortDate'}}</div>
+            <div>Age: {{ dob | age}}</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="4" [rowspan]="5" [style.background]="'lightpink'">
+        <div class="tile-content">
+            <h3>Member List</h3>
+            <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search Member" required>
+            <button class="btn btn-outline-secondary" (click)="applyFilter()">Search</button>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col" style="text-align: center;">Membership Number</th>
+                        <th class="col" style="text-align: center;">Name</th>
+                        <th class="col" style="text-align: center;">Salary</th>
+                        <th class="col" style="text-align: center;">Gender</th>
+                    </tr>
+                </thead>
+                @for (member of members | searchMembers:searchText; track $index) {
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;"> {{member.memberId}}</td>
+                        <td> {{member.name | title : member.gender}}</td>
+                        <td style="text-align: center;"> {{member.sal | currency: 'JPY'}}</td>
+                        <td style="text-align: center;"> {{member.gender}}</td>
+                    </tr>
+                </tbody>
+                }
+            </table>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+<!-- Previous code with BootStrap -->
+<!-- <div class="container">
     <div class="border p-3 ">
         <input type="number" class="form-control"  aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-sm" [(ngModel)]="input" placeholder="Enter a Number"
@@ -11,7 +57,7 @@
         <h3>Custom Pipe - Age:</h3>
         <div>Please selct a date to calculate your Age:</div>
         <input type="date" [(ngModel)]="dob">
-        <div>DOB: {{ dob | date}}</div>
+        <div>DOB: {{ dob | date : 'shortDate'}}</div>
         <div>Age: {{ dob | age}}</div>
     </div>
 
@@ -34,11 +80,11 @@
                 <tr>
                     <td style="text-align: center;"> {{member.memberId}}</td>
                     <td > {{member.name | title : member.gender}}</td>
-                    <td style="text-align: center;"> {{member.sal}}</td>
+                    <td style="text-align: center;"> {{member.sal | currency: 'JPY'}}</td>
                     <td style="text-align: center;"> {{member.gender}}</td>
                 </tr>
             </tbody>
             }
         </table>
     </div>
-</div>
+</div> -->

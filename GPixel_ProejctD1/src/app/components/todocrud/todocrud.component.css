@@ -1,0 +1,21 @@
+.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+.container{
+    background-color:darkslategrey;
+    color: white;
+}
+  .todo-container {
+    display: flex;
+    gap: 10px;
+    background-color: gray;
+  }
+  
+  .delete {
+    color: red;
+    font-size: 18px;
+    margin: 5px;
+  }
+
+ 

@@ -1,0 +1,28 @@
+<form #myForm="ngForm" (submit)="submit(myForm.value)" (reset)="reset(myForm)">
+    <p>
+        <span>Name:</span>
+        <input name="Name" #name="ngModel" [(ngModel)]="member.Name" required minlength="3">
+    </p>
+    <p>
+        <span>Email</span>
+        <input name="email" #email="ngModel" [(ngModel)]="member.email">
+    </p>
+    <div>
+        <h5>Details</h5>
+        <p>
+            <span>Constituency</span>
+            <input name="constituency" #constituency="ngModel" [(ngModel)]="member.details.constituency">
+        </p>
+        <p>
+            <input type="radio" name="radio" #position="ngModel" [(ngModel)]="member.details.position"
+                value=" Member of Parliament">
+            <span> Member of Parliament</span>
+            <input type="radio" name="radio" #position="ngModel" [(ngModel)]="member.details.position"
+                value=" Member of Legislative Assembly">
+            <span> Member of Legislative Assembly</span>
+        </p>
+    </div>
+    <button type="submit" class=" btn btn-outline-secondary" style="margin: 10px;">Submit</button>
+
+    <button type="reset" class="btn btn-outline-secondary" style="margin: 10px;">Reset</button>
+</form>

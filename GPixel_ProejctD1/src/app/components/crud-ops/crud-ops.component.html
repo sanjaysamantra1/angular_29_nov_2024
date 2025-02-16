@@ -1,10 +1,15 @@
-    <div class="row" style="text-align: center;text-decoration-line: underline;">
-        <br>
-        <h2 style="text-align: center;"> Our Elite Members</h2>
-        <br>
-    </div>
-    <div class="container">
-        <table class="table table-hover">
+<div class="row" style="text-align: center;text-decoration-line: underline;">
+    <br>
+    <h2 style="text-align: center;"> Our Elite Members</h2>
+    <br>
+</div>
+<div class="container">
+    <app-demo1>
+        <div class="col" (click)="createMember()"> <button class="btn btn-outline-success"> Add a new
+                Member</button></div>
+    </app-demo1>
+
+    <table class="table table-hover">
         <thead class="dark">
             <tr>
                 <th class="col">ID</th>
@@ -12,8 +17,7 @@
                 <th class="col">Gender</th>
                 <th class="col">Salary</th>
                 <th>View Member</th>
-                <th class="col" (click)="createMember()"> <button class="btn btn-outline-success"> Add a new
-                        Member</button></th>
+                <th>Delete Member</th>
             </tr>
         </thead>
         @for (member of members; track $index){
@@ -23,7 +27,8 @@
                 <td>{{member.name}}</td>
                 <td>{{member.gender}}</td>
                 <td>{{member.sal}}</td>
-                <td><button class="btn  btn-outline-success" (click)="openView(member)">View</button></td>
+                <td><button class="btn  btn-outline-success"
+                        [routerLink]="['/memberDetails',member.memberId]">View</button></td>
                 <td><button class="btn btn-secondary" (click)="openDeleteView(member)">Delete</button></td>
                 <!-- <td> <button class="btn  btn-warning" (click)="deleteMember(member.memberId)">Delete</button></td> -->
             </tr>

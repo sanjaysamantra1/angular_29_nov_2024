@@ -1,0 +1,21 @@
+<div class="todo-container container">
+    <input #todoInput type="text" placeholder="Add a new task" style="margin: 3px;" />
+    <button class="btn btn-outline-secondary btn-dark" (click)="addTodo(todoInput.value); todoInput.value = ''"
+        style="margin: 3px;">Add</button>
+</div>
+<div class="container">
+    <ol>
+        @for(todo of todos$ | async; track $index){
+        <li class="todo-item">
+            <input type="checkbox" [checked]="todo.isCompleted" (change)="toggleCompletion(todo.id)" />
+            <span [class.completed]="todo.isCompleted">{{ todo.title }}</span>
+
+            <span (click)="toggleFavorite(todo.id)" class="favorite">
+            </span>
+
+            <button (click)="deleteTodo(todo.id)" class="delete btn btn-outline-secondary">X</button>
+        </li>
+        }
+
+    </ol>
+</div>

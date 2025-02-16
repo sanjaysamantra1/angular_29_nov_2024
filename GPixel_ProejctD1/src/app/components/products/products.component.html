@@ -1,9 +1,11 @@
-<div class="container">
-    <h5 > Google Ads</h5>
+<div class="container" style="padding: 20px;">
+    <h5> Google Ads</h5>
     <input type="text" [(ngModel)]="input" placeholder="Search Google Ads">
     <button type="button" class="btn btn-dark" (click)="filterProducts()">Search</button>
-    <button class="btn btn-outline-secondary" (click)="sortByPrice()">sort by price: {{priceFlag?'Descending':'Ascending'}}</button>
-    <button class="btn btn-outline-secondary" (click)="sortByRating()">sort by Rating: {{ratingFlag? 'Descending':'Ascending'}}</button>
+    <button class="btn btn-outline-secondary" (click)="sortByPrice()">sort by price:
+        {{priceFlag?'Descending':'Ascending'}}</button>
+    <button class="btn btn-outline-secondary" (click)="sortByRating()">sort by Rating: {{ratingFlag?
+        'Descending':'Ascending'}}</button>
 </div>
 <div class="container">
     <div>
@@ -14,6 +16,8 @@
                 <br>
                 <div class="card p-3 border" Style="height:100%">
                     <img class="card-img-top" src="{{product.image}}" alt="card image cap" style="height:auto;" />
+                    <a href="#" class="btn btn-primary" [routerLink]="['/productdetails']"
+                        [queryParams]="{id:product.id,category:product.category,price:product.price}">Details</a>
                     <div class="card-body">
                         <h5 class="card-title">{{ product.title }}</h5>
                         <p class="card-text">Price: ${{ product.price }}</p>

@@ -1,0 +1,28 @@
+<button class="btn btn-outline-secondary" (click)="displayModal()"> Add User</button>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{ display: modalDisplayStyle }">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">User Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="userName" [(ngModel)]="userName">
+                <label class="form-label">Gender</label>
+                <input type="text" class="form-control" id="userGender" [(ngModel)]="userGender">
+                <label class="form-label">Salary</label>
+                <input type="text" class="form-control" id="userSalary" [(ngModel)]="userSalary">
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    (click)="hideModal()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="addNewUser()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

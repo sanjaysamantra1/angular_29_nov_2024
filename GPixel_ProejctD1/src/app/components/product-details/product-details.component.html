@@ -1,0 +1,20 @@
+<h3 class="text-center">Product Details</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 offset-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <img class="card-img-top" src="{{product.image}}" alt="card image cap" style="height:auto;" />
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text">Price: ${{ product.price }}</p>
+                    <p class="card-text">Description {{ product.description }}</p>
+                    <p class="card-text">Category: {{ product.category }}</p>
+                    <div clas="Rating">
+                        <p class="card-text">Rating: {{ product.rating.rate }}</p>
+                        <p class="card-text">Count: {{ product.rating.count }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
